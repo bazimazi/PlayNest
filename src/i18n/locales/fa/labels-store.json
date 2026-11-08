@@ -1,0 +1,19 @@
+{
+ "REACTIONS.loved.label": "عاشقش شد",
+ "REACTIONS.liked.label": "خوشش آمد",
+ "REACTIONS.meh.label": "امروز نه",
+ "REACTIONS.too-hard.label": "زیادی سخت بود",
+ "REACTIONS.too-easy.label": "زیادی آسان بود",
+ "MOODS.happy.label": "شاد",
+ "MOODS.happy.hint": "هوشیار و آمادهٔ کشف کردن",
+ "MOODS.happy.heading": "برای لحظه‌ای پر از کنجکاوی",
+ "MOODS.energetic.label": "پرانرژی",
+ "MOODS.energetic.hint": "پر از انرژی، نیاز به تحرک دارد",
+ "MOODS.energetic.heading": "برای تخلیهٔ انرژی",
+ "MOODS.fussy.label": "بی‌قرار",
+ "MOODS.fussy.hint": "نیاز به آرامش و نوازش دارد",
+ "MOODS.fussy.heading": "برای آرام کردن",
+ "MOODS.sleepy.label": "خواب‌آلود",
+ "MOODS.sleepy.hint": "دارد آرام می‌گیرد، ساکت و نرم",
+ "MOODS.sleepy.heading": "برای آرام شدن پیش از خواب"
+}

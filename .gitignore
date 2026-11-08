@@ -1,0 +1,8 @@
+node_modules
+dist
+*.local
+.vite
+
+# e2e screenshots
+e2e/screenshots
+e2e/screenshots-fa

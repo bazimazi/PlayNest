@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" data-world="sun">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="text-scale" content="scale" />
+    <title>PlayNest — play ideas for babies & children</title>
+    <meta
+      name="description"
+      content="Research-backed games, stories, songs and help for hard moments, for parents of children from birth to 12. Private, offline, free."
+    />
+    <meta name="theme-color" content="#ffcf56" />
+    <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="preload" href="/src/assets/fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/src/assets/fonts/caprasimo-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-title" content="PlayNest" />
+    <script>
+      // Apply the saved theme before first paint to avoid a flash.
+      try {
+        var s = JSON.parse(localStorage.getItem('playnest:state') || '{}').settings || {};
+        var t = s.theme || 'system';
+        if (t === 'system') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        // The night screen must not flash bright first: that's the moment it matters most.
+        if (s.bedside) {
+          t = 'dark';
+          document.documentElement.dataset.mode = s.bedsideTone === 'amber' ? 'bedside-amber' : 'bedside';
+        }
+        document.documentElement.dataset.theme = t;
+        // Less movement has to hold from the very first frame too.
+        document.documentElement.dataset.motion = s.motion === 'less' || matchMedia('(prefers-reduced-motion: reduce)').matches ? 'less' : 'full';
+        // The language's direction too, or the first frame would be laid out backwards. Same rule as src/i18n/index.ts.
+        var lang = s.language;
+        if (lang !== 'en' && lang !== 'fa') {
+          lang = 'en';
+          var device = navigator.languages || [];
+          for (var i = 0; i < device.length; i++) {
+            var base = device[i].slice(0, 2).toLowerCase();
+            if (base === 'en' || base === 'fa') {
+              lang = base;
+              break;
+            }
+          }
+        }
+        if (lang === 'fa') {
+          document.documentElement.lang = 'fa';
+          document.documentElement.dir = 'rtl';
+          document.title = 'پلی‌نست؛ ایده‌های بازی برای نوزادان و کودکان';
+          document.querySelector('link[rel="manifest"]').href = './manifest.fa.webmanifest';
+          document.querySelector('meta[name="apple-mobile-web-app-title"]').content = 'پلی‌نست';
+          document.querySelector('meta[name="description"]').content = 'بازی، قصه، لالایی و کمک برای لحظه‌های سخت، برای پدر و مادر کودکان از تولد تا ۱۲ سالگی. خصوصی، آفلاین و رایگان.';
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>PlayNest needs JavaScript to run.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
