@@ -11,6 +11,8 @@ import {
 } from './types';
 
 const KEBAB = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+/** An ISO 639 language code: 'fa', 'en', 'haw'. */
+export const LANG = /^[a-z]{2,3}$/;
 const MAX_MONTHS = 144;
 
 /**
@@ -73,6 +75,10 @@ export function validateActivities(list: Activity[]): string[] {
     for (const t of a.tags ?? []) if (!TAGS.includes(t)) err(`unknown tag "${t}"`);
     if (a.tags?.includes('world') && !a.origin) err('tag "world" requires origin');
     if (a.origin && !a.tags?.includes('world')) err('origin set but tag "world" missing');
+    // Each language shows only its own culture's games, so a game from one culture has to say which.
+    if (a.origin && a.origin !== 'Worldwide' && !a.lang) err('a game with an origin needs lang, the language of its culture');
+    if (a.celebration && !a.lang) err("a festival game needs lang, the language of its day's culture");
+    if (a.lang !== undefined && !LANG.test(a.lang)) err(`lang "${a.lang}" is not an ISO 639 code`);
     for (const s of a.sources ?? []) if (!SOURCE_IDS.includes(s)) err(`unknown source "${s}"`);
     for (const r of a.refs ?? []) if (!/^https:\/\//.test(r.url ?? '')) err(`ref url must be https: ${r.url}`);
     for (const w of a.weather ?? []) if (!WEATHERS.includes(w)) err(`unknown weather "${w}"`);

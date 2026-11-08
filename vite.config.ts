@@ -146,14 +146,20 @@ const CONTENT_CHUNKS: Record<string, string> = {
   'helplines.ts': 'help',
   'crying.ts': 'help',
   'stories.ts': 'stories',
+  'stories-persian.ts': 'stories',
+  'stories-english.ts': 'stories',
   'songs.ts': 'songs',
+  'songs-persian.ts': 'songs',
+  'songs-english.ts': 'songs',
   'talk.ts': 'talk',
+  'talk-persian.ts': 'talk',
   'stages.ts': 'stages',
   'routines.ts': 'routines',
   'firsts.ts': 'routines',
   'guides.ts': 'guides',
   'guides-more.ts': 'guides',
   'celebrations.ts': 'celebrations',
+  'celebrations-persian.ts': 'celebrations',
   'adaptations.ts': 'adaptations',
 };
 
@@ -173,7 +179,7 @@ export default defineConfig({
           // Content chunks call into this as they load, so it has to run first. On its own, it can't be caught in a cycle.
           if (/src[\\/]i18n[\\/]index\.ts$/.test(id) || id.includes('vite/preload-helper')) return 'i18n';
           if (/node_modules[\\/](react|react-dom|react-router|react-router-dom|scheduler)[\\/]/.test(id)) return 'vendor';
-          const band = id.match(/src[\\/]data[\\/]activities[\\/](infant|toddler|preschool|school|older|older-make|world|seasons|celebrate)\.ts$/);
+          const band = id.match(/src[\\/]data[\\/]activities[\\/](infant|toddler|preschool|school|older|older-make|world|seasons|celebrate|iran-young|iran-older|celebrate-persian)\.ts$/);
           if (band) return `activities-${band[1]}`;
           const data = id.match(/src[\\/]data[\\/]([^\\/]+\.ts)$/);
           if (data && CONTENT_CHUNKS[data[1]]) return `content-${CONTENT_CHUNKS[data[1]]}`;

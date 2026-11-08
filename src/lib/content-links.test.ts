@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { ACTIVITIES, ACTIVITY_BY_ID, CELEBRATION_ACTIVITIES } from '../data/activities';
-import { CELEBRATIONS } from '../data/celebrations';
+import { ACTIVITIES, ACTIVITY_BY_ID, CELEBRATION_ACTIVITIES, EVERY_CELEBRATION_ACTIVITY } from '../data/activities';
+import { CELEBRATIONS, EVERY_CELEBRATION } from '../data/celebrations';
 import { COACH } from '../data/coach';
 import { CRYING, PARENT_SUPPORT } from '../data/crying';
 import { AID_CARDS } from '../data/firstaid';
@@ -39,7 +39,7 @@ describe('search finds the right things in the real content', () => {
 
   it('finds songs and stories by culture', () => {
     expect(find(index, 'lullaby').hits.some((h) => h.type === 'song')).toBe(true);
-    expect(find(index, 'persian').hits.length).toBeGreaterThan(0);
+    expect(find(index, 'english').hits.some((h) => h.type === 'story')).toBe(true);
   });
 
   it('survives a typo', () => {
@@ -49,9 +49,13 @@ describe('search finds the right things in the real content', () => {
 
 describe('content that points at other content', () => {
   it('festival games are valid and belong to a real celebration', () => {
-    expect(validateActivities(CELEBRATION_ACTIVITIES)).toEqual([]);
-    const ids = new Set(CELEBRATIONS.map((c) => c.id));
-    expect(CELEBRATION_ACTIVITIES.filter((a) => !a.celebration || !ids.has(a.celebration)).map((a) => a.id)).toEqual([]);
+    expect(validateActivities([...EVERY_CELEBRATION_ACTIVITY])).toEqual([]);
+    const days = new Map(EVERY_CELEBRATION.map((c) => [c.id, c]));
+    expect(EVERY_CELEBRATION_ACTIVITY.filter((a) => !a.celebration || !days.has(a.celebration)).map((a) => a.id)).toEqual([]);
+    // A festival game is in the language of its day, so the two always appear together.
+    expect(EVERY_CELEBRATION_ACTIVITY.filter((a) => a.lang !== days.get(a.celebration ?? '')?.lang).map((a) => a.id)).toEqual([]);
+    const shown = new Set(CELEBRATIONS.map((c) => c.id));
+    expect(CELEBRATION_ACTIVITIES.filter((a) => !shown.has(a.celebration ?? '')).map((a) => a.id)).toEqual([]);
   });
 
   it('festival games never mix into everyday suggestions, and vice versa', () => {

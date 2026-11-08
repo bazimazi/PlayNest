@@ -189,6 +189,14 @@ export const commaList = (items: readonly string[]): string => items.join(curren
 
 // ---------- Content ----------
 
+/**
+ * Each language uses only its own culture. A story, song, festival or traditional game carries `lang`, the language whose
+ * culture it comes from, and appears only in that language: Persian shows Persian stories and Iranian games, English shows
+ * English ones, and nothing is borrowed across. Content that belongs to no one culture (most games, the guides, help and
+ * first aid) has no `lang` and appears in every language, translated.
+ */
+export const fitsCulture = (item: { lang?: string }): boolean => !item.lang || item.lang === current;
+
 const keyOf = (item: unknown, index: number): string => {
   if (item && typeof item === 'object') {
     const { id, slug } = item as { id?: unknown; slug?: unknown };

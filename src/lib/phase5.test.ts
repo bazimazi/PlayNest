@@ -282,6 +282,7 @@ describe('celebrations', () => {
     name: 'X',
     emoji: '🎉',
     kind: 'shared' as const,
+    lang: 'en',
     whoCelebrates: 'Some families',
     about: 'About',
     dates: { '2026': ['2026-03-20'], '2027': ['2027-03-21'] },

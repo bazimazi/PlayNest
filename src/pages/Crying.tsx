@@ -100,7 +100,7 @@ export default function Crying() {
 
       <ListGroup>
         <ListRow to="/sounds" lead={<Glyph emoji="🌊" tone="var(--d-senses)" />} title={t('Soothing sounds')} subtitle={t('Soft noise, across the room')} />
-        <ListRow to="/songs?type=lullaby" lead={<Glyph emoji="🌙" tone="var(--d-thinking)" />} title={t('Lullabies')} subtitle={t('Your voice, from around the world')} />
+        <ListRow to="/songs?type=lullaby" lead={<Glyph emoji="🌙" tone="var(--d-thinking)" />} title={t('Lullabies')} subtitle={t('Sung in your own voice')} />
         <ListRow to="/help/you" lead={<Glyph emoji="💛" tone="var(--d-feelings)" />} title={t('How are you doing?')} />
       </ListGroup>
 

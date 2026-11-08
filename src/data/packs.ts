@@ -218,6 +218,11 @@ export interface Story {
   nativeTitle?: string;
   /** "Traditional, Persian" style attribution; say "told in many places" when it isn't one culture's alone. */
   culture: string;
+  /**
+   * The language whose culture the story comes from (ISO 639): 'fa', 'en', 'ja'. A story is told only in its own
+   * language's app, so a Persian parent meets Persian stories and an English one English stories. See `fitsCulture`.
+   */
+  lang: string;
   emoji: string;
   minMonths: number;
   maxMonths: number;
@@ -270,6 +275,8 @@ export interface Song {
   nativeTitle?: string;
   /** "Persian", "Swahili", "Mandarin". */
   language: string;
+  /** The same language as an ISO 639 code. A song is shown only in its own language's app. See `fitsCulture`. */
+  lang: string;
   culture: string;
   type: SongType;
   emoji: string;
@@ -302,6 +309,8 @@ export interface TalkCard {
   band: TalkBand;
   /** One open question, at most 110 characters, in your own words. */
   text: string;
+  /** Set when the card draws on one culture, such as a Persian proverb: then only that language shows it. */
+  lang?: string;
 }
 
 // ---------- This stage ----------
@@ -363,6 +372,11 @@ export interface Celebration {
   emoji: string;
   /** 'shared' days aren't tied to one faith or people (Earth Day, Children's Day). */
   kind: 'cultural' | 'religious' | 'shared';
+  /**
+   * The language whose culture the day belongs to (ISO 639). Each language offers only its own culture's days, and their
+   * festival games go with them. See `fitsCulture`.
+   */
+  lang: string;
   /** Phrased as "Some families", at most 160 characters. */
   whoCelebrates: string;
   /** Who doesn't, so nobody is assumed in or out. At most 160 characters. */

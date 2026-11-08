@@ -11,6 +11,7 @@ export const preschoolActivities: Activity[] = [
   {
     id: 'simon-says',
     title: 'Simon says',
+    lang: 'en',
     emoji: '🙋',
     summary: "Do the action only when you hear 'Simon says' first: a classic game of listen, stop and think.",
     minMonths: 36,
@@ -49,6 +50,7 @@ export const preschoolActivities: Activity[] = [
   {
     id: 'red-light-green-light',
     title: 'Red light, green light',
+    lang: 'en',
     emoji: '🚦',
     summary: 'Run towards you on green, freeze like a statue on red: a stop-and-go race that builds self-control.',
     minMonths: 36,
@@ -165,6 +167,7 @@ export const preschoolActivities: Activity[] = [
   {
     id: 'five-speckled-frogs-song',
     title: 'Five green and speckled frogs',
+    lang: 'en',
     emoji: '🐸',
     summary: 'Sing the counting-down song and let one finger frog jump into the pool each verse.',
     minMonths: 36,
@@ -204,6 +207,7 @@ export const preschoolActivities: Activity[] = [
   {
     id: 'coming-round-the-mountain',
     title: "She'll be coming 'round the mountain",
+    lang: 'en',
     emoji: '⛰️',
     summary: 'Sing the cumulative song, adding a new sound and action each verse and repeating all the earlier ones in order.',
     minMonths: 36,
@@ -2844,6 +2848,7 @@ export const preschoolActivities: Activity[] = [
   {
     id: 'sleeping-lions-party-game',
     title: 'Sleeping lions',
+    lang: 'en',
     emoji: '💤',
     summary: 'Everyone lies still as sleeping lions while a hunter tries to make them giggle or wriggle, without touching.',
     minMonths: 40,
@@ -2917,6 +2922,7 @@ export const preschoolActivities: Activity[] = [
     ],
     safety: ['Play on grass or in a clear space, well away from roads and steps.'],
     origin: 'Spain and Latin America',
+    lang: 'es',
     tags: ['world', 'party', 'song'],
     sources: ['harvard-ef-guide'],
   },
@@ -3000,6 +3006,7 @@ export const preschoolActivities: Activity[] = [
     ],
     safety: ['Hands over eyes are enough: never tie anything over the face, and keep the ring away from furniture.'],
     origin: 'Japan',
+    lang: 'ja',
     tags: ['world', 'party', 'song'],
   },
   {
@@ -3165,11 +3172,13 @@ export const preschoolActivities: Activity[] = [
       'Swap the actions for animal moves, like elephant stomps for ram sam sam and penguin waddles for guli guli.',
     ],
     origin: 'Morocco',
+    lang: 'ar',
     tags: ['world', 'song'],
   },
   {
     id: 'bingo-clap-song',
     title: 'B-I-N-G-O clap-in song',
+    lang: 'en',
     emoji: '🐶',
     summary: 'Sing Bingo and swap one more letter for a clap each verse, until the whole name is claps.',
     minMonths: 48,
@@ -3546,11 +3555,13 @@ export const preschoolActivities: Activity[] = [
     ],
     safety: ['A ring, button or pebble is a choking hazard for babies and toddlers, so watch younger siblings and count it back in.'],
     origin: 'Chile',
+    lang: 'es',
     tags: ['world', 'party', 'brain-game'],
   },
   {
     id: 'down-by-the-bay-rhymes',
     title: 'Down by the bay rhyme song',
+    lang: 'en',
     emoji: '🍉',
     summary: 'Sing the traditional song and invent silly rhyming pictures: Did you ever see a bear combing his hair?',
     minMonths: 48,
@@ -3750,6 +3761,7 @@ export const preschoolActivities: Activity[] = [
     ],
     safety: ['Keep a clear space, and squeeze in slowly so nobody bumps into the child in the middle.'],
     origin: 'Russia',
+    lang: 'ru',
     tags: ['world', 'song', 'party'],
   },
   {
@@ -4528,6 +4540,7 @@ export const preschoolActivities: Activity[] = [
   {
     id: 'beetle-drive-dice-game',
     title: 'Beetle drive dice drawing game',
+    lang: 'en',
     emoji: '🐞',
     summary: 'Roll a dice and draw the beetle part that matches the number. The first to finish a whole beetle wins.',
     minMonths: 54,
@@ -4817,6 +4830,7 @@ export const preschoolActivities: Activity[] = [
   {
     id: 'kims-game-whats-missing',
     title: "Kim's game: what's missing?",
+    lang: 'en',
     emoji: '🧐',
     summary: 'Look hard at a tray of objects, close your eyes while one is taken away, then work out what is missing.',
     minMonths: 54,

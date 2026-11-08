@@ -351,6 +351,7 @@ export const toddlerActivities: Activity[] = [
   {
     id: 'itsy-bitsy-spider',
     title: 'Itsy Bitsy Spider',
+    lang: 'en',
     emoji: '🕷️',
     summary: 'Sing Itsy Bitsy Spider with the finger-climbing actions, slowly enough for your toddler to copy and join in.',
     minMonths: 12,
@@ -390,6 +391,7 @@ export const toddlerActivities: Activity[] = [
   {
     id: 'open-shut-them-fingerplay',
     title: 'Open, shut them',
+    lang: 'en',
     emoji: '✋',
     summary: 'A quick hand rhyme of opening, shutting and clapping that gives toddlers a fun first go at stopping and starting.',
     minMonths: 12,
@@ -429,6 +431,7 @@ export const toddlerActivities: Activity[] = [
   {
     id: 'old-macdonald-animal-sounds',
     title: 'Old MacDonald animal sounds',
+    lang: 'en',
     emoji: '🐄',
     summary: "Sing Old MacDonald and pause so your toddler can fill in each animal's sound. Great for car rides and queues.",
     minMonths: 12,
@@ -728,6 +731,7 @@ export const toddlerActivities: Activity[] = [
   {
     id: 'wheels-on-the-bus',
     title: 'Wheels on the bus',
+    lang: 'en',
     emoji: '🚌',
     summary: 'Sing The Wheels on the Bus with the actions on car rides or at home, letting your toddler pick the next verse.',
     minMonths: 12,
@@ -848,6 +852,7 @@ export const toddlerActivities: Activity[] = [
   {
     id: 'ring-around-the-rosie',
     title: 'Ring Around the Rosie',
+    lang: 'en',
     emoji: '🌹',
     summary: 'Hold hands, walk in a circle singing, and all fall down together, then stand up and do it again.',
     minMonths: 18,
@@ -888,6 +893,7 @@ export const toddlerActivities: Activity[] = [
   {
     id: 'head-shoulders-knees-and-toes',
     title: 'Head, Shoulders, Knees and Toes',
+    lang: 'en',
     emoji: '🙆',
     summary: 'Sing and touch each body part in turn, then try it slower, faster, or with one word left out.',
     minMonths: 18,
@@ -926,6 +932,7 @@ export const toddlerActivities: Activity[] = [
   {
     id: 'im-a-little-teapot',
     title: "I'm a Little Teapot",
+    lang: 'en',
     emoji: '☕',
     summary: "Act out I'm a Little Teapot with a handle arm and a spout arm, then tip over and pour on the last line.",
     minMonths: 18,
@@ -963,6 +970,7 @@ export const toddlerActivities: Activity[] = [
   {
     id: 'jack-in-the-box-pop-up',
     title: 'Jack in the box',
+    lang: 'en',
     emoji: '🎁',
     summary: 'Crouch down small and still, then wait for the magic words before you both jump up: a start-stop game for little bodies.',
     minMonths: 18,
@@ -1697,6 +1705,7 @@ export const toddlerActivities: Activity[] = [
   {
     id: 'motorboat-motorboat',
     title: 'Motorboat, motorboat',
+    lang: 'en',
     emoji: '🚤',
     summary: 'Hold hands and circle while chanting “Motorboat, motorboat, go so slow…”, then faster, then fastest, then stop!',
     minMonths: 24,
@@ -1737,6 +1746,7 @@ export const toddlerActivities: Activity[] = [
   {
     id: 'hokey-pokey',
     title: 'Hokey Pokey',
+    lang: 'en',
     emoji: '🦶',
     summary: 'Put your hand in, take your hand out and shake it all about: a song full of body parts, in, out and turning around.',
     minMonths: 24,
@@ -2552,6 +2562,7 @@ export const toddlerActivities: Activity[] = [
       'Sing it in any language your family speaks, keeping the same actions.',
     ],
     origin: 'Japan',
+    lang: 'ja',
     tags: ['world', 'song'],
     sources: ['harvard-ef-guide', 'bilingual-ef'],
   },
@@ -2593,6 +2604,7 @@ export const toddlerActivities: Activity[] = [
     ],
     safety: ['Use it for small everyday bumps only. Check any real injury properly, and get medical help if you are worried.'],
     origin: 'Spain and Latin America',
+    lang: 'es',
     tags: ['world', 'song', 'calm-down'],
     sources: ['harvard-serve-return'],
   },
@@ -3132,6 +3144,7 @@ export const toddlerActivities: Activity[] = [
     ],
     safety: ["In the bath, stay within arm's reach every second."],
     origin: 'India',
+    lang: 'hi',
     tags: ['world', 'song', 'water'],
     sources: ['bilingual-ef', 'harvard-ef-guide'],
   },
@@ -3467,6 +3480,7 @@ export const toddlerActivities: Activity[] = [
     ],
     safety: ['Outdoors, play on soft, flat grass away from roads, and check the ground for anything sharp.'],
     origin: 'Germany',
+    lang: 'de',
     tags: ['world', 'song', 'party'],
     sources: ['harvard-ef-guide'],
   },
@@ -4363,6 +4377,7 @@ export const toddlerActivities: Activity[] = [
       'Sing each bear in its own voice: a deep daddy bear voice, a middle voice and a squeaky baby bear voice.',
     ],
     origin: 'Korea',
+    lang: 'ko',
     tags: ['song', 'world'],
     sources: ['who-unicef-ccd'],
   },
@@ -4402,6 +4417,7 @@ export const toddlerActivities: Activity[] = [
       'Act it with soft toys: a big toy as the hen and small ones as chicks tucked under a scarf wing.',
     ],
     origin: 'Chile (sung across Latin America and Spain)',
+    lang: 'es',
     tags: ['song', 'world', 'calm-down'],
     sources: ['lullabies-singing'],
   },
@@ -4501,6 +4517,7 @@ export const toddlerActivities: Activity[] = [
   {
     id: 'sleeping-bunnies-song',
     title: 'Sleeping bunnies',
+    lang: 'en',
     emoji: '🐰',
     summary: 'Lie still as sleeping bunnies while you sing, then wake up and hop, hop, hop, and stop when the song says stop.',
     minMonths: 24,
@@ -4622,6 +4639,7 @@ export const toddlerActivities: Activity[] = [
   {
     id: 'two-little-dickie-birds',
     title: 'Two little dickie birds',
+    lang: 'en',
     emoji: '🐦',
     summary: 'Two finger birds sit on a wall, fly away behind your back and come back again: a tiny rhyme for waiting moments.',
     minMonths: 24,
@@ -4693,6 +4711,7 @@ export const toddlerActivities: Activity[] = [
       'Make two tiger faces from paper plates and act the song out with them.',
     ],
     origin: 'China',
+    lang: 'zh',
     tags: ['song', 'world'],
     sources: ['who-unicef-ccd'],
   },
@@ -4867,6 +4886,7 @@ export const toddlerActivities: Activity[] = [
     ],
     safety: ['Play on grass or carpet, and slow down if anyone starts to stumble.'],
     origin: 'Brazil',
+    lang: 'pt',
     tags: ['song', 'world', 'party'],
     sources: ['who-unicef-ccd'],
   },
@@ -5173,6 +5193,7 @@ export const toddlerActivities: Activity[] = [
   {
     id: 'ten-in-the-bed-song',
     title: 'Ten in the bed',
+    lang: 'en',
     emoji: '🛌',
     summary: 'Line up soft toys on the bed and sing Roll over, roll over, letting one fall out each verse until only the little one is left.',
     minMonths: 30,

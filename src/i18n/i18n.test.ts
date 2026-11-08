@@ -98,7 +98,7 @@ describe('translated content', () => {
         bad.push(`${file}: nothing in the app is called this`);
         continue;
       }
-      const source = flatten(name, registry.get(name));
+      const source = flatten(name, registry.get(name), 'fa');
       const translated = readJson(join(LOCALE, file));
       const hashes = existsSync(join(HASHES, file)) ? readJson(join(HASHES, file)) : {};
       for (const [key, persian] of Object.entries(translated)) {
@@ -118,7 +118,7 @@ describe('translated content', () => {
     const bad: string[] = [];
     for (const file of overlays()) {
       const name = file.slice(0, -'.json'.length);
-      const source = flatten(name, registry.get(name));
+      const source = flatten(name, registry.get(name), 'fa');
       const translated = readJson(join(LOCALE, file));
       const started = new Set(Object.keys(translated).map((k) => k.split('.')[0]));
       for (const key of Object.keys(source)) {
@@ -130,7 +130,7 @@ describe('translated content', () => {
 
   it('the app’s safety screens are complete', () => {
     for (const name of ['firstaid', 'crying', 'helplines', 'coach', 'milestones', 'labels-domains', 'labels-packs', 'labels-types', 'labels-store']) {
-      const source = flatten(name, registry.get(name));
+      const source = flatten(name, registry.get(name), 'fa');
       const path = join(LOCALE, `${name}.json`);
       const translated = existsSync(path) ? readJson(path) : {};
       expect(Object.keys(source).filter((k) => !(k in translated)), name).toEqual([]);

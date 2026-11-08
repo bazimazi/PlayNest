@@ -983,6 +983,7 @@ export const infantActivities: Activity[] = [
   {
     id: 'this-little-piggy',
     title: 'This little piggy',
+    lang: 'en',
     emoji: '🐷',
     summary:
       "Wiggle each toe through the classic rhyme, then tickle all the way up to the tummy for the 'wee, wee, wee' finish.",
@@ -1539,6 +1540,7 @@ export const infantActivities: Activity[] = [
   {
     id: 'pat-a-cake',
     title: 'Pat-a-cake',
+    lang: 'en',
     emoji: '👏',
     summary:
       "Clap your baby's hands (or your own) through the classic rhyme, rolling, patting and 'baking' the cake together.",
@@ -1580,6 +1582,7 @@ export const infantActivities: Activity[] = [
   {
     id: 'trot-trot-knee-ride',
     title: 'Trot trot to Boston knee ride',
+    lang: 'en',
     emoji: '🐴',
     summary:
       'Bounce your baby on your knees to a riding rhyme, then gently dip them between your knees on the last line.',
@@ -3106,6 +3109,7 @@ export const infantActivities: Activity[] = [
       "Oily babies are slippery. Keep a firm hold, and in the bath stay within arm's reach with a hand on your baby every second.",
     ],
     origin: 'India',
+    lang: 'hi',
     tags: ['world', 'calm-down', 'everyday', 'song'],
     sources: ['who-unicef-ccd', 'aap-drowning'],
   },
@@ -3702,6 +3706,7 @@ export const infantActivities: Activity[] = [
   {
     id: 'here-sits-the-lord-mayor',
     title: 'Here sits the Lord Mayor face rhyme',
+    lang: 'en',
     emoji: '🎩',
     summary:
       'An old English face rhyme: touch forehead, eyes, cheeks, nose and mouth in turn, then finish with a chin tickle.',
@@ -3945,6 +3950,7 @@ export const infantActivities: Activity[] = [
       'Whisper the rhyme, then try it in a big, booming voice, and see which gets the bigger smile.',
     ],
     origin: 'Brazil',
+    lang: 'pt',
     tags: ['world', 'song', 'brain-game'],
     sources: ['harvard-ef-guide'],
   },
@@ -4069,6 +4075,7 @@ export const infantActivities: Activity[] = [
     ],
     safety: ['Keep tickles light and brief, and stop if your baby turns away or startles.'],
     origin: 'Japan',
+    lang: 'ja',
     tags: ['world', 'song', 'brain-game', 'everyday'],
     sources: ['harvard-ef-guide'],
   },
@@ -4325,6 +4332,7 @@ export const infantActivities: Activity[] = [
       'Try it as a lullaby: slower and quieter, with your hand drifting down to rest on their tummy.',
     ],
     origin: 'Spain and Latin America',
+    lang: 'es',
     tags: ['world', 'song'],
     sources: ['lullabies-singing'],
   },
@@ -4414,6 +4422,7 @@ export const infantActivities: Activity[] = [
   {
     id: 'round-and-round-the-garden',
     title: 'Round and round the garden',
+    lang: 'en',
     emoji: '🌷',
     summary:
       "Trace circles on your baby's palm, walk your fingers up their arm, and pause before the tickle under the arm.",
@@ -4950,6 +4959,7 @@ export const infantActivities: Activity[] = [
       'Play it slowly at bedtime with the softest touch, ending with a stroke down the arm instead of a tickle.',
     ],
     origin: 'Japan',
+    lang: 'ja',
     tags: ['world', 'song'],
     sources: ['harvard-ef-guide'],
   },
@@ -5001,6 +5011,7 @@ export const infantActivities: Activity[] = [
   {
     id: 'wash-your-knees-bath-song',
     title: 'This is the way we wash our knees',
+    lang: 'en',
     emoji: '🛁',
     summary: 'Sing a washing song in the bath, naming and gently washing one body part in each verse with a soft flannel.',
     minMonths: 6,
@@ -5166,6 +5177,7 @@ export const infantActivities: Activity[] = [
       'Verses differ from family to family, so ask Spanish-speaking relatives or friends how they learned it.',
     ],
     origin: 'Mexico',
+    lang: 'es',
     tags: ['world', 'song'],
     sources: ['harvard-ef-guide'],
   },
@@ -5336,6 +5348,7 @@ export const infantActivities: Activity[] = [
       "Make your own fingers the bugs and fly them up into the sky, then down to land on your baby's nose.",
     ],
     origin: 'China',
+    lang: 'zh',
     tags: ['world', 'song'],
     sources: ['harvard-ef-guide'],
   },
@@ -5377,6 +5390,7 @@ export const infantActivities: Activity[] = [
       'Let a grandparent or older sibling lead, using the words and rhythm they grew up with.',
     ],
     origin: 'Korea',
+    lang: 'ko',
     tags: ['world', 'song'],
     sources: ['harvard-ef-guide'],
   },
@@ -5500,6 +5514,7 @@ export const infantActivities: Activity[] = [
       'If Russian is your family language, chant it in Russian: Ladushki, ladushki, gde byli? U babushki!',
     ],
     origin: 'Russia',
+    lang: 'ru',
     tags: ['world', 'song'],
     sources: ['harvard-ef-guide'],
   },
@@ -6233,6 +6248,7 @@ export const infantActivities: Activity[] = [
       'Play on a soft floor away from furniture corners, and check outdoor ground for sharp things first.',
     ],
     origin: 'Korea',
+    lang: 'ko',
     tags: ['world'],
     sources: ['cdc-milestones'],
   },

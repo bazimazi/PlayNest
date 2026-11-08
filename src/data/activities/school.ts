@@ -9,6 +9,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'go-fish-card-game',
     title: 'Go Fish',
+    lang: 'en',
     emoji: '🐟',
     summary: 'Ask for cards, remember who has what and collect sets of four in this classic card game.',
     minMonths: 60,
@@ -48,6 +49,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'crazy-eights-card-game',
     title: 'Crazy Eights',
+    lang: 'en',
     emoji: '🎴',
     summary: 'Match the suit or the number to get rid of your cards first. Eights are wild and let you change the suit.',
     minMonths: 60,
@@ -87,6 +89,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'slapjack-and-snap',
     title: 'Slapjack and Snap',
+    lang: 'en',
     emoji: '✋',
     summary: 'Flip cards into the middle and slap the pile when a jack appears, but keep your hands still for every other card!',
     minMonths: 60,
@@ -127,6 +130,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'old-maid-odd-card-out',
     title: 'Old Maid (the odd card out)',
+    lang: 'en',
     emoji: '🃏',
     summary: 'Pair up your cards and pass them around, trying not to be left holding the one queen that has no partner.',
     minMonths: 60,
@@ -165,6 +169,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'spoons-card-grab',
     title: 'Spoons',
+    lang: 'en',
     emoji: '🥄',
     summary: 'Pass cards fast to collect four of a kind, then grab a spoon from the middle before they run out.',
     minMonths: 72,
@@ -477,6 +482,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'packing-for-a-picnic',
     title: 'Packing for a Picnic',
+    lang: 'en',
     emoji: '🧺',
     summary: 'Take turns adding an item from A to Z to an imaginary picnic basket, repeating the whole growing list from memory.',
     minMonths: 60,
@@ -517,6 +523,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'singing-in-rounds',
     title: 'Singing in rounds',
+    lang: 'en',
     emoji: '🎶',
     summary: 'Sing Row, Row, Row Your Boat as a round: hold your own part steady while someone else sings a different line.',
     minMonths: 60,
@@ -533,7 +540,7 @@ export const schoolActivities: Activity[] = [
       'Split into two parts. You start, and your child starts from the beginning when you reach gently down the stream.',
       'Keep singing your own part even though you can hear the other one. Go round two or three times.',
       'Finish one at a time: whoever started first stops first, and the last voice sings the final line alone.',
-      "Swap who starts. Then try Frère Jacques or London's Burning.",
+      "Swap who starts. Then try London's Burning or White Coral Bells.",
     ],
     talk: [
       'What helps you keep your own tune when I sing something different?',
@@ -547,7 +554,7 @@ export const schoolActivities: Activity[] = [
     variations: [
       'Make up new words for the round, like Drive, drive, drive your car, gently down the road, and sing those in parts.',
       'Sing it in character: one part sings as squeaky high mice, the other as low growly bears.',
-      'Learn Kookaburra, an Australian round, and add a kookaburra laugh at the end of each line.',
+      'Once two parts feel easy, try three: the third singer starts when the second reaches gently down the stream.',
     ],
     tags: ['song', 'brain-game'],
     sources: ['harvard-ef-guide'],
@@ -555,6 +562,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'miss-mary-mack-clapping',
     title: 'Miss Mary Mack clapping game',
+    lang: 'en',
     emoji: '👏',
     summary: 'Learn a playground clapping rhyme with a partner and keep the pattern going as the words get faster.',
     minMonths: 60,
@@ -593,6 +601,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'jump-rope-rhymes',
     title: 'Jump rope rhymes',
+    lang: 'en',
     emoji: '➰',
     summary: 'Jump a long turning rope while chanting Teddy Bear, Teddy Bear and doing each action without missing a beat.',
     minMonths: 60,
@@ -637,6 +646,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'what-time-is-it-mr-fox',
     title: 'What Time Is It, Mr Fox?',
+    lang: 'en',
     emoji: '🦊',
     summary: 'Creep towards the fox by counting steps to the time called, then race back home when the fox shouts Dinner time!',
     minMonths: 54,
@@ -677,6 +687,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'mother-may-i',
     title: 'Mother May I? (or Captain May I?)',
+    lang: 'en',
     emoji: '🙋',
     summary: "Follow the leader's step commands, but only after asking permission and hearing Yes, you may!",
     minMonths: 60,
@@ -715,6 +726,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'duck-duck-goose',
     title: 'Duck, Duck, Goose',
+    lang: 'en',
     emoji: '🦆',
     summary: 'Tap heads around a circle saying duck, then pick a goose who chases you round the circle to the empty spot.',
     minMonths: 54,
@@ -793,6 +805,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'four-square-ball',
     title: 'Four square',
+    lang: 'en',
     emoji: '🟧',
     summary: "Bounce a ball between four chalk squares: let it bounce once in your square, then hit it into someone else's.",
     minMonths: 66,
@@ -900,8 +913,8 @@ export const schoolActivities: Activity[] = [
     easier: 'Play only the classic version slowly, saying the winner out loud each time: paper wraps rock!',
     harder: 'Play best of five with a tally, or invent a fourth sign with its own rules.',
     variations: [
-      'Try suit from Indonesia: thumb is an elephant, index finger a person and little finger an ant. Elephant beats person, person beats ant, ant beats elephant.',
-      'Say jan-ken-pon, as children do in Japan, or the words from your home language, and keep the same hand signs.',
+      'Play with your feet: feet together for rock, feet wide apart for paper, and one foot forward for scissors. Jump to show your choice.',
+      'Invent a fourth sign with its own rule, such as a cup that catches the rock, and test together whether the game still feels fair.',
       'Play a path race along a line of cushions: start at opposite ends, step forward each time you win, and the first to reach the far end wins.',
     ],
     tags: ['brain-game', 'classic'],
@@ -1741,6 +1754,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'pillow-sumo',
     title: 'Pillow sumo',
+    lang: 'ja',
     emoji: '🤼',
     summary: 'Hold pillows to your chests and push to nudge each other out of a blanket ring, with clear rules and a stop word.',
     minMonths: 60,
@@ -1971,6 +1985,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Play on a flat, non-slippery surface with plenty of space.'],
     origin: 'Ghana',
+    lang: 'ak',
     tags: ['world'],
   },
   {
@@ -2009,6 +2024,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['If babies or toddlers are around, hide only objects bigger than a toilet-roll tube, and keep the area free of trip hazards.'],
     origin: 'Ghana',
+    lang: 'ak',
     tags: ['world'],
   },
   {
@@ -2049,6 +2065,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Keep stones, coins and buttons away from babies and toddlers.'],
     origin: 'Ghana',
+    lang: 'ak',
     tags: ['world', 'brain-game'],
   },
   {
@@ -2091,6 +2108,7 @@ export const schoolActivities: Activity[] = [
       'Dried beans and pebbles are choking hazards and can be pushed into ears and noses. Play away from babies and toddlers and count them back in afterwards.',
     ],
     origin: 'West Africa (Oware)',
+    lang: 'ak',
     tags: ['world', 'brain-game', 'science'],
     sources: ['harvard-ef-guide'],
   },
@@ -2130,6 +2148,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Play on grass in an open space. Kneelers keep their legs tucked in, and a tag is a light touch, never a push.'],
     origin: 'India',
+    lang: 'mr',
     tags: ['world', 'rough-and-tumble'],
   },
   {
@@ -2168,6 +2187,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Use a soft ball and never throw at heads. Use stones only if they are flat and stable; plastic cups are safer.'],
     origin: 'India',
+    lang: 'kn',
     tags: ['world'],
   },
   {
@@ -2210,6 +2230,7 @@ export const schoolActivities: Activity[] = [
       'Sticky tack is a choking hazard for babies and toddlers.',
     ],
     origin: 'India',
+    lang: 'ta',
     tags: ['world', 'science', 'art'],
   },
   {
@@ -2254,6 +2275,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Buttons and beans are choking hazards for babies and toddlers, so keep the pieces in a pot between games.'],
     origin: 'Nepal',
+    lang: 'ne',
     tags: ['world', 'brain-game'],
   },
   {
@@ -2292,6 +2314,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Coins and washers are choking hazards, so tape them in tightly and keep the jianzi away from babies and toddlers.'],
     origin: 'China',
+    lang: 'zh',
     tags: ['world'],
   },
   {
@@ -2330,6 +2353,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Play in an open space on a soft surface. Keep to a safe speed, no yanking, and let go if anyone trips.'],
     origin: 'China',
+    lang: 'zh',
     tags: ['world', 'rough-and-tumble', 'pretend', 'party'],
   },
   {
@@ -2368,6 +2392,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Tie the bags tightly so nothing spills, and keep them away from babies and toddlers, as loose rice and beans are choking hazards.'],
     origin: 'Japan',
+    lang: 'ja',
     tags: ['world', 'song'],
   },
   {
@@ -2406,6 +2431,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Strings are a strangulation risk for babies and toddlers, so store the toy out of their reach, and swing it away from faces.'],
     origin: 'Japan (records point to 16th-century France)',
+    lang: 'ja',
     refs: [
       { title: 'Kendama', publisher: 'Kids Web Japan, Ministry of Foreign Affairs of Japan', url: 'https://web-japan.org/kidsweb/virtual/kendama/kendama02.html' },
       { title: 'Cup-and-ball', publisher: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Cup-and-ball' },
@@ -2448,6 +2474,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Small stones are a choking hazard, so play away from babies and toddlers and count all five back into a pouch.'],
     origin: 'Korea',
+    lang: 'ko',
     tags: ['world'],
   },
   {
@@ -2486,6 +2513,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Use soft rolled-paper arrows only, never throw towards people, and wait until everyone has thrown before collecting.'],
     origin: 'Korea',
+    lang: 'ko',
     tags: ['world'],
   },
   {
@@ -2526,6 +2554,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Coins and buttons are choking hazards for babies and toddlers.'],
     origin: 'Korea',
+    lang: 'ko',
     tags: ['world', 'science', 'party'],
   },
   {
@@ -2564,6 +2593,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Play in an open space, keep the chase at a safe speed, and let go of hands if someone trips.'],
     origin: 'Mexico',
+    lang: 'es',
     tags: ['world', 'pretend', 'party'],
     sources: ['bilingual-ef'],
   },
@@ -2606,6 +2636,7 @@ export const schoolActivities: Activity[] = [
       'Beans and buttons are choking hazards for babies and toddlers.',
     ],
     origin: 'Mexico',
+    lang: 'es',
     tags: ['world', 'art', 'party'],
     sources: ['bilingual-ef'],
   },
@@ -2647,6 +2678,7 @@ export const schoolActivities: Activity[] = [
       "Keep the ropes or handles flat on the floor and move them slowly. Never lift them or snap them shut, and the holders watch the dancer's feet so the lines never close on a foot.",
     ],
     origin: 'Philippines',
+    lang: 'tl',
     tags: ['world', 'song'],
   },
   {
@@ -2685,6 +2717,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Use rolled socks indoors, and clear away anything breakable or easy to trip on.'],
     origin: 'Philippines',
+    lang: 'tl',
     tags: ['world'],
   },
   {
@@ -2723,6 +2756,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Walk only, never run with eyes closed. Players in the circle hold out gentle hands to stop anyone who drifts close to the edge.'],
     origin: 'South Africa',
+    lang: 'zu',
     tags: ['world', 'pretend'],
   },
   {
@@ -2764,6 +2798,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Throw underhand only, and nobody stands in the playing area while anyone is throwing.'],
     origin: 'Sweden',
+    lang: 'sv',
     tags: ['world', 'party'],
   },
   {
@@ -2803,6 +2838,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Clear the space of toys and furniture so nobody trips while creeping.'],
     origin: 'Greece',
+    lang: 'el',
     tags: ['world', 'pretend', 'party'],
   },
   {
@@ -2847,6 +2883,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Choose prizes without small parts if babies or toddlers are joining in, and clear away paper as you go.'],
     origin: 'United Kingdom',
+    lang: 'en',
     tags: ['world', 'song', 'classic', 'party'],
   },
   {
@@ -2885,6 +2922,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Marbles and small stones are choking hazards. Do not play when babies or toddlers are around, and count everything back in afterwards.'],
     origin: 'Haiti',
+    lang: 'ht',
     tags: ['world', 'classic', 'science'],
   },
   {
@@ -2902,7 +2940,7 @@ export const schoolActivities: Activity[] = [
     materials: ['chalk', 'a flat stone or beanbag as a marker'],
     groupFriendly: true,
     steps: [
-      'Hopscotch is played on pavements all over the world: it is rayuela in Spanish and marelle in French. Chalk a court of numbered boxes from 1 to 10, mixing single boxes with side-by-side pairs.',
+      'Chalk a court of numbered boxes from 1 to 10 on a pavement or playground, mixing single boxes with side-by-side pairs.',
       'Toss your marker into box 1.',
       'Hop over that box and on through the court: one foot in single boxes, and two feet, one in each box, in side-by-side pairs.',
       'Turn round at the end, hop back, and pick up your marker without putting your other foot down. Hop over its box and out.',
@@ -2965,6 +3003,7 @@ export const schoolActivities: Activity[] = [
       'Only swing a child the grown-ups can lift easily, and keep every edge held.',
     ],
     origin: 'Inspired by the Iñupiat blanket toss (Arctic Alaska)',
+    lang: 'ik',
     tags: ['world', 'rough-and-tumble'],
     sources: ['rough-and-tumble'],
   },
@@ -3003,6 +3042,7 @@ export const schoolActivities: Activity[] = [
       'Add a Simon says rule: only follow the call if the leader starts with hana, hana, hana, and keep still if they skip it.',
     ],
     origin: 'Japan',
+    lang: 'ja',
     tags: ['world', 'brain-game'],
     sources: ['bilingual-ef'],
   },
@@ -3042,6 +3082,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Play on open, flat ground. Tag with a light touch, and watch out for bumped heads when both players reach for the handkerchief.'],
     origin: 'Spain',
+    lang: 'es',
     tags: ['world', 'classic'],
   },
   {
@@ -3080,6 +3121,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Tape the bag tightly so rice cannot spill, and keep it away from babies and toddlers.'],
     origin: 'Brazil',
+    lang: 'pt',
     tags: ['world'],
   },
   {
@@ -3120,6 +3162,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Beans and coins are choking hazards for babies and toddlers.'],
     origin: 'China',
+    lang: 'zh',
     tags: ['world', 'brain-game'],
     sources: ['harvard-ef-guide'],
   },
@@ -3830,6 +3873,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'picture-consequences-drawing',
     title: 'Picture consequences',
+    lang: 'en',
     emoji: '✏️',
     summary: 'Take turns drawing a head, a body and legs on folded paper without peeking, then unfold the silly creatures you made together.',
     minMonths: 66,
@@ -3993,6 +4037,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'sevens-card-dominoes',
     title: 'Sevens (card dominoes)',
+    lang: 'en',
     emoji: '♥️',
     summary: 'Build each suit up and down from its 7, playing cards in order, and decide which cards to hold back to block other players.',
     minMonths: 66,
@@ -4111,12 +4156,14 @@ export const schoolActivities: Activity[] = [
       'Write the chain on a long strip of paper while you wait, and see if it reaches across the table.',
     ],
     origin: 'Japan',
+    lang: 'ja',
     tags: ['world', 'brain-game'],
     sources: ['bilingual-ef'],
   },
   {
     id: 'stuck-in-the-mud-tag',
     title: 'Stuck in the mud',
+    lang: 'en',
     emoji: '🏃',
     summary: 'A chasing game where anyone tagged freezes with legs wide apart, until a teammate crawls through their legs to set them free.',
     minMonths: 66,
@@ -4190,6 +4237,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Supervise scissors while cutting the pieces.'],
     origin: 'China',
+    lang: 'zh',
     tags: ['world', 'science'],
   },
   {
@@ -4307,6 +4355,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'hole-in-my-bucket-duet',
     title: "There's a hole in my bucket duet",
+    lang: 'en',
     emoji: '🎤',
     summary: 'Sing the traditional duet as two characters, one who keeps finding problems and one who keeps solving them, round and round.',
     minMonths: 66,
@@ -4469,6 +4518,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'concentration-clap-game',
     title: 'Concentration clap game',
+    lang: 'en',
     emoji: '👏',
     summary: 'Keep a slap-clap-snap rhythm going round the group while each player names something in a category, with no repeats or pauses.',
     minMonths: 72,
@@ -4590,6 +4640,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'french-skipping-elastics',
     title: 'French skipping with elastics',
+    lang: 'en',
     emoji: '🤸',
     summary: 'Jump in, out and on a loop of stretched elastic to a playground rhyme, raising it from ankles to knees as you get better.',
     minMonths: 72,
@@ -4790,6 +4841,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'origami-jumping-frog-races',
     title: 'Origami jumping frog races',
+    lang: 'ja',
     emoji: '🐸',
     summary: 'Fold a paper frog that really jumps when you press its back, then hold long-jump and high-jump contests.',
     minMonths: 72,
@@ -4903,6 +4955,7 @@ export const schoolActivities: Activity[] = [
     ],
     safety: ['Use soft, blunt newspaper sticks, toss gently underarm and keep faces out of the way. Leave plenty of space around each pair.'],
     origin: 'New Zealand (Māori)',
+    lang: 'mi',
     tags: ['world', 'song'],
   },
   {
@@ -5031,6 +5084,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'name-place-animal-thing',
     title: 'Name, place, animal, thing',
+    lang: 'en',
     emoji: '📝',
     summary: 'Pick a letter, then race to write a name, a place, an animal and a thing that all start with it before someone shouts stop.',
     minMonths: 78,
@@ -5069,6 +5123,7 @@ export const schoolActivities: Activity[] = [
   {
     id: 'rummy-sets-and-runs',
     title: 'Rummy: sets and runs',
+    lang: 'en',
     emoji: '♦️',
     summary: 'Draw and discard cards to collect sets of the same number and runs in the same suit, then lay them all down to win.',
     minMonths: 84,

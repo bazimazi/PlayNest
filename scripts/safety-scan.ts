@@ -1,6 +1,6 @@
 // Flags activities whose text mentions a known hazard without a matching safety note.
 // Run with: npx vite-node scripts/safety-scan.ts
-import { ACTIVITIES, CELEBRATION_ACTIVITIES } from '../src/data/activities';
+import { EVERY_ACTIVITY, EVERY_CELEBRATION_ACTIVITY } from '../src/data/activities';
 
 const RULES: { re: RegExp; maxMin: number; note: RegExp; label: string }[] = [
   { re: /\bhoney\b/i, maxMin: 12, note: /honey/i, label: 'honey (botulism risk under 12 months)' },
@@ -29,7 +29,8 @@ const REVIEWED = new Set([
 ]);
 
 const problems: string[] = [];
-const ALL = [...ACTIVITIES, ...CELEBRATION_ACTIVITIES];
+// Every game in every language: a hazard is a hazard whichever app shows it.
+const ALL = [...EVERY_ACTIVITY, ...EVERY_CELEBRATION_ACTIVITY];
 for (const a of ALL) {
   const body = [a.title, a.summary, ...a.materials, ...a.steps, ...(a.variations ?? []), a.easier ?? '', a.harder ?? ''].join(' ');
   const safety = (a.safety ?? []).join(' ');

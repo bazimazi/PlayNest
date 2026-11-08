@@ -21,7 +21,12 @@ import {
   type TalkCard,
 } from './packs';
 import { DOMAINS, TAGS } from './types';
-import { NEWER_EMOJI } from './validate';
+import { LANG, NEWER_EMOJI } from './validate';
+
+/** Every story, song and festival belongs to one culture, and only its language shows it. */
+const checkLang = (lang: string | undefined, err: (m: string) => void) => {
+  if (!lang || !LANG.test(lang)) err('lang required: the ISO 639 code of the culture it comes from');
+};
 
 const KEBAB = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const MAX_MONTHS = 144;
@@ -203,6 +208,7 @@ export function validateStories(list: Story[]): string[] {
   return runner(list, (s, err) => {
     if (!s.title || s.title.length > 48) err('title required, at most 48 characters');
     if (!s.culture?.trim()) err('culture required');
+    checkLang(s.lang, err);
     checkEmoji(s.emoji, err);
     checkAge(s.minMonths, s.maxMonths, err);
     if (!(s.minutes >= 1 && s.minutes <= 15)) err('minutes 1–15');
@@ -225,6 +231,7 @@ export function validateSongs(list: Song[]): string[] {
   return runner(list, (s, err) => {
     if (!s.title?.trim()) err('title required');
     if (!s.language?.trim() || !s.culture?.trim()) err('language and culture required');
+    checkLang(s.lang, err);
     if (!(s.type in SONG_TYPES)) err(`unknown type ${s.type}`);
     checkEmoji(s.emoji, err);
     checkAge(s.minMonths, s.maxMonths, err);
@@ -251,6 +258,7 @@ export function validateTalk(list: TalkCard[]): string[] {
     checkEmoji(c.emoji, err);
     if (!['3-5', '6-8', '9-12'].includes(c.band)) err(`unknown band ${c.band}`);
     checkLen([c.text], 110, 'text', err);
+    if (c.lang !== undefined) checkLang(c.lang, err);
   });
 }
 
@@ -310,6 +318,7 @@ export function validateCelebrations(list: Celebration[]): string[] {
     if (!c.name?.trim()) err('name required');
     checkEmoji(c.emoji, err);
     if (!['cultural', 'religious', 'shared'].includes(c.kind)) err(`unknown kind ${c.kind}`);
+    checkLang(c.lang, err);
     checkLen([c.whoCelebrates], 160, 'whoCelebrates', err);
     if (c.notEveryone) checkLen([c.notEveryone], 160, 'notEveryone', err);
     checkLen([c.about], 240, 'about', err);

@@ -173,6 +173,12 @@ export interface Activity {
   safety?: string[];
   /** Country / culture of origin for traditional games, e.g. "Ghana". Required when tagged 'world'. */
   origin?: string;
+  /**
+   * The language whose culture this game comes from, as an ISO 639 code: 'fa' for an Iranian game, 'en' for an English
+   * nursery rhyme. Each language shows only its own culture's games, plus the ones that belong to no one culture, which
+   * leave this out. Required with `origin`. See `fitsCulture` in `src/i18n`.
+   */
+  lang?: string;
   tags?: Tag[];
   sources?: SourceId[];
   /** Sources written inline, for games whose evidence or rules aren't in the shared `sources.ts` list. */

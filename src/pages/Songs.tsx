@@ -11,7 +11,7 @@ import { PlayTabs } from '../components/PlayTabs';
 import { SONG_TYPES, type Song, type SongType } from '../data/packs';
 import { SONGS } from '../data/songs';
 import { DOMAINS } from '../data/types';
-import { showsOwnScript, t } from '../i18n';
+import { language, showsOwnScript, t } from '../i18n';
 import { formatAgeRange } from '../lib/age';
 import { playTune, stopPlayingTune } from '../lib/audio';
 import { hashString } from '../lib/random';
@@ -133,6 +133,8 @@ export function SongPage() {
 
   const melody = song.melody;
   const hasOriginal = song.lines.some((l) => l.original);
+  // A song in the reader's own language needs no meaning under each line: the words are theirs already.
+  const ownWords = song.lang === language();
 
   return (
     <Page
@@ -222,7 +224,7 @@ export function SongPage() {
                   </span>
                 )}
                 {l.roman && (!l.original || showsOwnScript(l.original)) && <span className="song-roman">{l.roman}</span>}
-                <span className={hasOriginal || l.roman ? 'song-english' : 'song-sing'}>{l.english}</span>
+                {!(ownWords && l.original) && <span className={hasOriginal || l.roman ? 'song-english' : 'song-sing'}>{l.english}</span>}
               </p>
             ))}
           </div>
@@ -254,7 +256,7 @@ export function SongPage() {
           </summary>
           <div className="disclosure-body sources">
             <p>
-              {t('{language}. {rights}.', { language: song.language, rights: song.rights })}
+              {t('{language}. {rights}', { language: song.language, rights: song.rights })}
             </p>
             {melody && <p className="footnote">{t('Tune from: {source}', { source: melody.source })}</p>}
             {song.refs.map((r) => (

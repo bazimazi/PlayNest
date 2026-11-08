@@ -1,4 +1,5 @@
 import { CELEBRATION_REFS as R } from '../celebrations';
+import { IRAN_REFS as IR } from '../celebrations-persian';
 import type { Activity } from '../types';
 
 /**
@@ -45,14 +46,15 @@ export const celebrationActivities: Activity[] = [
     safety: ['An adult handles dry seeds when under-3s are near: they are a choking risk.'],
     tags: ['nature', 'science'],
     sources: ['aap-choking'],
-    refs: [R.nowruz],
+    refs: [IR.nowruz],
     celebration: 'nowruz',
+    lang: 'fa',
   },
   {
     id: 'nowruz-seven-things-hunt',
     title: 'Seven-things hunt',
     emoji: '🔎',
-    summary: 'Hunt the home for seven things that start with the same letter in your family language, and lay them out together.',
+    summary: 'Pick a letter other than s, hunt the home for seven things whose names start with it, and lay them out like a haft-sin.',
     minMonths: 48,
     maxMonths: 120,
     domains: ['language', 'thinking', 'feelings'],
@@ -64,16 +66,16 @@ export const celebrationActivities: Activity[] = [
     groupFriendly: true,
     steps: [
       'Tell your child how a haft-sin has seven things starting with s, and show them yours if it is already out.',
-      'Pick a letter together in your home language.',
-      'Hunt round the home until you have seven things that start with it.',
+      'Pick another letter of the alphabet together, such as b or sh.',
+      'Hunt round the home until you have seven things whose names start with it.',
       'Lay them on the cloth and take turns saying why each one could wish us well this year.',
     ],
     talk: [
       'What else starts with this sound?',
-      'How would your grandparent say that word?',
+      'Which of these would your grandparent put on a haft-sin?',
       'Which of these do you think brings the most luck, and why?',
     ],
-    whyItHelps: 'Listening for first sounds is good word play, and doing it in a home language gives that language a warm, playful job.',
+    whyItHelps: 'Listening for first sounds is good word play, and making a table of their own gives children a playful part in getting ready for the new year.',
     easier: 'Hunt for three things, and say the first sound with them as you go.',
     harder: 'Set a timer, or make each thing stand for a wish you have to explain.',
     variations: [
@@ -81,8 +83,9 @@ export const celebrationActivities: Activity[] = [
       'Make a drawn table: each person draws their seven things on one sheet.',
     ],
     tags: ['kid-leads'],
-    refs: [R.nowruz],
+    refs: [IR.nowruz],
     celebration: 'nowruz',
+    lang: 'fa',
   },
   {
     id: 'nowruz-painted-eggs',
@@ -121,8 +124,9 @@ export const celebrationActivities: Activity[] = [
       'Skip this if anyone has an egg allergy, or use paper egg shapes.',
     ],
     tags: ['art'],
-    refs: [R.nowruz],
+    refs: [IR.nowruz],
     celebration: 'nowruz',
+    lang: 'fa',
   },
   {
     id: 'nowruz-spring-mirror',
@@ -141,7 +145,7 @@ export const celebrationActivities: Activity[] = [
     steps: [
       'Stand the mirror among the flowers on your table.',
       'Hold your baby safely in your arms so they can see both your faces.',
-      'Say a soft new-year greeting to the baby in the mirror, in your family language.',
+      'Say a soft new-year greeting to the baby in the mirror, such as eydet mobarak, happy new year.',
       'Pause and wait for a look, a smile or a sound, then answer it.',
     ],
     talk: [
@@ -161,8 +165,9 @@ export const celebrationActivities: Activity[] = [
       'Keep flowers, candles and small things on the table out of reach.',
     ],
     tags: ['song'],
-    refs: [R.nowruz],
+    refs: [IR.nowruz],
     celebration: 'nowruz',
+    lang: 'fa',
   },
 
   // ───────────────────────────── Chaharshanbe Suri ─────────────────────────────
@@ -205,8 +210,9 @@ export const celebrationActivities: Activity[] = [
     ],
     tags: ['party', 'pretend'],
     sources: ['aap-choking'],
-    refs: [R.chaharshanbe],
+    refs: [IR.chaharshanbe, IR.ghashoghZani],
     celebration: 'chaharshanbe-suri',
+    lang: 'fa',
   },
   {
     id: 'chaharshanbe-firecracker-talk',
@@ -242,8 +248,9 @@ export const celebrationActivities: Activity[] = [
       'Plan what fun your family will have that night instead, and let them choose it.',
     ],
     safety: ['If someone is hurt by a firework or firecracker, get medical help straight away, above all for an eye injury.'],
-    refs: [R.chaharshanbeInjuries, R.chaharshanbe],
+    refs: [R.chaharshanbeInjuries, IR.chaharshanbe],
     celebration: 'chaharshanbe-suri',
+    lang: 'fa',
   },
 
   // ───────────────────────────── Sizdah Bedar ─────────────────────────────
@@ -282,8 +289,9 @@ export const celebrationActivities: Activity[] = [
     safety: ['Hold hands near moving water, and keep young children within arm\'s reach.'],
     tags: ['nature', 'party'],
     sources: ['aap-drowning'],
-    refs: [R.sizdah],
+    refs: [IR.sizdah],
     celebration: 'sizdah-bedar',
+    lang: 'fa',
   },
   {
     id: 'sizdah-back-to-soil',
@@ -319,8 +327,9 @@ export const celebrationActivities: Activity[] = [
     ],
     safety: ['Keep soil and seeds out of mouths, and wash hands afterwards.'],
     tags: ['nature'],
-    refs: [R.sizdah],
+    refs: [IR.sizdah],
     celebration: 'sizdah-bedar',
+    lang: 'fa',
   },
 
   // ───────────────────────────── Yalda ─────────────────────────────
@@ -359,8 +368,9 @@ export const celebrationActivities: Activity[] = [
     safety: ['If you sit at a korsi or use a heater, never use charcoal or any burner indoors: carbon monoxide has no smell.'],
     tags: ['reading', 'calm-down'],
     sources: ['bedtime-routine'],
-    refs: [R.yaldaUnesco, R.cdcCarbonMonoxide],
+    refs: [IR.yalda, R.yaldaUnesco, R.cdcCarbonMonoxide],
     celebration: 'yalda',
+    lang: 'fa',
   },
   {
     id: 'yalda-pomegranate-count',
@@ -397,8 +407,9 @@ export const celebrationActivities: Activity[] = [
     safety: ['This is for older toddlers who already eat small foods safely: seated, with you beside them. An adult does all the cutting.'],
     tags: ['kitchen'],
     sources: ['aap-choking'],
-    refs: [R.yaldaUnesco],
+    refs: [IR.yalda, R.yaldaUnesco],
     celebration: 'yalda',
+    lang: 'fa',
   },
   {
     id: 'yalda-poem-pick',
@@ -430,11 +441,12 @@ export const celebrationActivities: Activity[] = [
     harder: 'Ask them to write a line of their own in reply.',
     variations: [
       'Some families read Hafez on this night to tell fortunes. If yours does, you can add that part, or keep it as a poem.',
-      'Have a grandparent read the line in the first language of the poem, and listen to its sound.',
+      'Ask a grandparent to recite a poem they know by heart, and listen to its music.',
     ],
     tags: ['reading'],
-    refs: [R.yalda],
+    refs: [IR.yalda],
     celebration: 'yalda',
+    lang: 'fa',
   },
   {
     id: 'yalda-red-food-table',
@@ -471,8 +483,9 @@ export const celebrationActivities: Activity[] = [
     safety: ['Cut soft round fruit small, take out stones, and have children sitting down to eat.'],
     tags: ['kitchen'],
     sources: ['aap-choking'],
-    refs: [R.yaldaUnesco],
+    refs: [IR.yalda, R.yaldaUnesco],
     celebration: 'yalda',
+    lang: 'fa',
   },
 
   // ───────────────────────────── Mehregan ─────────────────────────────
@@ -509,8 +522,9 @@ export const celebrationActivities: Activity[] = [
       'Take off a link each time a promise is kept, and celebrate an empty string.',
     ],
     tags: ['art'],
-    refs: [R.mehreganFezana],
+    refs: [IR.mehregan],
     celebration: 'mehregan',
+    lang: 'fa',
   },
   {
     id: 'mehregan-purple-hunt',
@@ -545,8 +559,9 @@ export const celebrationActivities: Activity[] = [
       'Do the same hunt on a walk, looking for purple flowers and doors.',
     ],
     safety: ['Check what gets collected: anything small enough to fit in a toilet-paper tube stays away from under-3s.'],
-    refs: [R.mehreganFezana],
+    refs: [IR.mehregan],
     celebration: 'mehregan',
+    lang: 'fa',
   },
   {
     id: 'mehregan-thank-you-fruit',
@@ -583,8 +598,9 @@ export const celebrationActivities: Activity[] = [
     safety: ['An adult does the cutting. Cut fruit small and take out stones for young children.'],
     tags: ['kitchen'],
     sources: ['aap-choking'],
-    refs: [R.mehreganFezana],
+    refs: [IR.mehregan],
     celebration: 'mehregan',
+    lang: 'fa',
   },
 
   // ───────────────────────────── Ramadan ─────────────────────────────
@@ -629,6 +645,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-button-batteries'],
     refs: [R.fanous, R.ramadan],
     celebration: 'ramadan',
+    lang: 'ar',
   },
   {
     id: 'ramadan-kindness-calendar',
@@ -665,6 +682,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['everyday'],
     refs: [R.ramadan],
     celebration: 'ramadan',
+    lang: 'ar',
   },
   {
     id: 'ramadan-moon-diary',
@@ -702,6 +720,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['nature', 'science'],
     refs: [R.ramadan],
     celebration: 'ramadan',
+    lang: 'ar',
   },
   {
     id: 'ramadan-iftar-table',
@@ -740,6 +759,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking'],
     refs: [R.ramadan],
     celebration: 'ramadan',
+    lang: 'ar',
   },
 
   // ───────────────────────────── Hag al-Laila and Gerga'oon ─────────────────────────────
@@ -781,6 +801,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking', 'music-synchrony'],
     refs: [R.hagGulfNews],
     celebration: 'hag-al-laila',
+    lang: 'ar',
   },
   {
     id: 'hag-treat-bag',
@@ -818,6 +839,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art'],
     refs: [R.hagGulfNews],
     celebration: 'hag-al-laila',
+    lang: 'ar',
   },
   {
     id: 'gergaoon-treat-round',
@@ -859,6 +881,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking'],
     refs: [R.hagNational],
     celebration: 'gergaoon',
+    lang: 'ar',
   },
 
   // ───────────────────────────── Eid al-Fitr ─────────────────────────────
@@ -897,6 +920,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art'],
     refs: [R.eidFitr],
     celebration: 'eid-al-fitr',
+    lang: 'ar',
   },
   {
     id: 'eid-biscuit-press',
@@ -938,6 +962,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking'],
     refs: [R.eidFitr],
     celebration: 'eid-al-fitr',
+    lang: 'ar',
   },
   {
     id: 'eid-share-jar',
@@ -975,6 +1000,7 @@ export const celebrationActivities: Activity[] = [
     safety: ['Keep coins away from under-3s: they can be swallowed.'],
     refs: [R.eidFitr],
     celebration: 'eid-al-fitr',
+    lang: 'ar',
   },
   {
     id: 'eid-greetings-languages',
@@ -1012,6 +1038,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['asha-multilingual'],
     refs: [R.eidFitr],
     celebration: 'eid-al-fitr',
+    lang: 'ar',
   },
 
   // ───────────────────────────── Eid al-Adha ─────────────────────────────
@@ -1051,6 +1078,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['kitchen'],
     refs: [R.eidAdha],
     celebration: 'eid-al-adha',
+    lang: 'ar',
   },
   {
     id: 'eid-adha-neighbour-card',
@@ -1088,6 +1116,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art'],
     refs: [R.eidAdha],
     celebration: 'eid-al-adha',
+    lang: 'ar',
   },
 
   // ───────────────────────────── Mawlid ─────────────────────────────
@@ -1126,6 +1155,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['reading', 'calm-down'],
     refs: [R.mawlid],
     celebration: 'mawlid',
+    lang: 'ar',
   },
   {
     id: 'mawlid-dish-for-neighbours',
@@ -1164,6 +1194,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking'],
     refs: [R.mawlid],
     celebration: 'mawlid',
+    lang: 'ar',
   },
 
   // ───────────────────────────── Diwali ─────────────────────────────
@@ -1207,6 +1238,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art'],
     refs: [R.diwaliHaf, R.diwali],
     celebration: 'diwali',
+    lang: 'hi',
   },
   {
     id: 'diwali-paint-a-diya',
@@ -1250,6 +1282,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-button-batteries'],
     refs: [R.cpscFireworks, R.cdcCandles, R.diwali],
     celebration: 'diwali',
+    lang: 'hi',
   },
   {
     id: 'diwali-welcome-home-trail',
@@ -1288,6 +1321,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-button-batteries'],
     refs: [R.diwaliHaf, R.diwali],
     celebration: 'diwali',
+    lang: 'hi',
   },
   {
     id: 'diwali-sweet-round',
@@ -1326,6 +1360,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking'],
     refs: [R.diwali],
     celebration: 'diwali',
+    lang: 'hi',
   },
 
   // ───────────────────────────── Holi ─────────────────────────────
@@ -1371,6 +1406,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['messy-play'],
     refs: [R.holi],
     celebration: 'holi',
+    lang: 'hi',
   },
   {
     id: 'holi-paper-puppet-story',
@@ -1408,6 +1444,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['pretend', 'reading'],
     refs: [R.holi],
     celebration: 'holi',
+    lang: 'hi',
   },
 
   // ───────────────────────────── Raksha Bandhan ─────────────────────────────
@@ -1447,6 +1484,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art'],
     refs: [R.raksha],
     celebration: 'raksha-bandhan',
+    lang: 'hi',
   },
   {
     id: 'raksha-promise-to-look-after',
@@ -1483,6 +1521,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['everyday'],
     refs: [R.raksha],
     celebration: 'raksha-bandhan',
+    lang: 'hi',
   },
 
   // ───────────────────────────── Navratri ─────────────────────────────
@@ -1522,6 +1561,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['music-synchrony'],
     refs: [R.navaratri],
     celebration: 'navratri',
+    lang: 'hi',
   },
   {
     id: 'navratri-toy-steps-display',
@@ -1558,6 +1598,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['pretend', 'kid-leads'],
     refs: [R.navaratri],
     celebration: 'navratri',
+    lang: 'hi',
   },
 
   // ───────────────────────────── Pongal ─────────────────────────────
@@ -1597,6 +1638,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art'],
     refs: [R.pongal],
     celebration: 'pongal',
+    lang: 'ta',
   },
   {
     id: 'pongal-watch-it-boil-over',
@@ -1639,6 +1681,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['kitchen'],
     refs: [R.pongal],
     celebration: 'pongal',
+    lang: 'ta',
   },
   {
     id: 'pongal-thank-an-animal',
@@ -1676,6 +1719,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art'],
     refs: [R.pongal],
     celebration: 'pongal',
+    lang: 'ta',
   },
 
   // ───────────────────────────── Onam ─────────────────────────────
@@ -1718,6 +1762,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['nature', 'art'],
     refs: [R.onam],
     celebration: 'onam',
+    lang: 'ml',
   },
   {
     id: 'onam-leaf-plate-meal',
@@ -1756,6 +1801,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking'],
     refs: [R.onam],
     celebration: 'onam',
+    lang: 'ml',
   },
   {
     id: 'onam-welcome-the-king',
@@ -1792,6 +1838,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['pretend', 'reading'],
     refs: [R.onam],
     celebration: 'onam',
+    lang: 'ml',
   },
 
   // ───────────────────────────── Ganesh Chaturthi ─────────────────────────────
@@ -1836,6 +1883,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking'],
     refs: [R.ganesh],
     celebration: 'ganesh-chaturthi',
+    lang: 'mr',
   },
   {
     id: 'ganesh-clay-back-to-garden',
@@ -1874,6 +1922,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-drowning'],
     refs: [R.ganesh],
     celebration: 'ganesh-chaturthi',
+    lang: 'mr',
   },
 
   // ───────────────────────────── Vesak and Buddha's Birthday ─────────────────────────────
@@ -1917,6 +1966,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-button-batteries'],
     refs: [R.vesak],
     celebration: 'vesak',
+    lang: 'pi',
   },
   {
     id: 'vesak-day-of-giving',
@@ -1955,6 +2005,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking'],
     refs: [R.vesak],
     celebration: 'vesak',
+    lang: 'pi',
   },
   {
     id: 'korea-buddha-lantern-walk',
@@ -1996,6 +2047,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-button-batteries'],
     refs: [R.koreaHolidays, R.vesak],
     celebration: 'buddhas-birthday-korea',
+    lang: 'ko',
   },
 
   // ───────────────────────────── Lunar New Year ─────────────────────────────
@@ -2034,6 +2086,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art'],
     refs: [R.lunarNewYear],
     celebration: 'lunar-new-year',
+    lang: 'zh',
   },
   {
     id: 'lny-box-lion-dance',
@@ -2075,6 +2128,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['pretend', 'party'],
     refs: [R.lunarNewYear],
     celebration: 'lunar-new-year',
+    lang: 'zh',
   },
   {
     id: 'lny-zodiac-animal-walk',
@@ -2111,6 +2165,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['pretend'],
     refs: [R.lunarNewYear],
     celebration: 'lunar-new-year',
+    lang: 'zh',
   },
   {
     id: 'lny-kind-words-envelope',
@@ -2147,6 +2202,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art'],
     refs: [R.lunarNewYear],
     celebration: 'lunar-new-year',
+    lang: 'zh',
   },
 
   // ───────────────────────────── Tết ─────────────────────────────
@@ -2186,6 +2242,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['pretend', 'reading'],
     refs: [R.tet],
     celebration: 'tet',
+    lang: 'vi',
   },
   {
     id: 'tet-long-life-wishes',
@@ -2223,6 +2280,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['asha-multilingual'],
     refs: [R.tet],
     celebration: 'tet',
+    lang: 'vi',
   },
   {
     id: 'tet-blossom-branch',
@@ -2260,6 +2318,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art', 'nature'],
     refs: [R.tet],
     celebration: 'tet',
+    lang: 'vi',
   },
 
   // ───────────────────────────── Seollal ─────────────────────────────
@@ -2297,6 +2356,7 @@ export const celebrationActivities: Activity[] = [
     ],
     refs: [R.seollal],
     celebration: 'seollal',
+    lang: 'ko',
   },
   {
     id: 'seollal-tteokguk-together',
@@ -2338,6 +2398,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking'],
     refs: [R.seollal],
     celebration: 'seollal',
+    lang: 'ko',
   },
 
   // ───────────────────────────── Mid-Autumn ─────────────────────────────
@@ -2381,6 +2442,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-button-batteries'],
     refs: [R.midAutumn],
     celebration: 'mid-autumn',
+    lang: 'zh',
   },
   {
     id: 'mid-autumn-pomelo-face',
@@ -2418,6 +2480,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art', 'kitchen'],
     refs: [R.midAutumn],
     celebration: 'mid-autumn',
+    lang: 'zh',
   },
   {
     id: 'mid-autumn-moon-in-your-arms',
@@ -2456,6 +2519,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['lullabies-singing', 'harvard-serve-return'],
     refs: [R.midAutumn],
     celebration: 'mid-autumn',
+    lang: 'zh',
   },
 
   // ───────────────────────────── Chuseok ─────────────────────────────
@@ -2499,6 +2563,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking'],
     refs: [R.chuseok],
     celebration: 'chuseok',
+    lang: 'ko',
   },
   {
     id: 'chuseok-moon-circle-dance',
@@ -2537,6 +2602,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['music-synchrony'],
     refs: [R.chuseok],
     celebration: 'chuseok',
+    lang: 'ko',
   },
   {
     id: 'chuseok-whos-in-our-family',
@@ -2573,6 +2639,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art'],
     refs: [R.chuseok],
     celebration: 'chuseok',
+    lang: 'ko',
   },
 
   // ───────────────────────────── Japan ─────────────────────────────
@@ -2612,6 +2679,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['pretend'],
     refs: [R.hinamatsuri],
     celebration: 'hinamatsuri',
+    lang: 'ja',
   },
   {
     id: 'hinamatsuri-paper-doll-float',
@@ -2650,6 +2718,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-drowning'],
     refs: [R.hinamatsuri],
     celebration: 'hinamatsuri',
+    lang: 'ja',
   },
   {
     id: 'tanabata-wish-branch',
@@ -2687,6 +2756,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art', 'reading'],
     refs: [R.tanabata],
     celebration: 'tanabata',
+    lang: 'ja',
   },
   {
     id: 'tanabata-vega-altair',
@@ -2724,6 +2794,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['nature', 'science'],
     refs: [R.tanabata],
     celebration: 'tanabata',
+    lang: 'ja',
   },
   {
     id: 'kodomo-one-carp-per-person',
@@ -2761,6 +2832,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art'],
     refs: [R.kodomo],
     celebration: 'kodomo-no-hi',
+    lang: 'ja',
   },
   {
     id: 'kodomo-newspaper-helmet',
@@ -2797,6 +2869,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art', 'pretend'],
     refs: [R.kodomo],
     celebration: 'kodomo-no-hi',
+    lang: 'ja',
   },
   {
     id: 'setsubun-paper-ball-oni-toss',
@@ -2839,6 +2912,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking'],
     refs: [R.setsubun],
     celebration: 'setsubun',
+    lang: 'ja',
   },
   {
     id: 'setsubun-worry-oni',
@@ -2875,6 +2949,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art', 'calm-down'],
     refs: [R.setsubun],
     celebration: 'setsubun',
+    lang: 'ja',
   },
 
   // ───────────────────────────── Thailand ─────────────────────────────
@@ -2916,6 +2991,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-drowning'],
     refs: [R.songkran, R.songkranUnesco],
     celebration: 'songkran',
+    lang: 'th',
   },
   {
     id: 'songkran-cup-splash',
@@ -2957,6 +3033,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-drowning'],
     refs: [R.songkran],
     celebration: 'songkran',
+    lang: 'th',
   },
   {
     id: 'songkran-sand-stupa',
@@ -2994,6 +3071,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['building'],
     refs: [R.songkran],
     celebration: 'songkran',
+    lang: 'th',
   },
   {
     id: 'loy-krathong-basin-float',
@@ -3037,6 +3115,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-drowning', 'aap-button-batteries'],
     refs: [R.loyKrathong],
     celebration: 'loy-krathong',
+    lang: 'th',
   },
   {
     id: 'loy-krathong-let-it-go-note',
@@ -3073,6 +3152,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['calm-down', 'nature'],
     refs: [R.loyKrathong],
     celebration: 'loy-krathong',
+    lang: 'th',
   },
 
   // ───────────────────────────── Advent and Christmas ─────────────────────────────
@@ -3111,6 +3191,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art', 'everyday'],
     refs: [R.advent, R.pbsHolidays],
     celebration: 'advent',
+    lang: 'en',
   },
   {
     id: 'advent-led-wreath-count',
@@ -3152,6 +3233,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-button-batteries'],
     refs: [R.advent],
     celebration: 'advent',
+    lang: 'en',
   },
   {
     id: 'christmas-in-the-shade',
@@ -3193,6 +3275,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['nhs-sun-safety', 'aap-drowning'],
     refs: [R.christmas],
     celebration: 'christmas',
+    lang: 'en',
   },
   {
     id: 'christmas-gift-of-time',
@@ -3229,6 +3312,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art'],
     refs: [R.pbsHolidays],
     celebration: 'christmas',
+    lang: 'en',
   },
   {
     id: 'christmas-carols-in-your-arms',
@@ -3266,6 +3350,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['lullabies-singing'],
     refs: [R.pbsHolidays],
     celebration: 'christmas',
+    lang: 'en',
   },
   {
     id: 'christmas-orthodox-why-january',
@@ -3301,6 +3386,7 @@ export const celebrationActivities: Activity[] = [
     ],
     refs: [R.christmas],
     celebration: 'christmas-orthodox',
+    lang: 'ru',
   },
   {
     id: 'christmas-orthodox-forty-links',
@@ -3337,6 +3423,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art', 'everyday'],
     refs: [R.advent],
     celebration: 'christmas-orthodox',
+    lang: 'ru',
   },
 
   // ───────────────────────────── Easter ─────────────────────────────
@@ -3379,6 +3466,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['party', 'science'],
     refs: [R.easter],
     celebration: 'easter',
+    lang: 'en',
   },
   {
     id: 'easter-clue-hunt',
@@ -3416,6 +3504,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['kid-leads', 'party'],
     refs: [R.easter],
     celebration: 'easter',
+    lang: 'en',
   },
   {
     id: 'orthodox-easter-onion-skin-eggs',
@@ -3456,6 +3545,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['kitchen', 'science', 'art'],
     refs: [R.easter],
     celebration: 'easter-orthodox',
+    lang: 'el',
   },
   {
     id: 'orthodox-easter-egg-tap',
@@ -3493,6 +3583,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['party', 'kitchen'],
     refs: [R.easter],
     celebration: 'easter-orthodox',
+    lang: 'el',
   },
 
   // ───────────────────────────── St Nicholas ─────────────────────────────
@@ -3533,6 +3624,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking', 'cpsc-small-parts'],
     refs: [R.nicholas],
     celebration: 'st-nicholas',
+    lang: 'nl',
   },
   {
     id: 'st-nicholas-hay-and-carrot',
@@ -3571,6 +3663,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking'],
     refs: [R.nicholas],
     celebration: 'st-nicholas',
+    lang: 'nl',
   },
 
   // ───────────────────────────── Three Kings ─────────────────────────────
@@ -3611,6 +3704,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-drowning'],
     refs: [R.epiphany],
     celebration: 'three-kings',
+    lang: 'es',
   },
   {
     id: 'three-kings-ring-cake',
@@ -3652,6 +3746,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking'],
     refs: [R.epiphany],
     celebration: 'three-kings',
+    lang: 'es',
   },
 
   // ───────────────────────────── St Lucia ─────────────────────────────
@@ -3695,6 +3790,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-button-batteries'],
     refs: [R.lucia],
     celebration: 'st-lucia',
+    lang: 'sv',
   },
   {
     id: 'st-lucia-morning-tray',
@@ -3732,6 +3828,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['kitchen', 'kid-leads'],
     refs: [R.lucia],
     celebration: 'st-lucia',
+    lang: 'sv',
   },
 
   // ───────────────────────────── Hanukkah ─────────────────────────────
@@ -3777,6 +3874,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['calm-down'],
     refs: [R.hanukkah, R.cdcCandles],
     celebration: 'hanukkah',
+    lang: 'he',
   },
   {
     id: 'hanukkah-dreidel-game',
@@ -3815,6 +3913,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['cpsc-small-parts'],
     refs: [R.hanukkah],
     celebration: 'hanukkah',
+    lang: 'he',
   },
   {
     id: 'hanukkah-grate-and-fry-latkes',
@@ -3856,6 +3955,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['kitchen'],
     refs: [R.hanukkah],
     celebration: 'hanukkah',
+    lang: 'he',
   },
 
   // ───────────────────────────── Purim ─────────────────────────────
@@ -3896,6 +3996,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking'],
     refs: [R.purim],
     celebration: 'purim',
+    lang: 'he',
   },
   {
     id: 'purim-food-gift-basket',
@@ -3933,6 +4034,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['kitchen'],
     refs: [R.purim],
     celebration: 'purim',
+    lang: 'he',
   },
   {
     id: 'purim-dress-up-day',
@@ -3971,6 +4073,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-pretend-play'],
     refs: [R.purim],
     celebration: 'purim',
+    lang: 'he',
   },
 
   // ───────────────────────────── Sukkot ─────────────────────────────
@@ -4009,6 +4112,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['building', 'pretend', 'nature'],
     refs: [R.sukkot],
     celebration: 'sukkot',
+    lang: 'he',
   },
   {
     id: 'sukkot-dinner-under-branches',
@@ -4050,6 +4154,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking'],
     refs: [R.sukkot],
     celebration: 'sukkot',
+    lang: 'he',
   },
   {
     id: 'sukkot-look-up-through-branches',
@@ -4088,6 +4193,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['nhs-sun-safety', 'harvard-serve-return'],
     refs: [R.sukkot],
     celebration: 'sukkot',
+    lang: 'he',
   },
 
   // ───────────────────────────── Passover: the seder belongs to Jewish families ─────────────────────────────
@@ -4128,6 +4234,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking'],
     refs: [R.seder],
     celebration: 'passover',
+    lang: 'he',
   },
   {
     id: 'passover-child-leads-questions',
@@ -4164,6 +4271,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['song', 'kid-leads'],
     refs: [R.seder],
     celebration: 'passover',
+    lang: 'he',
   },
   {
     id: 'passover-why-question-supper',
@@ -4199,6 +4307,7 @@ export const celebrationActivities: Activity[] = [
     ],
     refs: [R.christianSeders],
     celebration: 'passover',
+    lang: 'he',
   },
 
   // ───────────────────────────── Kwanzaa ─────────────────────────────
@@ -4236,6 +4345,7 @@ export const celebrationActivities: Activity[] = [
     ],
     refs: [R.kwanzaa, R.kwanzaaOfficial],
     celebration: 'kwanzaa',
+    lang: 'sw',
   },
   {
     id: 'kwanzaa-paper-weave-mkeka',
@@ -4272,6 +4382,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art'],
     refs: [R.kwanzaa],
     celebration: 'kwanzaa',
+    lang: 'sw',
   },
   {
     id: 'kwanzaa-led-kinara',
@@ -4313,6 +4424,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-button-batteries'],
     refs: [R.kwanzaa, R.cdcCandles],
     celebration: 'kwanzaa',
+    lang: 'sw',
   },
   {
     id: 'kwanzaa-seven-big-ideas',
@@ -4348,6 +4460,7 @@ export const celebrationActivities: Activity[] = [
     ],
     refs: [R.kwanzaaOfficial],
     celebration: 'kwanzaa',
+    lang: 'sw',
   },
 
   // ───────────────────────────── Yam festivals and Homowo ─────────────────────────────
@@ -4387,6 +4500,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['everyday', 'kitchen'],
     refs: [R.iriJi],
     celebration: 'iri-ji',
+    lang: 'ig',
   },
   {
     id: 'iri-ji-yam-every-way',
@@ -4424,6 +4538,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['kitchen'],
     refs: [R.iriJi],
     celebration: 'iri-ji',
+    lang: 'ig',
   },
   {
     id: 'asogli-mash-and-share',
@@ -4461,6 +4576,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['kitchen'],
     refs: [R.asogli],
     celebration: 'asogli-te-za',
+    lang: 'ee',
   },
   {
     id: 'homowo-quiet-then-loud',
@@ -4498,6 +4614,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['harvard-ef-guide'],
     refs: [R.homowo],
     celebration: 'homowo',
+    lang: 'gaa',
   },
 
   // ───────────────────────────── Meskel and Timkat ─────────────────────────────
@@ -4540,6 +4657,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art'],
     refs: [R.meskel],
     celebration: 'meskel',
+    lang: 'am',
   },
   {
     id: 'timkat-music-parade',
@@ -4578,6 +4696,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['music-synchrony'],
     refs: [R.timkat],
     celebration: 'timkat',
+    lang: 'am',
   },
 
   // ───────────────────────────── Día de los Muertos ─────────────────────────────
@@ -4617,6 +4736,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['calm-down'],
     refs: [R.diaUnesco, R.dia],
     celebration: 'dia-de-los-muertos',
+    lang: 'es',
   },
   {
     id: 'dia-paper-marigolds',
@@ -4654,6 +4774,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art'],
     refs: [R.dia],
     celebration: 'dia-de-los-muertos',
+    lang: 'es',
   },
   {
     id: 'dia-papel-picado',
@@ -4691,6 +4812,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art'],
     refs: [R.dia],
     celebration: 'dia-de-los-muertos',
+    lang: 'es',
   },
   {
     id: 'dia-small-light-on-the-shelf',
@@ -4732,6 +4854,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-button-batteries'],
     refs: [R.dia, R.cdcCandles],
     celebration: 'dia-de-los-muertos',
+    lang: 'es',
   },
 
   // ───────────────────────────── Carnival ─────────────────────────────
@@ -4771,6 +4894,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art', 'pretend'],
     refs: [R.carnival],
     celebration: 'carnival',
+    lang: 'pt',
   },
   {
     id: 'carnival-home-parade',
@@ -4809,6 +4933,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking', 'music-synchrony'],
     refs: [R.carnival],
     celebration: 'carnival',
+    lang: 'pt',
   },
 
   // ───────────────────────────── Inti Raymi ─────────────────────────────
@@ -4849,6 +4974,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['nhs-sun-safety'],
     refs: [R.inti],
     celebration: 'inti-raymi',
+    lang: 'qu',
   },
   {
     id: 'inti-sun-drawings',
@@ -4886,6 +5012,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art', 'nature'],
     refs: [R.inti],
     celebration: 'inti-raymi',
+    lang: 'qu',
   },
 
   // ───────────────────────────── Matariki ─────────────────────────────
@@ -4925,6 +5052,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['nature'],
     refs: [R.tepapa, R.tepapaRegional],
     celebration: 'matariki',
+    lang: 'mi',
   },
   {
     id: 'matariki-remember-celebrate-plan',
@@ -4961,6 +5089,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['calm-down'],
     refs: [R.tepapa, R.matariki],
     celebration: 'matariki',
+    lang: 'mi',
   },
   {
     id: 'matariki-learn-a-waiata',
@@ -4998,6 +5127,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['music-synchrony'],
     refs: [R.tepapaHow],
     celebration: 'matariki',
+    lang: 'mi',
   },
   {
     id: 'matariki-feast-with-whanau',
@@ -5036,6 +5166,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking'],
     refs: [R.tepapaHow],
     celebration: 'matariki',
+    lang: 'mi',
   },
 
   // ───────────────────────────── NAIDOC Week ─────────────────────────────
@@ -5073,6 +5204,7 @@ export const celebrationActivities: Activity[] = [
     ],
     refs: [R.naidocResources, R.naidoc],
     celebration: 'naidoc-week',
+    lang: 'aus',
   },
   {
     id: 'naidoc-first-nations-book',
@@ -5111,6 +5243,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['dialogic-reading'],
     refs: [R.naidocResources],
     celebration: 'naidoc-week',
+    lang: 'aus',
   },
   {
     id: 'naidoc-go-to-local-event',
@@ -5148,6 +5281,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['party'],
     refs: [R.naidoc, R.naidocResources],
     celebration: 'naidoc-week',
+    lang: 'aus',
   },
 
   // ───────────────────────────── Children's days ─────────────────────────────
@@ -5188,6 +5322,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['cdc-child-led-play'],
     refs: [R.childrensDay],
     celebration: 'childrens-day-1-june',
+    lang: 'en',
   },
   {
     id: 'childrens-day-swap-places',
@@ -5225,6 +5360,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-pretend-play'],
     refs: [R.childrensDay],
     celebration: 'childrens-day-1-june',
+    lang: 'en',
   },
   {
     id: 'childrens-day-interview',
@@ -5263,6 +5399,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['harvard-serve-return'],
     refs: [R.childrensDay],
     celebration: 'childrens-day-20-november',
+    lang: 'en',
   },
   {
     id: 'childrens-day-letter-next-year',
@@ -5299,6 +5436,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['kid-leads'],
     refs: [R.childrensDay],
     celebration: 'childrens-day-20-november',
+    lang: 'en',
   },
   {
     id: 'childrens-day-when-i-was-your-age',
@@ -5333,8 +5471,9 @@ export const celebrationActivities: Activity[] = [
       'Ask a grandparent to tell the story of you at this age.',
     ],
     tags: ['reading'],
-    refs: [R.childrensDay],
+    refs: [IR.childrensDay],
     celebration: 'childrens-day-iran',
+    lang: 'fa',
   },
   {
     id: 'childrens-day-family-portrait',
@@ -5370,8 +5509,9 @@ export const celebrationActivities: Activity[] = [
     ],
     safety: ['Stay with under-3s when using crayons, and keep small pieces out of mouths.'],
     tags: ['art'],
-    refs: [R.childrensDay],
+    refs: [IR.childrensDay],
     celebration: 'childrens-day-iran',
+    lang: 'fa',
   },
   {
     id: 'childrens-day-door-frame',
@@ -5409,6 +5549,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['everyday'],
     refs: [R.childrensDay],
     celebration: 'childrens-day-own-date',
+    lang: 'en',
   },
   {
     id: 'childrens-day-plan-our-day',
@@ -5446,6 +5587,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['harvard-ef-guide'],
     refs: [R.childrensDay],
     celebration: 'childrens-day-own-date',
+    lang: 'en',
   },
 
   // ───────────────────────────── Grandparents' Day ─────────────────────────────
@@ -5483,6 +5625,7 @@ export const celebrationActivities: Activity[] = [
     ],
     refs: [R.grandparents],
     celebration: 'grandparents-day',
+    lang: 'en',
   },
   {
     id: 'grandparents-childhood-game',
@@ -5520,6 +5663,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['classic', 'party'],
     refs: [R.grandparents],
     celebration: 'grandparents-day',
+    lang: 'en',
   },
   {
     id: 'grandparents-hand-print-card',
@@ -5557,6 +5701,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['art'],
     refs: [R.grandparents],
     celebration: 'grandparents-day',
+    lang: 'en',
   },
 
   // ───────────────────────────── Teachers' Day ─────────────────────────────
@@ -5595,6 +5740,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['everyday'],
     refs: [R.teachers],
     celebration: 'world-teachers-day',
+    lang: 'en',
   },
   {
     id: 'teachers-day-child-teaches-you',
@@ -5631,6 +5777,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['kid-leads', 'pretend'],
     refs: [R.teachers],
     celebration: 'world-teachers-day',
+    lang: 'en',
   },
 
   // ───────────────────────────── Earth Day ─────────────────────────────
@@ -5670,6 +5817,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['nature', 'science'],
     refs: [R.earthDay],
     celebration: 'earth-day',
+    lang: 'en',
   },
   {
     id: 'earth-day-plant-something',
@@ -5708,6 +5856,7 @@ export const celebrationActivities: Activity[] = [
     sources: ['aap-choking'],
     refs: [R.earthDay],
     celebration: 'earth-day',
+    lang: 'en',
   },
   {
     id: 'earth-day-bin-audit',
@@ -5745,6 +5894,7 @@ export const celebrationActivities: Activity[] = [
     tags: ['science', 'kid-leads'],
     refs: [R.earthDay],
     celebration: 'earth-day',
+    lang: 'en',
   },
 
   // ───────────────────────────── A harvest table ─────────────────────────────
@@ -5752,7 +5902,7 @@ export const celebrationActivities: Activity[] = [
     id: 'harvest-table-one-food-one-thanks',
     title: 'Harvest table: one food, one thank-you',
     emoji: '🌾',
-    summary: 'Put one seasonal food on the table, and go round saying one thank-you, whichever tradition you come from, or none.',
+    summary: 'Put one seasonal food on the table, and go round the family, each saying one thank-you.',
     minMonths: 18,
     maxMonths: 144,
     domains: ['feelings', 'language', 'senses'],
@@ -5783,7 +5933,8 @@ export const celebrationActivities: Activity[] = [
     safety: ['Cut food small for young children, and have them sit down to eat.'],
     tags: ['kitchen', 'nature'],
     sources: ['aap-choking'],
-    refs: [R.pongal, R.chuseok, R.sukkot],
+    refs: [{ title: 'Harvest festival', publisher: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Harvest_festival' }],
     celebration: 'harvest-table',
+    lang: 'en',
   },
 ];

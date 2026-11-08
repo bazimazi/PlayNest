@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import { DOMAINS } from '../types';
 import { validateActivities } from '../validate';
-import { ACTIVITIES } from './index';
+import { ACTIVITIES, EVERY_ACTIVITY } from './index';
 
 describe('all activities', () => {
   it('are valid and ids are unique across files', () => {
-    expect(validateActivities(ACTIVITIES)).toEqual([]);
+    expect(validateActivities([...EVERY_ACTIVITY])).toEqual([]);
   });
 
   it('have unique titles', () => {

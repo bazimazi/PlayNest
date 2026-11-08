@@ -18,7 +18,7 @@
  "{done} of {total} answered": "{done} از {total} پاسخ داده شده",
  "{done} of {total} played": "بازی‌شده: {done} از {total}",
  "{label} noise": "صدای {label}",
- "{language}. {rights}.": "زبان: {language}. {rights}",
+ "{language}. {rights}": "زبان: {language}. {rights}",
  "{month}: {n} flower|{month}: {n} flowers": "{month}: {n} گل",
  "{n} d": "{n} روز",
  "{n} day|{n} days": "{n} روز",
@@ -841,7 +841,7 @@
  "Your phone’s volume matters too. Softer and shorter is better.": "بلندی صدای گوشی‌تان هم مهم است. آرام‌تر و کوتاه‌تر بهتر است.",
  "Your saved data is safe.": "داده‌های ذخیره‌شدهٔ شما امن است.",
  "Your voice is the one they want, in tune or not. Tap a song to learn it, then sing it your way.": "کودک شما همین صدای شما را می‌خواهد، چه کوک باشد چه نباشد. روی یک ترانه بزنید تا یادش بگیرید، بعد به روش خودتان بخوانیدش.",
- "Your voice works too. Lullabies from around the world": "صدای شما هم کارساز است. لالایی‌هایی از سراسر دنیا",
- "Your voice, from around the world": "با صدای خودتان، از سراسر دنیا",
+ "Your voice works too. Lullabies to sing": "صدای شما هم کارساز است. لالایی‌هایی برای خواندن",
+ "Sung in your own voice": "با صدای خودتان",
  "Yours": "مال شما"
 }

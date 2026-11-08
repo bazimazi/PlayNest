@@ -23,7 +23,7 @@ const readJson = (p: string): Record<string, string> => (existsSync(p) ? (JSON.p
 const writeJson = (p: string, data: unknown) => writeFileSync(p, `${JSON.stringify(data, null, 1)}\n`);
 const sourceOf = (name: string) => {
   if (!registry.has(name)) throw new Error(`No collection called ${name}. Known: ${[...registry.keys()].join(', ')}`);
-  return flatten(name, registry.get(name));
+  return flatten(name, registry.get(name), LANG);
 };
 
 const [command, a, b, c] = process.argv.slice(2);

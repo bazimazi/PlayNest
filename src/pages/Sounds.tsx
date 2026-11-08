@@ -193,7 +193,7 @@ export default function Sounds() {
         </span>
         <span className="nudge-text">
           <b>{t('Sing instead?')}</b>
-          <span>{t('Your voice works too. Lullabies from around the world')}</span>
+          <span>{t('Your voice works too. Lullabies to sing')}</span>
         </span>
         <Icon name="right" size={18} strokeWidth={3} />
       </Link>

@@ -14,7 +14,7 @@ Four tabs, each answering one question:
 | Tab | Question | What you get |
 |---|---|---|
 | **Today** | What shall we play right now? | Mood (happy / energetic / fussy / sleepy), which changes the sky. **One big pick** with a plain reason; swipe or tap *Another idea*. One-tap chips for what's going on (5 min, no toys, car, bath, rainy, stormy, very hot…), which change the pick and take unsafe ideas out. *Let them choose* from three pictures. Then two alternatives, today's plan, the garden, one extra card at most, and a row of more |
-| **Play** | What else is there? | **Ideas:** 960+ games, with search, filters and collections. **Stories:** 71 folk tales to read or tell. **Songs:** a world songbook with a music-box guide. **Week:** two ideas a day across 8 areas of development. Plus talk cards, picture routines, and celebrations you choose |
+| **Play** | What else is there? | **Ideas:** 800+ games, with search, filters and collections. **Stories:** folk tales to read or tell, from the language's own culture. **Songs:** lullabies and rhymes from the language's own culture, with a music-box guide. **Week:** two ideas a day across 8 areas of development. Plus talk cards, picture routines, and celebrations you choose |
 | **Grow** | How are they growing? | A **garden** where every game plants a flower, pressed flowers that only grow, firsts to keep, this stage, a **one-question-at-a-time milestone check-in** (CDC checklists to age 5, corrected age for premature babies), a one-page summary for a visit, and the journal |
 | **Learn** | What should I know? | 50 short guides on shelves by topic, this stage with your child, and search across the whole app |
 
@@ -98,9 +98,20 @@ npx vite-node scripts/safety-scan.ts     # hazards (small parts, cords, balloons
 ## Languages
 
 English and Persian (فارسی). Persian runs right to left, with Persian digits, the Persian calendar for dates and birthdays, and a week
-that starts on Saturday. The language follows the phone until a parent picks one on the first screen or in Settings. Everything is
-translated except most of the games, stories, songs and guides; until they are, Persian shows only the ones that are. None of the Persian
-has been read by a Persian speaker yet: see section 8 of [REVIEW-1.5.md](docs/REVIEW-1.5.md).
+that starts on Saturday. The language follows the phone until a parent picks one on the first screen or in Settings.
+
+**Each language uses only its own culture.** Stories, songs, festivals and traditional games carry the language whose culture they come
+from, and appear only in it:
+
+- **Persian** has Persian stories from folk tradition, the Shahnameh, Rumi, Saadi, Attar and Nezami; Iranian lullabies and rhymes;
+  Iranian games, crafts and pastimes; Persian proverbs, poetry and riddles; and 11 Iranian days, from Nowruz and Yalda to Sadeh, Tirgan
+  and Ferdowsi Day.
+- **English** has English folk tales, nursery rhymes and songs, and its own days.
+- **Neither borrows from the other or from anywhere else.** Play ideas, guides, tips, help and first aid belong to no one culture and are
+  in both, translated.
+
+All 50 guides and every daily tip are in Persian, with 286 games and 39 festival games. Persian shows only what has been translated. The
+Persian added for this has not yet been read by a Persian speaker: see section 8 of [REVIEW-1.5.md](docs/REVIEW-1.5.md).
 
 How it works, how to add a language, and the house style for Persian: [docs/I18N.md](docs/I18N.md).
 

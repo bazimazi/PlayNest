@@ -8,7 +8,7 @@ const NOT_WORDS = new Set([
   'id', 'slug', 'key', 'emoji', 'url', 'color', 'tone', 'type', 'kind', 'via', 'domains', 'tags', 'settings', 'energy',
   'materialsLevel', 'sources', 'source', 'weather', 'seasons', 'celebration', 'checkedOn', 'group', 'topic', 'evidence',
   'stance', 'refs', 'melody', 'original', 'roman', 'nativeTitle', 'nativeName', 'dates', 'whenEnergy', 'whenSetting',
-  'whenTag', 'need', 'band', 'relatedTags', 'phone', 'category', 'themes', 'basedOn', 'textLine',
+  'whenTag', 'need', 'band', 'relatedTags', 'phone', 'category', 'themes', 'basedOn', 'textLine', 'lang',
 ]);
 
 /** Fields that are words elsewhere but proper names in this collection. */
@@ -25,22 +25,39 @@ const keyOf = (item: unknown, index: number): string => {
   return String(index);
 };
 
-/** Every string worth translating in a collection, by the dotted path `localize` will look for. */
-export function flatten(name: string, data: unknown): Record<string, string> {
+/** An item from another language's culture: that language's app shows it, so it is never translated into this one. */
+const elsewhere = (item: unknown, lang: string | undefined): boolean => {
+  const own = item && typeof item === 'object' ? (item as { lang?: unknown }).lang : undefined;
+  return !!lang && typeof own === 'string' && own !== lang;
+};
+
+/**
+ * Every string worth translating in a collection, by the dotted path `localize` will look for. Given a language, it leaves
+ * out items from another language's culture: the Persian app never shows an English nursery rhyme, so there is nothing to
+ * translate.
+ */
+export function flatten(name: string, data: unknown, lang?: string): Record<string, string> {
   const out: Record<string, string> = {};
   const names = NAMES_HERE[name];
-  const visit = (value: unknown, path: string) => {
+  // Inside a song in this very language, the words are already the reader's own: the English meaning under each line
+  // isn't shown (see Songs.tsx), so it has nothing to be translated into.
+  const visit = (value: unknown, path: string, own: boolean) => {
     if (typeof value === 'string') {
       if (/\p{L}/u.test(value)) out[path] = value;
     } else if (Array.isArray(value)) {
-      value.forEach((item, i) => visit(item, path ? `${path}.${keyOf(item, i)}` : keyOf(item, i)));
+      value.forEach((item, i) => {
+        if (elsewhere(item, lang)) return;
+        const mine = own || (!!lang && !!item && typeof item === 'object' && (item as { lang?: unknown }).lang === lang);
+        visit(item, path ? `${path}.${keyOf(item, i)}` : keyOf(item, i), mine);
+      });
     } else if (value && typeof value === 'object') {
       for (const [k, v] of Object.entries(value)) {
-        if (!NOT_WORDS.has(k) && !names?.has(k)) visit(v, path ? `${path}.${k}` : k);
+        if (own && k === 'english') continue;
+        if (!NOT_WORDS.has(k) && !names?.has(k)) visit(v, path ? `${path}.${k}` : k, own);
       }
     }
   };
-  visit(data, '');
+  visit(data, '', false);
   return out;
 }
 

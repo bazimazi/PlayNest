@@ -12,6 +12,7 @@ export const olderActivities: Activity[] = [
   {
     id: 'house-rule-crazy-eights',
     title: 'House-rule Crazy Eights',
+    lang: 'en',
     emoji: '🃏',
     summary: 'The classic matching game, except the winner of each round adds one new rule that everyone has to play by.',
     minMonths: 96,
@@ -89,6 +90,7 @@ export const olderActivities: Activity[] = [
   {
     id: 'whist-first-tricks',
     title: 'Whist: your first trick-taking game',
+    lang: 'en',
     emoji: '♣️',
     summary: 'Play in pairs, follow suit and let trumps beat the rest: the simple game behind many grown-up card games.',
     minMonths: 108,
@@ -206,6 +208,7 @@ export const olderActivities: Activity[] = [
   {
     id: 'spit-speed-cards',
     title: 'Spit, the two-player speed race',
+    lang: 'en',
     emoji: '⚡',
     summary: 'No turns: both players race at once to play cards one up or one down onto two shared piles.',
     minMonths: 96,
@@ -246,6 +249,7 @@ export const olderActivities: Activity[] = [
   {
     id: 'cheat-bluffing-cards',
     title: 'Cheat: the bluffing card game',
+    lang: 'en',
     emoji: '🤥',
     summary: 'Play cards face down, say what they are, true or not, and call Cheat when you think someone is bluffing.',
     minMonths: 96,
@@ -631,6 +635,7 @@ export const olderActivities: Activity[] = [
   {
     id: 'fictionary-fake-definitions',
     title: 'Fictionary: the fake definitions game',
+    lang: 'en',
     emoji: '📖',
     summary: 'Find a strange word in the dictionary, then invent fake meanings and try to fool each other.',
     minMonths: 108,
@@ -747,6 +752,7 @@ export const olderActivities: Activity[] = [
   {
     id: 'consequences-folded-story',
     title: 'Consequences: the folded story',
+    lang: 'en',
     emoji: '📜',
     summary: 'Write one line of a story, fold it over, pass it on, then read the ridiculous result out loud.',
     minMonths: 96,
@@ -1461,6 +1467,7 @@ export const olderActivities: Activity[] = [
   {
     id: 'kick-the-can',
     title: 'Kick the Can',
+    lang: 'en',
     emoji: '🥫',
     summary: 'Hide-and-seek with a twist: one sneaky kick of the can sets everyone free again.',
     minMonths: 96,
@@ -1503,6 +1510,7 @@ export const olderActivities: Activity[] = [
   {
     id: 'sardines-hide-and-seek',
     title: 'Sardines',
+    lang: 'en',
     emoji: '🐠',
     summary: 'Reverse hide-and-seek: one hides and everyone who finds them has to squeeze in silently alongside.',
     minMonths: 84,
@@ -1545,6 +1553,7 @@ export const olderActivities: Activity[] = [
   {
     id: 'spud-ball-game',
     title: 'Spud',
+    lang: 'en',
     emoji: '🥔',
     summary: 'A ball goes up, a number is called, everyone runs until the catcher shouts Spud, then freezes for the throw.',
     minMonths: 96,
@@ -1584,6 +1593,7 @@ export const olderActivities: Activity[] = [
   {
     id: 'rounders-soft-ball',
     title: 'Rounders in the park',
+    lang: 'en',
     emoji: '🏏',
     summary: 'Hit a soft ball and run round four posts before the fielders get it back, with room for the whole family.',
     minMonths: 96,
@@ -1866,6 +1876,7 @@ export const olderActivities: Activity[] = [
   {
     id: 'horse-with-a-bin',
     title: 'H-O-R-S-E with a bin or hoop',
+    lang: 'en',
     emoji: '🏀',
     summary: 'Make a trick shot and your opponent has to copy it, or they earn a letter.',
     minMonths: 96,
@@ -3220,6 +3231,7 @@ export const olderActivities: Activity[] = [
       'Keep a season record of how many times each person has been the fool.',
     ],
     origin: 'Russia and Eastern Europe',
+    lang: 'ru',
     tags: ['world', 'strategy'],
     refs: [{ title: 'Durak', publisher: PAGAT, url: 'https://www.pagat.com/beating/durak.html' }],
   },
@@ -3260,6 +3272,7 @@ export const olderActivities: Activity[] = [
       'Teach the game to a grandparent and let them write the score.',
     ],
     origin: 'Spain and South America',
+    lang: 'es',
     tags: ['world', 'strategy', 'science'],
     refs: [{ title: 'Escoba', publisher: PAGAT, url: 'https://www.pagat.com/fishing/escoba.html' }],
   },
@@ -3301,6 +3314,7 @@ export const olderActivities: Activity[] = [
     ],
     safety: ['Keep small counters away from babies and toddlers.'],
     origin: 'Madagascar',
+    lang: 'mg',
     tags: ['world', 'strategy'],
     refs: [{ title: 'Fanorona', publisher: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Fanorona' }],
   },
@@ -3342,6 +3356,7 @@ export const olderActivities: Activity[] = [
     ],
     safety: ['Keep small counters away from babies and toddlers.'],
     origin: 'Northern Europe',
+    lang: 'non',
     tags: ['world', 'strategy', 'pretend'],
     refs: [{ title: 'Hnefatafl', publisher: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Hnefatafl' }],
   },
@@ -3383,6 +3398,7 @@ export const olderActivities: Activity[] = [
     ],
     safety: ['Keep coins and small counters away from babies and toddlers.'],
     origin: 'Ancient Mesopotamia',
+    lang: 'akk',
     tags: ['world', 'strategy', 'kid-leads'],
     refs: [{ title: 'Royal Game of Ur', publisher: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Royal_Game_of_Ur' }],
   },
@@ -3424,6 +3440,7 @@ export const olderActivities: Activity[] = [
     ],
     safety: ['Bottle tops and lids stay out of reach of babies and toddlers. Flick, never throw, and keep faces back from the board at eye level.'],
     origin: 'India',
+    lang: 'hi',
     tags: ['world', 'strategy', 'building'],
     refs: [{ title: 'Carrom', publisher: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Carrom' }],
   },
@@ -3465,6 +3482,7 @@ export const olderActivities: Activity[] = [
     ],
     safety: ['No tackling, grabbing or pile-ons in this family version. Play on soft ground, take a break if anyone feels dizzy, and stop if a player feels unwell.'],
     origin: 'South Asia',
+    lang: 'hi',
     tags: ['world', 'party'],
     sources: ['nhs-active-5-18'],
     refs: [{ title: 'Kabaddi', publisher: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Kabaddi' }],
@@ -3507,6 +3525,7 @@ export const olderActivities: Activity[] = [
     ],
     safety: ['Real metal boules are heavy, so keep them off feet and stay behind the player throwing. Use beanbags or tennis balls if younger children are close by.'],
     origin: 'France',
+    lang: 'fr',
     tags: ['world', 'party'],
     refs: [{ title: 'Pétanque', publisher: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/P%C3%A9tanque' }],
   },

@@ -1,5 +1,6 @@
 import type { TalkCard } from './packs';
-import { localize } from '../i18n';
+import { fitsCulture, localize } from '../i18n';
+import { PERSIAN_TALK } from './talk-persian';
 
 /**
  * Open questions for the dinner table, the car and bedtime. All written for PlayNest from the themes in
@@ -10,7 +11,7 @@ import { localize } from '../i18n';
  * sisters, or how a child joined the family. Nothing frightening at 3 to 5. Nothing about puberty or romance at 9 to 12.
  * Ids are stable, so add new cards at the end of a theme.
  */
-export const TALK: TalkCard[] = [
+const CARDS: TalkCard[] = [
   // ---------- Ages 3 to 5: concrete, about here and now ----------
   { id: 'talk-3-feelings-1', theme: 'Feelings', emoji: '😊', band: '3-5', text: 'What was the happiest bit of today?' },
   { id: 'talk-3-feelings-2', theme: 'Feelings', emoji: '😊', band: '3-5', text: 'Does happy live in your tummy, your toes or your nose?' },
@@ -293,4 +294,10 @@ export const TALK: TalkCard[] = [
   { id: 'talk-9-screens-1', theme: 'Screens and us', emoji: '📱', band: '9-12', text: 'What do you think phones do well for people, and what do they do badly?' },
 ];
 
-localize('talk', TALK);
+localize('talk', CARDS);
+
+/** Every card in every language, for checking the content. */
+export const EVERY_TALK: readonly TalkCard[] = [...CARDS, ...PERSIAN_TALK];
+
+/** The cards this language shows: the ones for everyone, and its own culture's. */
+export const TALK: TalkCard[] = EVERY_TALK.filter(fitsCulture);

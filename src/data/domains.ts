@@ -104,7 +104,7 @@ export const MATERIALS_INFO: Record<MaterialsLevel, { label: string }> = {
 
 export const TAG_INFO: Record<Tag, { label: string; emoji: string; blurb: string }> = {
   song: { label: 'Songs & rhymes', emoji: '🎵', blurb: 'Singing, rhymes and fingerplays — language and bonding in one.' },
-  world: { label: 'Games from around the world', emoji: '🌍', blurb: 'Traditional games children have loved for generations.' },
+  world: { label: 'Traditional games', emoji: '🪁', blurb: 'Games passed down from grandparents to children for generations.' },
   everyday: { label: 'Everyday moments', emoji: '🧺', blurb: 'Turn nappy changes, meals and chores into play.' },
   'calm-down': { label: 'Calm-down', emoji: '😌', blurb: 'Soothing play for fussy, tired or overexcited moments.' },
   'tummy-time': { label: 'Tummy time', emoji: '🐢', blurb: 'Fun ways to build strong necks, backs and shoulders.' },

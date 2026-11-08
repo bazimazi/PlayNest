@@ -356,6 +356,7 @@ export const olderMakeActivities: Activity[] = [
   {
     id: 'origami-instructor',
     title: 'Origami instructor',
+    lang: 'ja',
     emoji: '🦢',
     summary: 'Your child masters one paper model, then teaches the whole family, one fold at a time.',
     minMonths: 96,
