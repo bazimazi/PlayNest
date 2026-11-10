@@ -27,6 +27,7 @@ were read through a summarising tool, so wording needs checking against the live
 | Overdue source pages | NHS febrile seizure, anaphylaxis and stings are past their review dates. ANZCOR anaphylaxis is from 2019 |
 | Illustrations | Cards have no pictures of hand position. Original, clinician-reviewed drawings would help most on choking and CPR |
 | No poison number | The WHO directory has 97 countries but with known data errors, so no number is shown on the poison card |
+| Water under 6 months (changed Nov 2026) | The dehydration card used to say formula-fed babies under 6 months could have sips of boiled water (NHS); the heat games said no water (AAP, WHO). Both now agree: from 6 months, sips of water; under 6 months, ask a doctor before giving any. Confirm, or split the card by region |
 
 Regulatory line: these are reference cards chosen by naming the emergency. Nothing takes symptoms and returns a verdict. Take advice before any
 red, amber and green feature.
@@ -148,8 +149,8 @@ to a wrong action and 25 smaller ones. All of them were fixed. That says how muc
 | Translated | What |
 |---|---|
 | All of it | Every word of the interface (852 strings), first aid, crying and crisis screens, helplines, hard moments, milestones, stage cards, firsts, routines, talk cards, adaptations |
-| A first set | 35 games (12 or more at every age, including all 5 Iranian ones), 10 stories (6 Iranian), 7 songs, 13 guides, 19 tips, 12 festivals and 13 of their games |
-| Not yet | About 1.75 million characters: the other ~1,400 games, the other stories, songs, guides, tips and festivals. In Persian they are hidden, not shown in English |
+| Content | 425 games, 52 of them Iranian (every game that starts in the first year is in, and the bath, car, meal, bedtime and waiting games to age 3), all 50 guides and every tip, 26 Persian stories, 21 Persian songs, 11 Iranian days and their 39 games |
+| Not yet | About 514,000 characters, nearly all of it games for ages 1 to 12. In Persian they are hidden, not shown in English |
 
 `npx vite-node scripts/i18n.ts status` shows coverage. How to add more, and the house style for Persian, are in [I18N.md](I18N.md).
 
@@ -173,6 +174,24 @@ to a wrong action and 25 smaller ones. All of them were fixed. That says how muc
   first aid. A reviewer should add the words parents really type, in both formal and spoken Persian.
 - [ ] **A parent reads the spoken lines aloud.** Things to say to a child (hard moments, talk cards, games, story questions) are in spoken
   Persian with «تو»; everything else is written Persian with «شما». Do they sound like a real parent?
+
+### Added in the second content round (November 2026)
+
+- [ ] **139 games for babies and toddlers were translated**, each line checked by machine and the safety lines read beside the English. A
+  Persian reader should look at the choices the translators flagged:
+  - English rhymes in games became Persian ones from the songbook («تاب تاب عباسی», «حمومک مورچه داره», «چشم چشم دو ابرو»…), and rhyme-finishing games use Persian rhymes.
+  - "Garden" is mostly «حیاط»; "cheers" is «به سلامتی»; the wrapped newborn bath is «حمام قنداقی نوزاد» (the summary says the wrap is loose).
+  - Sources stay named as elsewhere: the CDC as «مرکز کنترل و پیشگیری از بیماری‌های آمریکا», Harvard, Montessori.
+  - "Cruise" (walking along furniture) has no settled Persian term; it is «کنار مبل قدم برداشتن».
+- [ ] **Four Persian stories**, each softened as its note says: «روباه دم‌بریده» (a Bakhtiari tale), «لاک‌پشت و دو مرغابی» (Kalila and Dimna),
+  «کاووس و تخت پرنده» and «گردآفرید» (the Shahnameh). Read them against their sources, especially the Shahnameh pages that could only be
+  read in part.
+- [ ] **Three Persian songs**, words only, as cited: «لالا لالا گلی دارم» (three verses from three collections), «جمجمک برگ خزون» (Hamshahri's
+  text; the game card uses «سیمین خاتون» where this has «زینب خاتون») and «آسیاب بچرخ» (Ketabak).
+- Fixed: "It is spoken" (said, not sung) had become «گفتنی است», "it is worth mentioning", in four song notes. "Pull over safely" had become
+  «با خیال راحت», "without a worry", on a car game.
+- Two existing songs name «هندستون»: «الالالا ملوس ململ» (old trade with India) and «اتل متل» (where one scholar reads it as a place where milk
+  is shared). Decide whether these fit the one-culture rule; they are kept because they are part of the folk words.
 
 ### Found in the English while translating (the translation follows the English; nothing was changed)
 

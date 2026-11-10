@@ -511,6 +511,7 @@ export const persianCelebrationActivities: Activity[] = [
     safety: [
       'Stay with under-3s, and keep berries, seeds and leaves out of mouths.',
       'Hold hands near roads.',
+      'A grown-up looks after the string and puts it away afterwards: string never goes round anyone’s neck.',
     ],
     tags: ['nature', 'art'],
     refs: [IR.treeDay],

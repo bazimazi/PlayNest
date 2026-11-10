@@ -5123,6 +5123,7 @@ export const celebrationActivities: Activity[] = [
       'Ask your local school or kōhanga what they are singing this year.',
       'Sing it at the Matariki meal with your whānau.',
     ],
+    safety: ["Stay within arm's reach the whole time and never leave a child alone in the bath, even for a moment."],
     tags: ['song'],
     sources: ['music-synchrony'],
     refs: [R.tepapaHow],

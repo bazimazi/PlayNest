@@ -100,6 +100,7 @@ export const iranYoungActivities: Activity[] = [
       'Some families say a sparrow (گنجشکه) fell in. Let the sparrow fly up to the ceiling at the end.',
       'Play it on the toes at bath time or during a nappy change, with the big toe as the boastful one.',
     ],
+    safety: ["Stay within arm's reach every second, and never leave your baby in the bath, even for a moment."],
     origin: 'Iran',
     lang: 'fa',
     tags: ['world', 'song', 'calm-down'],

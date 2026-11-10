@@ -90,6 +90,12 @@ export function validateActivities(list: Activity[]): string[] {
       (a.materialsLevel !== 'none' || a.settings?.includes('bath') || a.settings?.includes('outdoor'));
     if (riskyForUnder3 && !a.safety?.length) err('safety notes required (under-3 with materials/water/outdoors)');
 
+    // Water at any age, and a child in the bath anywhere in the game: children can drown silently in a few centimetres of water.
+    // Only wording that puts the child in water counts, so "after the bath" or "a bath towel" doesn't.
+    const mentionsBath = [...(a.steps ?? []), ...(a.variations ?? [])].some((s) => /\b(?:in|into) the bath\b|\bat bath ?time\b|\bwashing-up bowl\b/i.test(s));
+    if ((a.settings?.includes('bath') || mentionsBath) && !a.safety?.some((s) => /\b(bath|water|bowl)\b/i.test(s)))
+      err('a game with bath time or a bowl of water needs a safety note about water');
+
     const allText = [a.title, a.summary, ...(a.steps ?? []), ...(a.talk ?? []), ...(a.variations ?? []), a.whyItHelps].join(' ');
     if (/\b(tablet|ipad|youtube|screen time|app)\b/i.test(allText)) err('activities must not involve screens');
   }

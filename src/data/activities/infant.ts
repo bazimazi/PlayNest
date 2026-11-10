@@ -1018,6 +1018,7 @@ export const infantActivities: Activity[] = [
       "Play it on a sibling's or teddy's toes first, then on your baby's, so they watch the surprise before they feel it.",
       'Play it at bath time on wet, wiggly toes, ending with a gentle splash instead of a tickle.',
     ],
+    safety: ["Stay within arm's reach every second, and never leave your baby in the bath, even for a moment."],
     tags: ['classic', 'song', 'brain-game', 'everyday'],
     sources: ['harvard-ef-guide'],
   },
@@ -5221,6 +5222,7 @@ export const infantActivities: Activity[] = [
       'Check the pile for dog mess, litter, sharp twigs and stinging insects before your baby touches it.',
       'Watch for mouthing: leaves, acorns, conkers and small stones must not go in mouths.',
       'Avoid damp, mouldy piles, and wash hands afterwards.',
+      "Stay within arm's reach every second, and never leave your baby in the bath, even for a moment.",
     ],
     tags: ['nature'],
   },
@@ -5264,6 +5266,7 @@ export const infantActivities: Activity[] = [
     safety: [
       'Use blocks and cups too big to fit through a toilet-paper tube, with no splinters or cracks.',
       'Watch out for little fingers getting pinched between the blocks.',
+      "Stay within arm's reach every second, and never leave your baby in the bath, even for a moment.",
     ],
     tags: ['science'],
     sources: ['cdc-milestones'],

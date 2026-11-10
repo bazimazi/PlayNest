@@ -4388,6 +4388,7 @@ export const schoolActivities: Activity[] = [
       'Sing it in the bath with a plastic cup that has a hole poked in the bottom as a prop.',
       'Make it a car game: one half of the car sings Henry, the other half sings Liza.',
     ],
+    safety: ['Stay nearby whenever your child is in the bath.'],
     tags: ['song', 'pretend'],
   },
   // ──────────────────────── More ideas: 6–8 years ─────────────────────────

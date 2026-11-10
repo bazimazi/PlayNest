@@ -3594,6 +3594,7 @@ export const preschoolActivities: Activity[] = [
       'Change the place to where you are going: Up at the park, where the big dogs bark...',
       'Draw your favourite silly rhymes and staple them into a little Down by the bay book.',
     ],
+    safety: ["Stay within arm's reach the whole time and never leave a child alone in the bath, even for a moment."],
     tags: ['song', 'reading'],
   },
   {
@@ -4110,6 +4111,7 @@ export const preschoolActivities: Activity[] = [
       "Fill Old MacDonald's farm with dinosaurs, jungle animals or sea creatures, and invent their noises.",
       'Sing the song in a different voice each time: a tiny mouse, a giant, a robot or an opera singer.',
     ],
+    safety: ["Stay within arm's reach the whole time and never leave a child alone in the bath, even for a moment."],
     tags: ['song'],
   },
   {

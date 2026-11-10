@@ -78,7 +78,8 @@ npm run e2e        # build, then drive every screen in a phone-sized browser + a
 
 - **Unit and content tests:**
   - every activity is checked against the schema rules in `src/data/validate.ts` (age ranges, safety notes for
-    under-3s, no screens, unique ids and titles, 2–4 variations, emoji that render on older devices);
+    under-3s, a water-safety note on any game that puts a child in the bath or near a bowl of water, no screens, unique
+    ids and titles, 2–4 variations, emoji that render on older devices);
   - every age must have enough activities and daily tips, with every development area covered;
   - tips, guides and sources are validated, and the recommendation, plan, play-together and insight logic is tested.
 - **Packs:** every pack is checked against `src/data/validatePacks.ts`, and `src/lib/content-links.test.ts` guards the safety rules (choking and CPR never share steps, no abdominal thrusts for a baby, no phone numbers in first-aid text, festival games stay out of everyday picks).
@@ -110,8 +111,9 @@ from, and appear only in it:
 - **Neither borrows from the other or from anywhere else.** Play ideas, guides, tips, help and first aid belong to no one culture and are
   in both, translated.
 
-All 50 guides and every daily tip are in Persian, with 286 games and 39 festival games. Persian shows only what has been translated. The
-Persian added for this has not yet been read by a Persian speaker: see section 8 of [REVIEW-1.5.md](docs/REVIEW-1.5.md).
+All 50 guides and every daily tip are in Persian, with 425 games (every one that starts in a baby's first year) and 39 festival games,
+26 stories and 21 songs. Persian shows only what has been translated. The Persian added for this has not yet been read by a Persian
+speaker: see section 8 of [REVIEW-1.5.md](docs/REVIEW-1.5.md).
 
 How it works, how to add a language, and the house style for Persian: [docs/I18N.md](docs/I18N.md).
 

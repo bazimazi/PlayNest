@@ -255,6 +255,7 @@ export const worldActivities: Activity[] = [
       'Tell it on your toddler’s toes at bath time, and let the littlest toe eat them all.',
       'Your toddler may know Dedo mindinho or This Little Piggy too. Try them one after another and see which they ask for.',
     ],
+    safety: ["Stay within arm's reach every second, and never leave your baby in the bath, even for a moment."],
     origin: 'Germany and German-speaking lands',
     lang: 'de',
     tags: ['world', 'song'],

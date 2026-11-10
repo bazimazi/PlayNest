@@ -1148,7 +1148,7 @@ export const AID_CARDS: AidCard[] = [
         steps: [
           'Phone your doctor or local health advice line now, and say how many wet nappies there have been.',
           'Keep breastfeeding or giving formula, in small amounts more often than usual.',
-          'On formula or solid food: give small sips of extra water too. Under 6 months, boil it first and let it cool.',
+          'On formula or solid food, from 6 months: give small sips of extra water too. Under 6 months, ask your doctor before giving any water.',
           'Give regular small sips of rehydration solution. Ask a pharmacist which one.',
           'Give small children their usual food.',
         ],
