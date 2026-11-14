@@ -33,7 +33,7 @@ Plus:
 - **Make it work for us:** on every game, ideas by barrier ("too much", "hard to hear"). It names the barrier, never the child.
 - **Your data is safe:** no account, no server, no tracking. A damaged save is kept rather than overwritten, failed saves are announced, and a copy can go anywhere your phone can share to.
 - **The night screen:** black, one warm colour, no pictures and no movement.
-- **Everywhere:** installable PWA, fully offline, light and dark themes, and Capacitor-ready for the App Store and Google Play ([docs/NATIVE.md](docs/NATIVE.md)).
+- **Everywhere:** installable PWA, fully offline, light and dark themes, Capacitor-ready for the App Store and Google Play, and a Tauri desktop app for Windows, macOS and Linux ([docs/NATIVE.md](docs/NATIVE.md)).
 - **Accessible:** WCAG 2.1 AA, keyboard and screen-reader friendly, reduced motion, raised contrast and 200% text are all tested.
 
 | Document | What it covers |
@@ -63,12 +63,23 @@ npm run preview    # serve the production build locally
 ```
 
 `dist/` is a static site (hash routing, relative paths). Upload it to any static host: GitHub Pages, Netlify,
-Cloudflare Pages, S3 and so on. The service worker is generated at build time and precaches the whole app for offline
+Cloudflare Pages, S3 and so on. Every push to `main` is deployed to https://playnest.bazimazi.games by
+`.github/workflows/deploy.yml`. The service worker is generated at build time and precaches the whole app for offline
 use. When a new version is deployed, open apps show "PlayNest has been updated — Reload".
 
 For iOS and Android builds, see [docs/NATIVE.md](docs/NATIVE.md) (`npm run android`, `npm run ios`).
 
+For the Windows, macOS and Linux desktop app (Tauri, needs Rust), see the desktop section of the same guide:
+
+```bash
+npm run desktop         # app window with hot reload
+npm run desktop:build   # installers in src-tauri/target/release/bundle/
+```
+
 ## Test
+
+CI (`.github/workflows/ci.yml`) runs the checks below on every push and pull request, plus `cargo fmt`, `clippy` and
+`cargo check` for the desktop shell. `desktop.yml` builds the Windows, macOS and Linux installers.
 
 ```bash
 npm test           # unit tests + content validation (Vitest)
@@ -125,19 +136,20 @@ npm run i18n -- status                   # how much of each collection is transl
 ## Project layout
 
 ```
-docs/                 research brief, plan, native (iOS/Android) guide
+docs/                 research brief, plan, native (iOS/Android/desktop) guide
 e2e/                  Playwright smoke test + accessibility audit
 public/               manifest, icons (`node scripts/make-icons.mjs`), illustrations (`node scripts/make-emoji.mjs`)
 scripts/              content statistics, safety scan, and the icon and illustration generators
 src/assets/fonts/     self-hosted Caprasimo, Nunito, Vazirmatn and Lalezar
 src/data/             content: activities/, milestones, guides, tips, sources, schema + validator
 src/lib/              pure logic: age & corrected age, recommendations & reasons, weekly plan, play together, insights, colour worlds
-src/platform/         device features (haptics, keep-awake, share, install) — the one seam for native plugins
+src/platform/         device features (haptics, keep-awake, share, install, desktop links and saving) — the one seam for native shells
 src/store/            persisted state (localStorage) with migrations; weekly-plan hook
 src/components/       shared UI
 src/pages/            screens
 src/styles/app.css    design tokens (light/dark) and styles
-capacitor.config.ts   native shells
+capacitor.config.ts   iOS/Android native shells
+src-tauri/            Windows/macOS/Linux desktop shell (Tauri 2, Rust)
 ```
 
 ## Adding activities

@@ -2,9 +2,10 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 import { toast } from './components/Toast';
-import { captureInstallPrompt, isNative } from './platform';
+import { captureInstallPrompt, isNative, openLinksExternally } from './platform';
 
 captureInstallPrompt();
+openLinksExternally();
 
 // An open tab asked for a code file from an older version that is no longer available: offer the new one.
 window.addEventListener('vite:preloadError', (event) => {

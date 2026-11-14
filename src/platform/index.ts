@@ -1,16 +1,22 @@
 /**
  * Device features behind one small interface. Everything here uses web APIs with graceful fallbacks, so the app
- * works in any browser, as an installed PWA and inside a native wrapper (Capacitor). To use native plugins later,
- * swap the implementations here; nothing else in the app touches these APIs directly.
+ * works in any browser, as an installed PWA and inside a native wrapper (Capacitor on iOS/Android, Tauri on Windows,
+ * macOS and Linux). To use native plugins later, swap the implementations here; nothing else in the app touches these
+ * APIs directly.
  */
 import { t } from '../i18n';
 
 type CapacitorGlobal = { isNativePlatform?: () => boolean; getPlatform?: () => string };
 
-/** True inside the iOS/Android app shell (Capacitor injects `window.Capacitor`). */
+/** True inside the Tauri desktop shell (Tauri injects `window.__TAURI_INTERNALS__`). */
+export function isTauri(): boolean {
+  return !!(globalThis as { __TAURI_INTERNALS__?: unknown }).__TAURI_INTERNALS__;
+}
+
+/** True inside a native app shell: Capacitor (iOS/Android, injects `window.Capacitor`) or Tauri (desktop). */
 export function isNative(): boolean {
   const cap = (globalThis as { Capacitor?: CapacitorGlobal }).Capacitor;
-  return !!cap?.isNativePlatform?.();
+  return !!cap?.isNativePlatform?.() || isTauri();
 }
 
 /** Running as an installed app (home-screen PWA or native shell) rather than in a browser tab. */
@@ -111,7 +117,7 @@ export async function shareText(title: string, text: string): Promise<ShareResul
   }
 }
 
-export type BackupResult = 'shared' | 'cancelled' | 'downloaded' | 'failed';
+export type BackupResult = 'shared' | 'saved' | 'cancelled' | 'downloaded' | 'failed';
 
 /**
  * Hands the parent a copy of their data. Shared as `.txt` because share sheets don't accept `.json` files; the content
@@ -119,6 +125,15 @@ export type BackupResult = 'shared' | 'cancelled' | 'downloaded' | 'failed';
  */
 export async function saveBackupFile(json: string, today: string): Promise<BackupResult> {
   const name = `PlayNest-backup-${today}.txt`; // i18n-ignore: file names stay in English
+  // A desktop webview has no share sheet and may ignore downloads: ask where to save it instead.
+  if (isTauri()) {
+    try {
+      const { invoke } = await import('@tauri-apps/api/core');
+      return (await invoke<boolean>('save_backup', { name, contents: json })) ? 'saved' : 'cancelled';
+    } catch {
+      return 'failed';
+    }
+  }
   const file = new File([json], name, { type: 'text/plain' });
   const nav = globalThis.navigator;
   if (nav?.canShare?.({ files: [file] })) {
@@ -174,6 +189,28 @@ export async function storageProtection(): Promise<StorageProtection> {
 export function appLink(path: string): string {
   const { origin, pathname } = globalThis.location;
   return `${origin}${pathname}#${path}`;
+}
+
+// ---------- links in the desktop shell ----------
+
+/** Links that belong to another app: a website, a phone number, an email. Matches the opener scope in src-tauri/capabilities. */
+const EXTERNAL_LINK = /^(https?|tel|mailto):/i;
+
+/**
+ * In the Tauri desktop shell, a web link or a `tel:` number would otherwise replace the app inside its own window (or do
+ * nothing). Call once at startup: it hands them to the system's browser or phone app, so a helpline is still one tap
+ * away. Does nothing anywhere else, where the browser already does the right thing.
+ */
+export function openLinksExternally(): void {
+  if (!isTauri()) return;
+  document.addEventListener('click', (e) => {
+    if (e.defaultPrevented || e.button !== 0) return;
+    const a = (e.target as Element | null)?.closest?.('a[href]') as HTMLAnchorElement | null;
+    const href = a?.getAttribute('href');
+    if (!href || !EXTERNAL_LINK.test(href)) return;
+    e.preventDefault();
+    void import('@tauri-apps/plugin-opener').then(({ openUrl }) => openUrl(href)).catch(() => {});
+  });
 }
 
 // ---------- install prompt (Chrome / Edge / Android) ----------

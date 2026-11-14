@@ -9,9 +9,9 @@ import { t } from '../i18n';
 /** Hands the parent a copy of their data. Must run straight from a tap. */
 export async function backUpNow() {
   const result = await saveBackupFile(exportState(), toISODate(new Date()));
-  if (result === 'shared' || result === 'downloaded') {
+  if (result === 'shared' || result === 'saved' || result === 'downloaded') {
     actions.markBackedUp();
-    toast(result === 'shared' ? t('💾 Copy saved') : t('💾 Copy downloaded'));
+    toast(result === 'downloaded' ? t('💾 Copy downloaded') : t('💾 Copy saved'));
   } else if (result === 'failed') {
     toast(t('That didn’t work. Try again from Settings'));
   }
@@ -36,7 +36,7 @@ export function StorageBanner() {
             const text = damagedCopy(damagedKey);
             if (!text) return;
             void saveBackupFile(text, `damaged-${toISODate(new Date())}`).then((result) => {
-              if (inPlace && (result === 'shared' || result === 'downloaded')) releaseDamagedSave();
+              if (inPlace && (result === 'shared' || result === 'saved' || result === 'downloaded')) releaseDamagedSave();
             });
           }}
         >

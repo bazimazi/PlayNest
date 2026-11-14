@@ -1,0 +1,113 @@
+name: CI
+
+# The checks that run on every change. Installers live in desktop.yml, because
+# building three of them takes minutes and a typo does not deserve that.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# A new push to the same branch makes the run in progress pointless.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      # Unit tests plus content validation: schema rules, safety notes,
+      # first-aid rules and translations.
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+  # Every screen in a phone-sized browser, with an axe accessibility audit, in
+  # English and in Persian (right to left). The runner image already has
+  # Chrome, so nothing is downloaded.
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - run: npm ci
+
+      - name: Smoke test (English)
+        run: npm run e2e
+
+      - name: Smoke test (Persian)
+        run: node e2e/persian.mjs
+
+      - name: Keep screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-screenshots
+          path: |
+            e2e/screenshots/
+            e2e/screenshots-fa/
+          if-no-files-found: ignore
+
+  # The Tauri desktop shell: formatting, lints and a full type/borrow check.
+  # Ubuntu needs the WebKitGTK headers the webview links against.
+  tauri:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src-tauri
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install WebKitGTK and friends
+        working-directory: .
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libxdo-dev libssl-dev \
+            libayatana-appindicator3-dev librsvg2-dev
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      # `generate_context!` embeds the built web app; the checks only need the
+      # directory to exist, not a real build of it.
+      - name: Placeholder web build
+        working-directory: .
+        run: mkdir -p dist && echo '<!doctype html>' > dist/index.html
+
+      - name: Format
+        run: cargo fmt --check
+
+      - name: Clippy
+        run: cargo clippy --all-targets --locked -- -D warnings
+
+      - name: Check
+        run: cargo check --locked

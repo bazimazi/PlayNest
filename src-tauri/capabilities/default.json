@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "What the PlayNest window may do: open links and phone numbers in the system's apps. Saving a backup goes through the app's own save_backup command.",
+  "windows": ["main"],
+  "permissions": ["core:default", "opener:allow-open-url", "opener:allow-default-urls"]
+}

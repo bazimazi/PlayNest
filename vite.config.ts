@@ -166,6 +166,10 @@ const CONTENT_CHUNKS: Record<string, string> = {
 export default defineConfig({
   base: './',
   plugins: [react(), serviceWorker()],
+  // The Tauri desktop shell (src-tauri/) loads the dev server from a fixed address and prints its own Rust output.
+  clearScreen: false,
+  server: { port: 5173, strictPort: true },
+  envPrefix: ['VITE_', 'TAURI_ENV_'],
   // A language's files are large. Parsed as JSON they cost far less at startup than the same data as JavaScript.
   json: { stringify: true },
   build: {

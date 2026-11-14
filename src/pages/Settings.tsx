@@ -212,7 +212,7 @@ export default function Settings() {
                 const text = damagedCopy(key);
                 if (!text) return;
                 void saveBackupFile(text, `damaged-${toISODate(new Date())}`).then((result) => {
-                  if (result === 'shared' || result === 'downloaded') {
+                  if (result === 'shared' || result === 'saved' || result === 'downloaded') {
                     removeDamagedCopy(key);
                     setRescuable(damagedCopies());
                     toast(t('💾 Copy saved'));
