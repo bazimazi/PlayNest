@@ -274,9 +274,21 @@ a {
 }
 button,
 input,
+select,
 textarea {
   font: inherit;
   color: inherit;
+}
+/* A list's open popup is drawn by the browser, which ignores a see-through background and paints it white;
+   give its options the card's own solid colours so the text stays readable in either theme. */
+option {
+  background-color: var(--surface);
+  color: var(--ink);
+  font-family: var(--font);
+  font-weight: 700;
+}
+option:disabled {
+  color: var(--ink-3);
 }
 button {
   background: none;
