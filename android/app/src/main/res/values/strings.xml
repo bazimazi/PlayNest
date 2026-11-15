@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">PlayNest</string>
+    <string name="title_activity_main">PlayNest</string>
+    <string name="package_name">games.bazimazi.playnest</string>
+    <string name="custom_url_scheme">games.bazimazi.playnest</string>
+</resources>
