@@ -13,20 +13,22 @@ import { ACTIVITIES } from '../data/activities';
 import { COACH } from '../data/coach';
 import { GOALS, GOAL_BY_ID } from '../data/goals';
 import { GUIDE_BY_SLUG } from '../data/guides';
-import type { GoalStep, ParentingGoal } from '../data/packs';
+import type { GoalExpect, GoalStep, ParentingGoal } from '../data/packs';
 import { DOMAINS } from '../data/types';
 import { num, t } from '../i18n';
 import { hashString } from '../lib/random';
+import { dueCheckIn } from '../lib/checkIns';
 import { isEligible } from '../lib/recommend';
 import { haptic } from '../platform';
 import { useActiveChild } from '../store/hooks';
-import type { GoalFeeling, GoalProgress } from '../store/model';
+import type { GoalFeeling, GoalHolding, GoalProgress } from '../store/model';
 import { actions, useStore } from '../store/store';
 
 /** More than this many open goals at once, and the page gently suggests focusing. */
 const FOCUS = 2;
 /** After this long without a visit, the practice opens with a welcome back. */
 const AWAY_MS = 10 * 24 * 60 * 60 * 1000;
+
 
 const palette = (g: ParentingGoal) => DOMAINS[hashString(g.id) % DOMAINS.length];
 
@@ -78,6 +80,8 @@ export default function Goals() {
   const rest = GOALS.filter((g) => !openIds.has(g.id) && !closedIds.has(g.id));
   const forThisAge = rest.filter(fits);
   const forOthers = rest.filter((g) => !fits(g));
+  // Worked out once per visit, so answering one doesn't make another goal's question jump in straight away.
+  const [checkIn] = useState(() => dueCheckIn(saved));
 
   const row = (g: ParentingGoal) => (
     <ListRow key={g.id} to={`/goals/${g.id}`} lead={<Glyph emoji={g.emoji} tone={`var(--d-${palette(g)})`} />} title={g.title} subtitle={g.promise} />
@@ -97,6 +101,8 @@ export default function Goals() {
         </>
       }
     >
+      {checkIn && <CheckIn goal={checkIn.goal} />}
+
       {open.length > 0 && (
         <Section title={t('Working on')} id="open-goals">
           <div className="goal-cards">
@@ -149,6 +155,128 @@ export default function Goals() {
         </Section>
       )}
     </Page>
+  );
+}
+
+const HOLDINGS: { value: Exclude<GoalHolding, 'later'>; label: string; emoji: string }[] = [
+  { value: 'most-days', label: t('Most days'), emoji: '🌟' },
+  { value: 'sometimes', label: t('Sometimes'), emoji: '🌱' },
+  { value: 'not-lately', label: t('Not lately'), emoji: '🌧️' },
+];
+
+/** Kind words for every answer. A lapse is ordinary information: one missed stretch doesn't undo a habit. */
+const HOLDING_REPLY: Record<Exclude<GoalHolding, 'later'>, string> = {
+  'most-days': t('That’s a real change, and you made it. We’ll ask once more later, unless you’d rather we didn’t.'),
+  sometimes: t('That’s how habits usually go: they wobble and come back. A week with one practice is often enough to steady them.'),
+  'not-lately': t('Busy stretches happen, and they don’t undo what you built. Pick it up again from any practice, whenever you like.'),
+};
+
+/** A light check-in after a finished goal: one question, three answers in words, and always a way out. */
+function CheckIn({ goal }: { goal: ParentingGoal }) {
+  const navigate = useNavigate();
+  const [answered, setAnswered] = useState<GoalHolding | 'settled'>();
+  const answer = (how: GoalHolding) => {
+    actions.checkInGoal(goal.id, how);
+    setAnswered(how);
+    haptic('success');
+  };
+  const settle = () => {
+    actions.settleGoal(goal.id);
+    setAnswered('settled');
+  };
+  if (answered === 'later') return null;
+  return (
+    <section className="card goal-now goal-check" aria-labelledby="check-title">
+      <p className="eyebrow">{t('A quick check-in')}</p>
+      <h2 id="check-title">{t('How is “{goal}” going now?', { goal: goal.title })}</h2>
+      {!answered && (
+        <>
+          <p>{t('You finished this goal a while ago. Over the last week or so, have the practices still been part of your days?')}</p>
+          <div className="btn-row">
+            {HOLDINGS.map((h) => (
+              <button key={h.value} type="button" className="btn grow" onClick={() => answer(h.value)}>
+                <Emoji e={h.emoji} size={20} /> {h.label}
+              </button>
+            ))}
+          </div>
+          <div className="btn-row">
+            <button type="button" className="link-btn" onClick={() => answer('later')}>
+              {t('Not now')}
+            </button>
+            <button type="button" className="link-btn" onClick={settle}>
+              {t('This goal is done for us')}
+            </button>
+          </div>
+        </>
+      )}
+      {answered === 'settled' && (
+        <p className="goal-reply" role="status">
+          <Emoji e="🌳" size={22} /> {t('Lovely. We won’t ask about this one again. It’s always here if you want it.')}
+        </p>
+      )}
+      {answered && answered !== 'settled' && (
+        <div className="goal-reply" role="status">
+          <p>
+            <Emoji e={HOLDINGS.find((h) => h.value === answered)!.emoji} size={22} /> {HOLDING_REPLY[answered]}
+          </p>
+          {answered === 'not-lately' && <p className="footnote">{t('If things have become much harder than before, see When to get help on the goal.')}</p>}
+          <div className="btn-row">
+            {answered === 'most-days' ? (
+              <button type="button" className="btn grow" onClick={settle}>
+                {t('No more check-ins')}
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="btn btn-primary grow"
+                onClick={() => {
+                  actions.startGoal(goal.id, goal.steps[0].id);
+                  navigate(`/goals/${goal.id}`);
+                }}
+              >
+                {t('Pick it up again')}
+              </button>
+            )}
+            <Link to={`/goals/${goal.id}`} className="btn grow">
+              {t('See the practices')}
+            </Link>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
+/** What's typical at the child's age for this goal, or at every age when no child is set up. */
+function Expect({ goal }: { goal: ParentingGoal }) {
+  const { child, age } = useActiveChild();
+  const bands = goal.expect;
+  if (!bands?.length) return null;
+  const months = age?.months;
+  const mine = months === undefined ? undefined : bands.find((b) => b.minMonths <= months && months <= b.maxMonths);
+  const shown: GoalExpect[] = mine ? [mine] : bands;
+  const guide = GUIDE_BY_SLUG.get('what-to-expect');
+  return (
+    <section className="card goal-expect" aria-labelledby="expect-title">
+      <h2 id="expect-title">{mine && child ? t('What’s typical at {name}’s age', { name: child.name }) : t('What’s typical by age')}</h2>
+      {shown.map((b) => (
+        <div key={b.minMonths} className="goal-expect-band">
+          {!mine && <p className="eyebrow">{b.age}</p>}
+          <p>{b.typical}</p>
+          {b.ask && (
+            <p className="footnote">
+              <b>{t('Worth asking about:')}</b> {b.ask}
+            </p>
+          )}
+        </div>
+      ))}
+      <p className="footnote">{t('These are typical ranges, not tests. Children grow at different speeds.')}</p>
+      {guide && (
+        <Link to={`/learn/${guide.slug}`} className="link-btn">
+          {guide.title}
+        </Link>
+      )}
+    </section>
   );
 }
 
@@ -362,6 +490,8 @@ export function GoalPage() {
           </button>
         </section>
       )}
+
+      <Expect goal={goal} />
 
       <Section title={t('The practices')} id="path-title">
         <ol className="goal-path">

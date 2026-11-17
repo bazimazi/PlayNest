@@ -211,12 +211,23 @@ describe('parenting goals', () => {
       felt: { 'same-time': 'helped' },
       note: '',
       closedAt: null,
+      checkIns: [],
+      settled: false,
     });
+  });
+
+  it('a version 4 goal gains empty check-ins, and keeps only well-formed ones', () => {
+    const state = migrate({
+      version: 4,
+      goals: [{ goalId: 'calmer-bedtimes', current: 'same-time', closedAt: '2026-11-01T10:00:00Z', checkIns: [{ at: '2026-11-08T10:00:00Z', how: 'most-days' }, { at: 'x', how: 'brilliant' }, 7], settled: 'yes' }],
+    });
+    expect(state.goals[0].checkIns).toEqual([{ at: '2026-11-08T10:00:00Z', how: 'most-days' }]);
+    expect(state.goals[0].settled).toBe(false);
   });
 
   it('counts goals and tried practices as something worth backing up', () => {
     const base = emptyState();
-    const withGoal = { ...base, goals: [{ goalId: 'g', current: 'a', startedAt: '', tried: { a: '', b: '' }, felt: {}, note: '', closedAt: null }] };
+    const withGoal = { ...base, goals: [{ goalId: 'g', current: 'a', startedAt: '', tried: { a: '', b: '' }, felt: {}, note: '', closedAt: null, checkIns: [], settled: false }] };
     expect(recordCount(withGoal) - recordCount(base)).toBe(3);
   });
 });

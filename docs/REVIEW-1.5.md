@@ -279,4 +279,74 @@ opened, search-only or background; the writers kept effect sizes out wherever on
 ### Not verified, so not added
 
 - Iranian helpline numbers (123 social emergency, 1480 counselling) and the 190 poison/drug line. Test-call them before adding to
-  `helplines.ts`.
+  `helplines.ts`. *Update, release 1.7:* 123 and 1480 were found on the Welfare Organisation's own pages and added; see §10.
+
+## 10. Research round 4: the everyday companion (release 1.7, November 2026)
+
+Release 1.7 added 29 guides, a new "first months" shelf, a "Make our home safer" goal, "what's typical at this age" lines on 11
+goals, check-ins after a finished goal, 55 daily tips, and Iranian helplines 123 and 1480, in English and Persian. The research is
+in [RESEARCH-5.md](RESEARCH-5.md). **No clinician, psychologist or Persian speaker has read any of it.** Sources in the notes are
+tagged opened, search-only or unverified; claims resting on abstracts carry no effect sizes beyond what the abstract showed.
+
+### A paediatric clinician, midwife or health visitor
+
+- [ ] `first-weeks-at-home`: the danger-sign list (WHO 2022 via a database copy, plus AAP cord signs). "About one more layer than
+  you" follows WHO's "1–2 more layers"; check it isn't read as over-wrapping, which the fever guide warns against.
+- [ ] `newborn-jaundice`: the get-help table, "8 to 12 feeds a day", and the remedies section. The NICE "do not use manna" point is
+  search-only (NICE blocked). The Persian names ترنجبین، شیرخشت، خاکشیر and آب قند: is the tone respectful and the line right for
+  Iranian health centres?
+- [ ] `g6pd`: triggers (fava beans, mothballs, henna, some medicines, infections), the breastfeeding line ("many advise avoiding fava
+  beans"), and "the quick test can miss some babies, especially girls" (one Iranian study, Sari 2014). No medicine list is given.
+- [ ] `swaddling-and-hips`: "where straight-leg wrapping was replaced, hip problems fell sharply" is from population studies cited
+  in an Iranian paper, not opened directly. Stop point: "signs of rolling, from about 2 months" (AAP); Red Nose says 3 months.
+- [ ] `old-remedies`: each row. "Salt can burn newborn skin and has made babies seriously ill" rests on Turkish case series
+  (search-only); how common salting is in Iran is unknown. The tahnik line ("ask about a version without honey") makes no ruling;
+  confirm it reads respectfully.
+- [ ] `dummies-and-thumbs`: "stopping somewhere between 1 and 3 years" blends Lullaby Trust (6–12 months), AAPD (by 36 months) and
+  CPS (3–4 years).
+- [ ] `settling-to-sleep`: "not before 6 months" (Douglas & Hill 2013), the four approaches, and the red flags. Raising Children
+  Network was blocked, so its pages weren't read.
+- [ ] `health-checks`: the Persian names Iran's visit ages from the Ministry booklet (revision 1395): ۳–۵ روزگی، ۱۴–۱۵، ۳۰–۴۵ روزگی،
+  ۲، ۴، ۶، ۷، ۹، ۱۲، ۱۵، ۱۸، ۲۴، ۳۰ ماهگی، ۳، ۴ و ۵ سالگی. Confirm with a health centre that it is current. The vaccine lines ("a mild
+  cold usually isn't a reason to wait", "no need to restart") come from Iranian textbook sources.
+- [ ] `healthy-eyes`: "about two hours outdoors a day" (IMI), the 40-minute trial, and "a white glow in one pupil" (standard
+  teaching, not opened this round).
+- [ ] `bad-air-days`: the colour table is built on the US AQI (Iran's index appears to use the same bands; unverified). Masks: none
+  under 2; fit matters for older children.
+- [ ] `medicines-at-home`: cough-medicine ages ("2, 4 or 6 depending on the country"), honey and lemon over 1, and the methadone and
+  opium storage line, which must stay free of judgement.
+- [ ] `scalds-at-home`: "15 minutes" for tea comes from HSE Ireland and school handouts (CAPT unreachable). The list of things not
+  to put on a burn names Iranian remedies (yogurt, potato, pastes); check it agrees with the first-aid card `burns-scalds`.
+- [ ] `carbon-monoxide`: Iranian figures (6,078 deaths 2011–2018) and sources (gas heaters, water heaters, portable burners).
+- [ ] `car-seats`: stage table, 145 cm belt fit, "about 70%" for babies (WHO/GRSP). No Iranian law is stated.
+- [ ] The goal `safer-home` cites the Cochrane review on home safety education and equipment (Kendrick et al., CD005014), written
+  from the writer's knowledge, not opened this round. Confirm the citation and that "raises safe practices" is a fair summary.
+
+### A child psychologist
+
+- [ ] `is-my-child-ok`: the whole guide, and above all the suicide question and the four steps after a "yes". Check the Persian
+  script («گاهی وقتی بچه‌ها خیلی حالشان بد است…») is natural and culturally safe. It points to Help, which now lists 123 and 1480.
+- [ ] `temperament`: no labels; "small planned steps" for cautious children is from Cool Little Kids (Rapee) via a digest. The
+  sensitivity section avoids "highly sensitive child" on purpose.
+- [ ] `what-to-expect` and the 11 goals' age lines: these are syntheses of several sources (ZERO TO THREE, Tremblay, Evans & Lee,
+  Wakschlag, CDC 2022). Every "worth asking about" must read as a reason to ask, never a sign of a disorder. Language ages follow
+  CDC 2022 and the Iranian booklet (a word by 15–18 months, two words together by 2).
+- [ ] `what-protects-children`: Bethell 2019 is cross-sectional and retrospective; the copy says "a link, not a guarantee". No ACE
+  score appears anywhere.
+- [ ] `food-and-body-talk`: scripts for relatives; eating-disorder red flags (NHS).
+- [ ] Check-ins after a goal: timing (1 week, 1 month, 3 months is a reasoned choice, not a tested one), the three replies, the
+  "not lately" line pointing to When to get help, and whether a parent can ever read guilt into it.
+
+### A Persian-speaking reader
+
+- [ ] Iran-specific wording added inside translations: مشق شب، کلاس تقویتی، آزمون تیزهوشان (homework); نشانه‌ها and اِعراب (reading);
+  اسرا (game ratings); طرح سنجش بینایی (eyes); the national well-child ages (health checks); نوروز، یلدا (protective experiences).
+- [ ] Earthquake steps: which phrasing Iranian schools use in the national drill.
+- [ ] Goal age labels («۱ تا ۲ سالگی») and the check-in screen («یک احوال‌پرسی کوتاه»، «این هدف برای ما تمام شده است»).
+- [ ] Helplines: «اورژانس اجتماعی ۱۲۳» and «صدای مشاور ۱۴۸۰» notes.
+
+### Before release
+
+- [ ] Test-call 123 and 1480, as for every number in `helplines.ts`. Confirm 1480's usual hours (8:00–24:00 on Behzisti's page).
+- [ ] Resolve the Iranian poison line (1490, not 190?) by test call before adding it anywhere.
+- [ ] Get the current (1403) Iranian vaccine table before any guide lists vaccines by age.

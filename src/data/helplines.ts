@@ -15,9 +15,13 @@ import { localize } from '../i18n';
  * 'crisis'. A few family, welfare or medical lines that are a country's main public option are 'parent', with a note saying
  * what they really are.
  *
+ * Iran, 2026-11-17: 123 and 1480 were checked on the State Welfare Organisation's own news pages (research_notes/PlayNest
+ * phase 7 research round 4/05_global_frameworks_and_iran.md §5), which settles the round-5 doubt about what 1480 is. The
+ * poison line (1490 or 190?) and 4030 are still unverified and stay out.
+ *
  * Each country lists crisis lines first, then parent lines, then someone to talk to. Blank hours mean the source didn't
  * show them, not that the service is closed. Never add a number from memory, and leave out anything the notes list as
- * unverified: Iran's 1480, Saudi Arabia's 920033360, and so on.
+ * unverified: Saudi Arabia's 920033360, Iran's poison line, and so on.
  *
  * Licence check before release: most 'directory' rows come from Find A Helpline, whose commercial use requires contacting
  * ThroughLine.
@@ -671,10 +675,10 @@ export const HELPLINES: Record<string, Helpline[]> = {
     {
       name: '123 Social Emergency',
       phone: '123',
-      url: 'https://findahelpline.com/countries/ir',
+      url: 'https://www.behzisti.ir/news/172004/',
       kind: 'crisis',
-      note: 'Iran Crisis Line names this number for emergencies. Hours are not confirmed.',
-      via: 'directory',
+      note: 'Run by the State Welfare Organisation, for a child or adult in danger, a family crisis or risk of suicide. Usual hours are not confirmed.',
+      via: 'operator',
     },
     {
       name: "Yara's Voice",
@@ -692,6 +696,15 @@ export const HELPLINES: Record<string, Helpline[]> = {
       kind: 'talk',
       note: "Iran's health ministry line.",
       via: 'directory',
+    },
+    {
+      name: 'Counsellor’s Voice 1480',
+      phone: '1480',
+      url: 'https://www.behzisti.ir/news/171896/',
+      kind: 'talk',
+      hours: 'Usually 8am to midnight, holidays included',
+      note: 'Free, confidential counselling from the State Welfare Organisation, including family, parenting and child worries. Not an emergency line: for danger, call 123.',
+      via: 'operator',
     },
   ],
 

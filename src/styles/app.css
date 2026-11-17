@@ -6522,6 +6522,25 @@ canvas.confetti {
 .goal-reply p {
   margin: 0 0 12px;
 }
+.goal-check .btn-row {
+  flex-wrap: wrap;
+}
+.goal-check .btn {
+  padding: 0 12px;
+  min-width: 0;
+}
+.goal-check .btn-row + .btn-row {
+  margin-top: 8px;
+  gap: 16px;
+}
+.goal-expect-band + .goal-expect-band {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.goal-expect-band p {
+  margin: 0 0 6px;
+}
 .goal-path {
   list-style: none;
   margin: 0;

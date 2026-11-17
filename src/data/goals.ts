@@ -12,7 +12,7 @@
  *
  * Research: research_notes/PlayNest phase 6 parenting hub research/ (01 programmes, 06 goal design). Paraphrase only.
  */
-import type { ParentingGoal, Ref } from './packs';
+import type { GoalExpect, ParentingGoal, Ref } from './packs';
 import { SOURCES } from './sources';
 import type { SourceId } from './types';
 import { localize } from '../i18n';
@@ -885,8 +885,170 @@ const RAW_GOALS: ParentingGoal[] = [
   },
 ];
 
+/**
+ * A safer home (release 1.7). Injuries are the leading cause of death in children after infancy, in Iran as elsewhere:
+ * road traffic first, then drowning and burns, with scalds peaking at 2 to 4. Safety education plus equipment raises safe
+ * practices at home. Ordered so each practice stands on its own, the commonest serious risks first.
+ * Research: research_notes/PlayNest phase 7 research round 4/02_injury_and_environmental_health.md.
+ */
+const SAFER = {
+  cochrane: { title: 'Home safety education and provision of safety equipment for injury prevention (Kendrick et al.)', publisher: 'Cochrane Database of Systematic Reviews', url: 'https://www.cochrane.org/CD005014' },
+  whoRoad: { title: 'Road traffic injuries', publisher: 'World Health Organization (2026)', url: 'https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries' },
+  whoBurns: { title: 'Burns', publisher: 'World Health Organization (2026)', url: 'https://www.who.int/news-room/fact-sheets/detail/burns' },
+  upAndAway: { title: 'Up and Away: medicine safety', publisher: 'Up and Away (with the CDC)', url: 'https://www.upandaway.org/en/' },
+  nhsCo: { title: 'Carbon monoxide poisoning', publisher: NHS, url: 'https://www.nhs.uk/conditions/carbon-monoxide-poisoning/' },
+  rospaFalls: { title: 'Falls', publisher: 'RoSPA', url: 'https://rospa.com/Keeping-Kids-Safe-Hub/Falls' },
+  fars: { title: 'Unintentional injury deaths in children in Fars, Iran, 2004–2019 (Azarbakhsh et al. 2023)', publisher: 'BMJ Paediatrics Open, via Europe PMC', url: 'https://europepmc.org/search?query=EXT_ID%3A37844972' },
+} satisfies Record<string, Ref>;
+
+const SAFER_HOME: ParentingGoal = {
+  id: 'safer-home',
+  title: 'Make our home safer',
+  emoji: '🏡',
+  promise: 'The most common serious accidents planned out of your home and car, one small job a week.',
+  minMonths: 0,
+  maxMonths: 72,
+  approach: 'Most serious injuries to young children happen at home or on the road, and most can be prevented. Each practice tackles one of the commonest causes, with a small job to do once and a habit to keep. Start anywhere: each one helps on its own.',
+  evidence: 'moderate',
+  steps: [
+    {
+      id: 'every-trip',
+      title: 'A seat for every trip',
+      try: 'Check your child’s car seat fits their size now, is fitted as its instructions say, and is used on every trip, including short ones. No child on a lap.',
+      plan: 'When we get in the car, I’ll buckle my child in before I start the engine, every time.',
+      ifHard: 'If a new seat isn’t possible yet, ask family or friends for one with a known history.',
+      why: 'Road crashes are the biggest cause of injury deaths in children. A correctly used seat cuts a baby’s risk of dying in a crash by about 70%.',
+      guide: 'car-seats',
+      coach: 'car-seat-buggy',
+    },
+    {
+      id: 'hot-things-high',
+      title: 'Hot drinks out of reach',
+      try: 'Move the kettle, samovar and teapot to a stable place your child can’t reach or pull, and agree as a family: no hot drinks while holding a child.',
+      plan: 'When I pour tea, I’ll put the cup in the middle of the table, never at the edge.',
+      ifHard: 'Just do the kettle or samovar this week. That’s where many scalds start.',
+      why: 'Most burns in young children are scalds from hot liquids, most often at ages 2 to 4.',
+      guide: 'scalds-at-home',
+    },
+    {
+      id: 'medicines-up',
+      title: 'Medicines up and locked',
+      try: 'Gather every medicine, vitamin and iron drop in the home into one high, closed place, locked if you can. Ask visiting grandparents to keep their bags up high too.',
+      plan: 'When I’ve given a medicine, I’ll put it straight back up before doing anything else.',
+      ifHard: 'Start with the adult medicines, which are the most dangerous to a small child.',
+      why: 'Children finding medicines on their own is the main reason under-5s end up in hospital because of medicines.',
+      guide: 'medicines-at-home',
+    },
+    {
+      id: 'heaters-and-air',
+      title: 'Heaters checked, air clean',
+      try: 'Before the cold weather, have heaters and the water heater checked and their flues cleared. Keep charcoal, portable gas burners and smoking out of rooms where children sleep.',
+      plan: 'When the first cold day comes, I’ll book the heater check before we turn it on.',
+      ifHard: 'Make sure no vent or air gap is blocked. That costs nothing and helps a lot.',
+      why: 'Carbon monoxide has no smell and causes deaths every winter where homes use gas heaters. Smoke harms children’s lungs even with a window open.',
+      guide: 'carbon-monoxide',
+    },
+    {
+      id: 'windows-water',
+      title: 'Windows, balconies and water',
+      try: 'Move furniture away from windows and balcony rails, fit window locks, and empty buckets, tubs and paddling pools after use.',
+      plan: 'When I open a window, I’ll check nothing is underneath that my child could climb.',
+      ifHard: 'This week, just move the bed or sofa that sits under a window.',
+      why: 'Falls from height and drowning are among the commonest serious injuries to young children, and both happen fast and silently.',
+      guide: 'windows-and-balconies',
+    },
+  ],
+  signs: ['Car seats are used on every trip without discussion.', 'Hot drinks live in the middle of the table.', 'Medicines have one high home.', 'You can name your emergency number without looking it up.'],
+  help: ['If your child may have swallowed a medicine or chemical, call your emergency number now, even if they seem fine.', 'After any burn on a baby, fall from a height, or crash, get your child checked by a doctor.'],
+  refs: [SAFER.cochrane, SAFER.whoRoad, SAFER.whoBurns, SAFER.upAndAway, SAFER.nhsCo, SAFER.rospaFalls, SAFER.fars],
+};
+
+/**
+ * What's typical at each age for each goal (release 1.7). From research_notes/PlayNest phase 7 research round 4/
+ * 04_temperament_development_and_wellbeing.md §2.2: ranges, not norms. Every "ask" is a reason to talk to someone, never a
+ * diagnosis. Language ages follow the CDC 2022 milestones and Iran's well-child booklet (a word by 15 to 18 months, two
+ * words together by 2). Mornings have no direct research: those rows lean on how self-control develops.
+ */
+const Y1 = { age: '1 to 2 years', minMonths: 12, maxMonths: 23 };
+const Y2 = { age: '2 to 3 years', minMonths: 24, maxMonths: 35 };
+const Y3 = { age: '3 to 5 years', minMonths: 36, maxMonths: 59 };
+const Y5 = { age: '5 to 8 years', minMonths: 60, maxMonths: 95 };
+const Y8 = { age: '8 to 12 years', minMonths: 96, maxMonths: 144 };
+
+const EXPECT: Record<string, GoalExpect[]> = {
+  'feel-closer': [
+    { ...Y1, typical: 'Clings with strangers, protests when you leave, and keeps checking back to you while exploring.', ask: 'Rarely looks to you for comfort, shows you things, or turns to their name.' },
+    { ...Y2, typical: 'Wants to do it “by myself”, yet needs you close. Goodbyes usually get easier by about 3.', ask: 'Very strong distress at every separation that isn’t easing after 3.' },
+    { ...Y3, typical: 'Loves one-to-one time with you, and may prefer one parent for a while. That’s a phase, not a verdict.', ask: 'Pulls away from all adults, or shows no interest in playing with you.' },
+    { ...Y5, typical: 'Shares more at bedtime than at the school gate. Still wants you there for the things that matter to them.', ask: 'A sudden change: secretive, or frightened of a particular person or place.' },
+    { ...Y8, typical: 'Wants more privacy, and friends matter more. Still needs regular time alone with you, often side by side.', ask: 'Withdrawing from family and friends, or low most days for two weeks or more.' },
+  ],
+  'fewer-battles': [
+    { ...Y2, typical: 'Tests limits all the time. Hitting or biting peaks around now. Rules need saying many, many times.', ask: 'Aggression that is frequent and severe, and not easing at all by 4.' },
+    { ...Y3, typical: 'Self-control grows fast. Around 3½ to 4, most can wait or stop for a short while. Still forgets often.', ask: 'Can’t follow simple rules anywhere, at home or nursery, most of the time.' },
+    { ...Y5, typical: 'Follows routines with reminders, and argues hard about what’s fair.', ask: 'Defiance at home and school that is harming friendships or learning.' },
+    { ...Y8, typical: 'Negotiates and wants reasons. Cooperates more when asked for their ideas.', ask: 'Rule-breaking that keeps going, cruelty, or serious aggression.' },
+  ],
+  'calmer-bedtimes': [
+    { ...Y1, typical: 'Needs about 11 to 14 hours in all, naps included. Waking in the night and protesting at bedtime are common.', ask: 'Loud snoring with pauses in breathing.' },
+    { ...Y2, typical: 'Stalling is an art form: one more drink, one more story. May drop the nap. Night fears begin.', ask: 'Very restless sleep most nights, or very hard to wake.' },
+    { ...Y3, typical: 'About 10 to 13 hours. Fears of the dark and monsters, and nightmares, are common.', ask: 'Snoring with pauses in breathing, or night terrors that happen very often.' },
+    { ...Y5, typical: 'About 9 to 12 hours. The odd bad dream. Wet nights are still common at 5 and 6.', ask: 'New sleep problems that come with worry or low mood, or wetting again after six months dry.' },
+    { ...Y8, typical: 'Bedtimes slide later, and screens compete with sleep.', ask: 'Sleep changes lasting weeks, with low mood, worry or not wanting to go to school.' },
+  ],
+  'big-feelings': [
+    { ...Y1, minMonths: 18, age: '18 months to 2', typical: 'Short, frequent tantrums, often under five minutes. Needs you to calm down.' },
+    { ...Y2, typical: 'Tantrums are very common, set off by frustration, tiredness and changes of plan.', ask: 'Many tantrums a day that involve hurting themselves or others.' },
+    { ...Y3, typical: 'Most preschoolers have tantrums, but fewer each year. Few have them every day.', ask: 'Tantrums most days, out of nowhere, very long or exhausting, or with other adults too.' },
+    { ...Y5, typical: 'Can name many feelings. Still melts down when tired. Fears and scary dreams are common.', ask: 'Irritable most days, or explosive anger far bigger than the cause, again and again.' },
+    { ...Y8, typical: 'Moody at times, worries about school and friends, and hides feelings more.', ask: 'Sad or irritable most days for two weeks or more. Talk of wanting to die needs help the same day.' },
+  ],
+  'siblings-get-along': [
+    { ...Y2, typical: 'Short squabbles are frequent. Sharing really develops around 3 to 4, so grabbing is normal now.', ask: 'Keeps trying to hurt a baby brother or sister.' },
+    { ...Y3, typical: 'Squabbles several times an hour are common, and so is playing well together in between.', ask: 'One child is often frightened of the other.' },
+    { ...Y5, typical: 'Fights about fairness and attention. Competing is part of it.', ask: 'One child keeps hurting or humiliating the other, and it’s one-sided.' },
+    { ...Y8, typical: 'Teasing and fights over privacy, but they can solve more themselves with a little coaching.', ask: 'Ongoing bullying of one child by another, or any sexual behaviour between siblings: seek advice.' },
+  ],
+  'raise-a-reader': [
+    { age: 'Under 1', minMonths: 0, maxMonths: 11, typical: 'Coos, then babbles, and turns to voices. Loves faces, songs and being talked to.', ask: 'Not turning to sounds or voices, or not babbling by about 9 months.' },
+    { ...Y1, typical: 'Understands far more than they say. First words, and pointing to show you things.', ask: 'No pointing by about 15 months, no words by about 18 months, or losing words they had.' },
+    { ...Y2, typical: 'Two words together, then short sentences. People outside the family understand some of it.', ask: 'Not putting two words together by about 2, or hard for family to understand.' },
+    { ...Y3, typical: 'Asks “why?” endlessly and tells simple stories. Most people can understand them.', ask: 'Still very hard to understand at 4, or stammering that worries them or lasts six months.' },
+    { ...Y5, typical: 'Learning to read. Mixing up letters early on is common.', ask: 'Reading not moving forward despite help. Ask the school, and check hearing and eyesight.' },
+    { ...Y8, typical: 'Reads to learn, and picks up new words from books.', ask: 'Avoids reading or gets upset by it. Ask the school about an assessment.' },
+  ],
+  'calmer-mealtimes': [
+    { ...Y1, typical: 'Messy self-feeding, and appetite that changes a lot from day to day.', ask: 'Gagging or choking often, or not gaining weight.' },
+    { ...Y2, typical: 'Fussy eating often starts now, and likes the same foods again and again.', ask: 'Eats very few foods, and the list keeps shrinking.' },
+    { ...Y3, typical: 'Needs many tries of a new food. Eats well one day and little the next.', ask: 'Distress or gagging with many textures, or worries about growth.' },
+    { ...Y5, typical: 'Eats better at shared family meals, and copies what you eat.', ask: 'Avoiding food from fear of choking or being sick, or losing weight.' },
+    { ...Y8, typical: 'Chooses snacks alone, and friends influence what they eat. Talk about bodies starts.', ask: 'Skipping meals, eating in secret, or strong worry about weight or shape.' },
+  ],
+  'screen-balance': [
+    { ...Y2, typical: 'WHO advises no more than an hour a day at this age, less is better, and watching together.', ask: 'Screens are the only thing that calms every upset.' },
+    { ...Y3, typical: 'Still about an hour at most. What they watch, and whether you watch with them, matters more than minutes.', ask: 'Screens crowding out sleep, play and talk.' },
+    { ...Y5, typical: 'No fixed number. Protect sleep, meals and play, and agree a family plan together.', ask: 'Distress or aggression every time screens end, or lost sleep.' },
+    { ...Y8, typical: 'Own devices are common. What they do online, and who with, matters most.', ask: 'Secrecy, contact from strangers, upsetting content, or gaming harming school or sleep.' },
+  ],
+  'confident-capable': [
+    { ...Y3, typical: 'Very positive about themselves: “I’m the fastest!” Wants to do things alone, and gets frustrated.', ask: 'So afraid of anything new that it stops them, everywhere.' },
+    { ...Y5, typical: 'Starts comparing with others. Cautious children hang back at first, then join in.', ask: 'Avoiding school or friends because of fear.' },
+    { ...Y8, typical: 'More realistic, sometimes harsh with themselves: “I’m stupid.”', ask: 'Often saying they’re worthless or hate themselves, or refusing every challenge.' },
+  ],
+  'smoother-mornings': [
+    { ...Y3, typical: 'A picture routine helps, but they still need a prompt at each step. Dawdling isn’t defiance.' },
+    { ...Y5, typical: 'Follows a checklist with reminders. Forgetting is normal: planning skills are still growing.', ask: 'Tummy aches or headaches mainly on school mornings, again and again. It may be worry.' },
+    { ...Y8, typical: 'Can own most of the routine, perhaps with an alarm.', ask: 'Refusing school, or often late because of distress.' },
+  ],
+  'potty-ready': [
+    { ...Y1, minMonths: 18, age: '18 months to 2', typical: 'Signs of readiness start to show: dry for longer, noticing a wet nappy, interest in the toilet.' },
+    { ...Y2, typical: 'Training usually starts around now. Accidents are part of learning.', ask: 'Pain when pooing, or hard, infrequent poos. Constipation is common and treatable.' },
+    { ...Y3, maxMonths: 60, typical: 'Most are dry in the day by about 4. Dry nights come later. Accidents happen when absorbed in play.', ask: 'Not dry in the day by 4 to 5, holding on, or pain.' },
+  ],
+};
+
 /** Goals whose content hasn't been translated leave the list in that language. */
-export const GOALS: ParentingGoal[] = RAW_GOALS;
+export const GOALS: ParentingGoal[] = [...RAW_GOALS, SAFER_HOME].map((g) => (EXPECT[g.id] ? { ...g, expect: EXPECT[g.id] } : g));
 
 localize('goals', GOALS, { hideMissing: true });
 

@@ -16,7 +16,7 @@ Four tabs, each answering one question:
 | **Today** | What shall we play right now? | Mood (happy / energetic / fussy / sleepy), which changes the sky. **One big pick** with a plain reason; swipe or tap *Another idea*. One-tap chips for what's going on (5 min, no toys, car, bath, rainy, stormy, very hot…), which change the pick and take unsafe ideas out. *Let them choose* from three pictures. Then two alternatives, today's plan, the garden, one extra card at most, and a row of more |
 | **Play** | What else is there? | **Ideas:** 800+ games, with search, filters and collections. **Stories:** folk tales to read or tell, from the language's own culture. **Songs:** lullabies and rhymes from the language's own culture, with a music-box guide. **Week:** two ideas a day across 8 areas of development. Plus talk cards, picture routines, and celebrations you choose |
 | **Grow** | How are they growing? | A **garden** where every game plants a flower, pressed flowers that only grow, firsts to keep, this stage, a **one-question-at-a-time milestone check-in** (CDC checklists to age 5, corrected age for premature babies), a one-page summary for a visit, and the journal |
-| **Learn** | What should I know, and how do I get better at it? | **Parenting goals**: pick something to work on and get 5–6 small weekly practices, each with a plan to borrow. 79 short guides on 14 shelves, led by **parenting skills** from tested programmes, then feelings, play, talking, food, sleep, health, character, school, screens, family life and more. This stage with your child, and search across the whole app |
+| **Learn** | What should I know, and how do I get better at it? | **Parenting goals**: pick something to work on and get 5–6 small weekly practices, each with a plan to borrow. 108 short guides on 15 shelves: **the first months** for new parents, **parenting skills** from tested programmes, then feelings, play, talking, food, sleep, health, character, school, screens, family life, safety and more. This stage with your child, and search across the whole app |
 
 **Help** sits top right of every tab, beside the child's avatar:
 
@@ -29,7 +29,7 @@ Plus:
 
 - **Play mode:** a "Before you start" card, one big step at a time, read aloud if your hands are full, then a new flower blooms.
 - **Kid mode:** picture routines a child follows alone: big pictures, no reading, no score, no way to fail.
-- **Parenting goals:** 13 goals (calmer bedtimes, fewer battles, shout less, big feelings, siblings, a reader, mealtimes, screens, confidence, mornings, toilet training, closeness, looking after yourself). Practices start with connection and end with calm follow-through, as tested programmes do. Each has an if-then plan, a smaller version for a hard week, and links to guides, hard moments and games. No streaks, scores or deadlines: say how it went, and move on when you choose.
+- **Parenting goals:** 14 goals (calmer bedtimes, fewer battles, shout less, big feelings, siblings, a reader, mealtimes, screens, confidence, mornings, toilet training, closeness, looking after yourself, a safer home). Each shows what's typical at the child's age, and a finished goal gets a few gentle check-ins. Practices start with connection and end with calm follow-through, as tested programmes do. Each has an if-then plan, a smaller version for a hard week, and links to guides, hard moments and games. No streaks, scores or deadlines: say how it went, and move on when you choose.
 - **Play together:** games that fit siblings of different ages. For big gaps, "big kid leads" games.
 - **Make it work for us:** on every game, ideas by barrier ("too much", "hard to hear"). It names the barrier, never the child.
 - **Your data is safe:** no account, no server, no tracking. A damaged save is kept rather than overwritten, failed saves are announced, and a copy can go anywhere your phone can share to.
@@ -40,6 +40,7 @@ Plus:
 | Document | What it covers |
 |---|---|
 | [docs/REVIEW-1.5.md](docs/REVIEW-1.5.md) | **What a person must check before release:** clinicians, test calls, native speakers, communities, devices, families |
+| [docs/RESEARCH-5.md](docs/RESEARCH-5.md) | **The everyday companion (1.7):** newborns and traditions, injury prevention in Iran, learning at home, temperament and mental health, WHO Nurturing Care and the route to endorsement. Full notes in `research_notes/PlayNest phase 7 research round 4/` |
 | [docs/RESEARCH-4.md](docs/RESEARCH-4.md) | **The parenting hub (1.6):** what tested parenting programmes share, feeding, health, character and family research, and the rules behind Parenting goals. Full notes in `research_notes/PlayNest phase 6 parenting hub research/` |
 | [docs/RESEARCH-3.md](docs/RESEARCH-3.md) | The newest research: what to improve next, and corrections to the earlier research. Full notes are in `research_notes/` |
 | [docs/EXPANSION.md](docs/EXPANSION.md) | **The plan for PlayNest 2:** from a play app to a full parenting companion for ages 0–12, with modules, architecture and a phased roadmap |
@@ -124,7 +125,7 @@ from, and appear only in it:
 - **Neither borrows from the other or from anywhere else.** Play ideas, guides, tips, help and first aid belong to no one culture and are
   in both, translated.
 
-All 79 guides, every parenting goal and every daily tip are in Persian, with 425 games (every one that starts in a baby's first year) and 39 festival games,
+All 108 guides, every parenting goal and every daily tip are in Persian, with 425 games (every one that starts in a baby's first year) and 39 festival games,
 26 stories and 21 songs. Persian shows only what has been translated. The Persian added for this has not yet been read by a Persian
 speaker: see section 8 of [REVIEW-1.5.md](docs/REVIEW-1.5.md).
 

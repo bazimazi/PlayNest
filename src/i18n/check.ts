@@ -6,14 +6,22 @@ export function numbersIn(s: string): string[] {
   return (plain.match(/\d+(?:\.\d+)?/g) ?? []).sort();
 }
 
+/**
+ * Names written in Latin letters with a digit inside, kept as they are in Persian too, the way Iranian health pages write them.
+ * Inside a right-to-left line a Latin name holds together, while a Persian digit inside it (G۶PD) can be shown out of order.
+ */
+const LATIN_NAMES = /\bG6PD\b/g;
+
 const placeholders = (s: string) => (s.match(/\{\w+\}|<\/?\w+\/?>/g) ?? []).sort().join(' ');
 
 /**
  * What could be wrong with one Persian string, judged against its English. These don't judge the translation; they catch
  * the mistakes a person skimming wouldn't, the worst being a changed number on a first-aid card.
  */
-export function problemsWithPersian(english: string, persian: string): string[] {
+export function problemsWithPersian(englishText: string, persianText: string): string[] {
   const out: string[] = [];
+  const english = englishText.replace(LATIN_NAMES, '');
+  const persian = persianText.replace(LATIN_NAMES, '');
   if (!persian.trim()) return ['is empty'];
   if (!/[؀-ۿ]/.test(persian)) out.push('has no Persian in it');
   if (/[يكى]/.test(persian)) out.push('uses Arabic ي ك or ى, not Persian ی and ک');
@@ -27,7 +35,7 @@ export function problemsWithPersian(english: string, persian: string): string[] 
   if (placeholders(english) !== placeholders(persian)) out.push(`placeholders differ: "${placeholders(english)}" and "${placeholders(persian)}"`);
   // A paragraph takes its direction from its first strong letter, so a Latin first word would flip the whole line.
   // A placeholder isn't a word: a name in it is isolated, and a number has no direction of its own.
-  const words = persian.replace(/\{\w+\}|<\/?\w+\/?>/g, '');
+  const words = persianText.replace(/\{\w+\}|<\/?\w+\/?>/g, '');
   if (/^[\s\p{P}\p{S}\d]*[A-Za-z]/u.test(words)) out.push('starts with a Latin word, which turns the whole line left-to-right');
   return out;
 }

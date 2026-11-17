@@ -2,7 +2,7 @@ import type { AidRegion } from '../data/packs';
 import { localize, type Language } from '../i18n';
 
 /** Persisted app state. Bump `STATE_VERSION` and add a migration in `store.ts` when this changes. */
-export const STATE_VERSION = 4;
+export const STATE_VERSION = 5;
 
 export interface Child {
   id: string;
@@ -102,6 +102,19 @@ export interface StoryRead {
 export type GoalFeeling = 'helped' | 'some' | 'not-yet';
 
 /**
+ * After a goal is finished: are the practices still part of family life? In words, never a score. 'later' means the
+ * parent chose not to answer this time, which counts as a check-in so the question isn't asked again straight away.
+ */
+export type GoalHolding = 'most-days' | 'sometimes' | 'not-lately' | 'later';
+
+/** One light check-in after a goal is finished. */
+export interface GoalCheckIn {
+  /** ISO date-time. */
+  at: string;
+  how: GoalHolding;
+}
+
+/**
  * A parenting goal the family is working on. It belongs to the family, not one child: a calmer bedtime is usually for
  * everyone in the house. Nothing in it is due, so there is nothing to fall behind on.
  */
@@ -120,6 +133,13 @@ export interface GoalProgress {
   note: string;
   /** When the parent finished it or set it aside (ISO date-time). Kept, so starting again picks up where they were. */
   closedAt: string | null;
+  /**
+   * Check-ins after the goal was finished, oldest first. A few, spaced out (about a week, a month and three months after),
+   * because a light follow-up seems to help gains last. Reopening the goal leaves them in place.
+   */
+  checkIns: GoalCheckIn[];
+  /** The parent said this goal is done for them: no more check-ins. */
+  settled: boolean;
 }
 
 export type Mood = 'happy' | 'energetic' | 'fussy' | 'sleepy';

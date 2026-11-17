@@ -9,6 +9,7 @@ import {
   type Climate,
   type FirstEntry,
   type GoalFeeling,
+  type GoalHolding,
   type GoalProgress,
   type MilestoneAnswer,
   type Moment,
@@ -101,6 +102,7 @@ function migrateSettings(raw: unknown, hasChildren: boolean): Settings {
 }
 
 const FEELINGS: GoalFeeling[] = ['helped', 'some', 'not-yet'];
+const HOLDINGS: GoalHolding[] = ['most-days', 'sometimes', 'not-lately', 'later'];
 
 /** Keeps each goal once, with only well-formed entries. Goals whose content has gone stay too: the page skips them. */
 function migrateGoals(raw: unknown): GoalProgress[] {
@@ -121,6 +123,10 @@ function migrateGoals(raw: unknown): GoalProgress[] {
       felt,
       note: typeof g.note === 'string' ? g.note : '',
       closedAt: str(g.closedAt),
+      checkIns: arr<unknown>(g.checkIns)
+        .filter((c): c is { at: string; how: GoalHolding } => isObj(c) && typeof c.at === 'string' && HOLDINGS.includes(c.how as GoalHolding))
+        .map((c) => ({ at: c.at, how: c.how })),
+      settled: g.settled === true,
     });
   }
   return out;
@@ -619,7 +625,7 @@ export const actions = {
       if (s.goals.some((g) => g.goalId === goalId)) {
         return { ...s, goals: s.goals.map((g) => (g.goalId === goalId ? { ...g, closedAt: null } : g)) };
       }
-      const fresh: GoalProgress = { goalId, startedAt: new Date().toISOString(), current: firstStep, tried: {}, felt: {}, note: '', closedAt: null };
+      const fresh: GoalProgress = { goalId, startedAt: new Date().toISOString(), current: firstStep, tried: {}, felt: {}, note: '', closedAt: null, checkIns: [], settled: false };
       return { ...s, goals: [...s.goals, fresh] };
     });
   },
@@ -650,6 +656,19 @@ export const actions = {
   /** Finished, or set aside for now. Either way it's kept, so it can be picked up again. */
   closeGoal(goalId: string) {
     setState((s) => ({ ...s, goals: s.goals.map((g) => (g.goalId === goalId ? { ...g, closedAt: new Date().toISOString() } : g)) }));
+  },
+
+  /** A check-in after a finished goal, or "not now". Answering never reopens the goal; the parent does that if they want. */
+  checkInGoal(goalId: string, how: GoalHolding) {
+    setState((s) => ({
+      ...s,
+      goals: s.goals.map((g) => (g.goalId === goalId ? { ...g, checkIns: [...g.checkIns, { at: new Date().toISOString(), how }] } : g)),
+    }));
+  },
+
+  /** "This goal is done for us": no more check-ins. */
+  settleGoal(goalId: string) {
+    setState((s) => ({ ...s, goals: s.goals.map((g) => (g.goalId === goalId ? { ...g, settled: true } : g)) }));
   },
 
   /**

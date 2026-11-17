@@ -364,6 +364,21 @@ export interface GoalStep {
   tags?: Tag[];
 }
 
+/**
+ * What's typical at one age for a goal's topic, so a parent aims for the next small step rather than the finished picture.
+ * Many parents expect self-control and sharing earlier than children manage (ZERO TO THREE, 2016).
+ */
+export interface GoalExpect {
+  /** "2 to 3 years". At most 24 characters. */
+  age: string;
+  minMonths: number;
+  maxMonths: number;
+  /** What most children of this age do. At most 160 characters. */
+  typical: string;
+  /** Worth talking to a doctor, nurse or teacher about. A reason to ask, never a diagnosis. At most 160 characters. */
+  ask?: string;
+}
+
 /** Something a parent wants to change, broken into a few weekly practices that build on each other. */
 export interface ParentingGoal {
   id: string;
@@ -385,6 +400,8 @@ export interface ParentingGoal {
   /** How strong the support for the whole sequence is. 'practice' means sensible advice with little direct research. */
   evidence: 'strong' | 'moderate' | 'practice';
   refs: Ref[];
+  /** What's typical by age, in order, without gaps or overlaps. Left out for goals about the parent. */
+  expect?: GoalExpect[];
 }
 
 // ---------- Routines ----------

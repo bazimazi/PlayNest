@@ -222,6 +222,7 @@ export type GuideBlock =
 
 /** The shelves in Learn, in the order they appear. */
 export const GUIDE_TOPICS = {
+  baby: { label: 'The first months', emoji: '👶' },
   parenting: { label: 'Parenting skills', emoji: '🧭' },
   feelings: { label: 'Feelings and behaviour', emoji: '💛' },
   play: { label: 'Play', emoji: '🧩' },

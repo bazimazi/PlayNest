@@ -1,10 +1,14 @@
+import { BABY_GUIDES } from './guides-baby';
 import { DISCIPLINE_GUIDES } from './guides-discipline';
 import { FAMILY_GUIDES } from './guides-family';
 import { FOOD_GUIDES } from './guides-food';
 import { GROWING_GUIDES } from './guides-growing';
 import { HEALTH_GUIDES } from './guides-health';
+import { LEARNING_GUIDES } from './guides-learning';
 import { MORE_GUIDES } from './guides-more';
 import { PARENTING_GUIDES } from './guides-parenting';
+import { SAFETY_GUIDES } from './guides-safety';
+import { WELLBEING_GUIDES } from './guides-wellbeing';
 import { YOU_GUIDES } from './guides-you';
 import type { Guide, GuideTopic } from './types';
 import { localize } from '../i18n';
@@ -611,6 +615,10 @@ export const GUIDES: Guide[] = [
   ...GROWING_GUIDES,
   ...FAMILY_GUIDES,
   ...YOU_GUIDES,
+  ...BABY_GUIDES,
+  ...WELLBEING_GUIDES,
+  ...LEARNING_GUIDES,
+  ...SAFETY_GUIDES,
 ];
 
 localize('guides', GUIDES, { hideMissing: true });

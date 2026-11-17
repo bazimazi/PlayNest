@@ -143,6 +143,18 @@ export function validateGoals(list: ParentingGoal[], guides: ReadonlySet<string>
     checkLen(g.help, 150, 'help', err);
     if (!['strong', 'moderate', 'practice'].includes(g.evidence)) err('evidence must be strong, moderate or practice');
     checkRefs(g.refs, err);
+    // What's typical by age: bands in order, no gaps or overlaps, covering the whole goal.
+    const bands = g.expect ?? [];
+    bands.forEach((b, i) => {
+      checkAge(b.minMonths, b.maxMonths, err);
+      if (!b.age?.trim() || b.age.length > 24) err(`expect ${i}: age label required, at most 24 characters`);
+      checkLen([b.typical], 160, `expect ${i} typical`, err);
+      if (b.ask !== undefined) checkLen([b.ask], 160, `expect ${i} ask`, err);
+      if (i > 0 && b.minMonths !== bands[i - 1].maxMonths + 1) err(`expect ${i}: must start the month after the band before`);
+    });
+    if (bands.length && (bands[0].minMonths > g.minMonths || bands[bands.length - 1].maxMonths < g.maxMonths)) {
+      err('expect bands must cover the whole age range');
+    }
   });
 }
 
