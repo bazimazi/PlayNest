@@ -901,6 +901,106 @@ const SAFER = {
   fars: { title: 'Unintentional injury deaths in children in Fars, Iran, 2004–2019 (Azarbakhsh et al. 2023)', publisher: 'BMJ Paediatrics Open, via Europe PMC', url: 'https://europepmc.org/search?query=EXT_ID%3A37844972' },
 } satisfies Record<string, Ref>;
 
+/**
+ * The first year (release 1.8): the only goal for parents of babies under 1. Built to be gentle on exhausted parents: each
+ * practice rides on care they already give, takes a few minutes, and has a one-minute version that counts. The crying plan
+ * comes first because it protects everyone and is done once. Its wording never claims to prevent shaking injuries:
+ * population programmes raised knowledge and coping, but injury results were mixed (Zolotor 2015, Barr 2018). Night sharing
+ * says nothing about how to feed. The wellbeing practice borrows from WHO's Thinking Healthy, without claiming to treat
+ * depression. Research: research_notes/PlayNest phase 8 research round 5/04_first_year_goal_and_parents.md.
+ */
+const BABY_YEAR_REFS = {
+  barr2009: { title: 'Do educational materials change knowledge and behaviour about crying and shaken baby syndrome? (Barr et al. 2009)', publisher: 'CMAJ', url: 'https://doi.org/10.1503/cmaj.081419' },
+  barr2018: { title: 'Eight-year outcome of implementation of abusive head trauma prevention (Barr et al. 2018)', publisher: 'Child Abuse & Neglect', url: 'https://doi.org/10.1016/j.chiabu.2018.07.004' },
+  icon: { title: 'Babies cry, you can cope', publisher: 'ICON', url: 'https://iconcope.org/' },
+  nhsCrying: { title: 'Soothing a crying baby', publisher: NHS, url: 'https://www.nhs.uk/baby/caring-for-a-newborn/soothing-a-crying-baby/' },
+  ccd: { title: 'Care for Child Development: counselling cards', publisher: 'WHO and UNICEF', url: 'https://www.unicef.org/media/91181/file/4-CCD-Counselling-Cards.pdf' },
+  coaching: { title: 'Parent coaching increases conversational turns and advances infant language development (Ferjan Ramírez et al. 2020)', publisher: 'PNAS', url: 'https://doi.org/10.1073/pnas.1921653117' },
+  songs: { title: 'Familiarity and mood: infants’ responses to singing (Cirelli & Trehub 2020)', publisher: 'Developmental Science', url: 'https://doi.org/10.1111/desc.12892' },
+  vip: { title: 'Promotion of positive parenting and prevention of socioemotional disparities: the Video Interaction Project (Weisleder et al. 2016)', publisher: 'Pediatrics', url: 'https://doi.org/10.1542/peds.2015-3239' },
+  lessIsMore: { title: 'Less is more: meta-analyses of sensitivity and attachment interventions in early childhood (Bakermans-Kranenburg et al. 2003)', publisher: 'Psychological Bulletin', url: 'https://doi.org/10.1037/0033-2909.129.2.195' },
+  sleep: { title: 'Long-term effects of pregnancy and childbirth on sleep in mothers and fathers (Richter et al. 2019)', publisher: 'Sleep', url: 'https://doi.org/10.1093/sleep/zsz015' },
+  sweden: { title: 'When dad can stay home: fathers’ workplace flexibility and maternal health (Persson & Rossin-Slater 2024)', publisher: 'American Economic Journal: Applied Economics', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12463307' },
+  thinkingHealthy: { title: 'Cognitive behaviour therapy-based intervention by community health workers for mothers with depression (Rahman et al. 2008)', publisher: 'The Lancet', url: 'https://doi.org/10.1016/S0140-6736(08)61263-X' },
+  paulson: { title: 'Prenatal and postpartum depression in fathers: a meta-analysis (Paulson & Bazemore 2010)', publisher: 'JAMA', url: 'https://doi.org/10.1001/jama.2010.605' },
+} satisfies Record<string, Ref>;
+
+const BABY_YEAR: ParentingGoal = {
+  id: 'first-year-together',
+  title: 'Our first year together',
+  emoji: '🐣',
+  promise: 'A plan for hard crying, small daily “conversations”, shared nights, and a moment for you, on good weeks and hard ones.',
+  minMonths: 0,
+  maxMonths: 12,
+  approach: 'Six small practices built into feeds, changes and baths, about two weeks each. The crying plan comes first, because it helps everyone. Each has a one-minute version for hard weeks, and that counts. Pause whenever you need to.',
+  evidence: 'moderate',
+  steps: [
+    {
+      id: 'crying-plan',
+      title: 'Our crying plan',
+      try: 'Together, note three things that soothe your baby and one person each of you can call. Agree it’s OK to lay the baby down safely and step away for 10 minutes. Share it with anyone who minds your baby.',
+      plan: 'When the crying gets to me, I’ll lay my baby on their back in the cot, close the door, set a 10-minute timer and breathe.',
+      ifHard: 'Save one name to call in your phone today.',
+      why: 'Every baby has crying spells, and they can wear anyone down. A plan made in a calm moment is easier to follow at 3 in the morning.',
+      guide: 'crying-curve',
+    },
+    {
+      id: 'little-conversations',
+      title: 'Little conversations',
+      try: 'Face to face, copy your baby’s sound or expression, then wait for their reply. As they grow, answer their babble, name what they look at, and wave bye-bye.',
+      plan: 'When I change a nappy, I’ll copy one sound and wait for an answer.',
+      ifHard: 'Say out loud one thing you’re doing: “Now the warm water.”',
+      why: 'Back-and-forth exchanges are linked with language growth, and in a trial, coaching parents to have more of them helped babies’ early words.',
+      guide: 'serve-and-return',
+      tags: ['everyday'],
+    },
+    {
+      id: 'song-or-book',
+      title: 'A song or a book a day',
+      try: 'Sing the same song at the same moment each day, such as bath or bedtime, or look at one picture book or family photo together, pointing and naming.',
+      plan: 'When I lay my baby down for the night, I’ll sing our song once.',
+      ifHard: 'Hum one line while you hold them.',
+      why: 'Familiar songs calmed babies more than talking in studies, and reading and play from birth were linked with fewer behaviour problems later.',
+      guide: 'talk-read-sing',
+      tags: ['song', 'reading'],
+    },
+    {
+      id: 'read-the-cue',
+      title: 'Read the signal',
+      try: 'Once a day, pause before you act. Watch, say what you think your baby is telling you (“You’re turning away, you’ve had enough”), then respond. At meals, let them decide how much.',
+      plan: 'When my baby turns away during play or a feed, I’ll pause and let them come back to me.',
+      ifHard: 'Notice one signal today. Noticing counts.',
+      why: 'Short programmes that help parents notice and answer babies’ signals improve care. Missing some is normal: babies need good-enough care, not perfect.',
+      guide: 'milk-feeds',
+    },
+    {
+      id: 'share-the-nights',
+      title: 'Share the nights and the load',
+      try: 'Agree who is “on” for each part of the night, so each of you gets one longer sleep. If you breastfeed, your partner can still burp, change and settle. Give each adult their own job, like the bath.',
+      plan: 'When we get into bed, we’ll decide who’s on until 2 in the morning.',
+      ifHard: 'Hand over one task tonight, or ask one relative for one thing.',
+      why: 'Parents’ sleep is lowest in the first months. Shared care is linked with better health for mothers, and babies gain from more than one close adult.',
+      guide: 'you-two-after-baby',
+    },
+    {
+      id: 'one-thing-for-me',
+      title: 'One small thing for me',
+      try: 'Each day, do one small thing that’s good for you: a walk with the pram, tea by a window, a call with a friend, prayer or quiet time. Ask each other: “How are you, really?”',
+      plan: 'When my baby goes down for the first nap, I’ll do my one thing before any chores.',
+      ifHard: 'Drink a glass of water by a window, or tell one person how you are.',
+      why: 'Planning small, valued moments and involving family are at the heart of WHO’s Thinking Healthy approach for parents after a birth.',
+      guide: 'running-on-empty',
+    },
+  ],
+  signs: ['You have a plan for hard crying, and someone to call.', 'Your baby looks for your face and “talks” back.', 'The nights feel shared, not one person’s job.', 'You get a small moment for yourself most days.'],
+  help: [
+    'If you feel you might shake or hurt your baby, lay them on their back in the cot, step away and call someone now. That is the right thing to do.',
+    'Low mood, worry or no joy most days for 2 weeks, in either parent: talk to your doctor or health centre. See Help.',
+    'Crying that sounds different, or comes with fever, poor feeding, floppiness or breathing trouble: get your baby seen now.',
+  ],
+  refs: [BABY_YEAR_REFS.barr2009, BABY_YEAR_REFS.barr2018, BABY_YEAR_REFS.icon, BABY_YEAR_REFS.nhsCrying, BABY_YEAR_REFS.ccd, BABY_YEAR_REFS.coaching, BABY_YEAR_REFS.songs, BABY_YEAR_REFS.vip, BABY_YEAR_REFS.lessIsMore, BABY_YEAR_REFS.sleep, BABY_YEAR_REFS.sweden, BABY_YEAR_REFS.thinkingHealthy, BABY_YEAR_REFS.paulson],
+};
+
 const SAFER_HOME: ParentingGoal = {
   id: 'safer-home',
   title: 'Make our home safer',
@@ -1048,7 +1148,7 @@ const EXPECT: Record<string, GoalExpect[]> = {
 };
 
 /** Goals whose content hasn't been translated leave the list in that language. */
-export const GOALS: ParentingGoal[] = [...RAW_GOALS, SAFER_HOME].map((g) => (EXPECT[g.id] ? { ...g, expect: EXPECT[g.id] } : g));
+export const GOALS: ParentingGoal[] = [...RAW_GOALS, SAFER_HOME, BABY_YEAR].map((g) => (EXPECT[g.id] ? { ...g, expect: EXPECT[g.id] } : g));
 
 localize('goals', GOALS, { hideMissing: true });
 

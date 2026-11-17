@@ -350,3 +350,76 @@ tagged opened, search-only or unverified; claims resting on abstracts carry no e
 - [ ] Test-call 123 and 1480, as for every number in `helplines.ts`. Confirm 1480's usual hours (8:00–24:00 on Behzisti's page).
 - [ ] Resolve the Iranian poison line (1490, not 190?) by test call before adding it anywhere.
 - [ ] Get the current (1403) Iranian vaccine table before any guide lists vaccines by age.
+
+## 11. Research round 5: what the research agrees on (release 1.8, November 2026)
+
+Release 1.8 added 16 guides, a first-year goal for parents of babies, 61 daily tips, and a change to the dog-bite first-aid card, in
+English and Persian. The research is in [RESEARCH-6.md](RESEARCH-6.md). **No clinician, psychologist or Persian speaker has read
+any of it.** Sources in the notes are tagged opened, search-only or unverified.
+
+### A paediatric clinician, nurse or pharmacist
+
+- [ ] **First-aid card `dog-bite`, step 1, changed:** "Wash the bite or scratch with soap under running water for 15 minutes. Use a
+  timer. Do this even for small scratches." From WHO's rabies fact sheet and Iran's 2019 national rabies guideline (Pasteur
+  Institute). Check the Persian line by line against the English, as for every first-aid card.
+- [ ] `tummy-bugs`: the get-help table (green vomit, blood, signs of drying out, under 6 months), "wait about 10 minutes after a
+  vomit" (Iran's «مانا» booklet), the 48-hour rule, and the zinc line, which gives no amount. The Persian adds دوغ and soup as fluids
+  for children who eat, and says rotavirus vaccine is in Iran's national programme at 2, 4 and 6 months since 1403: confirm on an
+  official Ministry page. Must agree with `fever-and-sick-days` and the `dehydration` card.
+- [ ] `coughs-colds-ears`: durations (UKHSA TARGET 2024: earache 3 days, sore throat a week, cold 2 weeks, cough 3 to 4 weeks),
+  "1 in 14" side effects from ear-infection antibiotics (Cochrane 2023), croup ("medicine helps", no steam), and the table. **Honey:
+  the app says from 1 year (NHS, AAP, WHO); Iran's «مانا» booklet says lemon and honey over 2.** Decide what the Persian should say.
+- [ ] `eczema-and-nappy-rash`: "use plenty of moisturiser, at least twice a day", the two same-day flares (infected eczema, possible
+  eczema herpeticum), "daily moisturiser from birth isn't needed" (BEEP, PreventADALL, Cochrane 2022; CASCADE 2025 disagrees), and
+  "never henna on a baby's skin" (G6PD; the 2001 and 2023 reports were seen by title only). The Persian may name گل سرشور.
+- [ ] `hot-days-and-sun`: "fans help less above about 35°C" (NHS), "never cover a pram with a blanket or dry cloth" (WHO 2026),
+  "breastfed babies under 6 months don't need water", sunscreen under 6 months (bodies differ), SPF 30, and the overheating table.
+  Must agree with the `heatstroke-hot-car` card.
+- [ ] `festival-fires-fireworks`: eye advice ("don't rub or press, don't remove anything, cover loosely with a paper cup, go now";
+  the Ministry's package also says don't wash an eye after a firework, which the English leaves to the card's chemical/impact
+  split). An ophthalmologist should confirm. Burns: 20 minutes, as the card says (the Ministry package says 10).
+- [ ] `children-and-animals`: the two steps after a bite, "curl into a ball" if knocked over (recall, not opened), and the Persian
+  line that rabies centres are usually free (search-only, from 1398).
+- [ ] `water-safety`: "lessons may lower the risk, from about 1 for many children" (AAP 2026), armbands are toys, isolation fencing.
+- [ ] Goal `first-year-together`: the crying-plan step-away wording, and "share the nights" (a lactation reviewer should check it
+  doesn't imply skipping night feeds in the early weeks). The help lines must agree with the Crying page.
+
+### A child psychologist
+
+- [ ] `when-scary-things-happen` and `weeks-after-hard-times`: the four steps, the age scripts, "don't push them to talk" (Cochrane on
+  debriefing, adult trials), "about a month" as the point to ask, the same-day line, and the parent-stress wording ("you affect
+  each other"). Must agree with the hard-moment card `scary-news` and `is-my-child-ok`.
+- [ ] **Political neutrality, read in Persian:** no side, country, date or place; no «دشمن». The Persian names 1480 and 123 only.
+- [ ] `what-decades-show` and `myths-checked`: every claim is "linked with" unless from a trial; no number is borrowed for the app's
+  own games. "Sleep training harms babies: not shown" must agree with `settling-to-sleep`.
+- [ ] `stuttering`: no recovery timeline; reasons to see a therapist (CHSA/ASHA, Michael Palin Centre, Stuttering Foundation
+  differ); the "instead of / try" table, including not praising smooth speech (STAMMA, Palin) while therapy programmes may.
+- [ ] `when-learning-is-hard`: signs are reasons to ask, not a test; the attention section ("not caused by sugar or bad
+  parenting"; CDC lists family environment as a possible factor, so the copy doesn't say the family plays no part).
+- [ ] Goal `first-year-together`: "Our crying plan" comes first by design; its why-line claims no injury prevention (population
+  results were mixed). "One small thing for me" borrows from Thinking Healthy and claims no treatment.
+
+### A Persian-speaking reader
+
+- [ ] Iran-specific additions inside translations: چهارشنبه‌سوری, قاشق‌زنی and the 1403 Emergency Organisation figure (44% under 18);
+  مرکز پیشگیری و درمان هاری; حوض, منبع آب, استخر کشاورزی and the Caspian; «مانا», مکمل روی, دوغ, بخور; سنجش سلامت جسمانی و آمادگی تحصیلی
+  نوآموزان and مرکز اختلالات یادگیری آموزش و پرورش; اِعراب in the reading signs.
+- [ ] Respect: the festival guide never uses «چهارشنبه‌سوزی»; the stuttering guide's line on «ترسیدن»; the myths guide's tone about
+  سرماخوردگی and grandparents; faith offered as one option in the hard-times and first-year content.
+- [ ] Goal title «سال اول ما با نوزادمان» against the other goal titles. In the goal: «کشیک» for who is "on" at night, «همسرتان یا
+  هر کس که در مراقبت شریک است» for partners, WHO's Thinking Healthy as «روش «تفکر سالم»» (no established Persian name was found), and
+  «محکم تکان دهید» in the help line, chosen so it can't be read as gentle rocking.
+- [ ] Translator choices: «کلاغ پر» and «رقص و مجسمه» for "Simon says" and freeze dance; the festival guide's opening adds «به پیشواز
+  بهار»; MMR as «ام‌ام‌آر (سرخک، سرخجه و اوریون)»; the cold myth is titled «توی سرما بروی، سرما می‌خوری» and says elders who dress
+  children warmly «بی‌راه نمی‌گویند»; stuttering examples «ت-ت-توپ» and «سسسیب»; ORS as «محلول جبران آب بدن (او.آر.اس)», matching the
+  dehydration card.
+- [ ] Persian-only additions to check against their sources: zinc in «مانا» (no amount), دوغ/سوپ as fluids, no herbal drinks for young
+  children with coughs («مانا»), گل سرشور, the school-entry screening checking vision and hearing, and the اِعراب line in reading signs
+  (an inference that a reading specialist should confirm).
+
+### Before release
+
+- [ ] Test-call 190 (extension 9) before it is added anywhere, and update the "190 or 1490" comment in `helplines.ts`.
+- [ ] Open the Emergency Organisation's own 1403 Chaharshanbe Suri release (the figure came from Aftab News citing IRNA).
+- [ ] Confirm rotavirus vaccine in Iran's schedule on behdasht.gov.ir.
+- [ ] Confirm whether the Iranian learning-difficulty centres take parent self-referrals.

@@ -1035,14 +1035,15 @@ export const AID_CARDS: AidCard[] = [
     regions: {
       all: {
         steps: [
-          'Wash the bite with soap and warm water.',
+          'Wash the bite or scratch with soap under running water for 15 minutes. Use a timer. Do this even for small scratches.',
           'If it is bleeding heavily, press on it with a clean cloth.',
           'Dry it and cover it with a clean dressing.',
           'Get prompt medical care for any bite that breaks the skin.',
         ],
         dont: ['Do not give aspirin to anyone under 16.'],
-        basedOn: 'NHS 2025, St John Ambulance 2025 and AAP 2026',
+        basedOn: 'WHO 2026, NHS 2025, St John Ambulance 2025 and AAP 2026',
         refs: [
+          ref('Rabies', 'World Health Organization', 'https://www.who.int/news-room/fact-sheets/detail/rabies'),
           ref('Animal and human bites', 'NHS', 'https://www.nhs.uk/conditions/animal-and-human-bites/'),
           ref('Human and animal bites', 'St John Ambulance', 'https://www.sja.org.uk/first-aid-advice/human-and-animal-bites/'),
           AAP_EMS,
