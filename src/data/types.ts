@@ -220,13 +220,19 @@ export type GuideBlock =
   | { type: 'callout'; tone: 'tip' | 'safety' | 'science'; text: string }
   | { type: 'table'; head: string[]; rows: string[][] };
 
+/** The shelves in Learn, in the order they appear. */
 export const GUIDE_TOPICS = {
-  play: { label: 'Play', emoji: '🧩' },
+  parenting: { label: 'Parenting skills', emoji: '🧭' },
   feelings: { label: 'Feelings and behaviour', emoji: '💛' },
+  play: { label: 'Play', emoji: '🧩' },
   talking: { label: 'Talking and reading', emoji: '📚' },
+  food: { label: 'Food and eating', emoji: '🥕' },
   sleep: { label: 'Sleep and crying', emoji: '🌙' },
-  screens: { label: 'Screens', emoji: '📱' },
+  health: { label: 'Health and body', emoji: '🩺' },
+  growing: { label: 'Character and life skills', emoji: '🌱' },
   school: { label: 'School and growing up', emoji: '🎒' },
+  screens: { label: 'Screens', emoji: '📱' },
+  family: { label: 'Family life', emoji: '🏡' },
   included: { label: 'Every child, every family', emoji: '🤝' },
   safety: { label: 'Safety', emoji: '🛡️' },
   you: { label: 'For you', emoji: '💛' },

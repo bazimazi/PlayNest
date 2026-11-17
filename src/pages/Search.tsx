@@ -16,11 +16,12 @@ const TYPE_LABEL: Record<HitType, string> = {
   help: t('Hard moments'),
   game: t('Games'),
   guide: t('Guides'),
+  goal: t('Parenting goals'),
   story: t('Stories'),
   song: t('Songs'),
   stage: t('Stages'),
 };
-const ORDER: HitType[] = ['firstaid', 'help', 'game', 'guide', 'story', 'song', 'stage'];
+const ORDER: HitType[] = ['firstaid', 'help', 'game', 'guide', 'goal', 'story', 'song', 'stage'];
 const PER_TYPE = 4;
 const SUGGESTIONS = [t('No toys'), t('Rainy day'), t('Car'), t('Bath'), t('Tantrum'), t('Bedtime'), t('Bored'), t('Sharing')];
 

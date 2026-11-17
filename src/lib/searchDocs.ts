@@ -1,6 +1,7 @@
 import { ACTIVITIES } from '../data/activities';
 import { COACH } from '../data/coach';
 import { AID_CARDS } from '../data/firstaid';
+import { GOALS } from '../data/goals';
 import { GUIDES } from '../data/guides';
 import { SONGS } from '../data/songs';
 import { STAGES } from '../data/stages';
@@ -22,6 +23,9 @@ export function allSearchDocs(): SearchDoc[] {
   }
   for (const g of GUIDES) {
     docs.push({ id: `guide:${g.slug}`, type: 'guide', title: g.title, subtitle: g.summary, emoji: g.emoji, to: `/learn/${g.slug}`, text: g.summary, minMonths: g.minMonths, maxMonths: g.maxMonths });
+  }
+  for (const g of GOALS) {
+    docs.push({ id: `goal:${g.id}`, type: 'goal', title: g.title, subtitle: g.promise, emoji: g.emoji, to: `/goals/${g.id}`, text: [g.promise, ...g.steps.map((s) => s.title)].join(' '), minMonths: g.minMonths, maxMonths: g.maxMonths });
   }
   for (const s of STORIES) {
     docs.push({ id: `story:${s.id}`, type: 'story', title: s.title, subtitle: s.culture, emoji: s.emoji, to: `/stories/${s.id}`, text: [s.culture, s.nativeTitle ?? '', ...s.themes].join(' '), minMonths: s.minMonths, maxMonths: s.maxMonths });

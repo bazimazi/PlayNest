@@ -10,6 +10,7 @@ import '../data/crying';
 import '../data/domains';
 import '../data/firstaid';
 import '../data/firsts';
+import '../data/goals';
 import '../data/guides';
 import '../data/helplines';
 import '../data/milestones';

@@ -8,6 +8,8 @@ import {
   type Child,
   type Climate,
   type FirstEntry,
+  type GoalFeeling,
+  type GoalProgress,
   type MilestoneAnswer,
   type Moment,
   type Routine,
@@ -64,6 +66,7 @@ export function emptyState(): AppState {
     storyReads: [],
     savedStories: [],
     savedSongs: [],
+    goals: [],
     settings: defaultSettings(),
   };
 }
@@ -97,11 +100,37 @@ function migrateSettings(raw: unknown, hasChildren: boolean): Settings {
   };
 }
 
+const FEELINGS: GoalFeeling[] = ['helped', 'some', 'not-yet'];
+
+/** Keeps each goal once, with only well-formed entries. Goals whose content has gone stay too: the page skips them. */
+function migrateGoals(raw: unknown): GoalProgress[] {
+  const seen = new Set<string>();
+  const out: GoalProgress[] = [];
+  for (const g of arr<unknown>(raw)) {
+    if (!isObj(g) || typeof g.goalId !== 'string' || seen.has(g.goalId) || typeof g.current !== 'string') continue;
+    seen.add(g.goalId);
+    const tried = Object.fromEntries(Object.entries(isObj(g.tried) ? g.tried : {}).filter(([, v]) => typeof v === 'string')) as Record<string, string>;
+    const felt = Object.fromEntries(
+      Object.entries(isObj(g.felt) ? g.felt : {}).filter(([, v]) => FEELINGS.includes(v as GoalFeeling)),
+    ) as Record<string, GoalFeeling>;
+    out.push({
+      goalId: g.goalId,
+      startedAt: str(g.startedAt) ?? new Date(0).toISOString(),
+      current: g.current,
+      tried,
+      felt,
+      note: typeof g.note === 'string' ? g.note : '',
+      closedAt: str(g.closedAt),
+    });
+  }
+  return out;
+}
+
 /**
  * Turns anything read from storage (or an imported backup) into a valid current-version state.
  * Unknown/missing fields fall back to defaults so a partial or older file never crashes the app.
  *
- * v1 → v2 → v3 need no special step: each only adds fields, and every one defaults here.
+ * v1 → v2 → v3 → v4 need no special step: each only adds fields, and every one defaults here (v4 added `goals`).
  */
 export function migrate(raw: unknown): AppState {
   const base = emptyState();
@@ -154,6 +183,7 @@ export function migrate(raw: unknown): AppState {
     ),
     savedStories: strings(raw.savedStories),
     savedSongs: strings(raw.savedSongs),
+    goals: migrateGoals(raw.goals),
     settings: migrateSettings(raw.settings, children.length > 0),
   };
 }
@@ -377,7 +407,7 @@ export function getState(): AppState {
 /** Everything a parent has recorded. Used to decide whether a new backup would have anything new in it. */
 export function recordCount(s: AppState): number {
   const answers = Object.values(s.milestones).reduce((n, m) => n + Object.keys(m ?? {}).length, 0);
-  return s.children.length + s.sessions.length + s.moments.length + s.firsts.length + s.storyReads.length + s.routines.length + answers;
+  return s.children.length + s.sessions.length + s.moments.length + s.firsts.length + s.storyReads.length + s.routines.length + s.goals.reduce((n, g) => n + 1 + Object.keys(g.tried).length, 0) + answers;
 }
 
 export function subscribe(listener: () => void): () => void {
@@ -581,6 +611,45 @@ export const actions = {
       ...s,
       savedSongs: s.savedSongs.includes(id) ? s.savedSongs.filter((x) => x !== id) : [...s.savedSongs, id],
     }));
+  },
+
+  /** Starts a goal, or opens it again where the family left off. */
+  startGoal(goalId: string, firstStep: string) {
+    setState((s) => {
+      if (s.goals.some((g) => g.goalId === goalId)) {
+        return { ...s, goals: s.goals.map((g) => (g.goalId === goalId ? { ...g, closedAt: null } : g)) };
+      }
+      const fresh: GoalProgress = { goalId, startedAt: new Date().toISOString(), current: firstStep, tried: {}, felt: {}, note: '', closedAt: null };
+      return { ...s, goals: [...s.goals, fresh] };
+    });
+  },
+
+  /** The parent's own words on why this goal matters. */
+  setGoalNote(goalId: string, note: string) {
+    setState((s) => ({ ...s, goals: s.goals.map((g) => (g.goalId === goalId ? { ...g, note } : g)) }));
+  },
+
+  /** Moves to a practice. Going back is as welcome as going on. */
+  setGoalStep(goalId: string, stepId: string) {
+    setState((s) => ({ ...s, goals: s.goals.map((g) => (g.goalId === goalId ? { ...g, current: stepId } : g)) }));
+  },
+
+  /** The parent tried a practice, and maybe said how it went. Trying again only updates it. */
+  markGoalTried(goalId: string, stepId: string, felt?: GoalFeeling) {
+    setState((s) => ({
+      ...s,
+      goals: s.goals.map((g) => {
+        if (g.goalId !== goalId) return g;
+        const next = { ...g.felt };
+        if (felt) next[stepId] = felt;
+        return { ...g, tried: { ...g.tried, [stepId]: new Date().toISOString() }, felt: next };
+      }),
+    }));
+  },
+
+  /** Finished, or set aside for now. Either way it's kept, so it can be picked up again. */
+  closeGoal(goalId: string) {
+    setState((s) => ({ ...s, goals: s.goals.map((g) => (g.goalId === goalId ? { ...g, closedAt: new Date().toISOString() } : g)) }));
   },
 
   /**

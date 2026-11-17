@@ -337,6 +337,56 @@ export interface StageCard {
   refs: Ref[];
 }
 
+// ---------- Parenting goals ----------
+
+/**
+ * One small practice on the way to a goal. Nothing is due: a family stays on a practice for as long as it takes, and moves
+ * on when they choose.
+ */
+export interface GoalStep {
+  /** Kebab-case and stable: progress is stored by it. */
+  id: string;
+  /** At most 40 characters: "Same steps, same order". */
+  title: string;
+  /** What to do, in one or two sentences. At most 230 characters. */
+  try: string;
+  /** An if-then plan the parent can borrow, at most 150 characters: "When the bath ends, then I’ll dim the lights." */
+  plan: string;
+  /** A smaller version for a hard week, at most 150 characters: what still counts when there's little left to give. */
+  ifHard: string;
+  /** Why it sits here in the sequence, in proportion to the evidence. At most 200 characters. */
+  why: string;
+  /** A guide slug that goes deeper. */
+  guide?: string;
+  /** A hard-moment card for when it goes wrong. */
+  coach?: string;
+  /** Games that practise the skill, filtered to the child's age. */
+  tags?: Tag[];
+}
+
+/** Something a parent wants to change, broken into a few weekly practices that build on each other. */
+export interface ParentingGoal {
+  id: string;
+  /** In the parent's own words, at most 40 characters: "Calmer bedtimes". */
+  title: string;
+  emoji: string;
+  /** What it looks like when it's working. At most 120 characters. */
+  promise: string;
+  minMonths: number;
+  maxMonths: number;
+  /** Why the practices come in this order. At most 300 characters. */
+  approach: string;
+  /** 4 to 6 practices, in order. */
+  steps: GoalStep[];
+  /** 3 or 4 things a parent might notice when it's working. At most 120 characters each. Never a score. */
+  signs: string[];
+  /** 1 to 3 signs it's worth talking to a doctor or specialist. At most 150 characters each. */
+  help: string[];
+  /** How strong the support for the whole sequence is. 'practice' means sensible advice with little direct research. */
+  evidence: 'strong' | 'moderate' | 'practice';
+  refs: Ref[];
+}
+
 // ---------- Routines ----------
 
 export interface RoutineTemplate {

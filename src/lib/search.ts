@@ -2,7 +2,7 @@ import MiniSearch from 'minisearch';
 import { foldText, t } from '../i18n';
 
 /** Anything search can find. */
-export type HitType = 'help' | 'firstaid' | 'game' | 'guide' | 'story' | 'song' | 'stage';
+export type HitType = 'help' | 'firstaid' | 'game' | 'guide' | 'goal' | 'story' | 'song' | 'stage';
 
 export interface SearchDoc {
   id: string;

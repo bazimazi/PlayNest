@@ -531,6 +531,33 @@ await step('talk cards: one question at a time', async () => {
   await audit('talk');
 });
 
+await step('parenting goals: start, try, say how it went, move on, set aside', async () => {
+  await go('/learn');
+  await page.getByRole('link', { name: /Parenting goals/ }).first().click();
+  await page.getByRole('heading', { name: 'What would you like to work on?' }).waitFor();
+  await shot('goals', true);
+  await audit('goals');
+  await go('/goals/calmer-bedtimes');
+  await page.getByRole('button', { name: 'Start this goal' }).click();
+  await page.getByRole('heading', { name: 'Roughly the same time' }).waitFor();
+  await page.getByRole('button', { name: 'We tried it' }).click();
+  await page.getByRole('button', { name: /It helped/ }).click();
+  await page.getByRole('button', { name: 'Next practice' }).click();
+  await page.getByRole('heading', { name: 'Same steps, same order' }).waitFor();
+  await page.getByText('A hard week?').click();
+  await shot('goal', true);
+  await audit('goal');
+  await go('/learn');
+  await page.getByText('Calmer bedtimes').first().waitFor();
+  await go('/goals/calmer-bedtimes');
+  await page.getByRole('button', { name: 'Set this goal aside' }).click();
+  await page.getByRole('heading', { name: 'Finished or set aside' }).waitFor();
+  await go('/learn/parenting-pyramid');
+  await audit('guide parenting');
+  await go('/learn/fever-and-sick-days');
+  await audit('guide fever');
+});
+
 await step('this stage, firsts and pressed flowers', async () => {
   await go('/stage');
   await page.getByRole('heading', { name: 'What’s going on' }).waitFor();
@@ -661,7 +688,7 @@ await step('state persists across reload', async () => {
 
 await step('no horizontal scroll on any page, even on a small phone', async () => {
   await page.setViewportSize({ width: 360, height: 640 });
-  for (const h of ['/help', '/help/first-aid', '/help/crying', '/help/you', '/sounds', '/stories', '/songs', '/talk', '/routines', '/stage', '/firsts', '/album', '/search', '/celebrate', '/print/summary', '/', '/explore', '/learn', '/learn/talk-read-sing', '/plan', '/growth', '/milestones', '/milestones?checkin=1', '/settings', '/together', `/activity/${firstId}`, `/play/${firstId}`]) {
+  for (const h of ['/help', '/help/first-aid', '/help/crying', '/help/you', '/sounds', '/stories', '/songs', '/talk', '/routines', '/stage', '/firsts', '/album', '/search', '/celebrate', '/print/summary', '/', '/explore', '/learn', '/learn/talk-read-sing', '/learn/starting-solids', '/goals', '/goals/fewer-battles', '/plan', '/growth', '/milestones', '/milestones?checkin=1', '/settings', '/together', `/activity/${firstId}`, `/play/${firstId}`]) {
     await go(h);
     const over = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     if (over > 1) throw new Error(`${h} overflows by ${over}px`);

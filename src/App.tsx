@@ -38,6 +38,8 @@ const Firsts = lazy(() => import('./pages/Firsts'));
 const Album = lazy(() => import('./pages/Album'));
 const Search = lazy(() => import('./pages/Search'));
 const Celebrate = lazy(() => import('./pages/Celebrate'));
+const Goals = lazy(() => import('./pages/Goals'));
+const GoalPage = lazy(() => import('./pages/Goals').then((m) => ({ default: m.GoalPage })));
 const PrintSummary = lazy(() => import('./pages/Print').then((m) => ({ default: m.PrintSummary })));
 const PrintCard = lazy(() => import('./pages/Print').then((m) => ({ default: m.PrintCard })));
 
@@ -129,6 +131,8 @@ export default function App() {
               <Route path="together" element={<Together />} />
               <Route path="learn" element={<Learn />} />
               <Route path="learn/:slug" element={<GuidePage />} />
+              <Route path="goals" element={<Goals />} />
+              <Route path="goals/:id" element={<GoalPage />} />
               <Route path="settings" element={<Settings />} />
               <Route path="stories" element={<Stories />} />
               <Route path="stories/:id" element={<StoryPage />} />

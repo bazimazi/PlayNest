@@ -2,7 +2,7 @@ import type { AidRegion } from '../data/packs';
 import { localize, type Language } from '../i18n';
 
 /** Persisted app state. Bump `STATE_VERSION` and add a migration in `store.ts` when this changes. */
-export const STATE_VERSION = 3;
+export const STATE_VERSION = 4;
 
 export interface Child {
   id: string;
@@ -98,6 +98,30 @@ export interface StoryRead {
   date: string;
 }
 
+/** How a practice went, in the parent's own judgement. Never added up into a score. */
+export type GoalFeeling = 'helped' | 'some' | 'not-yet';
+
+/**
+ * A parenting goal the family is working on. It belongs to the family, not one child: a calmer bedtime is usually for
+ * everyone in the house. Nothing in it is due, so there is nothing to fall behind on.
+ */
+export interface GoalProgress {
+  /** Key from GOALS. */
+  goalId: string;
+  /** ISO date-time. */
+  startedAt: string;
+  /** The practice the family is on. It moves only when the parent chooses. */
+  current: string;
+  /** Practice id → when the parent said they'd tried it (ISO date-time). */
+  tried: Record<string, string>;
+  /** Practice id → how it went, if they said. */
+  felt: Record<string, GoalFeeling>;
+  /** Why it matters to them, in their own words. Never shown anywhere else. */
+  note: string;
+  /** When the parent finished it or set it aside (ISO date-time). Kept, so starting again picks up where they were. */
+  closedAt: string | null;
+}
+
 export type Mood = 'happy' | 'energetic' | 'fussy' | 'sleepy';
 
 export type Theme = 'system' | 'light' | 'dark';
@@ -153,6 +177,8 @@ export interface AppState {
   /** Stories and songs saved for later. Activities use `favorites`. */
   savedStories: string[];
   savedSongs: string[];
+  /** Parenting goals, open and closed, at most one record per goal. */
+  goals: GoalProgress[];
   settings: Settings;
 }
 

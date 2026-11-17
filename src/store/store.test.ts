@@ -184,3 +184,39 @@ describe('backups', () => {
     expect(recordCount(s)).toBe(4);
   });
 });
+
+describe('parenting goals', () => {
+  it('a version 3 save gains an empty list of goals', () => {
+    const state = migrate({ version: 3, children: [], sessions: [] });
+    expect(state.goals).toEqual([]);
+    expect(state.version).toBe(STATE_VERSION);
+  });
+
+  it('keeps each goal once, drops broken entries and unknown feelings, and fills in what is missing', () => {
+    const state = migrate({
+      goals: [
+        { goalId: 'calmer-bedtimes', current: 'same-time', startedAt: '2026-11-01T10:00:00Z', tried: { 'same-time': '2026-11-03T10:00:00Z', bad: 4 }, felt: { 'same-time': 'helped', other: 'ecstatic' } },
+        { goalId: 'calmer-bedtimes', current: 'same-steps' }, // a second copy of the same goal
+        { goalId: 'feel-closer' }, // no current practice
+        { current: 'x' }, // no goal
+        'nope',
+      ],
+    });
+    expect(state.goals).toHaveLength(1);
+    expect(state.goals[0]).toEqual({
+      goalId: 'calmer-bedtimes',
+      current: 'same-time',
+      startedAt: '2026-11-01T10:00:00Z',
+      tried: { 'same-time': '2026-11-03T10:00:00Z' },
+      felt: { 'same-time': 'helped' },
+      note: '',
+      closedAt: null,
+    });
+  });
+
+  it('counts goals and tried practices as something worth backing up', () => {
+    const base = emptyState();
+    const withGoal = { ...base, goals: [{ goalId: 'g', current: 'a', startedAt: '', tried: { a: '', b: '' }, felt: {}, note: '', closedAt: null }] };
+    expect(recordCount(withGoal) - recordCount(base)).toBe(3);
+  });
+});

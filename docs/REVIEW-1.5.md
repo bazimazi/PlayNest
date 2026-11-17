@@ -224,3 +224,59 @@ to a wrong action and 25 smaller ones. All of them were fixed. That says how muc
 - [ ] "Read it to me" needs a Persian voice on the phone. Most phones have none, and the app says so rather than reading in an English voice.
 - [ ] The three-list birthday picker is easy to use, and the stored date matches the birthday the parent meant.
 - [ ] The Add to Home Screen name is «پلی‌نست». The native iOS and Android projects aren't generated yet, so their app names aren't localised.
+
+## 9. The parenting hub (release 1.6, November 2026)
+
+Release 1.6 added 29 guides, 13 parenting goals with 68 practices, and 58 daily tips, in English and Persian. The research is in
+[RESEARCH-4.md](RESEARCH-4.md). **No clinician, psychologist or Persian speaker has read any of it.** Each source in the notes is tagged
+opened, search-only or background; the writers kept effect sizes out wherever only an abstract was seen.
+
+### A paediatric clinician, a dietitian or a health visitor
+
+- [ ] `fever-and-sick-days`: the "get help now / see a doctor soon" table, the cautious "2 to 3 days" duration rule, and the
+  dehydration signs. "Crying with few tears" and "sunken eyes" come from WHO and general knowledge, not the opened NHS page. It must
+  agree with the first-aid cards `fever-young-baby`, `very-unwell` and `dehydration`.
+- [ ] `fever-and-sick-days`: comfort care. No sponging or alcohol rubs; one light layer; don't switch between two fever medicines unless
+  advised (CPS allows combining; NHS doesn't). In Iran, lukewarm «پاشویه» is traditional. Decide how firmly to say no.
+- [ ] `milk-feeds` and `starting-solids`: readiness, iron, textures, the choking-safe table, allergen introduction (eczema caveat;
+  bodies differ on testing first), drinks (cow's milk as a drink from 6, 9–12 or 12 months by body), "no tea". The Persian adds
+  «آلبالو» to the quarter-it row (on the Iranian ministry's list) and «مثلاً در فرنی» for milk in cooking.
+- [ ] `starting-solids` cites the Iranian Ministry of Health complementary-feeding textbook, whose porridge recipe adds a little sugar. The
+  guide says no added sugar (WHO, NHS). Confirm that's the right line for Iranian health centres.
+- [ ] `healthy-teeth`: "how often sugar is eaten matters more than how much" and "no bottle in bed" are framed as what dentists usually
+  say; no source was opened for them. Fluoride: NHS gives strength, ADA/AAPD give amount.
+- [ ] `vaccines-and-jabs`: comfort measures follow the 2026 CMAJ guideline update, read through a news report only. The urgent-reaction signs
+  are general knowledge.
+- [ ] `toilet-training` and the `potty-ready` goal: ages (AAP), constipation as a cause of accidents, when to see a doctor about wet nights.
+- [ ] `move-sit-sleep`: the 5–17 figures (60 minutes, strengthening 3 days a week) come from secondary summaries and are written as "about".
+
+### A child psychologist, ideally trained in a tested programme
+
+- [ ] The 9 parenting-skills guides and all 13 goals: does each goal's order match how programmes teach it, and does every practice that
+  responds to misbehaviour end in calm, doable follow-through?
+- [ ] `consequences-that-teach`, `ignore-and-redirect`: age ranges for planned ignoring ("roughly 2 to 8") come from the notes' summary,
+  not the meta-analysis itself. Both must agree with `time-out-time-in` (none under 2, time-in first at 2–3).
+- [ ] `instead-of-smacking`: tone for parents who were smacked themselves and live where it's legal and common. Wang & Kenny studied
+  13–14 year-olds, beyond the app's age range.
+- [ ] `rewards-that-work`, `praise-and-confidence`: the reward-undermining finding (Deci 1999) and the toddler-helping study are cited from
+  abstracts; no effect sizes are given.
+- [ ] `when-parents-argue`, `keeping-your-cool`, `running-on-empty`: the safety routes for violence at home, fear of hurting a child, and
+  parental depression in mothers and fathers. No numbers appear; they point to Help.
+- [ ] The goal feelings replies ("It helped / A little / Not yet") and the welcome-back line: kind enough, and never guilt-making?
+
+### A Persian-speaking reader
+
+- [ ] Programme names are translated, not transliterated: «تریپل پی»، «سال‌های شگفت‌انگیز» (Incredible Years), «هم‌نوا با بچه‌ها»
+  (Tuning in to Kids). A reader may prefer the original names in brackets or transliterated.
+- [ ] Goal titles mix a wish («می‌خواهم به فرزندم نزدیک‌تر شوم») with noun phrases («وقت خواب آرام‌تر»). Pick one form.
+- [ ] Plans are in the parent's first person and children's lines are mildly colloquial («امتحان کن. من اینجام.»). Check the register.
+- [ ] «خیلی بزرگ شدی» as praise may read as comparing the child. «شورت‌پوشک» for pull-ups. «بیشتر نوشیدن الکل» in the burnout guide may be
+  too blunt for many readers.
+- [ ] The emotion-coaching feelings table is written as natural Persian vocabulary by age, not translated English. Check it suits children.
+- [ ] The rituals guide adapts its examples to «ناهار جمعه، شب یلدا و نوروز», and the goals use Friday as the weekend.
+- [ ] New glossary terms are in [I18N.md](I18N.md): هدف فرزندپروری، تمرین، وقت ویژه، مربی‌گری احساسات، کتاب‌خوانی گفت‌وگویی، جدول ستاره.
+
+### Not verified, so not added
+
+- Iranian helpline numbers (123 social emergency, 1480 counselling) and the 190 poison/drug line. Test-call them before adding to
+  `helplines.ts`.

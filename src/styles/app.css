@@ -6439,3 +6439,166 @@ canvas.confetti {
 .language-switch button[aria-pressed='true'] {
   background: var(--fill-2);
 }
+
+/* ============ Parenting goals ============ */
+.goal-cards {
+  display: grid;
+  gap: 10px;
+}
+.goal-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px;
+  padding-inline-end: 14px;
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+.goal-card:active {
+  transform: scale(0.98);
+}
+.goal-card-art {
+  flex: none;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  --sticker: 62%;
+}
+.goal-card-text {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+.goal-card-text b {
+  font-family: var(--display);
+  font-size: var(--fs-title3);
+  font-weight: 400;
+}
+.goal-card-text span {
+  color: var(--ink-2);
+  font-size: var(--fs-sub);
+}
+.goal-how .steps {
+  margin-top: 8px;
+}
+.goal-now h2 {
+  margin: 2px 0 8px;
+}
+.goal-try {
+  font-size: var(--fs-body);
+  margin: 0 0 12px;
+}
+.goal-plan {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-radius: var(--r-md);
+  background: var(--fill);
+  border-inline-start: 4px solid var(--brand);
+}
+.goal-plan p {
+  margin: 4px 0 0;
+  font-weight: 700;
+}
+.goal-now .footnote {
+  margin-bottom: 14px;
+}
+.goal-felt-q {
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+.goal-felt .btn-row,
+.goal-reply .btn-row {
+  flex-wrap: wrap;
+}
+.goal-felt .btn {
+  padding: 0 12px;
+  min-width: 0;
+}
+.goal-reply p {
+  margin: 0 0 12px;
+}
+.goal-path {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.goal-path-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  padding: 8px 12px;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  color: var(--ink);
+  text-align: start;
+  font: inherit;
+  border: 0;
+}
+button.goal-path-item:active {
+  transform: scale(0.98);
+}
+.goal-path-text {
+  flex: 1;
+  min-width: 0;
+}
+.goal-dot {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--fill-2);
+  color: var(--ink-2);
+  font-weight: 800;
+  font-size: var(--fs-sub);
+}
+.goal-dot.here {
+  background: var(--brand);
+  color: var(--cta-ink);
+}
+.goal-dot.done {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+.goal-close {
+  display: block;
+  margin: 8px auto 0;
+}
+.goal-hard {
+  margin: 0 0 12px;
+}
+.goal-hard summary {
+  cursor: pointer;
+  font-weight: 800;
+  color: var(--brand);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.goal-hard p {
+  margin: 4px 0 0;
+}
+.goal-note textarea {
+  width: 100%;
+  margin-top: 8px;
+}
+.goal-welcome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 10px 14px;
+  border-radius: var(--r-md);
+  background: var(--tip-soft);
+  font-weight: 700;
+}

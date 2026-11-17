@@ -1,0 +1,198 @@
+import type { Guide } from './types';
+
+/**
+ * Parenting-skills guides on limits and misbehaviour (release 1.6). Research:
+ * research_notes/PlayNest phase 6 parenting hub research/01_parenting_programmes.md and 05_family_life_and_parents.md.
+ * Paraphrase only. Kept in step with the `time-out-time-in` and `talk-so-it-lands` guides in guides-more.ts.
+ */
+const AAP = 'American Academy of Pediatrics (HealthyChildren.org)';
+const CDC = 'Centers for Disease Control and Prevention';
+const CHECKED = '2026-11-16';
+
+const R = {
+  cdcIgnoring: { title: 'Ignoring', publisher: CDC, url: 'https://www.cdc.gov/parenting-toddlers/responding-to-behavior/ignoring.html' },
+  cdcRules: { title: 'Rules', publisher: CDC, url: 'https://www.cdc.gov/parenting-toddlers/structure-rules/rules.html' },
+  cdcStructure: { title: 'Structure and rules', publisher: CDC, url: 'https://www.cdc.gov/parenting-toddlers/structure-rules/index.html' },
+  cdcResponding: { title: 'Responding to behaviour', publisher: CDC, url: 'https://www.cdc.gov/parenting-toddlers/responding-to-behavior/index.html' },
+  aapRoutines: { title: 'The importance of family routines', publisher: AAP, url: 'https://www.healthychildren.org/English/family-life/family-dynamics/Pages/The-Importance-of-Family-Routines.aspx' },
+  aapDiscipline: { title: 'Disciplining your child', publisher: AAP, url: 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/Disciplining-Your-Child.aspx' },
+  aapOlderDiscipline: { title: 'Disciplining older children', publisher: AAP, url: 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/Disciplining-Older-Children.aspx' },
+  aapSpanking: { title: 'Where we stand: spanking', publisher: AAP, url: 'https://www.healthychildren.org/English/family-life/family-dynamics/communication-discipline/Pages/Where-We-Stand-Spanking.aspx' },
+  who: { title: 'Corporal punishment and health (fact sheet, May 2026)', publisher: 'World Health Organization', url: 'https://www.who.int/news-room/fact-sheets/detail/corporal-punishment-and-health' },
+  sege: { title: 'Effective discipline to raise healthy children (policy statement)', publisher: 'Sege & Siegel, Pediatrics (2018)', url: 'https://doi.org/10.1542/peds.2018-3112' },
+  gershoff: { title: 'Spanking and child outcomes: old controversies and new meta-analyses', publisher: 'Gershoff & Grogan-Kaylor, Journal of Family Psychology (2016)', url: 'https://doi.org/10.1037/fam0000191' },
+  heilmann: { title: 'Physical punishment and child outcomes: a review of prospective studies', publisher: 'Heilmann et al., The Lancet (2021)', url: 'https://doi.org/10.1016/S0140-6736(21)00582-1' },
+  wangKenny: { title: 'Harsh verbal discipline, conduct problems and depressive symptoms', publisher: 'Wang & Kenny, Child Development (2014)', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC3875601' },
+  leijten2018: { title: 'Parenting behaviours that shape child compliance: a meta-analysis', publisher: 'Leijten et al., PLoS ONE (2018)', url: 'https://doi.org/10.1371/journal.pone.0204929' },
+  leijten2019: { title: 'Key parenting programme components for disruptive behaviour', publisher: 'Leijten et al., JAACAP (2019)', url: 'https://doi.org/10.1016/j.jaac.2018.07.900' },
+  ipd: { title: 'Individual differences in mediators of parenting programme effects', publisher: 'Laas Sigurðardóttir et al., JAACAP (2025)', url: 'https://doi.org/10.1016/j.jaac.2024.10.003' },
+  whoGuidelines: { title: 'Guidelines on parenting interventions to prevent maltreatment', publisher: 'World Health Organization (2023)', url: 'https://www.who.int/teams/social-determinants-of-health/violence-prevention/parenting-guidelines' },
+  pinquart: { title: 'Parenting styles and behaviour problems across cultures', publisher: 'Pinquart & Kauser, Cultural Diversity and Ethnic Minority Psychology (2018)', url: 'https://doi.org/10.1037/cdp0000149' },
+};
+
+export const DISCIPLINE_GUIDES: Guide[] = [
+  {
+    slug: 'rules-and-routines',
+    title: 'Family rules and routines',
+    emoji: '🗓️',
+    summary: 'A few clear rules and a predictable day mean fewer battles, and less for you to say.',
+    minutes: 3,
+    minMonths: 18,
+    maxMonths: 144,
+    topic: 'parenting',
+    checkedOn: CHECKED,
+    sources: [],
+    refs: [R.cdcRules, R.cdcStructure, R.aapRoutines, R.whoGuidelines],
+    relatedTags: ['everyday'],
+    blocks: [
+      { type: 'p', text: 'Children cope better when they know what comes next and what’s expected of them. Rules and routines do some of the reminding for you, so there’s less to argue about in the moment.' },
+      { type: 'h', text: 'A few rules, said as what to do' },
+      {
+        type: 'steps',
+        items: [
+          { title: 'Keep it short', text: 'Choose 3 to 5 rules that matter most, often about safety and kindness. A long list is hard for anyone to remember.' },
+          { title: 'Say what to do', text: '“We walk inside” is easier to follow than “No running”. It tells a child exactly what to do instead.' },
+          { title: 'Make it visible', text: 'For young children, put each rule next to a simple picture where everyone can see it.' },
+          { title: 'Practise on a calm day', text: 'Act a rule out together, and notice out loud when they keep it: “You walked all the way to the door.”' },
+        ],
+      },
+      {
+        type: 'table',
+        head: ['In place of', 'Try'],
+        rows: [
+          ['“Don’t hit.”', '“Hands are for gentle touches.”'],
+          ['“Stop shouting.”', '“Inside voices in the house.”'],
+          ['“Don’t make a mess.”', '“Toys go back in the box before the next thing.”'],
+        ],
+      },
+      { type: 'h', text: 'A day they can predict' },
+      { type: 'list', items: ['Keep the big parts of the day in the same order: waking, meals, play, bath, bed.', 'Give a heads-up before a change: “Five more minutes, then shoes on.”', 'A picture routine helps young children follow the steps without you saying each one.', 'Leave room for real life. Routines are a frame, not a timetable.'] },
+      { type: 'h', text: 'As children grow' },
+      { type: 'p', text: 'From about school age, make the rules together. Ask what they think is fair and agree what happens if a rule is broken. Children are likelier to keep rules they helped to make, and it gives them practice at the kind of thinking they’ll need later.' },
+      { type: 'callout', tone: 'tip', text: 'Rules work best when the grown-ups agree. If a grandparent, partner or carer looks after your child, talk the main rules through together. Small differences between homes are fine; big ones about safety are worth sorting out.' },
+      { type: 'callout', tone: 'science', text: 'Routines and clear rules are part of most tested parenting programmes, including the World Health Organization’s. Studies haven’t tested routines on their own, so we can’t say how much they help by themselves. They’re low-risk and make the other skills easier to use.' },
+    ],
+  },
+  {
+    slug: 'ignore-and-redirect',
+    title: 'Ignoring the small stuff',
+    emoji: '🙈',
+    summary: 'Taking your attention away from minor attention-seeking, and giving it back the moment things improve.',
+    minutes: 3,
+    minMonths: 12,
+    maxMonths: 96,
+    topic: 'parenting',
+    checkedOn: CHECKED,
+    sources: ['aap-tantrums'],
+    refs: [R.cdcIgnoring, R.cdcResponding, R.leijten2018, R.leijten2019],
+    relatedTags: ['calm-down'],
+    blocks: [
+      { type: 'p', text: 'Children love your attention, and they’ll take it in any form, even being told off. So for small, harmless behaviour that’s about getting a reaction, giving no reaction can work better than a telling-off. The trick is to switch your attention back on as soon as things get better.' },
+      { type: 'h', text: 'What it suits' },
+      {
+        type: 'table',
+        head: ['Often fine to ignore', 'Never ignore'],
+        rows: [
+          ['Whining', 'Hitting, biting or hurting anyone'],
+          ['Fake crying', 'Anything unsafe, like running into a road'],
+          ['Mild silliness or rude noises', 'Real distress, fear or pain'],
+          ['A small tantrum to get something', 'Breaking or damaging things'],
+        ],
+      },
+      { type: 'h', text: 'How to do it' },
+      {
+        type: 'steps',
+        items: [
+          { title: 'Decide ahead', text: 'Pick one or two behaviours you’ll ignore, so you aren’t deciding in the heat of the moment.' },
+          { title: 'Look away and stay quiet', text: 'Keep a calm face, turn slightly away and find something to do. Don’t talk, argue or sigh.' },
+          { title: 'Expect it to get worse first', text: 'It often grows louder for a short while, as your child checks whether the old way still works. Stay steady.' },
+          { title: 'Switch back on', text: 'The moment they stop or ask nicely, turn back warmly: “Thank you for asking in your normal voice. Let’s see.”' },
+        ],
+      },
+      { type: 'h', text: 'For toddlers: redirect' },
+      { type: 'p', text: 'Under about 2, ignoring is less useful than steering. Move them gently, swap the thing they shouldn’t have for something they can, or change the scene: “Let’s go and see what the birds are doing.”' },
+      { type: 'callout', tone: 'tip', text: 'Ignoring is about the behaviour, never the child. Keep giving plenty of warm attention at other times, so they don’t need to whine to get it. It only works when your attention is what the behaviour was after.' },
+      { type: 'callout', tone: 'science', text: 'A review of many studies found that briefly ignoring minor misbehaviour helped children follow instructions. It’s part of well-tested programmes, used alongside lots of warm attention. The research looked at young children, roughly 2 to 8.' },
+      { type: 'callout', tone: 'safety', text: 'If your child is hurt, scared, ill or in danger, respond straight away. And if behaviour you’re ignoring is getting worse over weeks rather than days, talk to your doctor or health visitor.' },
+    ],
+  },
+  {
+    slug: 'consequences-that-teach',
+    title: 'Consequences that teach',
+    emoji: '⚖️',
+    summary: 'Calm, small, related consequences you can follow through on, then a fresh start.',
+    minutes: 3,
+    minMonths: 36,
+    maxMonths: 144,
+    topic: 'parenting',
+    checkedOn: CHECKED,
+    sources: [],
+    refs: [R.aapDiscipline, R.aapOlderDiscipline, R.cdcResponding, R.leijten2019, R.ipd],
+    relatedTags: ['kid-leads'],
+    blocks: [
+      { type: 'p', text: 'A consequence is what happens after a rule is broken. Done well, it helps a child connect what they did with what followed. It doesn’t have to be big to work. What matters most is that it’s calm and that it actually happens.' },
+      {
+        type: 'table',
+        head: ['Kind', 'What it means', 'Example'],
+        rows: [
+          ['Natural', 'You let a safe result happen by itself', 'They won’t wear a coat, so they feel chilly on the walk.'],
+          ['Logical', 'You set a result linked to what happened', 'A toy is thrown, so it’s put away until after lunch.'],
+        ],
+      },
+      { type: 'h', text: 'What makes one work' },
+      {
+        type: 'steps',
+        items: [
+          { title: 'Related', text: 'Link it to the behaviour. Drawing on the wall means helping to clean it, not losing a party next week.' },
+          { title: 'Respectful', text: 'Say it calmly and briefly, without shaming or a long lecture.' },
+          { title: 'Reasonable and short', text: 'Minutes to a day is plenty. Long consequences tend to stop teaching anything.' },
+          { title: 'Warn once, then follow through', text: '“If the ball goes near the window again, it goes away for today.” If it happens, do it, calmly.' },
+          { title: 'Fresh start', text: 'When it’s over, it’s over. Don’t bring it up again later.' },
+        ],
+      },
+      { type: 'h', text: 'By age' },
+      { type: 'list', items: ['3 to 5: very short and immediate, like the toy going on the shelf for a while.', '6 to 9: losing a related privilege for the rest of the day, or putting right what went wrong.', '10 to 12: agree consequences ahead of time, and give them a say in what’s fair.'] },
+      { type: 'callout', tone: 'tip', text: 'Only promise what you’ll really do. “No more screens ever!” said in anger is hard to keep, and children learn that threats don’t mean much. A small consequence carried out calmly says more. For hurting or a broken safety rule with a young child, see the guide on time-out and time-in.' },
+      { type: 'callout', tone: 'science', text: 'A large review of parenting programmes found that teaching natural and logical consequences was one of the parts linked with stronger results. A later analysis of 14 European trials found that following through, and less harsh talk, mattered most. Consequences work best on top of a warm relationship and lots of noticing what goes well.' },
+      { type: 'callout', tone: 'safety', text: 'Only let natural consequences happen when they’re safe. Never use food, sleep or affection as a consequence, and never shut a child away alone. If nothing seems to work, talk to your doctor or health visitor.' },
+    ],
+  },
+  {
+    slug: 'instead-of-smacking',
+    title: 'Why not smacking, and what works instead',
+    emoji: '🤲',
+    summary: 'What the research shows about smacking and harsh words, and calmer ways to hold a limit.',
+    minutes: 4,
+    minMonths: 12,
+    maxMonths: 144,
+    topic: 'parenting',
+    checkedOn: CHECKED,
+    sources: ['aap-tantrums'],
+    refs: [R.who, R.sege, R.aapSpanking, R.gershoff, R.heilmann, R.wangKenny, R.ipd, R.pinquart],
+    relatedTags: ['calm-down'],
+    blocks: [
+      { type: 'p', text: 'Many of us were smacked as children, and many loving parents have smacked when they ran out of other ideas. This isn’t about blame. It’s about what decades of research now show, so you can choose with good information.' },
+      { type: 'h', text: 'What the research shows' },
+      { type: 'list', items: ['Smacking may stop a behaviour for a moment, but studies find it doesn’t improve behaviour over time.', 'A large analysis of studies with more than 160,000 children linked smacking with more aggression, more behaviour problems and poorer mental health, and with no good outcomes.', 'Studies that followed children over years found behaviour problems tended to grow, not shrink, after physical punishment.', 'The World Health Organization and the American Academy of Pediatrics both advise against all physical punishment.'] },
+      { type: 'h', text: 'Harsh words count too' },
+      { type: 'p', text: 'Shouting, swearing at or insulting a child can harm as well. In one study of 976 families, harsh words at age 13 were followed by more behaviour problems and low mood a year later. Being warm at other times didn’t cancel it out. Every parent shouts sometimes; it’s the regular pattern that matters.' },
+      { type: 'h', text: 'In the moment, instead' },
+      {
+        type: 'table',
+        head: ['When this happens', 'Try instead'],
+        rows: [
+          ['They hit or hurt someone', 'Stop it calmly and firmly, move them away, and comfort the other child first.'],
+          ['They won’t do what you asked', 'Get close, say it once clearly, then follow through with a small consequence.'],
+          ['A tantrum in full flow', 'Keep them safe, stay near and quiet, and let it pass. Talk later.'],
+          ['They’re testing a rule again and again', 'Same calm words, same response, every time.'],
+          ['You feel your temper rising', 'Make sure they’re safe, step away for a minute, and breathe.'],
+        ],
+      },
+      { type: 'h', text: 'What holds a limit well' },
+      { type: 'list', items: ['Lots of warm attention when things go well, so good behaviour gets noticed.', 'A few clear rules, said as what to do.', 'Calm, small consequences you actually carry out.', 'Repair after a hard moment: “I shouted. I’m sorry. The rule still stands.”'] },
+      { type: 'callout', tone: 'tip', text: 'Respect for parents and grandparents and clear family rules fit well with the research. Children can learn respect without being hit or shamed, and firm and kind can go together. If an older relative smacks, a calm private word can help: “We’re trying something else, and it’s working.”' },
+      { type: 'callout', tone: 'science', text: 'Most of this evidence comes from following families over time, not from experiments, because no one can randomly assign smacking. But the findings are consistent across many countries and study designs. Parenting programmes that help families use less harsh discipline also see fewer behaviour problems.' },
+      { type: 'callout', tone: 'safety', text: 'If you’re afraid you might hurt your child, put them somewhere safe, step away, and call someone now. You deserve support. Your doctor or health visitor, or a helpline in Help, is a good place to start.' },
+    ],
+  },
+];

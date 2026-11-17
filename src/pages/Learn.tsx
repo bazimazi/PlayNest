@@ -8,6 +8,7 @@ import { Emoji } from '../components/Emoji';
 import { BackButton, Empty, Page, Section } from '../components/Page';
 import { Carousel, Glyph, ListGroup, ListRow } from '../components/ui';
 import { ACTIVITIES } from '../data/activities';
+import { GOAL_BY_ID } from '../data/goals';
 import { GUIDES, GUIDE_BY_SLUG } from '../data/guides';
 import { SOURCES } from '../data/sources';
 import { STAGES } from '../data/stages';
@@ -18,6 +19,7 @@ import { hashString } from '../lib/random';
 import { isEligible } from '../lib/recommend';
 import { DOMAIN_WORLD } from '../lib/world';
 import { useActiveChild } from '../store/hooks';
+import { useStore } from '../store/store';
 
 /** Each guide gets its own cover colour, derived from its slug, so it's recognisable at a glance. */
 const coverPalette = (g: Guide): Domain => DOMAINS[hashString(g.slug) % DOMAINS.length];
@@ -41,7 +43,14 @@ function GuideCard({ g }: { g: Guide }) {
 /** The Learn tab: guides for the child's age first (big cards), then everything else as a list. */
 export default function Learn() {
   const { child, age } = useActiveChild();
+  const goals = useStore((s) => s.goals);
   const months = age?.months;
+  // The goal being worked on most recently, if any: it is the one a parent is likeliest to come back for.
+  const working = goals
+    .filter((p) => !p.closedAt && GOAL_BY_ID.has(p.goalId))
+    .sort((a, b) => Math.max(0, ...Object.values(b.tried).map(Date.parse), Date.parse(b.startedAt)) - Math.max(0, ...Object.values(a.tried).map(Date.parse), Date.parse(a.startedAt)))[0];
+  const workingGoal = working ? GOAL_BY_ID.get(working.goalId) : undefined;
+  const workingStep = working && workingGoal ? workingGoal.steps.find((s) => s.id === working.current) ?? workingGoal.steps[0] : undefined;
   const fits = (g: Guide) => months === undefined || (g.minMonths <= months && months <= g.maxMonths);
   const span = (g: Guide) => g.maxMonths - g.minMonths;
   // Guides written for this very age come first, ahead of the ones that suit everybody.
@@ -79,6 +88,21 @@ export default function Learn() {
             <span>{t('What’s going on, and what to try')}</span>
           </span>
           <Icon name="right" size={18} strokeWidth={3} />
+        </Link>
+      )}
+
+      <Link to={workingGoal ? `/goals/${workingGoal.id}` : '/goals'} className="tonight">
+        <Art emoji={workingGoal?.emoji ?? '🎯'} seed={workingGoal?.id ?? 'goals'} palette="feelings" energy="calm" className="tonight-art" />
+        <span className="tonight-text">
+          <span className="eyebrow">{workingGoal ? t('Your parenting goal') : t('Parenting goals')}</span>
+          <b>{workingGoal ? workingGoal.title : t('What would you like to work on?')}</b>
+          <span>{workingStep ? t('Now: {step}', { step: workingStep.title }) : t('Small steps, one week at a time')}</span>
+        </span>
+        <Icon name="right" size={18} strokeWidth={3} />
+      </Link>
+      {workingGoal && (
+        <Link to="/goals" className="link-btn">
+          {t('All parenting goals')}
         </Link>
       )}
 

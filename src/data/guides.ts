@@ -1,4 +1,11 @@
+import { DISCIPLINE_GUIDES } from './guides-discipline';
+import { FAMILY_GUIDES } from './guides-family';
+import { FOOD_GUIDES } from './guides-food';
+import { GROWING_GUIDES } from './guides-growing';
+import { HEALTH_GUIDES } from './guides-health';
 import { MORE_GUIDES } from './guides-more';
+import { PARENTING_GUIDES } from './guides-parenting';
+import { YOU_GUIDES } from './guides-you';
 import type { Guide, GuideTopic } from './types';
 import { localize } from '../i18n';
 
@@ -597,6 +604,13 @@ const ORIGINAL_GUIDES: Guide[] = [
 export const GUIDES: Guide[] = [
   ...ORIGINAL_GUIDES.map((g) => ({ ...g, topic: g.topic ?? ORIGINAL_TOPICS[g.slug] ?? 'play' })),
   ...MORE_GUIDES,
+  ...PARENTING_GUIDES,
+  ...DISCIPLINE_GUIDES,
+  ...FOOD_GUIDES,
+  ...HEALTH_GUIDES,
+  ...GROWING_GUIDES,
+  ...FAMILY_GUIDES,
+  ...YOU_GUIDES,
 ];
 
 localize('guides', GUIDES, { hideMissing: true });

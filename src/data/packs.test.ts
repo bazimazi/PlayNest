@@ -6,6 +6,8 @@ import { CRYING, PARENT_SUPPORT } from './crying';
 import { EMERGENCY } from './emergency';
 import { AID_CARDS } from './firstaid';
 import { FIRSTS } from './firsts';
+import { GOALS } from './goals';
+import { GUIDES } from './guides';
 import { HELPLINES } from './helplines';
 import { ROUTINE_TEMPLATES } from './routines';
 import { EVERY_SONG } from './songs';
@@ -20,6 +22,7 @@ import {
   validateCrying,
   validateEmergency,
   validateFirsts,
+  validateGoals,
   validateHelplines,
   validateRoutines,
   validateSongs,
@@ -31,6 +34,10 @@ import {
 
 describe('content packs', () => {
   it('coach', () => expect(validateCoach(COACH)).toEqual([]));
+  it('goals', () => {
+    expect(GOALS.length).toBeGreaterThanOrEqual(10);
+    expect(validateGoals(GOALS, new Set(GUIDES.map((g) => g.slug)), new Set(COACH.map((c) => c.id)))).toEqual([]);
+  });
   it('firstaid', () => expect(validateAid(AID_CARDS)).toEqual([]));
   it('emergency', () => expect(validateEmergency(EMERGENCY)).toEqual([]));
   it('helplines', () => expect(validateHelplines(HELPLINES)).toEqual([]));

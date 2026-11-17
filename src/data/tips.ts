@@ -1,4 +1,10 @@
+import { FAMILY_TIPS } from './tips-family';
+import { FOOD_TIPS } from './tips-food';
+import { GROWING_TIPS } from './tips-growing';
+import { HEALTH_TIPS } from './tips-health';
 import { OLDER_TIPS } from './tips-older';
+import { PARENTING_TIPS } from './tips-parenting';
+import { YOU_TIPS } from './tips-you';
 import type { Tip } from './types';
 import { localize } from '../i18n';
 
@@ -240,6 +246,6 @@ const BASE_TIPS: Tip[] = [
   { id: 'school-sleep', minMonths: 72, maxMonths: 144, source: 'cdc-sleep-hours', text: 'Children aged 6–12 need 9–12 hours of sleep a night. Count back from wake-up time to find a bedtime that fits, and keep to it on school nights.' },
 ];
 
-export const TIPS: Tip[] = [...BASE_TIPS, ...OLDER_TIPS];
+export const TIPS: Tip[] = [...BASE_TIPS, ...OLDER_TIPS, ...PARENTING_TIPS, ...FOOD_TIPS, ...HEALTH_TIPS, ...GROWING_TIPS, ...FAMILY_TIPS, ...YOU_TIPS];
 
 localize('tips', TIPS, { hideMissing: true });

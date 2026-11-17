@@ -12,6 +12,7 @@ import {
   type EmergencyNumbers,
   type FirstIdea,
   type Helpline,
+  type ParentingGoal,
   type ParentSupport,
   type Ref,
   type RoutineTemplate,
@@ -107,6 +108,41 @@ export function validateCoach(list: CoachSituation[]): string[] {
     checkLen(s.help, 120, 'help', err);
     if (!['strong', 'moderate', 'practice'].includes(s.evidence)) err('evidence must be strong, moderate or practice');
     checkRefs(s.refs, err);
+  });
+}
+
+/**
+ * Goals: 4 to 6 small practices in order, each with a plan to borrow and a smaller version for a hard week. Links must go
+ * somewhere real, so they are checked against the guides and hard-moment cards passed in.
+ */
+export function validateGoals(list: ParentingGoal[], guides: ReadonlySet<string>, coach: ReadonlySet<string>): string[] {
+  return runner(list, (g, err) => {
+    if (!g.title || g.title.length > 40) err('title required, at most 40 characters');
+    checkEmoji(g.emoji, err);
+    checkAge(g.minMonths, g.maxMonths, err);
+    checkLen([g.promise], 120, 'promise', err);
+    checkLen([g.approach], 300, 'approach', err);
+    if (!g.steps || g.steps.length < 4 || g.steps.length > 6) err('steps: 4–6');
+    const ids = new Set<string>();
+    for (const s of g.steps ?? []) {
+      if (!KEBAB.test(s.id ?? '')) err(`step id must be kebab-case: ${s.id}`);
+      if (ids.has(s.id)) err(`duplicate step id ${s.id}`);
+      ids.add(s.id);
+      if (!s.title || s.title.length > 40) err(`step ${s.id}: title required, at most 40 characters`);
+      checkLen([s.try], 230, `step ${s.id} try`, err);
+      checkLen([s.plan], 150, `step ${s.id} plan`, err);
+      checkLen([s.ifHard], 150, `step ${s.id} ifHard`, err);
+      checkLen([s.why], 200, `step ${s.id} why`, err);
+      if (s.guide && !guides.has(s.guide)) err(`step ${s.id}: no guide ${s.guide}`);
+      if (s.coach && !coach.has(s.coach)) err(`step ${s.id}: no hard-moment card ${s.coach}`);
+      for (const t of s.tags ?? []) if (!TAGS.includes(t)) err(`step ${s.id}: unknown tag ${t}`);
+    }
+    if (!g.signs || g.signs.length < 3 || g.signs.length > 4) err('signs: 3–4');
+    checkLen(g.signs, 120, 'signs', err);
+    if (!g.help?.length || g.help.length > 3) err('help: 1–3');
+    checkLen(g.help, 150, 'help', err);
+    if (!['strong', 'moderate', 'practice'].includes(g.evidence)) err('evidence must be strong, moderate or practice');
+    checkRefs(g.refs, err);
   });
 }
 
