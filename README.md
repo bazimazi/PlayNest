@@ -34,7 +34,7 @@ Plus:
 - **Make it work for us:** on every game, ideas by barrier ("too much", "hard to hear"). It names the barrier, never the child.
 - **Your data is safe:** no account, no server, no tracking. A damaged save is kept rather than overwritten, failed saves are announced, and a copy can go anywhere your phone can share to.
 - **The night screen:** black, one warm colour, no pictures and no movement.
-- **Everywhere:** installable PWA, fully offline, light and dark themes, Capacitor-ready for the App Store and Google Play, and a Tauri desktop app for Windows, macOS and Linux ([docs/NATIVE.md](docs/NATIVE.md)).
+- **Everywhere:** installable PWA ([docs/PWA.md](docs/PWA.md)), fully offline, light and dark themes, Capacitor-ready for the App Store and Google Play, and a Tauri desktop app for Windows, macOS and Linux ([docs/NATIVE.md](docs/NATIVE.md)).
 - **Accessible:** WCAG 2.1 AA, keyboard and screen-reader friendly, reduced motion, raised contrast and 200% text are all tested.
 
 | Document | What it covers |
@@ -69,7 +69,8 @@ npm run preview    # serve the production build locally
 `dist/` is a static site (hash routing, relative paths). Upload it to any static host: GitHub Pages, Netlify,
 Cloudflare Pages, S3 and so on. Every push to `main` is deployed to https://playnest.bazimazi.games by
 `.github/workflows/deploy.yml`. The service worker is generated at build time and precaches the whole app for offline
-use. When a new version is deployed, open apps show "PlayNest has been updated — Reload".
+use. When a new version is deployed, open apps show "PlayNest has been updated — Reload". Hosting needs, update
+behaviour and how to regenerate icons and install screenshots are in [docs/PWA.md](docs/PWA.md).
 
 For iOS and Android builds, see [docs/NATIVE.md](docs/NATIVE.md) (`npm run android`, `npm run ios`).
 
@@ -140,10 +141,10 @@ npm run i18n -- status                   # how much of each collection is transl
 ## Project layout
 
 ```
-docs/                 research brief, plan, native (iOS/Android/desktop) guide
+docs/                 research brief, plan, PWA and native (iOS/Android/desktop) guides
 e2e/                  Playwright smoke test + accessibility audit
-public/               manifest, icons (`node scripts/make-icons.mjs`), illustrations (`node scripts/make-emoji.mjs`)
-scripts/              content statistics, safety scan, and the icon and illustration generators
+public/               manifests, icons (`node scripts/make-icons.mjs`), install screenshots (`npm run screenshots`), illustrations (`node scripts/make-emoji.mjs`)
+scripts/              content statistics, safety scan, and the icon, screenshot and illustration generators
 src/assets/fonts/     self-hosted Caprasimo, Nunito, Vazirmatn and Lalezar
 src/data/             content: activities/, milestones, guides, tips, sources, schema + validator
 src/lib/              pure logic: age & corrected age, recommendations & reasons, weekly plan, play together, insights, colour worlds

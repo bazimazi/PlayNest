@@ -29,6 +29,23 @@ await render('icon-192.png', 192, svg);
 await render('icon-512.png', 512, svg);
 await render('icon-maskable-512.png', 512, maskable, '#8fd6fa');
 await render('apple-touch-icon.png', 180, square, '#8fd6fa');
+
+// App shortcuts (long-press the icon, or the taskbar's jump list): the tab's own picture on its world's colour, full
+// bleed so a round mask can't cut it, with the picture inside the central 60%.
+const SHORTCUTS = [
+  ['shortcut-today.png', '2600', '#ffcf56'], // ☀️ Today, like the tab
+  ['shortcut-help.png', '1f49b', '#ff9672'], // 💛 Help, like its rows
+  ['shortcut-stories.png', '1f319', '#2a2360'], // 🌙 tonight's story
+  ['shortcut-checkin.png', '1f331', '#bdeadf'], // 🌱 Grow, like the tab
+];
+for (const [name, code, colour] of SHORTCUTS) {
+  const emoji = readFileSync(new URL(`../emoji/${code}.svg`, dir), 'utf8');
+  await render(
+    name,
+    192,
+    `<div style="width:192px;height:192px;display:grid;place-items:center;background:${colour}">${emoji.replace('<svg', '<svg style="width:116px;height:116px"')}</div>`,
+  );
+}
 await browser.close();
 console.log('icons written');
 

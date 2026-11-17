@@ -16,7 +16,7 @@ import { childAge } from '../lib/age';
 import { playReminderCalendar } from '../lib/calendar';
 import { countryName, guessCountry } from '../lib/emergency';
 import { toISODate } from '../lib/dates';
-import { saveBackupFile, storageProtection, type StorageProtection } from '../platform';
+import { saveBackupFile, storageProtection, watchOfflineReadiness, type OfflineReadiness, type StorageProtection } from '../platform';
 import type { BedsideTone, Child, Climate, Theme } from '../store/model';
 import { actions, canUndoImport, damagedCopies, damagedCopy, isBackup, removeDamagedCopy, useStore } from '../store/store';
 import { LanguageSwitch } from '../components/LanguageSwitch';
@@ -39,12 +39,15 @@ export default function Settings() {
   useEffect(() => {
     void storageProtection().then(setProtection);
   }, []);
+  const [offline, setOffline] = useState<OfflineReadiness>('unavailable');
+  useEffect(() => watchOfflineReadiness(setOffline), []);
   const country = settings.country ?? guessCountry();
   const fileRef = useRef<HTMLInputElement>(null);
   // Worked out here rather than in the `value` props below, because the scanner doesn't read inside those.
   const choose = t('Choose');
   const celebrating = settings.celebrations.length ? num(settings.celebrations.length) : t('None');
   const nightScreen = settings.bedside ? t('On') : t('Off');
+  const offlineValue = offline === 'ready' ? t('Yes') : t('Getting ready…');
 
   const restore = async (file: File) => {
     try {
@@ -263,6 +266,14 @@ export default function Settings() {
             value={num(Object.keys(SOURCES).length)}
             chevron
           />
+          {offline !== 'unavailable' && (
+            <ListRow
+              lead={<Glyph icon={offline === 'ready' ? 'check' : 'download'} tone="var(--ink-3)" />}
+              title={t('Works offline')}
+              subtitle={offline === 'ready' ? t('Every screen opens with no signal') : t('Keep PlayNest open with a connection for a minute')}
+              value={offlineValue}
+            />
+          )}
           <ListRow lead={<Glyph icon="info" tone="var(--ink-3)" />} title={t('Version')} value={localDigits('1.5')} />
         </ListGroup>
         <p className="footnote">

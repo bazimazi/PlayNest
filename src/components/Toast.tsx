@@ -8,6 +8,8 @@ interface ToastAction {
 interface ToastMsg {
   text: string;
   action?: ToastAction;
+  /** News nobody tapped for (the app is ready offline, say) waits until the screen is free instead of replacing it. */
+  waitTurn?: boolean;
 }
 interface Shown extends ToastMsg {
   /** A new toast is a new element, so it comes in properly even when it replaces one still showing. */
@@ -22,8 +24,8 @@ const listeners = new Set<Listener>();
 const LEAVE_MS = 200;
 
 /** Show a short confirmation at the bottom of the screen, optionally with one action (e.g. Undo). */
-export function toast(text: string, action?: ToastAction) {
-  listeners.forEach((l) => l({ text, action }));
+export function toast(text: string, action?: ToastAction, options?: { waitTurn?: boolean }) {
+  listeners.forEach((l) => l({ text, action, waitTurn: options?.waitTurn }));
 }
 
 export function ToastHost() {
@@ -34,17 +36,29 @@ export function ToastHost() {
     let timer: number | undefined;
     let gone: number | undefined;
     let seq = 0;
-    const away = () => {
-      window.clearTimeout(timer);
-      setMsg((m) => (m ? { ...m, leaving: true } : m));
-      gone = window.setTimeout(() => setMsg(null), LEAVE_MS);
-    };
-    const l: Listener = (m) => {
+    let showing = false;
+    const waiting: ToastMsg[] = [];
+    const show = (m: ToastMsg) => {
       window.clearTimeout(timer);
       window.clearTimeout(gone);
+      showing = true;
       setMsg({ ...m, id: ++seq });
       // Tired people miss things. An Undo has to wait for them.
       timer = window.setTimeout(away, m.action ? 10000 : 2600);
+    };
+    const away = () => {
+      window.clearTimeout(timer);
+      setMsg((m) => (m ? { ...m, leaving: true } : m));
+      gone = window.setTimeout(() => {
+        showing = false;
+        setMsg(null);
+        const next = waiting.shift();
+        if (next) show(next);
+      }, LEAVE_MS);
+    };
+    const l: Listener = (m) => {
+      if (m.waitTurn && showing) waiting.push(m);
+      else show(m);
     };
     listeners.add(l);
     setDismiss(() => away);

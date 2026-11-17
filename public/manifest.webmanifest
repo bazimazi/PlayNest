@@ -3,6 +3,8 @@
   "name": "PlayNest — play together, grow together",
   "short_name": "PlayNest",
   "description": "Research-backed games, stories, songs and help for hard moments, for parents of children from birth to 12 years.",
+  "lang": "en",
+  "dir": "ltr",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -10,36 +12,48 @@
   "background_color": "#231b4e",
   "theme_color": "#ffcf56",
   "categories": ["education", "lifestyle", "parenting"],
+  "launch_handler": { "client_mode": ["focus-existing", "auto"] },
   "icons": [
     { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
     { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
     { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
     { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ],
+  "screenshots": [
+    { "src": "screenshots/today-en.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow", "label": "Today: a game picked for your child’s age" },
+    { "src": "screenshots/play-en.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow", "label": "Games, stories and songs for every age from birth to 12" },
+    { "src": "screenshots/help-en.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow", "label": "Help for hard moments and emergencies, even with no signal" },
+    { "src": "screenshots/stories-en.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow", "label": "Stories to read together at bedtime" },
+    { "src": "screenshots/wide-en.jpg", "sizes": "1280x800", "type": "image/jpeg", "form_factor": "wide", "label": "PlayNest on a computer: today’s pick for your child" }
+  ],
   "shortcuts": [
     {
       "name": "Today’s pick",
       "short_name": "Play now",
+      "description": "A game for your child’s age, right now",
       "url": "./#/",
-      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "icons/shortcut-today.png", "sizes": "192x192", "type": "image/png" }]
     },
     {
       "name": "Help right now",
       "short_name": "Help",
+      "description": "Help for a hard moment, first aid and who to call",
       "url": "./#/help",
-      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "icons/shortcut-help.png", "sizes": "192x192", "type": "image/png" }]
     },
     {
       "name": "Tonight’s story",
       "short_name": "Stories",
+      "description": "A story to read or tell at bedtime",
       "url": "./#/stories",
-      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "icons/shortcut-stories.png", "sizes": "192x192", "type": "image/png" }]
     },
     {
       "name": "Milestone check-in",
       "short_name": "Check-in",
+      "description": "What your child is doing now, and what comes next",
       "url": "./#/milestones?checkin=1",
-      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "icons/shortcut-checkin.png", "sizes": "192x192", "type": "image/png" }]
     }
   ]
 }

@@ -31,7 +31,8 @@ function serviceWorker(): Plugin {
     enforce: 'post', // After the HTML plugin, so index.html is in the bundle and counts towards the version.
     generateBundle(_options, bundle) {
       const publicDir = join(__dirname, 'public');
-      const publicFiles = listFiles(publicDir);
+      // Store-style screenshots are only for the browser's install dialog, which fetches them itself while online.
+      const publicFiles = listFiles(publicDir).filter((p) => !relative(publicDir, p).replace(/\\/g, '/').startsWith('screenshots/'));
       const publicNames = publicFiles.map((p) => relative(publicDir, p).replace(/\\/g, '/'));
       const built = Object.keys(bundle).filter((f) => !f.endsWith('.map'));
       const files = ['./', ...built, ...publicNames];
@@ -121,13 +122,20 @@ const fromCache = async (req) => (await (await caches.open(CACHE)).match(req)) |
 self.addEventListener('fetch', (event) => {
   const req = event.request;
   if (req.method !== 'GET' || new URL(req.url).origin !== self.location.origin) return;
+  // A part of a file can't be answered from a whole one in the cache, and can't be cached either.
+  if (req.headers.has('range')) return;
   if (req.mode === 'navigate') {
+    // Every screen lives behind the hash, so any page in scope is the app itself.
     event.respondWith(fromCache('./').then((hit) => hit || fetch(req)));
     return;
   }
   event.respondWith(
     fromCache(req).then((hit) => hit || fetch(req).then((res) => {
-      if (res.ok) { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req, copy)); }
+      // Only whole, successful answers. waitUntil keeps the worker alive until the copy is stored.
+      if (res.status === 200) {
+        const copy = res.clone();
+        event.waitUntil(caches.open(CACHE).then((c) => c.put(req, copy)).catch(() => {}));
+      }
       return res;
     })),
   );

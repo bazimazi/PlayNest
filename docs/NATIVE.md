@@ -5,7 +5,7 @@ PlayNest is one codebase that ships four ways:
 | Where | How | Status |
 |---|---|---|
 | Any browser | Static site (`npm run build` → `dist/`) | Ready |
-| Home screen (Android, iOS, desktop) | Installable PWA: manifest, service worker, offline, app shortcuts | Ready |
+| Home screen (Android, iOS, desktop) | Installable PWA: manifest, service worker, offline, app shortcuts ([PWA.md](PWA.md)) | Ready |
 | App Store / Google Play | [Capacitor](https://capacitorjs.com) native shells around the same build | Configured; native projects not generated yet |
 | Windows, macOS, Linux | [Tauri 2](https://tauri.app) desktop shell around the same build (`src-tauri/`) | Ready; builds and runs on Windows, not yet tried on macOS or Linux |
 

@@ -320,6 +320,8 @@ await flow('offline', async () => {
   const { context, page } = await open();
   await page.goto(`${base}#/`);
   await page.waitForFunction(() => !!navigator.serviceWorker.controller, null, { timeout: 30000 });
+  // Told in Persian, like everything else the app says.
+  await page.getByText('پلی‌نست حالا بدون اینترنت هم کار می‌کند').waitFor({ timeout: 8000 });
   await context.setOffline(true);
   for (const hash of ['/help', '/help/first-aid', '/help/first-aid/cpr-baby', '/help/crying', '/help/you', '/stories', '/songs']) {
     await page.goto(`${base}#${hash}`);

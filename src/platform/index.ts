@@ -213,6 +213,71 @@ export function openLinksExternally(): void {
   });
 }
 
+// ---------- offline ----------
+
+/** `ready`: every screen opens with no connection. `preparing`: still downloading. `unavailable`: only while online. */
+export type OfflineReadiness = 'ready' | 'preparing' | 'unavailable';
+
+/**
+ * Whether the whole app is on this device yet. A native shell bundles it; on the web the service worker only becomes
+ * active once it has stored every file, so an active worker means everything is there.
+ */
+export async function offlineReadiness(): Promise<OfflineReadiness> {
+  if (isNative()) return 'ready';
+  const sw = globalThis.navigator?.serviceWorker;
+  if (!sw) return 'unavailable';
+  if (sw.controller) return 'ready';
+  try {
+    const reg = await sw.getRegistration();
+    // Active but not in charge of this page (after a hard reload): everything is still stored for next time.
+    if (reg?.active) return 'ready';
+    if (reg?.installing || reg?.waiting) return 'preparing';
+  } catch {
+    /* blocked (a private window, for example) */
+  }
+  return 'unavailable';
+}
+
+/** Calls `listener` now and whenever readiness may have changed, until the returned function is called. */
+export function watchOfflineReadiness(listener: (readiness: OfflineReadiness) => void): () => void {
+  let live = true;
+  let timer: ReturnType<typeof setInterval> | undefined;
+  const check = () =>
+    void offlineReadiness().then((r) => {
+      if (!live) return;
+      listener(r);
+      if (r === 'ready') clearInterval(timer); // Ready stays ready: an update keeps the old files until it has all the new.
+    });
+  check();
+  const sw = globalThis.navigator?.serviceWorker;
+  sw?.addEventListener('controllerchange', check);
+  // An install in progress tells the page nothing until it takes over, so look again now and then while watched.
+  timer = setInterval(check, 2000);
+  return () => {
+    live = false;
+    sw?.removeEventListener('controllerchange', check);
+    clearInterval(timer);
+  };
+}
+
+// ---------- launching the installed app ----------
+
+type LaunchQueue = { setConsumer: (consumer: (params: { targetURL?: string }) => void) => void };
+
+/**
+ * The manifest asks for an open PlayNest window to be brought forward rather than a second one opened
+ * (`launch_handler`), so a parent keeps their place. A shortcut such as Help still has to take them to that screen:
+ * every screen is in the hash, so a launch with one goes there, and a plain launch leaves the window as it was.
+ */
+export function handleLaunches(): void {
+  const queue = (globalThis as { launchQueue?: LaunchQueue }).launchQueue;
+  queue?.setConsumer(({ targetURL }) => {
+    if (!targetURL) return;
+    const { hash } = new URL(targetURL);
+    if (hash && hash !== globalThis.location.hash) globalThis.location.hash = hash;
+  });
+}
+
 // ---------- install prompt (Chrome / Edge / Android) ----------
 
 interface InstallPromptEvent extends Event {

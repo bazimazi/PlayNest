@@ -12,36 +12,48 @@
   "background_color": "#231b4e",
   "theme_color": "#ffcf56",
   "categories": ["education", "lifestyle", "parenting"],
+  "launch_handler": { "client_mode": ["focus-existing", "auto"] },
   "icons": [
     { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
     { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
     { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
     { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ],
+  "screenshots": [
+    { "src": "screenshots/today-fa.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow", "label": "امروز: بازی‌ای که برای سن کودکتان انتخاب شده" },
+    { "src": "screenshots/play-fa.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow", "label": "بازی، قصه و ترانه برای هر سنی از تولد تا ۱۲ سالگی" },
+    { "src": "screenshots/help-fa.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow", "label": "کمک برای لحظه‌های سخت و موقعیت‌های اورژانسی، حتی بدون آنتن" },
+    { "src": "screenshots/stories-fa.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow", "label": "قصه‌هایی برای خواندن با هم پیش از خواب" },
+    { "src": "screenshots/wide-fa.jpg", "sizes": "1280x800", "type": "image/jpeg", "form_factor": "wide", "label": "پلی‌نست روی رایانه: پیشنهاد امروز برای کودکتان" }
+  ],
   "shortcuts": [
     {
       "name": "پیشنهاد امروز",
       "short_name": "بازی کنیم",
+      "description": "یک بازی مناسب سن کودکتان، همین حالا",
       "url": "./#/",
-      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "icons/shortcut-today.png", "sizes": "192x192", "type": "image/png" }]
     },
     {
       "name": "کمک فوری",
       "short_name": "کمک",
+      "description": "کمک برای لحظه‌های سخت، کمک‌های اولیه و شماره‌های تماس",
       "url": "./#/help",
-      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "icons/shortcut-help.png", "sizes": "192x192", "type": "image/png" }]
     },
     {
       "name": "قصهٔ امشب",
       "short_name": "قصه‌ها",
+      "description": "قصه‌ای برای خواندن یا تعریف کردن پیش از خواب",
       "url": "./#/stories",
-      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "icons/shortcut-stories.png", "sizes": "192x192", "type": "image/png" }]
     },
     {
       "name": "بررسی نشانه‌های رشد",
       "short_name": "نشانه‌های رشد",
+      "description": "کودکتان حالا چه کارهایی می‌کند و قدم بعدی چیست",
       "url": "./#/milestones?checkin=1",
-      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "icons/shortcut-checkin.png", "sizes": "192x192", "type": "image/png" }]
     }
   ]
 }

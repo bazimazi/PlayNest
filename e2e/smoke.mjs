@@ -896,12 +896,26 @@ await step('offline: help, first aid, stories and songs all work with no connect
   });
   // Wait until precaching has finished: the worker is active only after it has.
   await p.waitForFunction(() => !!navigator.serviceWorker.controller, null, { timeout: 30000 });
+  // The parent is told once it's all there.
+  await p.getByText('PlayNest now works offline').waitFor({ timeout: 8000 });
+  // The install dialog's screenshots are the one thing not worth a phone's storage.
+  const stored = await p.evaluate(async () => {
+    const urls = [];
+    for (const key of await caches.keys()) for (const r of await (await caches.open(key)).keys()) urls.push(r.url);
+    return urls;
+  });
+  if (!stored.some((u) => u.includes('/emoji/'))) throw new Error('the pictures were not stored for offline use');
+  if (stored.some((u) => u.includes('/screenshots/'))) throw new Error('install screenshots were stored for offline use');
   await context.setOffline(true);
-  for (const [hash, wait] of [['/help', 'We’re here'], ['/help/first-aid', 'First aid'], ['/help/crying', 'When crying won’t stop'], ['/help/you', 'How are you doing?'], ['/stories', 'Story time'], ['/songs', 'Sing together'], ['/search', null]]) {
+  // The home-screen shortcuts open with no signal too.
+  for (const [hash, wait] of [['/help', 'We’re here'], ['/help/first-aid', 'First aid'], ['/help/crying', 'When crying won’t stop'], ['/help/you', 'How are you doing?'], ['/stories', 'Story time'], ['/songs', 'Sing together'], ['/milestones?checkin=1', null], ['/search', null]]) {
     await p.goto(`${base}#${hash}`);
     await p.reload();
     if (wait) await p.getByRole('heading', { name: wait }).waitFor({ timeout: 8000 });
   }
+  await p.goto(`${base}#/settings`);
+  await p.reload();
+  await p.getByText('Every screen opens with no signal').waitFor({ timeout: 8000 });
   await context.close();
 });
 

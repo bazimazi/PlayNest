@@ -95,7 +95,11 @@ export function scanSource(files: string[] = sourceFiles()): { uses: Use[]; dyna
           return;
         }
         const name = ts.isPropertyAccessExpression(node.expression) ? node.expression.name.text : callee;
-        if (CODE_CALLS.has(name) || callee.startsWith('console.')) return;
+        if (CODE_CALLS.has(name) || callee.startsWith('console.')) {
+          // Its own strings are code, but a callback passed to it can still put words on screen.
+          node.arguments.forEach((a) => !literal(a) && visit(a, skip));
+          return;
+        }
       }
       if (ts.isNewExpression(node) && node.expression.getText(sf) === 'Error') return;
 
