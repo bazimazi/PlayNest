@@ -51,6 +51,7 @@ export const HEALTH_GUIDES: Guide[] = [
           'Dress them in one light layer. Don’t wrap them up to “sweat it out”, and don’t strip them bare either.',
           'Skip cold baths, cold sponging and alcohol rubs. They aren’t recommended any more.',
           'Fever medicine is for comfort when your child is distressed. It doesn’t treat the cause, and the fever often comes back.',
+          'Don’t give fever medicine to a baby under 3 months unless a doctor, nurse or pharmacist tells you to.',
           'Don’t switch back and forth between two fever medicines unless a doctor or pharmacist has told you to.',
           'Never give aspirin to anyone under 16.',
           'Check the pack every time: many cold remedies already contain a fever medicine. Use the syringe or spoon that comes with it, and ask a pharmacist if you’re unsure.',
@@ -61,7 +62,7 @@ export const HEALTH_GUIDES: Guide[] = [
         type: 'table',
         head: ['Get help now', 'See a doctor soon'],
         rows: [
-          ['Any fever in a baby under 3 months', 'A baby 3 to 6 months with a fever'],
+          ['Any fever in a baby under 3 months, or 39°C or more at 3 to 6 months', 'A baby 3 to 6 months with a lower fever'],
           ['A rash that doesn’t fade when you press a glass on it, or a stiff neck', 'A fever lasting more than 2 to 3 days'],
           ['Floppy, hard to wake, or very confused', 'Not drinking well, or fewer wet nappies'],
           ['Breathing fast or hard, grunting, or ribs pulling in', 'Ear pain, a sore throat, or a rash with the fever'],

@@ -419,7 +419,96 @@ any of it.** Sources in the notes are tagged opened, search-only or unverified.
 
 ### Before release
 
-- [ ] Test-call 190 (extension 9) before it is added anywhere, and update the "190 or 1490" comment in `helplines.ts`.
-- [ ] Open the Emergency Organisation's own 1403 Chaharshanbe Suri release (the figure came from Aftab News citing IRNA).
-- [ ] Confirm rotavirus vaccine in Iran's schedule on behdasht.gov.ir.
-- [ ] Confirm whether the Iranian learning-difficulty centres take parent self-referrals.
+- [ ] Test-call 190 (extension 9) before it is added anywhere. *Round 6: the `helplines.ts` comment is updated; 190 ext. 9 is the
+  Ministry's counselling line (8:00–24:00) per the head of its mental health office. Still not test-called.*
+- [ ] Open the Emergency Organisation's own 1403 Chaharshanbe Suri release. *Round 6: no longer online; the citation now says the
+  figure was given by the head of the organisation and reported by IRNA.*
+- [ ] Confirm rotavirus vaccine in Iran's schedule on behdasht.gov.ir. *Round 6: confirmed at 2, 4 and 6 months from 13 Azar 1403 by
+  a university health centre and the Ministry's vaccine office head; behdasht.gov.ir still blocked automated access.*
+- [ ] Confirm whether the Iranian learning-difficulty centres take parent self-referrals. *Round 6: still unknown; the app says
+  "ask the school", which is safe either way.*
+
+## 12. Research round 6: checking what we have, and the everyday worries (release 1.9, November 2026)
+
+Release 1.9 fixed what a currency audit found in existing content, rewrote the risky-play guide, and added 10 guides and 71 daily
+tips, in English and Persian. The research is in [RESEARCH-7.md](RESEARCH-7.md) and the governance policy in
+[CONTENT-GOVERNANCE.md](CONTENT-GOVERNANCE.md). **No clinician, psychologist or Persian speaker has read any of it.** Sources in the
+notes are tagged opened, abstract, search-only or unverified.
+
+### Fixes to existing content (check these first)
+
+- [ ] `fever-and-sick-days` table: "Any fever in a baby under 3 months, or 39°C or more at 3 to 6 months" is now under "Get help
+  now", and "a baby 3 to 6 months with a lower fever" under "See a doctor soon" (NHS 2024; NICE amber). Must agree with the
+  `fever-young-baby` card and the Crying page.
+- [ ] `fever-and-sick-days` list: new line "Don't give fever medicine to a baby under 3 months unless a doctor, nurse or pharmacist
+  tells you to" (NHS: no paracetamol under 2 months, no ibuprofen under 3 months).
+- [ ] `milk-feeds` "Keep it clean": the 70°C rule in plain words, "water that was boiled and left to cool for no more than 30
+  minutes" (NHS 2023). CDC applies it mainly to young, premature or unwell babies, so bodies differ in scope.
+- [ ] `car-seats`: booster "between about 8 and 12" (AAP, April 2026).
+- [ ] Card `electric-shock`: step 2 now applies to "a plug, cord or appliance" only. New don't: "Power lines, pylons, railway lines
+  or fallen cables: do not go near. Stay 10 metres or more away and call for help." Bodies give 6 to 25 metres. Also decide whether
+  "can bleed hours or days later" becomes "up to about 3 weeks" (clinical summaries say 2 to 21 days; search-only).
+- [ ] Card `swallowed-battery-magnet-beads` (US): "up to 6 times" (wording only).
+- [ ] **Decide:** `cpr-baby` ANZ step 3 still says two fingers (ANZCOR 2021, still current). AHA/AAP 2025 dropped two fingers, and
+  ERC/RCUK 2025 use two thumbs. Iranian parents choose a region and may land on ANZ.
+- [ ] **Decide:** `stings` says "Do not use tweezers"; AHA/American Red Cross 2024 say "plucking or scraping, as soon as possible".
+- [ ] Other P3 items in note 07: adrenaline nasal spray on `anaphylaxis`; "a black eye they didn't hit" on `head-injury`; a cool-bath
+  option on `heatstroke-hot-car`; "8 hours" (Crying) vs "12 hours" (`very-unwell`) without a wee; the ANZ asthma card's puff counts
+  are a dose; allergen wording "soon after solids begin" (ASCIA 2026).
+- [ ] Goals `calmer-bedtimes` › `screens-off` and `screen-balance` › `switch-off`: the "why" lines no longer claim warnings prevent
+  meltdowns (Hiniker 2016 linked them with more upset; a weak study).
+- [ ] `risky-and-rough-play`, rewritten: the "adult isn't overly dominant" clause is gone; "no trampolines under 6"; the play-fighting
+  disagreement (Brussoni 2015 vs Ramsden 2026).
+
+### A paediatric clinician, nurse, dietitian or pharmacist
+
+- [ ] `growth-and-appetite`: the "usually fine / worth a check" table (no numeric centile rule, because RCPCH, NICE and RCH differ),
+  "a newborn who hasn't regained birth weight by about 3 weeks", the red-flag list, and the appetite-syrup callout (no names).
+- [ ] `iron-drops-and-tea`: "about 1 in 5 young children in Iran" (two meta-analyses, 18.2% and 19.9%, wide intervals); the tea
+  wording (lab evidence strong, anaemia evidence mixed); "dark poo is common with iron drops, see a doctor if red"; "a cold isn't
+  usually a reason to stop"; the Dewey 2002 line on extra iron. **The Persian gives Iran's programme: A+D from the first days to 2,
+  iron from the end of 6 months or the start of solids to 2** (two university health documents and the 2021 Ministry textbook;
+  confirm on behdasht.gov.ir). It also adds «غذای کودک را با چای نرم نکنید» and names thalassaemia trait.
+- [ ] `constipation-and-poo`: the get-help table (NICE's "urgent" items written as "within a few days"), "medicine is commonly needed
+  for months and considered safe" (NICE; ESPGHAN/NASPGHAN 2026), and no oil by mouth (lipoid pneumonia case series). The Persian
+  names شیاف, oils and شیرخشت as things to ask a doctor about first.
+- [ ] `worms-and-lice`: "everyone at home the same day", "a second dose about 2 weeks later, as the pack or doctor says", the under-2
+  and pregnancy caution, the wet-combing days (1, 5, 9 and 13, check on 17), and the flammable-products warning (MHRA 2018). Read
+  Iran's school pediculosis guideline (unread) before adding school advice.
+- [ ] `legs-and-feet`: the "usually settles by" ages, the growing-pains pattern, and the get-help table (fever with a limp: today).
+- [ ] `bodies-and-curiosity`: the toddler self-soothing callout ("film it and show your doctor"; never "it isn't a seizure").
+- [ ] `on-wheels`: the helmet-fit steps, "no bike riding under 1" (AAP), and the handlebar-injury safety net (one case report).
+- [ ] `electricity-at-home`: "1 to 3 in 100 children's burns" (Tehran 3.2%, Guilan 1.0%); socket covers (the UK advice depends on UK
+  shuttered sockets); RCD testing.
+- [ ] Tips with ids starting `poo-`, `worms-`, `lice-`, `feet-`, `gr-` (especially `gr-no-extra-iron`, `gr-tea-between` and
+  `gr-drops-routine`) and `fr-`.
+
+### A child psychologist
+
+- [ ] `screens-young-children`: the research table, the reverse-causation box, "warnings are optional", and no blame for parents who
+  lean on screens. Must agree with `screens`, `phone-and-presence` and the `screen-off-meltdown` card.
+- [ ] `siblings-fights-fairness`: the squabble-or-bullying table; the coaching steps (from the Ross mediation trials, whose full
+  methods weren't read); the age table, which must agree with `sibling-fight`; "linked with later depression and self-harm" (never
+  "causes"; psychosis is deliberately left out); and the honest box about the null SIBS trial.
+- [ ] `bodies-and-curiosity`: the age table; the "usually OK / talk to someone" table (age gap "more than about 3 years", agreeing with
+  `body-safety`); the scripts; and the safety callout. Brook's Traffic Light content is licensed and was not used.
+
+### A Persian-speaking reader
+
+- [ ] `bodies-and-curiosity` and its tips: the body-part wording, «حریم بدن», the self-soothing wording (never «خودارضایی»), the
+  cousins line and the customs line. The Persian adds 1480 and 123. It must read as modest and useful in an Iranian home.
+- [ ] `siblings-fights-fairness`: «مقایسه» and «بچهٔ مردم», «تو بزرگ‌تری، کوتاه بیا», and nothing touching family-size policy.
+- [ ] `on-wheels`: Iran's helmet and rear-seat rules, and the health network's "no under-5s on motorbikes" (a Qom University of
+  Medical Sciences leaflet; no national original was found). It must never say carrying a child in front is illegal.
+- [ ] `electricity-at-home`: «پریز ایمنی کودک», «کلید محافظ جان», «خاموشی» with no comment on causes, and kites near rooftops.
+- [ ] `screens-young-children`: video calls with grandparents first, سفره, and no broadcaster named.
+- [ ] Complaint terms: «نشت مدفوع», «ملیّن», کرمک, رشک, «راه رفتن با پنجهٔ رو به داخل» (not پای پرانتزی) and «کفش طبی».
+- [ ] Growth and iron terms: صدک, «شربت اشتهاآور», «ناقل تالاسمی», نمک یددار, and the Iranian food examples.
+
+### Before release
+
+- [ ] Test-call 190 (ext. 9) and 1490 before either is added.
+- [ ] Read Iran's 1403 national immunisation table as an image before publishing any age-by-age table.
+- [ ] Confirm Iran's traffic regulation arts. 164 and 166 and the 1399 child protection law on qavanin.ir (they were read on a
+  secondary legal site).
+- [ ] Work through the "Recheck before shipping" lists at the end of notes 01 to 07.

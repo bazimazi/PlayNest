@@ -16,7 +16,7 @@ const R = {
   cpsc2025: { title: 'CPSC urges fireworks safety ahead of July 4th (2024 figures)', publisher: 'US Consumer Product Safety Commission (2025)', url: 'https://www.cpsc.gov/Newsroom/News-Releases/2025/CPSC-Urges-Fireworks-Safety-Ahead-of-July-4th-Holiday' },
   cpscReport: { title: '2023 Fireworks Annual Report', publisher: 'US Consumer Product Safety Commission (2024)', url: 'https://cpsc.gov/s3fs-public/2023-Fireworks-Annual-Report.pdf' },
   eAzerbaijan: { title: 'Injuries during a fire festival in East Azerbaijan, Iran (2019)', publisher: 'Journal of Injury and Violence Research', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC7187064/' },
-  emergency1403: { title: 'Fire festival injuries in 1403: figures from Iran’s Emergency Organisation', publisher: 'Aftab News, citing IRNA (March 2025)', url: 'https://aftabnews.ir/fa/news/976948/' },
+  emergency1403: { title: 'Fire festival injuries in 1403, as reported by the head of Iran’s Emergency Organisation', publisher: 'Aftab News, citing IRNA (March 2025)', url: 'https://aftabnews.ir/fa/news/976948/' },
   festivalIran: { title: 'Fire festival injuries across Iran: a national study (2013)', publisher: 'Journal of Injury and Violence Research', url: 'https://doi.org/10.5249/jivr.v5i1.146' },
   whoRabies: { title: 'Rabies: fact sheet (2026)', publisher: 'World Health Organization', url: 'https://www.who.int/news-room/fact-sheets/detail/rabies' },
   cochraneDogs: { title: 'Education of children and adolescents for the prevention of dog bite injuries (Duperrex et al. 2009)', publisher: 'Cochrane Database of Systematic Reviews', url: 'https://doi.org/10.1002/14651858.CD004726.pub2' },

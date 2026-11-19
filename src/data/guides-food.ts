@@ -61,7 +61,7 @@ export const FOOD_GUIDES: Guide[] = [
         type: 'steps',
         items: [
           { title: 'Follow the pack exactly', text: 'Use the scoop from that tin, levelled, and the amount of water the pack says. Never add extra powder or extra water, and never add sugar or cereal to the bottle.' },
-          { title: 'Keep it clean', text: 'Wash your hands, and clean and sterilise bottles and teats. Make each feed fresh, and throw away what’s left after a feed.' },
+          { title: 'Keep it clean', text: 'Wash your hands, and clean and sterilise bottles and teats. Make each feed fresh, and throw away what’s left after a feed. Make up powdered formula with water that was boiled and left to cool for no more than 30 minutes, so it is still hot enough to kill germs, then cool the bottle before feeding.' },
           { title: 'Skip the microwave', text: 'It heats unevenly and can scald. Test a few drops on the inside of your wrist.' },
           { title: 'Only infant formula', text: 'Homemade formula, plant drinks and animal milk can’t replace formula in the first months.' },
         ],

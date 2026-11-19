@@ -16,8 +16,11 @@ import { localize } from '../i18n';
  * what they really are.
  *
  * Iran, 2026-11-17: 123 and 1480 were checked on the State Welfare Organisation's own news pages (research_notes/PlayNest
- * phase 7 research round 4/05_global_frameworks_and_iran.md §5), which settles the round-5 doubt about what 1480 is. The
- * poison line (1490 or 190?) and 4030 are still unverified and stay out.
+ * phase 7 research round 4/05_global_frameworks_and_iran.md §5), which settles the round-5 doubt about what 1480 is.
+ * 2026-11-18: 190 extension 9 is the Ministry of Health's free, anonymous counselling line, 8:00 to 24:00, described as
+ * counselling, not a crisis line (the head of the Ministry's mental health office, Hamshahri 18 Shahrivar 1405 and Khabar
+ * Online 17 Farvardin 1405; research_notes/PlayNest phase 9 research round 6/06_governance_and_open_checks.md §2.2). 190 is not
+ * the poison line, which WHO's directory gives as 1490. Neither is added until someone test-calls it; 4030 stays out.
  *
  * Each country lists crisis lines first, then parent lines, then someone to talk to. Blank hours mean the source didn't
  * show them, not that the service is closed. Never add a number from memory, and leave out anything the notes list as

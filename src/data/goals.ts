@@ -238,7 +238,7 @@ const RAW_GOALS: ParentingGoal[] = [
         try: 'Switch screens off about an hour before sleep, and keep them out of the bedroom. Swap in a calm activity: drawing, a puzzle, a story.',
         plan: 'When the screens go off, I’ll offer a quiet activity we can do together.',
         ifHard: 'Start with 30 minutes screen-free, and give a five-minute warning first.',
-        why: 'Screens close to bedtime are linked with later and shorter sleep. A warning before they go off helps avoid meltdowns.',
+        why: 'Screens close to bedtime are linked with later and shorter sleep. Having something calm to move on to can make the change easier.',
         guide: 'screens',
         coach: 'screen-off-meltdown',
       },
@@ -616,7 +616,7 @@ const RAW_GOALS: ParentingGoal[] = [
         try: 'Give a warning before screens end, finish at a natural stop like the end of an episode, and have the next activity ready.',
         plan: 'When screen time is nearly up, I’ll give a five-minute warning and say what comes next.',
         ifHard: 'Use a timer the child can see, so the timer ends it, not you.',
-        why: 'Sudden endings are hard for children. Warnings and something to move on to help avoid meltdowns.',
+        why: 'Sudden endings are hard for many children. Stopping at a natural break, with something ready next, can help. Some like a warning and some get more upset by one: notice which suits yours.',
         coach: 'screen-off-meltdown',
       },
       {

@@ -75,7 +75,7 @@ export const SAFETY_GUIDES: Guide[] = [
         rows: [
           ['Baby', 'Rear-facing seat, from the first ride home', 'They outgrow the seat’s rear-facing height or weight limit. Many seats allow 2 years or more; UK rules say at least 15 months.'],
           ['Toddler and preschool', 'Forward-facing seat with its own harness', 'They outgrow the harness limits, often around 4 to 6.'],
-          ['School age', 'Booster seat with the car’s belt', 'The adult belt fits properly, usually at about 145 cm, often between 10 and 12.'],
+          ['School age', 'Booster seat with the car’s belt', 'The adult belt fits properly, usually at about 145 cm tall, between about 8 and 12.'],
           ['Older child', 'Seat belt, in the back seat', 'Keep all children under about 13 in the back.'],
         ],
       },

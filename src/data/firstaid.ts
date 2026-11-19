@@ -484,7 +484,7 @@ export const AID_CARDS: AidCard[] = [
         steps: [
           'Call your emergency number or go to the hospital emergency room now, even if your child seems fine. Do not wait for signs.',
           'Battery, over 12 months, swallowed in the last 12 hours, able to swallow: give 2 teaspoons (10 mL) of honey on the way.',
-          'Repeat the honey about every 10 minutes, up to 6 doses. Stop if they vomit. Do not delay care to look for honey.',
+          'Repeat the honey about every 10 minutes, up to 6 times. Stop if they vomit. Do not delay care to look for honey.',
           'Give nothing else to eat or drink.',
           'Tell staff what it was, how many and when. A battery can burn in as little as 2 hours.',
           'Several magnets can look like one on an X-ray, and water beads may not show, so say what you know or suspect.',
@@ -1006,13 +1006,13 @@ export const AID_CARDS: AidCard[] = [
       all: {
         steps: [
           'Turn off the power first.',
-          "If you can't, push your child clear with a dry wooden or plastic object.",
+          "If you can't, and it is a plug, cord or appliance, push your child clear with a dry wooden or plastic object.",
           'Call your emergency number. Put your phone on speaker.',
           'Not responding and not breathing normally: start CPR. See the Not breathing card.',
           'Move your child as little as possible.',
           'Get every shock checked by a doctor, even if your child seems fine. A mouth burn from a cord can bleed hours or days later.',
         ],
-        dont: ['Do not touch your child with bare hands until the power is off.'],
+        dont: ['Do not touch your child with bare hands until the power is off.', 'Power lines, pylons, railway lines or fallen cables: do not go near. Stay 10 metres or more away and call for help.'],
         basedOn: 'NHS 2025 and AAP 2019',
         refs: [NHS_ACCIDENT, ref('Electric shock', 'American Academy of Pediatrics', 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Electric-Shock.aspx')],
       },

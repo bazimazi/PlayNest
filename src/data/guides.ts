@@ -1,10 +1,13 @@
 import { BABY_GUIDES } from './guides-baby';
 import { DIFFERENCES_GUIDES } from './guides-differences';
 import { DISCIPLINE_GUIDES } from './guides-discipline';
+import { EVERYDAY_BODY_GUIDES } from './guides-everyday-body';
 import { EVIDENCE_GUIDES } from './guides-evidence';
 import { FAMILY_GUIDES } from './guides-family';
+import { FAMILY_BODIES_GUIDES } from './guides-family-bodies';
 import { FOOD_GUIDES } from './guides-food';
 import { GROWING_GUIDES } from './guides-growing';
+import { GROWTH_GUIDES } from './guides-growth';
 import { HARD_TIMES_GUIDES } from './guides-hard-times';
 import { HEALTH_GUIDES } from './guides-health';
 import { ILLNESS_GUIDES } from './guides-illness';
@@ -13,7 +16,9 @@ import { MORE_GUIDES } from './guides-more';
 import { PARENTING_GUIDES } from './guides-parenting';
 import { SAFETY_GUIDES } from './guides-safety';
 import { SAFETY_MORE_GUIDES } from './guides-safety-more';
+import { SCREENS_YOUNG_GUIDES } from './guides-screens-young';
 import { WELLBEING_GUIDES } from './guides-wellbeing';
+import { WHEELS_POWER_GUIDES } from './guides-wheels-power';
 import { YOU_GUIDES } from './guides-you';
 import type { Guide, GuideTopic } from './types';
 import { localize } from '../i18n';
@@ -145,10 +150,11 @@ const ORIGINAL_GUIDES: Guide[] = [
     checkedOn: '2026-11-04',
     sources: ['aap-screen-time', 'who-under5'],
     refs: [
-      { title: 'Screen time for under-5s', publisher: 'Best Start in Life, England (27 March 2026)', url: 'https://www.beststartinlife.gov.uk/screen-time-under-5s' },
+      { title: 'Screen time for under-5s', publisher: 'Best Start in Life, England (updated 29 June 2026)', url: 'https://www.beststartinlife.gov.uk/screen-time-under-5s' },
       { title: 'Barn och skärmar', publisher: '1177, Sweden (August 2026)', url: 'https://www.1177.se/Vastmanland/liv--halsa/sunda-vanor/barn-och-skarmar/' },
       { title: 'New screen advice (consultation draft)', publisher: 'Helsedirektoratet, Norway (June 2025)', url: 'https://www.helsedirektoratet.no/nyheter/nye-skjermrad-fra-helsedirektoratet' },
       { title: 'Screen use guidance from the Spanish Paediatric Association', publisher: 'Médicos y Pacientes (5 December 2024)', url: 'https://www.medicosypacientes.com/articulo/uso-pantallas-aep/' },
+      { title: 'Screen time and young children (parent handout)', publisher: 'Canadian Paediatric Society, Caring for Kids (March 2025)', url: 'https://caringforkids.cps.ca/handouts/behavior-and-development/screen-time-and-young-children' },
       { title: 'Digital media: promoting healthy screen use in school-aged children', publisher: 'Canadian Paediatric Society (2019, reaffirmed July 2025)', url: 'https://www.cps.ca/en/documents/position/digital-media' },
       { title: '24-hour movement guidelines: children and youth', publisher: 'Canadian Society for Exercise Physiology', url: 'https://csepguidelines.ca/guidelines/children-youth/' },
       { title: 'How to make a family media use plan', publisher: 'American Academy of Pediatrics (January 2026)', url: 'https://www.healthychildren.org/English/family-life/Media/Pages/How-to-Make-a-Family-Media-Use-Plan.aspx' },
@@ -167,7 +173,7 @@ const ORIGINAL_GUIDES: Guide[] = [
           ['Sweden (Aug 2026)', 'None under 2. At 2 to 5, up to 1 hour.', '6 to 12: up to 1 to 2 hours. School screens don’t count.'],
           ['Norway (draft, Jun 2025)', 'Avoid under 2. At 2 to 5, 30 minutes to 1 hour.', '6 to 12: 1 to 1.5 hours of leisure screens. Proposals that may have changed.'],
           ['Spain (Dec 2024)', 'None up to 6, apart from brief supervised video contact with people.', '7 to 12: under 1 hour, counting school and homework.'],
-          ['Canada (reaffirmed Jul 2025)', 'Covered in separate advice.', 'Paediatricians set no daily number, apart from no screens in the hour before bed. A separate movement guideline suggests up to 2 hours of leisure screens.'],
+          ['Canada (reaffirmed Jul 2025)', 'The paediatric society’s under-5 statement is now retired. Its 2025 parent advice: none under 2 apart from video calls, and about 1 hour or less at 2 to 5.', 'Paediatricians set no daily number, apart from no screens in the hour before bed. A separate movement guideline suggests up to 2 hours of leisure screens.'],
         ],
       },
       { type: 'h', text: 'What nearly everyone agrees on' },
@@ -254,19 +260,50 @@ const ORIGINAL_GUIDES: Guide[] = [
   },
   {
     slug: 'risky-and-rough-play',
-    title: 'Risky & rough-and-tumble play',
+    title: 'Room to grow: risky and rough-and-tumble play',
     emoji: '🌳',
-    summary: 'Why climbing trees and pillow fights are good for children — and how to keep them safe.',
-    minutes: 3,
+    summary: 'Why children seek thrills, how to keep the challenge and remove the hazards, and how to step back a little at each age.',
+    minutes: 4,
     minMonths: 18,
-    maxMonths: 96,
+    maxMonths: 144,
+    checkedOn: '2026-11-18',
     sources: ['risky-play', 'rough-and-tumble'],
+    refs: [
+      { title: 'What is the relationship between risky outdoor play and health in children? A systematic review (Brussoni et al. 2015)', publisher: 'International Journal of Environmental Research and Public Health', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC4483710/' },
+      { title: 'Outdoor risky play and health in children aged 3 to 12: a systematic review (Ramsden et al. 2026)', publisher: 'PLOS ONE', url: 'https://doi.org/10.1371/journal.pone.0347444' },
+      { title: 'Position statement on active outdoor play', publisher: 'Tremblay et al., International Journal of Environmental Research and Public Health (2015)', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC4483712/' },
+      { title: 'Early outdoor play and children’s mental health over time (Dodd et al. 2026)', publisher: 'Journal of Child Psychology and Psychiatry', url: 'https://doi.org/10.1111/jcpp.70175' },
+    ],
     relatedTags: ['rough-and-tumble', 'nature'],
     blocks: [
-      { type: 'p', text: 'Researchers describe six kinds of thrilling play children seek out: heights, speed, tools, elements like water and fire, rough-and-tumble, and exploring alone. Outdoor risky play is linked to more physical activity, better motor skills and better risk judgement.' },
+      { type: 'p', text: 'Children seek out thrills: heights, speed, real tools, water and fire, play-fighting and exploring on their own. A little risk is how they learn what their bodies can do and how to judge danger.' },
+      { type: 'callout', tone: 'science', text: 'Two reviews of more than 70 studies link risky outdoor play with more physical activity and better social and risk skills. In a Scottish study of over 4,000 children, toddlers who played outside more were a little less likely to have growing worries or behaviour problems by 8. Most of these studies show links and are of modest quality: promising, not proof.' },
+      { type: 'h', text: 'Keep the challenge, remove the hazard' },
+      { type: 'p', text: 'Most outdoor-play injuries are minor: bumps, scrapes, sprains and sometimes a broken arm. A hazard is something a child can’t see or judge, like a frayed rope, a rusty nail or a road at the end of the garden. A challenge is something they can, like a climbable tree. Remove the hazards and leave the challenge.' },
+      {
+        type: 'table',
+        head: ['Age', 'Thrills to try', 'How to stay near'],
+        rows: [
+          ['18 months to 3', 'Climbing low steps or the sofa arm, rolling down slopes, splashing', 'Stand close, hands off. Within arm’s reach near any water.'],
+          ['3 to 5', 'Balance beams, climbing frames, child-sized real tools with an adult', 'Watch from nearby, and let them try first.'],
+          ['6 to 8', 'Climbing trees, riding downhill, building dens, exploring a known park with friends', 'Agree boundaries together.'],
+          ['9 to 12', 'Longer outings, cooking, building projects, adventurous trips', 'Agree a plan and check in.'],
+        ],
+      },
+      { type: 'h', text: 'How to step back' },
+      {
+        type: 'steps',
+        items: [
+          { title: 'Let them judge', text: 'Ask “How high feels OK?” rather than deciding for them.' },
+          { title: 'Swap “Be careful!”', text: 'Try “Where will you put your foot next?” or “Is that branch strong enough?” so they think it through.' },
+          { title: 'Spot, don’t lift', text: 'Don’t lift a child onto something they can’t climb themselves. If they got up, they can usually get down, with you close by.' },
+          { title: 'Stand a little further away each time', text: 'Start close, then step back as their skill grows.' },
+        ],
+      },
       { type: 'h', text: 'Rough-and-tumble rules' },
-      { type: 'list', items: ['Agree a stop word — and always stop when it’s used.', 'Match your strength to theirs and let them win sometimes.', 'Keep it playful; stop when someone isn’t laughing anymore.', 'Clear the space of sharp corners and hard edges.'] },
-      { type: 'callout', tone: 'science', text: 'A review of 78 studies found that physical play (often with dads) was linked to children’s better control of their emotions and aggression — as long as the adult isn’t overly dominant.' },
+      { type: 'list', items: ['Agree a stop word, and always stop when anyone uses it.', 'Match your strength to theirs and let them win sometimes, while you stay in charge of the game.', 'Keep it playful, and stop when someone isn’t laughing any more.', 'Clear the space of sharp corners and hard edges.'] },
+      { type: 'callout', tone: 'science', text: 'Researchers disagree about play-fighting. One review found it didn’t make children more aggressive; a 2026 review found older studies linking it with more aggression, perhaps because they couldn’t tell play from real fights. Clear rules and an adult in charge make sense either way.' },
+      { type: 'callout', tone: 'safety', text: 'Water is the exception: always within arm’s reach of young children. Helmets for anything on wheels, and no trampolines under 6. Disabled children have the same right to thrills, so adapt the challenge rather than removing it. If fear stops your child from things others their age do, see Anxious children.' },
     ],
   },
   {
@@ -629,6 +666,11 @@ export const GUIDES: Guide[] = [
   ...HARD_TIMES_GUIDES,
   ...DIFFERENCES_GUIDES,
   ...SAFETY_MORE_GUIDES,
+  ...SCREENS_YOUNG_GUIDES,
+  ...FAMILY_BODIES_GUIDES,
+  ...EVERYDAY_BODY_GUIDES,
+  ...GROWTH_GUIDES,
+  ...WHEELS_POWER_GUIDES,
 ];
 
 localize('guides', GUIDES, { hideMissing: true });

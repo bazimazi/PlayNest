@@ -1,4 +1,10 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { COACH } from './coach';
+import { CRYING, PARENT_SUPPORT } from './crying';
+import { AID_CARDS } from './firstaid';
+import { GOALS } from './goals';
 import { GUIDES } from './guides';
 import { SOURCES } from './sources';
 import { TIPS } from './tips';
@@ -40,6 +46,36 @@ describe('guides', () => {
       for (const t of g.relatedTags ?? []) if (!TAGS.includes(t)) problems.push(`${g.slug}: unknown tag ${t}`);
     }
     expect(problems).toEqual([]);
+  });
+});
+
+/** Every string inside a value, however deeply nested. */
+const allText = (value: unknown): string[] =>
+  typeof value === 'string' ? [value] : Array.isArray(value) ? value.flatMap(allText) : value && typeof value === 'object' ? Object.values(value).flatMap(allText) : [];
+
+describe('house rules', () => {
+  // The app never prints a medicine or supplement amount: amounts change (WHO lowered zinc in 2024) and depend on weight and
+  // product. These are the only amounts a person has checked and allowed, each a first-aid step or a warning about units.
+  const DOSE = /\b\d+(?:[.,]\d+)?\s?(?:mg|mcg|µg|micrograms?|ml|millilit(?:re|er)s?|IU)\b|mg\s?\/\s?kg|per kilo/i;
+  const ALLOWED = [
+    /honey|jam/i, // button-battery cards: ANZCOR and US Poison Control first-aid steps, never a medicine
+    /0\.5 ml and 5 ml are very different/, // medicines-at-home: a warning about decimal points
+  ];
+
+  it('never gives a medicine or supplement amount', () => {
+    const texts = [...allText(GUIDES), ...allText(TIPS), ...allText(GOALS), ...allText(COACH), ...allText(AID_CARDS), ...allText(CRYING), ...allText(PARENT_SUPPORT)];
+    const doses = texts.filter((s) => DOSE.test(s) && !ALLOWED.some((ok) => ok.test(s)));
+    expect(doses).toEqual([]);
+  });
+
+  it('never gives one in the Persian either', () => {
+    const PERSIAN_DOSE = /[0-9۰-۹]+(?:[٫.][0-9۰-۹]+)?\s?(?:میلی‌گرم|میلی‌لیتر|میلی لیتر|میکروگرم|سی‌سی|سی سی|واحد بین‌المللی)/;
+    const PERSIAN_ALLOWED = [/عسل|مربا/, /۰٫۵ میلی‌لیتر و ۵ میلی‌لیتر/];
+    const dir = join(__dirname, '..', 'i18n', 'locales', 'fa');
+    const doses = ['guides', 'tips', 'goals', 'coach', 'firstaid', 'crying', 'helplines']
+      .flatMap((name) => Object.values(JSON.parse(readFileSync(join(dir, `${name}.json`), 'utf8')) as Record<string, string>))
+      .filter((s) => PERSIAN_DOSE.test(s) && !PERSIAN_ALLOWED.some((ok) => ok.test(s)));
+    expect(doses).toEqual([]);
   });
 });
 
