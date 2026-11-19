@@ -253,7 +253,7 @@ export const SOURCES: Record<SourceId, Source> = {
     id: 'cdc-child-led-play',
     title: 'Tips for Child-led Play',
     publisher: 'U.S. Centers for Disease Control and Prevention — Essentials for Parenting',
-    url: 'https://www.cdc.gov/parents/essentials/toddlersandpreschoolers/communication/specialplaytime.html',
+    url: 'https://www.cdc.gov/parenting-toddlers/communication/child-led-play.html',
   },
   'free-time-ef': {
     id: 'free-time-ef',

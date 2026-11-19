@@ -8,6 +8,7 @@ import type { Guide } from './types';
 const CHECKED = '2026-11-16';
 
 const R = {
+  daiMyopia: { title: 'Outdoor time and myopia in Chinese children: a meta-analysis (Dai et al. 2026)', publisher: 'Journal of Global Health', url: 'https://jogh.org/2026/jogh-16-04122' },
   nhsFever: { title: 'Fever in children', publisher: 'NHS (reviewed January 2024)', url: 'https://www.nhs.uk/conditions/fever-in-children/' },
   aapFever: { title: 'Fever without fear', publisher: 'American Academy of Pediatrics, HealthyChildren.org (September 2025)', url: 'https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/Fever-Without-Fear.aspx' },
   cpsFever: { title: 'Fever and temperature taking', publisher: 'Canadian Paediatric Society, Caring for Kids (June 2022)', url: 'https://caringforkids.cps.ca/handouts/health-conditions-and-treatments/fever_and_temperature_taking' },
@@ -183,7 +184,7 @@ export const HEALTH_GUIDES: Guide[] = [
     topic: 'health',
     checkedOn: CHECKED,
     sources: ['nhs-active-under5', 'nhs-active-5-18', 'outdoor-myopia'],
-    refs: [R.whoUnder5, R.whoActivity],
+    refs: [R.whoUnder5, R.whoActivity, R.daiMyopia],
     relatedTags: ['rough-and-tumble', 'nature'],
     blocks: [
       { type: 'p', text: 'WHO looks at a child’s whole day together: moving, sitting and sleeping. More active play and less time strapped in or in front of a screen go with healthier growth. Any movement counts, and a little more is better than none.' },
@@ -209,7 +210,7 @@ export const HEALTH_GUIDES: Guide[] = [
           'For everyone: when you’re sitting still, read or tell stories together rather than reaching for a screen.',
         ],
       },
-      { type: 'callout', tone: 'science', text: 'Time outdoors is linked with less short-sightedness. A 2026 review of 31 studies found that children spending more than about 2 hours a day outside had lower odds of becoming short-sighted, and a trial in Chinese schools that added 40 minutes outdoors each day found fewer new cases. It seems to help prevent short sight more than slow it down once it has started.' },
+      { type: 'callout', tone: 'science', text: 'Time outdoors is linked with less short-sightedness. A 2026 review of 31 studies, mostly surveys in China, linked more than about 2 hours a day outside with lower odds of becoming short-sighted, and a trial in Chinese schools that added 40 minutes outdoors each day found fewer new cases. It seems to help prevent short sight more than slow it down once it has started.' },
       { type: 'callout', tone: 'tip', text: 'You don’t need to count minutes. Ask yourself whether today had some running about, some fresh air, and not too much sitting in one go.' },
       { type: 'callout', tone: 'safety', text: 'Talk to your doctor if your child seems unusually tired or breathless with exercise, avoids moving because of pain, or squints, holds things very close or complains of headaches.' },
     ],
@@ -253,7 +254,8 @@ export const HEALTH_GUIDES: Guide[] = [
       { type: 'h', text: 'Wet nights' },
       { type: 'p', text: 'Wet beds are common until about 5, and still fairly common up to 7. It often runs in families, and it isn’t anyone’s fault. Children can’t stop it by trying harder.' },
       { type: 'list', items: ['Give plenty of drinks during the day rather than cutting them.', 'A last wee just before bed, and an easy path to the toilet at night.', 'Waterproof covers make clean-ups quick.', 'Skip fizzy drinks with caffeine, tea and coffee, especially in the evening.', 'Never punish or tease, and ask siblings not to either.'] },
-      { type: 'callout', tone: 'safety', text: 'Talk to a doctor if your child is 5 or older and wet nights bother them or you, if they start wetting again after 6 months of being dry, or if there are daytime accidents, pain when weeing, hard or infrequent poos, or unusual thirst. Doctors often check for constipation, which is a common hidden cause of accidents.' },
+      { type: 'callout', tone: 'safety', text: 'Talk to a doctor if your child is 5 or older and wet nights bother them or you, if they start wetting again after 6 months of being dry, or if there are daytime accidents, pain when weeing, or hard or infrequent poos. Doctors often check for constipation, which is a common hidden cause of accidents.' },
+      { type: 'callout', tone: 'safety', text: 'New wetting with being very thirsty, tired or getting thinner can be a sign of type 1 diabetes. See a doctor the same day and ask for a finger-prick blood sugar test.' },
     ],
   },
 ];

@@ -1408,7 +1408,7 @@ export const COACH: CoachSituation[] = [
       domains: ['feelings'],
     },
     help: [
-      'Worth asking your doctor or health visitor early if it goes on: lasting sleep problems rarely sort themselves out.',
+      'Worth asking your doctor or health visitor early if it goes on for weeks and wears the family down.',
       'Worth talking to your doctor about snoring, breathing trouble or restless legs.',
       'Any sudden, lasting change in sleep or behaviour deserves attention. Mention it to your doctor.',
     ],
@@ -1460,12 +1460,12 @@ export const COACH: CoachSituation[] = [
     ],
     why: 'Health bodies agree on the difference: a nightmare wakes a child and comfort helps; in a night terror they stay asleep and won\'t remember it.',
     later: {
-      text: 'By day, draw the dream and tear it up, or make a dream-catcher. It can give a sense of control.',
+      text: 'By day, draw the dream, then draw a new ending where they’re safe or brave. It can give a sense of control.',
       tags: ['art'],
       domains: ['feelings', 'imagination'],
     },
     help: [
-      'Worth talking to your doctor if nightmares are frequent, carry on after about 6, or follow something upsetting.',
+      'Worth talking to your doctor if nightmares are frequent, disturb days or bedtimes, or began after something frightening.',
       'Worth talking to your doctor if night terrors are frequent, start after 5, or carry on after 12.',
       'Terrors at the same time each night? Ask your doctor about gently waking them 15 minutes before.',
     ],
@@ -2353,7 +2353,7 @@ export const COACH: CoachSituation[] = [
     group: 'questions',
     minMonths: 24,
     maxMonths: 144,
-    keywords: ['death', 'dying', 'funeral', 'grief', 'pet died', 'grandparent died', 'where did they go', 'loss', 'will you die'],
+    keywords: ['death', 'dying', 'funeral', 'grief', 'pet died', 'grandparent died', 'where did they go', 'loss', 'will you die', 'put to sleep', 'vet', 'goldfish'],
     bands: [
       {
         minMonths: 24,
@@ -2364,7 +2364,7 @@ export const COACH: CoachSituation[] = [
           'Add what your family believes after the plain facts, and hold them if they want.',
         ],
         say: ['[Their name] died. They won\'t come back, and we\'ll miss them.', 'Their body stopped working. It doesn\'t hurt now.', 'It\'s very sad. I\'m sad too.', 'It\'s not because of anything you did.'],
-        avoid: ['Saying they have gone to sleep or on a long journey.', 'Telling them to be strong.'],
+        avoid: ['Saying they went to sleep or on a long journey, or that a pet was put to sleep or ran away.', 'Telling them to be strong.'],
       },
       {
         minMonths: 60,

@@ -103,7 +103,7 @@ export const GROWING_GUIDES: Guide[] = [
         ],
       },
       { type: 'h', text: 'Why it matters' },
-      { type: 'p', text: 'In a study filmed at home, toddlers who heard more praise for effort and strategy were more likely to enjoy challenges five years later. Praise for being smart had no such link. The study was small, but lab studies point the same way: children praised for being clever may avoid hard tasks, so they don’t risk looking less clever.' },
+      { type: 'p', text: 'In a study filmed at home, toddlers who heard more praise for effort and strategy were more likely to enjoy challenges five years later. Praise for being smart had no such link. The study was small. Early lab studies found that children praised for being clever avoided hard tasks, but a large repeat study didn’t, so treat it as a hint.' },
       { type: 'p', text: 'Over-the-top praise, like “incredibly good!”, can backfire for children who already feel unsure of themselves. In one experiment it nudged them towards easier tasks. Adults tend to give this kind of praise most to the children it helps least. Calm, specific words work better.' },
       { type: 'h', text: 'When they make a mistake' },
       { type: 'p', text: 'How you react to mistakes may matter more than what you believe about talent. In one study, children picked up their parents’ view of failure: whether it was a disaster, or something to learn from.' },

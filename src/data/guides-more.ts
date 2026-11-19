@@ -509,7 +509,7 @@ export const MORE_GUIDES: Guide[] = [
         ],
       },
       { type: 'p', text: 'A baby saying “not now” is ordinary, and it isn’t about you. Tummy time often starts on your chest, then with short tries, following what your follow-up team advises. See Tummy time without tears.' },
-      { type: 'callout', tone: 'science', text: 'WHO advises skin-to-skin care, which it calls kangaroo mother care, for babies born before 37 weeks or under 2.5 kg. It starts right after birth and goes on for as many hours as possible, unless a baby needs breathing support or is in shock. WHO says it saves many lives, cuts infections and low body temperature, and helps feeding. Ask your team how this works for your baby.' },
+      { type: 'callout', tone: 'science', text: 'WHO advises skin-to-skin care, which it calls kangaroo mother care, for babies born before 37 weeks or under 2.5 kg. It starts at birth and goes on for as many hours as possible, unless the baby’s team says it isn’t safe yet, for example for a baby on a ventilator or in shock. WHO says it saves many lives, cuts infections and low body temperature, and helps feeding. Ask your team how this works for your baby.' },
       { type: 'h', text: 'Getting ready for hospital' },
       {
         type: 'table',
@@ -896,7 +896,7 @@ export const MORE_GUIDES: Guide[] = [
       {
         type: 'steps',
         items: [
-          { title: 'Walk, then sit', text: 'Carry your baby while walking for about 5 minutes, then sit holding them for 5 to 8 more before laying them down. All the crying babies in one small study, of 21 babies, stopped during the walk. It won’t work every time.' },
+          { title: 'Walk, then sit', text: 'Carry your baby while walking for about 5 minutes, then sit holding them for 5 to 8 more before laying them down. In one small study of 21 babies, the crying babies settled during the walk. It won’t work every time.' },
           { title: 'Sing', text: 'Your voice and familiar songs, in any language. This was studied with older babies, in calm settings.' },
           { title: 'Carry more through the day', text: 'One trial found less crying at 6 weeks. It doesn’t seem to help colic that’s already started.' },
           { title: 'Try other comforts', text: 'A pram walk, skin to skin, a dummy, or quiet white noise far from the cot. If you swaddle, use a thin wrap, keep your baby on their back, leave room for the hips, and stop at the first sign of rolling.' },
@@ -1103,7 +1103,7 @@ export const MORE_GUIDES: Guide[] = [
       { type: 'h', text: 'Handing it over' },
       { type: 'list', items: ['Wait until they seem ready. If it isn’t working, leave it a few weeks and try again.', 'Show them, then let it be done their way.', 'Hand over without constant checking.', 'Try one new thing alone: climb a tree, run an errand, make a meal. This idea comes from the Let Grow charity, whose pages cite no research, so enjoy it as an idea.'] },
       { type: 'callout', tone: 'science', text: 'The benefits of chores come from observational studies, so we can’t promise what they’ll do. Ages for tying laces, cooking and walking to school rest on thin sources, too.' },
-      { type: 'callout', tone: 'safety', text: 'Rules differ by country. The UK has no legal age for leaving a child at home, but it’s an offence if it puts them at risk, and the NSPCC says under-12s are rarely mature enough for long periods. Young children’s road judgement is still developing, up to about age 10. Check your local rules and your own roads.' },
+      { type: 'callout', tone: 'safety', text: 'Rules differ by country. The UK has no legal age for leaving a child at home, but it’s an offence if it puts them at risk, and the NSPCC says under-12s are rarely mature enough for long periods, babies and young children should never be left even for a few minutes, and no under-16s overnight. Young children’s road judgement is still developing, up to about age 10. Check your local rules and your own roads.' },
     ],
   },
   {
@@ -1240,7 +1240,7 @@ export const MORE_GUIDES: Guide[] = [
       },
       { type: 'p', text: 'No study shows that any one agreement works. These points are shared advice from the AAP, Canadian paediatricians and Sweden’s health service.' },
       { type: 'callout', tone: 'tip', text: 'Laws change often, so check locally. As of November 2026: Australia’s under-16 social media rule has applied since December 2025. The UK has announced one, not yet in force. France’s under-15 law was struck down in August 2026, with a new draft pending. English schools have had statutory guidance on phones since September 2026. Early Australian results show small changes in use, and barely any in time on sport or with family, so home habits still matter.' },
-      { type: 'callout', tone: 'safety', text: 'If anyone online threatens your child or asks for images, don’t pay and don’t delete anything. Tell the police or your national reporting line straight away, and tell your child it isn’t their fault.' },
+      { type: 'callout', tone: 'safety', text: 'If anyone online threatens your child or asks for images, don’t pay, stop replying and block them, and don’t delete the messages. Tell the police or your national reporting line straight away, and tell your child it isn’t their fault.' },
     ],
   },
   {
@@ -1268,7 +1268,7 @@ export const MORE_GUIDES: Guide[] = [
         ],
       },
       { type: 'p', text: 'In a June 2026 brief, UNICEF said chatbots built to feel like friends bring particular risks for children. England’s March 2026 under-5s advice says not to let young children use AI toys, tools or chatbots, including smart speakers and interactive robots, until there’s more evidence. The UK also plans to limit some chatbots to over-18s. The AAP’s June 2026 advice, written mainly with teens in mind, says that avoiding all chatbots is probably unrealistic, and that it’s better to talk about them often and without judging.' },
-      { type: 'callout', tone: 'science', text: 'We found no independent research on harm or benefit in under-13s, so most of this advice is precaution. Much of the toy testing comes from advocacy groups: in Common Sense’s own tests, 27% of toy responses weren’t suitable for children.' },
+      { type: 'callout', tone: 'science', text: 'We found no independent research on harm or benefit in under-13s, so most of this advice is precaution. Much of the toy testing comes from advocacy groups: in Common Sense’s own tests, more than a quarter of toy responses weren’t suitable for children.' },
       { type: 'h', text: 'Talking toys' },
       { type: 'list', items: ['They may not look like screens, so check before you buy: does it connect to the internet, or use AI to chat?', 'Many collect voice recordings, transcripts and behaviour data, and are designed to build a bond with your child.', 'Tell relatives before birthdays, so they don’t end up as gifts.'] },
       { type: 'h', text: 'If chatbots are in your home' },

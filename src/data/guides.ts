@@ -1,4 +1,6 @@
+import { APART_CARRY_GUIDES } from './guides-apart-carry';
 import { BABY_GUIDES } from './guides-baby';
+import { COURSES_GUIDES } from './guides-courses';
 import { DIFFERENCES_GUIDES } from './guides-differences';
 import { DISCIPLINE_GUIDES } from './guides-discipline';
 import { EVERYDAY_BODY_GUIDES } from './guides-everyday-body';
@@ -12,11 +14,16 @@ import { HARD_TIMES_GUIDES } from './guides-hard-times';
 import { HEALTH_GUIDES } from './guides-health';
 import { ILLNESS_GUIDES } from './guides-illness';
 import { LEARNING_GUIDES } from './guides-learning';
+import { MIND_GUIDES } from './guides-mind';
 import { MORE_GUIDES } from './guides-more';
+import { NIGHT_GUIDES } from './guides-night';
+import { ONLINE_ALONE_GUIDES } from './guides-online-alone';
 import { PARENTING_GUIDES } from './guides-parenting';
 import { SAFETY_GUIDES } from './guides-safety';
 import { SAFETY_MORE_GUIDES } from './guides-safety-more';
+import { SCHOOL_MOVES_GUIDES } from './guides-school-moves';
 import { SCREENS_YOUNG_GUIDES } from './guides-screens-young';
+import { SIGNS_GUIDES } from './guides-signs';
 import { WELLBEING_GUIDES } from './guides-wellbeing';
 import { WHEELS_POWER_GUIDES } from './guides-wheels-power';
 import { YOU_GUIDES } from './guides-you';
@@ -68,7 +75,7 @@ const ORIGINAL_GUIDES: Guide[] = [
           { title: 'Practise endings and beginnings', text: 'Notice when they’re done and ready to move on, and follow them to the next thing.' },
         ],
       },
-      { type: 'callout', tone: 'science', text: 'An MIT study of 4–6 year-olds found that the number of back-and-forth conversational turns — more than the number of words heard — was linked to activity in the brain’s language areas and to verbal skills, regardless of family income.' },
+      { type: 'callout', tone: 'science', text: 'A small MIT study of 36 children aged 4 to 6 found that back-and-forth conversational turns, more than the number of words heard, were linked to activity in the brain’s language areas and to verbal skills, whatever the family income.' },
       { type: 'h', text: 'Where to practise' },
       { type: 'list', items: ['Nappy changes and dressing', 'Mealtimes (no screens at the table)', 'The supermarket queue', 'Bath time', 'Walking to the car or the bus', 'Bedtime stories'] },
     ],
@@ -345,7 +352,7 @@ const ORIGINAL_GUIDES: Guide[] = [
           { title: 'Widen the circle', text: 'Books, music, grandparents on the phone and other families who speak the language all give your child more reasons to use it.' },
         ],
       },
-      { type: 'callout', tone: 'science', text: 'One study of kindergarten children found that those growing up with two languages did better on several attention and self-control tasks. Researchers still debate how big this effect is — the surest reason to keep your languages is connection to family, stories and culture.' },
+      { type: 'callout', tone: 'science', text: 'A small study of kindergarten children found that those growing up with two languages did better on some attention tasks, but larger studies since mostly find little or no difference. The surest reason to keep your languages is connection to family, stories and culture.' },
       { type: 'callout', tone: 'tip', text: 'Worried about your child’s talking? Speak to your doctor or a speech and language therapist. A real communication difficulty shows up in all the languages a child uses, so it can be checked in any of them.' },
     ],
   },
@@ -371,7 +378,7 @@ const ORIGINAL_GUIDES: Guide[] = [
           { title: 'Keep it short', text: 'Play a few quick games, then stop while it’s still fun. Come back to it another day.' },
         ],
       },
-      { type: 'callout', tone: 'science', text: 'In a study of more than 100 three-year-olds, children who were better at copying block structures also did better at early maths. Parents of children who were behind reported using fewer spatial words like “above” and “below” — so build together and talk as you go.' },
+      { type: 'callout', tone: 'science', text: 'In a study of about 100 three-year-olds, children who were better at copying block structures also did better at early maths. So build together, and use words like “above” and “below” as you go.' },
       { type: 'h', text: 'Maths you can do every day' },
       {
         type: 'table',
@@ -473,7 +480,7 @@ const ORIGINAL_GUIDES: Guide[] = [
       },
       { type: 'p', text: 'Under-5s shouldn’t be inactive for long stretches except when asleep, and that includes long spells strapped into a buggy or car seat.' },
       { type: 'callout', tone: 'science', text: 'Time outdoors may protect young eyes. In a three-year trial in China, 6-year-olds whose schools added a 40-minute outdoor class each day were less likely to become short-sighted: about 30%, compared with about 40% in schools without it.' },
-      { type: 'p', text: 'Nature may lift moods, too. A review of 35 studies found that just over half of the results linked time in nature with better mental health in children and teenagers — promising, but not yet proof.' },
+      { type: 'p', text: 'Nature may lift moods, too. A review of 35 studies found that about half of the results linked time in nature with better mental health in children and teenagers — promising, but not yet proof.' },
       { type: 'h', text: 'Easy ways to get outside' },
       {
         type: 'list',
@@ -671,6 +678,13 @@ export const GUIDES: Guide[] = [
   ...EVERYDAY_BODY_GUIDES,
   ...GROWTH_GUIDES,
   ...WHEELS_POWER_GUIDES,
+  ...SIGNS_GUIDES,
+  ...MIND_GUIDES,
+  ...ONLINE_ALONE_GUIDES,
+  ...APART_CARRY_GUIDES,
+  ...NIGHT_GUIDES,
+  ...SCHOOL_MOVES_GUIDES,
+  ...COURSES_GUIDES,
 ];
 
 localize('guides', GUIDES, { hideMissing: true });

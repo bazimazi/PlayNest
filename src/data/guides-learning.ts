@@ -202,7 +202,7 @@ export const LEARNING_GUIDES: Guide[] = [
           ['Daily rewards and streaks', 'They’re built to bring children back every day. Talk about it together.'],
         ],
       },
-      { type: 'callout', tone: 'safety', text: 'Make sure your child knows: if anyone online asks for photos, secrets, personal details or to meet up, they tell you, and they won’t be in trouble for it. Report it to the platform, and to the police if an adult is involved.' },
+      { type: 'callout', tone: 'safety', text: 'Make sure your child knows: if anyone online asks for photos, secrets, personal details or to meet up, they tell you, and they won’t be in trouble for it. Report it to the platform. If anyone asks for sexual pictures, threatens your child or wants to meet, also tell the police, whatever age they seem to be.' },
       { type: 'h', text: 'Limits that work' },
       { type: 'list', items: ['Play together sometimes, and ask them to teach you the game.', 'Agree when gaming fits: after homework, not before school, not at meals.', 'End at a natural stopping point: “finish the level, then dinner”, with a warning before.', 'Keep devices out of bedrooms at night.', 'Look at sleep, school, friends and mood more than the clock.'] },
       { type: 'h', text: 'When it’s a problem' },

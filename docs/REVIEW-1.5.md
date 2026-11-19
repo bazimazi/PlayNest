@@ -512,3 +512,111 @@ notes are tagged opened, abstract, search-only or unverified.
 - [ ] Confirm Iran's traffic regulation arts. 164 and 166 and the 1399 child protection law on qavanin.ir (they were read on a
   secondary legal site).
 - [ ] Work through the "Recheck before shipping" lists at the end of notes 01 to 07.
+
+## 13. Research round 7: world research, a claims audit, and the worries parents bring at night (release 2.0, November 2026)
+
+Release 2.0 fixed 20 P2 problems that round 7's notes found in existing content, corrected research claims that didn't replicate,
+and added 11 guides, a pet-loss section and 92 daily tips, in English and Persian. The research is in [RESEARCH-8.md](RESEARCH-8.md).
+**No clinician, psychologist or Persian speaker has read any of it.** Sources in the notes are tagged opened, abstract, search-only
+or unverified.
+
+### Fixes to existing content (check these first)
+
+- [ ] `toilet-training` (new safety callout) and goal `potty-ready` › help: new wetting with great thirst, tiredness or weight loss
+  → the same day, ask for a finger-prick blood sugar test (NHS 4Ts; NICE NG18 same-day referral).
+- [ ] `tummy-bugs` table: three new "get help now" items (ketoacidosis pattern, testicle pain with tummy pain, intussusception) and
+  two "today" items (pain moving to the lower right; fever and vomiting with no cause → ask about a urine test). Must agree with
+  `crying.ts`, `signs-not-to-wait-on` and the `very-unwell` and `dehydration` cards.
+- [ ] `constipation-and-poo`: green vomit is now "always get help now".
+- [ ] `is-my-child-ok` (new safety callout) and goal `smoother-mornings`: headaches that wake a child or come with vomiting on
+  waking need a doctor first (HeadSmart card 2018; the clinical thresholds are search-only).
+- [ ] `running-on-empty`: thoughts of self-harm → "today". Goal `first-year-together` › help: thoughts of ending your life → "get
+  help today" (the psychosis line didn't fit the 3-item limit; it is in the guide and on Help). `crying.ts` › `whenToSeek`:
+  psychosis now includes "seems unusually high, or can't sleep or feels no need to sleep for days". `you-two-after-baby`: the
+  unsourced "in men it can look like… drinking more" is now the NHS symptom list. Goal ref: the Thinking Healthy DOI is fixed.
+- [ ] Coach `nightmare-night-terror`: the help trigger is frequency, distress or a frightening event, not "after about 6" (AAP:
+  nightmares peak 3 to 12). The dream-catcher line is now "draw a new ending". `night-waking`: "rarely sort themselves out" softened.
+  `settling-to-sleep`: "snores most nights, or gasps, snorts or stops breathing".
+- [ ] `video-games`: report to the police "whatever age they seem to be" (offenders pose as children; NCA 2024). `first-phone`: "stop
+  replying and block them". `chores-independence`: NSPCC's "never babies or young children, even for a few minutes" and "no
+  under-16s overnight".
+- [ ] `milk-feeds`: "Never prop a bottle or leave your baby alone with one." Persian: «تقریباً نشسته، با سری بالاتر از بدنش» replaces
+  «نسبتاً صاف» in the guide and in tip `food-bottle-pace`.
+- [ ] Audit fixes (note 02, E-1 to E-19): `bilingual-families`, `numbers-and-shapes`, `serve-and-return`, `outdoor-play`,
+  `praise-and-confidence`, `what-decades-show` (Jamaica, New York, NICHD, bedtimes, Bucharest, Building Blocks),
+  `premature-hospital-stays` (WHO's kangaroo-care exceptions are search-only; the guide now says "unless the baby's team says it
+  isn't safe yet"), `you-two-after-baby`, `move-sit-sleep`, `iron-drops-and-tea`, `siblings-fights-fairness` (ref),
+  `crying-curve`, `ai-chatbots-toys`, and the CDC child-led play URL. E-20 (`stuttering`, "not shyer beforehand") still needs the
+  full text.
+- [ ] `instead-of-smacking`: the 2025 review of 189 studies from 92 lower- and middle-income countries (abstract only).
+  `parenting-pyramid`: online programmes have "small effects, mostly as parents themselves report them" (partly from a
+  single-author preprint) and "not every new version has" worked.
+- [ ] Coach `someone-has-died`: "or that a pet was put to sleep or ran away" added to what to avoid; keywords "put to sleep", "vet",
+  "goldfish".
+
+### A paediatrician (and a paediatric surgeon for the first item)
+
+- [ ] `signs-not-to-wait-on`, line by line: the "now" table (rash and cold hands; sleepy, floppy or a fit; breathing; ketoacidosis;
+  green vomit even once; intussusception; testicle; severe or one-sided pain; under 3 months at 38°C; no wee for 12 hours or a
+  battery or magnets), the "today" table (the 4Ts, appendicitis, urine infection, fever for 5 days, going back), the HeadSmart
+  paragraph ("one sign is enough to go; with two or more, ask for an urgent referral"), and the instinct callout (Van den Bruel
+  2012; a weaker link in Riga 2019). The Persian adds MANA danger signs, the Patient Rights Charter's second-opinion right and an
+  Iranian ketoacidosis line.
+- [ ] `night-time-troubles`: the comparison table's ages, "don't wake them", sleepwalking safety, the scheduled-waking caution, the
+  snoring figures ("1 in 6", "2 or 3 in 100", from an RCH page awaiting review), the CHAT and PATS callout ("about 3 in 100
+  serious complications"), restless legs "2 in 100 aged 8 to 17", and the melatonin callout.
+- [ ] `milk-when-apart`: the storage table (the shorter CDC times; NHS allows 8 days in the fridge; Iran's Ministry says 3 to 5),
+  thawing, pump cleaning, formula on the go (GOV.UK, November 2026: 4 hours with an ice pack, 2 without), and the breast-pain line
+  (general wording; no mastitis page was opened). A midwife or lactation specialist should read it.
+- [ ] `slings-and-carriers`: the five checks ("chin isn't pressed down onto their chest", because the TICKS leaflet itself wasn't
+  opened), "under 4 months", feeding out of the sling (Lullaby Trust 2025), "falls are the most common injury", and the hip paragraph.
+- [ ] `left-handed-children`: no red flag for an early hand preference was added (one source only). Should one be?
+- [ ] Tips with ids starting `sign-`, `away-`, `sling-` and `nt-`.
+
+### A perinatal psychiatrist or psychologist
+
+- [ ] `your-mind-after-birth`: the opening emergency callout, the table (especially psychosis: "an emergency, call now"), the
+  frightening-thoughts paragraph ("almost all… many… studies so far haven't linked these thoughts with harming babies"; Collardeau
+  2024 and Beck 2026 abstracts only), the "if the thoughts feel right to you" callout, "very rare" (never "never"), "about 1 in 10
+  fathers", the Thinking Healthy callout and the "and your baby?" paragraph. The Persian uses «روان‌پریشی پس از زایمان (جنون پس از
+  زایمان)», and adds 1480, 123 and 115, the health-centre visits and the 40 days.
+- [ ] Tips `mind-*` (especially `mind-psychosis` and `mind-scary-thoughts`) and `world-dads-mood`. No tip about suicide is in the
+  rotating feed.
+
+### A child psychologist or safeguarding professional
+
+- [ ] `online-safety-calm`: the "how it usually works" list, the IWF callout (counts of images; children never to blame), the
+  scripts by age (no trial compares scripts), the "I won't take it away" tip, the parental-controls callout, and the
+  image-handling advice ("don't forward or share the picture itself"; recheck with CEOP or police).
+- [ ] `home-alone-out-alone`: the AAP and NSPCC table, "some health services say not before 12", readiness signs, house rules,
+  and the swap away from "stranger danger".
+- [ ] `school-worries-and-avoidance`: the helps-and-backfires table (limiting repeated reassurance; keeping school hours low-key)
+  for very anxious or autistic children, and the CBT callout (Maynard 2015).
+- [ ] `big-moves`: the age table is partly drawn from AACAP's general advice.
+- [ ] `parenting-courses`: the WHO components table and the effects callout.
+
+### A Persian-speaking reader
+
+- [ ] `signs-not-to-wait-on` and tips `sign-down-there` and `sign-testicle`: the modest wording for testicle and ovary («بیضه» once,
+  then plain words; «بخش‌های خصوصی بدن» for "down there").
+- [ ] `your-mind-after-birth`: the 40-days paragraph, «درست و بجا» for "the thoughts feel right to you", and «نوزادتان را از شما
+  بگیرند» for "losing your baby".
+- [ ] `online-safety-calm` and `home-alone-out-alone`: the 1399 child protection law lines (read on a secondary legal site; confirm
+  on qavanin.ir), «وضعیت مخاطره‌آمیز», and no app, platform, filtering or VPN mentioned.
+- [ ] `milk-when-apart`: the leave and breastfeeding-hour lines (1400 family law art. 17; the 1374 law as amended; Labour Law art.
+  78), «پاس شیر», and two hours for twins (regulation art. 6). `slings-and-carriers`: the cloth-carrying line and «ننو».
+- [ ] `night-time-troubles`: the title «کابوس، وحشت شبانه، خوابگردی و خروپف», the room-sharing line, and the «لولو» line (expert
+  reasoning, not evidence).
+- [ ] `left-handed-children`: the family-customs paragraph and the writing steps. The Persian paper step was made general because
+  the NHS advice assumes left-to-right writing; an occupational therapist who knows Persian handwriting should advise.
+- [ ] `children-and-animals` pet section: «پیشی», the Nowruz goldfish line, and the words to avoid.
+- [ ] Emergency tips `sign-dka` and `mind-psychosis` give «اورژانس ۱۱۵»; no earlier Persian tip names a number. Keep or drop?
+- [ ] Some older Persian lines still name other countries (in `what-decades-show`, `move-sit-sleep` and others). Decide whether to
+  make them generic like the new guides.
+
+### Before release
+
+- [ ] Test-call 190 (ext. 9), 1490, 096380 and 1570 before any is added.
+- [ ] Confirm the Ministry of Health's parenting-skills course (ages 2 to 12, comprehensive health centres) from a readable source
+  or a phone call, then add it to the Persian `parenting-courses` and `parenting-pyramid`.
+- [ ] Work through the "Recheck before shipping" lists at the end of notes 01 to 08.

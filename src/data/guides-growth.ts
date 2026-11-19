@@ -101,7 +101,7 @@ export const GROWTH_GUIDES: Guide[] = [
     refs: [R.nazari, R.hurrell, R.temme, R.ziegler, R.dewey, R.nhsVitamins, R.whoVitD, R.iodine],
     relatedTags: ['kitchen'],
     blocks: [
-      { type: 'p', text: 'Iron builds blood and helps the brain grow. Low iron is common in young children around the world, including about 1 in 5 young children in Iran in pooled studies. Food, drops where your health service gives them, and a few habits prevent most of it.' },
+      { type: 'p', text: 'Iron builds blood and helps the brain grow. Low iron is common in young children around the world. In pooled studies in Iran, about 1 in 5 young children had anaemia from low iron. Food, drops where your health service gives them, and a few habits prevent most of it.' },
       { type: 'h', text: 'Signs to mention to your doctor' },
       { type: 'p', text: 'Paleness, tiredness, grumpiness, a poor appetite, or eating things that aren’t food, like soil. Only a blood test can tell. Many pale children don’t have low iron, and some kinds of anaemia, such as thalassaemia trait, don’t get better with iron.' },
       {
@@ -117,7 +117,7 @@ export const GROWTH_GUIDES: Guide[] = [
       },
       { type: 'h', text: 'Tea and iron' },
       { type: 'p', text: 'Tea, including herbal teas like camomile or mint, can sharply reduce the iron the body takes from a meal, even with milk in it. Babies don’t need tea. For older children, if tea is part of the family’s day, keep it weak, unsweetened and between meals rather than with them, and offer water or milk with the meal.' },
-      { type: 'callout', tone: 'science', text: 'In a lab study, a cup of black tea with a meal cut the iron absorbed by about 80 to 90%. Whether tea causes low iron in children is less clear: studies disagree, and it seems to matter most when iron is already low.' },
+      { type: 'callout', tone: 'science', text: 'In studies of adults, a cup of black tea with a meal cut the iron absorbed by about 80 to 90%. Whether tea causes low iron in children is less clear: studies disagree, and it seems to matter most when iron is already low.' },
       { type: 'h', text: 'Milk: good, but not too much' },
       { type: 'p', text: 'Cow’s milk is low in iron and can fill a toddler up, and large amounts are linked with low iron. Ask your health centre how much suits your child. Cow’s milk isn’t a main drink before 1 year.' },
       { type: 'h', text: 'Vitamin and iron drops' },

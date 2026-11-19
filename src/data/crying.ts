@@ -256,7 +256,7 @@ export const PARENT_SUPPORT: ParentSupport = {
 
   whenToSeek: [
     'Now: you feel you might act on thoughts of ending your life or of hurting your baby. Call your emergency number.',
-    'Now: you or someone you care for is seeing, hearing or believing things that feel strange or frightening, is very confused, or has fast-changing moods. This can start suddenly, often in the first days or weeks after birth, and it is a medical emergency. Call your emergency number.',
+    'Now: you or someone you care for is seeing, hearing or believing things that feel strange or frightening, is very confused, has fast-changing moods, seems unusually high, or can’t sleep or feels no need to sleep for days. This can start suddenly, often in the first days or weeks after birth, and it is a medical emergency. Call your emergency number.',
     'The person may not notice these signs themselves, so a partner or relative may need to make the call.',
     'Today: thoughts of dying by suicide, or of hurting yourself or your baby. Tell a doctor, nurse or crisis line, even if it feels hard to say.',
     'Soon: low mood, hopelessness, no enjoyment in things, guilt, worry, a short temper, trouble sleeping or concentrating, or finding it hard to bond. This can start in pregnancy or up to a year after birth.',

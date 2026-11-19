@@ -15,6 +15,7 @@ import type { Guide } from './types';
 const CHECKED = '2026-11-18';
 
 const R = {
+  tuckerCan: { title: 'Prevalence and correlates of sibling victimization types (Tucker et al. 2013)', publisher: 'Child Abuse & Neglect', url: 'https://pubmed.ncbi.nlm.nih.gov/23428164/' },
   aapSynergy: { title: 'Sibling synergy', publisher: 'American Academy of Pediatrics (HealthyChildren.org, April 2026)', url: 'https://www.healthychildren.org/English/family-life/family-dynamics/Pages/sibling-synergy.aspx' },
   buist: { title: 'Sibling relationship quality and psychopathology: a meta-analysis (Buist et al. 2013)', publisher: 'Clinical Psychology Review', url: 'https://doi.org/10.1016/j.cpr.2012.10.007' },
   tucker: { title: 'Association of sibling aggression with child and adolescent mental health (Tucker et al. 2013)', publisher: 'Pediatrics', url: 'https://doi.org/10.1542/peds.2012-3801' },
@@ -43,7 +44,7 @@ export const FAMILY_BODIES_GUIDES: Guide[] = [
     topic: 'family',
     checkedOn: CHECKED,
     sources: ['aap-sibling-bonds'],
-    refs: [R.aapSynergy, R.buist, R.tucker, R.bowes, R.jensen, R.siddiqui, R.leijten, R.rohrer],
+    refs: [R.aapSynergy, R.buist, R.tucker, R.tuckerCan, R.bowes, R.jensen, R.siddiqui, R.leijten, R.rohrer],
     relatedTags: ['party', 'classic'],
     blocks: [
       { type: 'p', text: 'A brother or sister is often a child’s longest relationship. Squabbles are very common: in one large US survey, about 4 in 10 children were hurt or picked on by a sibling in a year, most often between 2 and 9. You can’t make them best friends, but you can make the good times more likely and the hard times less harmful.' },

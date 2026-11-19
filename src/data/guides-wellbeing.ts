@@ -263,6 +263,7 @@ export const WELLBEING_GUIDES: Guide[] = [
           ['Angry outbursts, trouble concentrating', '“I’m bad at everything”, “Nobody likes me”'],
         ],
       },
+      { type: 'callout', tone: 'safety', text: 'Don’t put every ache down to worry. Headaches that wake your child, or come with vomiting on waking, clumsiness or eye changes, need a doctor’s check first.' },
       { type: 'callout', tone: 'science', text: 'Worries and low mood in children are more common than many parents think. In a national survey in Iran, anxiety was the most common difficulty among school-age children. It’s nobody’s fault, and help works best when it comes early.' },
       { type: 'h', text: 'Starting a conversation' },
       {

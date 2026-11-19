@@ -273,7 +273,7 @@ export const BABY_GUIDES: Guide[] = [
       },
       { type: 'h', text: 'Before you start' },
       { type: 'list', items: ['Pick a calm time: not when your child is ill, teething badly, or going through a big change.', 'Agree a plan with everyone who does bedtimes, and stick with it for at least a week.', 'Keep safe-sleep rules whatever you choose. See Safe sleep essentials.', 'Try putting them down drowsy but awake, with the same words or song each night.'] },
-      { type: 'callout', tone: 'safety', text: 'See your doctor first if your child snores loudly with pauses in breathing, wakes in pain or itching, isn’t growing well, or if you’re so tired you feel low or unsafe. Your own sleep matters too.' },
+      { type: 'callout', tone: 'safety', text: 'See your doctor first if your child snores most nights, or gasps, snorts or stops breathing in their sleep, wakes in pain or itching, isn’t growing well, or if you’re so tired you feel low or unsafe. Your own sleep matters too.' },
     ],
   },
 ];

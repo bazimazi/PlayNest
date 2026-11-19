@@ -13,6 +13,10 @@ import type { Guide } from './types';
 const CHECKED = '2026-11-17';
 
 const R = {
+  dougyPet: { title: 'After the death of a pet or companion animal', publisher: 'Dougy Center and DoveLewis (2023)', url: 'https://www.dougy.org/assets/uploads/DoveLewis-Dougy-Center_After-the-death-of-a-companion-animal.pdf' },
+  kidsHealthPet: { title: 'When a pet dies', publisher: 'Nemours KidsHealth', url: 'https://kidshealth.org/en/parents/pet-death.html' },
+  crawford: { title: 'The mental health effects of pet death during childhood (Crawford et al. 2021)', publisher: 'European Child & Adolescent Psychiatry', url: 'https://pubmed.ncbi.nlm.nih.gov/32910227/' },
+  purewal: { title: 'Companion animals and child development outcomes: a longitudinal study (Purewal et al. 2024)', publisher: 'BMC Pediatrics', url: 'https://pubmed.ncbi.nlm.nih.gov/39272016/' },
   cpsc2025: { title: 'CPSC urges fireworks safety ahead of July 4th (2024 figures)', publisher: 'US Consumer Product Safety Commission (2025)', url: 'https://www.cpsc.gov/Newsroom/News-Releases/2025/CPSC-Urges-Fireworks-Safety-Ahead-of-July-4th-Holiday' },
   cpscReport: { title: '2023 Fireworks Annual Report', publisher: 'US Consumer Product Safety Commission (2024)', url: 'https://cpsc.gov/s3fs-public/2023-Fireworks-Annual-Report.pdf' },
   eAzerbaijan: { title: 'Injuries during a fire festival in East Azerbaijan, Iran (2019)', publisher: 'Journal of Injury and Violence Research', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC7187064/' },
@@ -100,7 +104,7 @@ export const SAFETY_MORE_GUIDES: Guide[] = [
     topic: 'safety',
     checkedOn: CHECKED,
     sources: [],
-    refs: [R.whoRabies, R.iranRabies, R.cochraneDogs, R.blueDog],
+    refs: [R.whoRabies, R.iranRabies, R.cochraneDogs, R.blueDog, R.dougyPet, R.kidsHealthPet, R.crawford, R.purewal],
     relatedTags: ['nature'],
     blocks: [
       { type: 'p', text: 'Children are bitten by dogs more than adults, and small children are more often bitten on the face. Most bites to young children come from a dog they know. In many countries, dogs can also carry rabies, which is always preventable with prompt care after a bite or scratch.' },
@@ -136,6 +140,19 @@ export const SAFETY_MORE_GUIDES: Guide[] = [
       },
       { type: 'callout', tone: 'science', text: 'Teaching children about dogs helps them spot risky situations, but studies haven’t shown it prevents bites on its own. What matters most is adults watching closely and managing the dog. With a small child near a large dog, pick the child up calmly.' },
       { type: 'callout', tone: 'tip', text: 'After a frightening bite, nightmares and fear of dogs are common. Comfort them and don’t force contact. If the fear is still strong after a few weeks, talk to your doctor.' },
+      { type: 'h', text: 'When a pet dies' },
+      { type: 'p', text: 'For many children, a pet’s death is their first big loss, and they feel it deeply. In a UK study of 6,260 children, those whose pet had died had slightly more emotional and behaviour difficulties a year or so later. That’s a link, not proof, but it shows the grief is real.' },
+      {
+        type: 'steps',
+        items: [
+          { title: 'Use plain words', text: '“Pishi died. Their body stopped working, and they can’t come back.”' },
+          { title: 'Skip the soft words', text: 'Not “put to sleep”, “put down” or “ran away”. Young children may become afraid of sleep, or think the pet left because of them.' },
+          { title: 'If the vet helped', text: '“The vet gave a special medicine just for animals, so Pishi could die peacefully, without pain.”' },
+          { title: 'Expect the same questions', text: 'Young children may ask again and again. Answer each time, simply.' },
+        ],
+      },
+      { type: 'p', text: 'Help them say goodbye and remember: a drawing or letter for the pet, a small ceremony, a painted stone or a photo, and funny stories told often. If they feel it was their fault, say: “You loved them, and you didn’t mean it to happen.” Decide on another pet together, when everyone is ready, and not as a replacement.' },
+      { type: 'callout', tone: 'science', text: 'Pets can bring joy and friendship. A review linked them with better self-esteem and less loneliness, but the studies were weak, and a large study that allowed for other differences found little effect on children’s emotional health.' },
     ],
   },
   {

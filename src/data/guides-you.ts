@@ -94,7 +94,7 @@ export const YOU_GUIDES: Guide[] = [
         ],
       },
       { type: 'callout', tone: 'science', text: 'Burnout seems more common in countries where families are expected to manage alone, though there are no figures for many countries. Small trials of 8-week group courses, some based on mindfulness and some on rebalancing stress, helped parents about equally. Research on mindful parenting and self-compassion on their own is modest and mixed. Support and time for yourself seem to matter most.' },
-      { type: 'callout', tone: 'safety', text: 'Burnout and depression overlap. If you feel low or hopeless most days for two weeks or more, can’t enjoy anything, or have thoughts of escaping or harming yourself, talk to your doctor soon. Depression after a baby happens to fathers as well as mothers. If you might hurt yourself or your child, get help now: Help, top right, has people to call.' },
+      { type: 'callout', tone: 'safety', text: 'Burnout and depression overlap. If you feel low or hopeless most days for two weeks or more, or can’t enjoy anything, talk to your doctor soon. Thoughts of harming yourself or ending your life: tell a doctor or a helpline today. Depression after a baby happens to fathers as well as mothers. If you might hurt yourself or your child, get help now: Help, top right, has people to call.' },
     ],
   },
   {
@@ -110,7 +110,7 @@ export const YOU_GUIDES: Guide[] = [
     sources: ['nhs-postnatal-depression', 'aap-sleepy-parents'],
     refs: [R.doss, R.bbh, R.familyFoundations, R.paulson],
     blocks: [
-      { type: 'p', text: 'If you and your partner are snapping at each other more since the baby came, you’re in good company. Big studies have found that couples’ happiness with each other often dips after a first baby, on average by a small to moderate amount, for mothers and fathers alike. It isn’t a sign that something is wrong with you. Sleep loss, new jobs and less time alone would strain anyone.' },
+      { type: 'p', text: 'If you and your partner are snapping at each other more since the baby came, you’re in good company. Big studies have found that couples’ happiness with each other often dips a little after a first baby, for mothers and fathers alike, though couples without children dip too. It isn’t a sign that something is wrong with you. Sleep loss, new jobs and less time alone would strain anyone.' },
       { type: 'h', text: 'Make the invisible work visible' },
       { type: 'p', text: 'A lot of baby work is hidden: remembering the jab appointment, noticing the nappies are running out, knowing which sleepsuit fits. Write every job down together and agree who owns each one. Owning a job means remembering it too, not just doing it when asked.' },
       {
@@ -125,7 +125,7 @@ export const YOU_GUIDES: Guide[] = [
       },
       { type: 'callout', tone: 'science', text: 'Couple programmes such as Family Foundations and Bringing Baby Home have shown benefits in some trials, including more support between parents and, in one, lower depression in mothers. In one trial, sharing baby tasks more equally went with both parents being happier with how the work was split. Most trials were small and run by the people who designed them.' },
       { type: 'h', text: 'Fathers get depressed too' },
-      { type: 'p', text: 'A large review found that about 1 in 10 fathers have depression around the time of a birth, and it’s more likely when the mother is struggling too. In men it can look like irritability, pulling away, working longer hours or drinking more, not only sadness. Check on each other.' },
+      { type: 'p', text: 'A large review found that about 1 in 10 fathers have depression around the time of a birth, and it’s more likely when the mother is struggling too. It can look like irritability, restlessness or pulling away, not only sadness. Check on each other.' },
       { type: 'callout', tone: 'safety', text: 'If either of you feels low, anxious or hopeless most days for two weeks or more, talk to your doctor or health visitor. It’s common and treatable, and the earlier the better. If arguments involve fear, threats or being hurt, that is not ordinary strain: Help, top right, lists people to call.' },
     ],
   },

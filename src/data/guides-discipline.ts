@@ -10,6 +10,8 @@ const CDC = 'Centers for Disease Control and Prevention';
 const CHECKED = '2026-11-16';
 
 const R = {
+  cuartas: { title: 'Physical punishment and lifelong outcomes in low- and middle-income countries: a meta-analysis (Cuartas, Gershoff & Bailey 2025)', publisher: 'Nature Human Behaviour', url: 'https://doi.org/10.1038/s41562-025-02164-y' },
+  who2025: { title: 'New report demonstrates that corporal punishment harms children’s health', publisher: 'World Health Organization (August 2025)', url: 'https://www.who.int/news/item/20-08-2025-new-report-demonstrates-that-corporal-punishment-harms-children-s-health' },
   cdcIgnoring: { title: 'Ignoring', publisher: CDC, url: 'https://www.cdc.gov/parenting-toddlers/responding-to-behavior/ignoring.html' },
   cdcRules: { title: 'Rules', publisher: CDC, url: 'https://www.cdc.gov/parenting-toddlers/structure-rules/rules.html' },
   cdcStructure: { title: 'Structure and rules', publisher: CDC, url: 'https://www.cdc.gov/parenting-toddlers/structure-rules/index.html' },
@@ -168,7 +170,7 @@ export const DISCIPLINE_GUIDES: Guide[] = [
     topic: 'parenting',
     checkedOn: CHECKED,
     sources: ['aap-tantrums'],
-    refs: [R.who, R.sege, R.aapSpanking, R.gershoff, R.heilmann, R.wangKenny, R.ipd, R.pinquart],
+    refs: [R.who, R.sege, R.aapSpanking, R.gershoff, R.heilmann, R.wangKenny, R.ipd, R.pinquart, R.cuartas, R.who2025],
     relatedTags: ['calm-down'],
     blocks: [
       { type: 'p', text: 'Many of us were smacked as children, and many loving parents have smacked when they ran out of other ideas. This isn’t about blame. It’s about what decades of research now show, so you can choose with good information.' },
@@ -191,7 +193,7 @@ export const DISCIPLINE_GUIDES: Guide[] = [
       { type: 'h', text: 'What holds a limit well' },
       { type: 'list', items: ['Lots of warm attention when things go well, so good behaviour gets noticed.', 'A few clear rules, said as what to do.', 'Calm, small consequences you actually carry out.', 'Repair after a hard moment: “I shouted. I’m sorry. The rule still stands.”'] },
       { type: 'callout', tone: 'tip', text: 'Respect for parents and grandparents and clear family rules fit well with the research. Children can learn respect without being hit or shamed, and firm and kind can go together. If an older relative smacks, a calm private word can help: “We’re trying something else, and it’s working.”' },
-      { type: 'callout', tone: 'science', text: 'Most of this evidence comes from following families over time, not from experiments, because no one can randomly assign smacking. But the findings are consistent across many countries and study designs. Parenting programmes that help families use less harsh discipline also see fewer behaviour problems.' },
+      { type: 'callout', tone: 'science', text: 'Most of this evidence comes from following families over time, not from experiments, because no one can randomly assign smacking. But the findings are consistent across many countries and study designs. A 2025 review of 189 studies from 92 lower- and middle-income countries, where smacking is often common, found the same links, and only for hitting and harsh words, not for calm discipline without violence. Parenting programmes that help families use less harsh discipline also see fewer behaviour problems.' },
       { type: 'callout', tone: 'safety', text: 'If you’re afraid you might hurt your child, put them somewhere safe, step away, and call someone now. You deserve support. Your doctor or health visitor, or a helpline in Help, is a good place to start.' },
     ],
   },

@@ -62,6 +62,12 @@ House rules, all enforced in review and some by tests:
 - Every red flag sends the parent to a professional or the emergency number.
 - Where bodies disagree, the copy says so and takes the cautious path.
 - No number from a study is borrowed to describe the app's own games or goals.
+- **Name the population** when a study's sample differs from ordinary families: stunted toddlers, adults, mostly one country,
+  lower-income families. Round 7's audit found four claims where the population had been dropped in paraphrase.
+- **Famous findings come with their repeats.** A claim that rests on one lab paradigm or one small study says whether larger
+  studies agreed (the bilingual advantage and praise for intelligence did not replicate; round 7 corrected both).
+- Red flags never say "it's probably worry" or "it's probably a bug" for a pattern a body lists as a warning sign (morning
+  headaches, new wetting with thirst). The body is checked first.
 - Every guide with a "science" box says what we don't know.
 - No guilt, no blame, no comparison between children; "they" for any child or parent; British English at a reading age of about 9 to 12.
 - Traditions are treated with respect and changed only where evidence shows harm. No religious rulings. Political neutrality: no
@@ -92,7 +98,10 @@ House rules, all enforced in review and some by tests:
   (for example the 2025 resuscitation guidelines).
 - Helplines: a test call before a number is added, and at every review.
 - Each round ends with a currency audit of the high-stakes content against the newest guidance, as round 6 did
-  (`07_currency_audit_high_stakes.md`).
+  (`07_currency_audit_high_stakes.md`), and with an audit of the research claims (numbers, "trials show", famous studies), as
+  round 7 did (`02_evidence_integrity_audit.md`).
+- Every research note checks the existing guides on its topic and lists what it found wrong as P1 (could cause harm), P2 (wrong
+  or misleading) or P3 (wording). Round 7's notes found no P1 and 20 P2 items, all fixed in release 2.0.
 
 ## 7. Reporting a problem
 

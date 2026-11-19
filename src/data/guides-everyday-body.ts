@@ -84,7 +84,7 @@ export const EVERYDAY_BODY_GUIDES: Guide[] = [
         head: ['Get help now or today', 'See a doctor within a few days'],
         rows: [
           ['A newborn who hasn’t passed their first poo by 24 hours', 'A baby under 1 who seems constipated'],
-          ['A swollen, tight tummy with vomiting, especially green vomit', 'Constipation that lasts more than a couple of weeks despite home steps'],
+          ['Green vomit (always get help now), or a swollen, tight tummy with vomiting', 'Constipation that lasts more than a couple of weeks despite home steps'],
           ['Severe tummy pain', 'Constipation since birth or the first weeks of life'],
           ['A baby who is constipated and also floppy, with a weak cry, poor sucking or drooping eyelids', 'Very thin, ribbon-like poos, or poor weight gain or growth'],
           ['White, red or black poo, or more than a streak of blood', 'New weakness in the legs, falling a lot, or a tuft of hair, dimple or lump at the base of the spine'],

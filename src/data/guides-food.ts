@@ -53,7 +53,7 @@ export const FOOD_GUIDES: Guide[] = [
           ['Crying, which is a late sign', 'Falling asleep, or pushing the bottle away'],
         ],
       },
-      { type: 'p', text: 'Feed at the early signs if you can, before crying. With a bottle, hold your baby fairly upright and let them set the pace. Stop when they show they’re full, even if milk is left.' },
+      { type: 'p', text: 'Feed at the early signs if you can, before crying. With a bottle, hold your baby fairly upright and let them set the pace. Stop when they show they’re full, even if milk is left. Never prop a bottle or leave your baby alone with one.' },
       { type: 'h', text: 'How long?' },
       { type: 'p', text: 'WHO advises breast milk alone for about the first 6 months, then carrying on alongside food to 2 years or beyond, for as long as you both want. The American Academy of Pediatrics now says much the same. Any amount of breast milk counts, and help with feeding is something every parent deserves.' },
       { type: 'h', text: 'If you use formula' },

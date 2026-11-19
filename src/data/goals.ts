@@ -880,7 +880,7 @@ const RAW_GOALS: ParentingGoal[] = [
       },
     ],
     signs: ['Your child sits on the potty without fuss.', 'They tell you, sometimes, when they need to go.', 'Accidents are handled calmly by everyone.', 'Toilet time feels less like a battle.'],
-    help: ['If your child is often constipated, has pain when going, or holds on, talk to your doctor: it’s common and treatable.', 'If your child was dry for six months and starts wetting again, or is very thirsty, talk to your doctor.'],
+    help: ['If your child is often constipated, has pain when going, or holds on, talk to your doctor: it’s common and treatable.', 'Dry, then wetting again? Talk to your doctor. With great thirst, tiredness or weight loss, go the same day for a blood sugar test.'],
     refs: [R.aapPottyAge, R.aapPottyPraise, R.nhsBedwetting],
   },
 ];
@@ -921,7 +921,7 @@ const BABY_YEAR_REFS = {
   lessIsMore: { title: 'Less is more: meta-analyses of sensitivity and attachment interventions in early childhood (Bakermans-Kranenburg et al. 2003)', publisher: 'Psychological Bulletin', url: 'https://doi.org/10.1037/0033-2909.129.2.195' },
   sleep: { title: 'Long-term effects of pregnancy and childbirth on sleep in mothers and fathers (Richter et al. 2019)', publisher: 'Sleep', url: 'https://doi.org/10.1093/sleep/zsz015' },
   sweden: { title: 'When dad can stay home: fathers’ workplace flexibility and maternal health (Persson & Rossin-Slater 2024)', publisher: 'American Economic Journal: Applied Economics', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12463307' },
-  thinkingHealthy: { title: 'Cognitive behaviour therapy-based intervention by community health workers for mothers with depression (Rahman et al. 2008)', publisher: 'The Lancet', url: 'https://doi.org/10.1016/S0140-6736(08)61263-X' },
+  thinkingHealthy: { title: 'Cognitive behaviour therapy-based intervention by community health workers for mothers with depression and their infants in rural Pakistan (Rahman et al. 2008)', publisher: 'The Lancet', url: 'https://doi.org/10.1016/S0140-6736(08)61400-2' },
   paulson: { title: 'Prenatal and postpartum depression in fathers: a meta-analysis (Paulson & Bazemore 2010)', publisher: 'JAMA', url: 'https://doi.org/10.1001/jama.2010.605' },
 } satisfies Record<string, Ref>;
 
@@ -995,7 +995,7 @@ const BABY_YEAR: ParentingGoal = {
   signs: ['You have a plan for hard crying, and someone to call.', 'Your baby looks for your face and “talks” back.', 'The nights feel shared, not one person’s job.', 'You get a small moment for yourself most days.'],
   help: [
     'If you feel you might shake or hurt your baby, lay them on their back in the cot, step away and call someone now. That is the right thing to do.',
-    'Low mood, worry or no joy most days for 2 weeks, in either parent: talk to your doctor or health centre. See Help.',
+    'Low mood, worry or no joy most days for 2 weeks, in either parent: see your doctor. Thoughts of ending your life: get help today. See Help.',
     'Crying that sounds different, or comes with fever, poor feeding, floppiness or breathing trouble: get your baby seen now.',
   ],
   refs: [BABY_YEAR_REFS.barr2009, BABY_YEAR_REFS.barr2018, BABY_YEAR_REFS.icon, BABY_YEAR_REFS.nhsCrying, BABY_YEAR_REFS.ccd, BABY_YEAR_REFS.coaching, BABY_YEAR_REFS.songs, BABY_YEAR_REFS.vip, BABY_YEAR_REFS.lessIsMore, BABY_YEAR_REFS.sleep, BABY_YEAR_REFS.sweden, BABY_YEAR_REFS.thinkingHealthy, BABY_YEAR_REFS.paulson],
@@ -1137,7 +1137,7 @@ const EXPECT: Record<string, GoalExpect[]> = {
   ],
   'smoother-mornings': [
     { ...Y3, typical: 'A picture routine helps, but they still need a prompt at each step. Dawdling isn’t defiance.' },
-    { ...Y5, typical: 'Follows a checklist with reminders. Forgetting is normal: planning skills are still growing.', ask: 'Tummy aches or headaches mainly on school mornings, again and again. It may be worry.' },
+    { ...Y5, typical: 'Follows a checklist with reminders. Forgetting is normal: planning skills are still growing.', ask: 'Tummy aches or headaches on school mornings, again and again. See a doctor to check the body first; it can also be worry.' },
     { ...Y8, typical: 'Can own most of the routine, perhaps with an alarm.', ask: 'Refusing school, or often late because of distress.' },
   ],
   'potty-ready': [
