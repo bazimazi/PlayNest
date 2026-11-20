@@ -620,3 +620,55 @@ or unverified.
 - [ ] Confirm the Ministry of Health's parenting-skills course (ages 2 to 12, comprehensive health centres) from a readable source
   or a phone call, then add it to the Persian `parenting-courses` and `parenting-pyramid`.
 - [ ] Work through the "Recheck before shipping" lists at the end of notes 01 to 08.
+
+## 14. Research round 8: the Shahnameh and Persian heritage stories, by age (release 2.1, November 2026)
+
+Release 2.1 adds 39 Persian stories (23 from the Shahnameh, 15 from other classics, 1 folk tale), a way to read the Shahnameh in
+order, 18 Shahnameh talk cards and 9 Shahnameh activities to the Persian app, and a guide and 10 tips for both languages. The
+research is in [RESEARCH-9.md](RESEARCH-9.md). **No Persian literature specialist, children's-literature reviewer or child
+psychologist has read any of it.** Each story's `note` says what the source says and what was changed; review against that.
+
+### Fixes to existing content (check these first)
+
+- [ ] `gordafarid-and-the-white-fortress`: the note now says Sohrab knows his father's name but neither knows the other in battle;
+  paragraph 6 is conditional ("if they see my face and hair").
+- [ ] `zal-and-the-simorgh`: starts at 5 (was 4); the note now mentions the Simorgh first carrying the baby off as food, and has a
+  line for adoptive and foster families; Ganjoor refs added; culture string now "Persian, from Ferdowsi's Shahnameh".
+- [ ] `kavus-and-the-flying-throne` note: "war on the sky" is reported as a story people told.
+- [ ] `takhteh-nard-bozorgmehr`: the Middle Persian "30 days" question is replaced by Ferdowsi's line on a lone piece (b. 94).
+
+### Stories marked `care` (read these closely)
+
+- [ ] `rostam-and-sohrab` (11 to 12 only, read with a parent; added by the owner's decision): a father kills his son without
+  knowing him. The killing is one sentence ("struck him with his dagger") and Sohrab's death another ("And Sohrab died"). Cut and
+  named in the note: Tahmineh's night visit, all wine, Rostam's night killing of Tahmineh's messenger hero, blood, and Rostam
+  tearing his clothes and reaching for a dagger to kill himself. Kept: Afrasiyab's secret order, Hajir hiding Rostam, Rostam's
+  denial and his first-wrestle trick, Kavus refusing the cure, and Rostam's call to end the war. Check the age, the note's
+  advice to read it first and stay afterwards, and whether the note should point to `old-tales-by-age`. Its "Comes next" link
+  shows on `gordafarid-and-the-white-fortress` (9 to 12) with its age beside it.
+- [ ] `rostam-is-born`: a mother in a hard birth, for ages 4 to 8; the caesarean is said simply, and the note names it «سزارین».
+- [ ] `siavash-and-the-fire` (9 to 12): Sudabeh's accusation is only "a lie"; the hanging order is "punish her severely"; the note
+  says fire is never safe to go near.
+- [ ] `kay-khosrow-the-hidden-prince`: Giv's killings cut, Afrasiab's threat cut, the father's death said in one line.
+- [ ] `bizhan-and-the-ring`: told as loyal friendship under 10, the note says the poem tells a love story; Rostam's night raid cut.
+- [ ] `fereydun-tests-his-sons` (from Mohl's edition on Wikisource; not in Ganjoor's text), `rakhsh-keeps-watch` (the lion is
+  driven off, not killed), `bahram-and-the-cow`, `bozorgmehr-and-the-locked-box` (the three-women clue cut),
+  `ferdowsi-and-the-shahnameh` (history first, then the Chahar Maqaleh legend, marked as legend), `young-pigeon-learns-to-fly`,
+  `the-three-fish`, `saadi-lost-in-the-crowd`, `thirsty-dog-in-the-desert`, `hare-and-the-moon-spring`.
+
+### Persian language
+
+- [ ] Every Persian story is what a parent reads aloud: read each one aloud once for rhythm, naturalness and age.
+- [ ] Old place names kept from the poem: Tahmures's scripts (رومی، تازی، چینی), Kabul, Turan, Hind. Fine, or make general?
+- [ ] Classical names simplified for small children: «اردک» for «بط», «کلاغ» for «زاغ», «میش» for the poem's «غرم».
+- [ ] The new on-screen words: «شاهنامه، به ترتیب», «پیش از این» / «بعد از این», and the intro line on the Shahnameh shelf.
+
+### Before release
+
+- [x] Owner decision (20 November 2026): Rostam and Sohrab is in, for 11 to 12, read with a parent (`rostam-and-sohrab`).
+- [x] Owner decision (20 November 2026): Mah Pishani, Jirtdan and Nokhodi are not pursued. The held draft stays in
+  `research_notes/PlayNest phase 11 research round 8/held_drafts/` and out of the app.
+- [x] Owner decision (20 November 2026): release 2.1 need not wait for an outside reviewer.
+- [ ] Still wanted after release: a Persian children's-literature reviewer (Kanoon, or Shiraz University's children's literature
+  centre) reads all 39 stories.
+- [ ] `old-tales-by-age`: a child psychologist checks the age table and the "if they're scared" advice against note 04.

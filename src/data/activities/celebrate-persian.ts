@@ -4,7 +4,7 @@ import type { Activity } from '../types';
 
 /**
  * Festival games for the Iranian days in `celebrations-persian.ts`: Sadeh, Tirgan, Sepandarmazgan, Tree-planting Day and
- * Ferdowsi Day, and more for Chaharshanbe Suri, Sizdah Bedar, Yalda and Children's Day in `celebrations.ts`. Like every
+ * Ferdowsi Day, and more for Nowruz, Chaharshanbe Suri, Sizdah Bedar, Yalda and Children's Day in `celebrations.ts`. Like every
  * festival game they are shown only to families who chose that day, and never tagged `world`. The day decides the
  * language, so these appear in Persian only, and the Persian is what parents read.
  *
@@ -935,6 +935,53 @@ export const persianCelebrationActivities: Activity[] = [
     tags: ['classic', 'kid-leads'],
     refs: [IR.childGames, IR.childrensDay],
     celebration: 'childrens-day-iran',
+    lang: 'fa',
+  },
+
+  // ---------- Nowruz: Jamshid (round 8) ----------
+  {
+    id: 'nowruz-jamshid-throne',
+    title: 'Jamshid’s throne: the first new day',
+    emoji: '👑',
+    summary: 'Turn a chair into Jamshid’s shining throne and shower each other with paper jewels, as people did on the Shahnameh’s first Nowruz.',
+    minMonths: 36,
+    maxMonths: 84,
+    domains: ['feelings', 'language', 'imagination'],
+    durationMin: 20,
+    energy: 'moderate',
+    settings: ['indoor'],
+    materialsLevel: 'craft',
+    materials: ['a sturdy chair or a big cushion', 'yellow card for a sun', 'scissors, for the grown-up', 'sticky tape', 'coloured paper or tissue paper', 'a tray or a bowl'],
+    groupFriendly: true,
+    steps: [
+      'Tell the story: long ago King Jamshid taught people many useful things. Then he had a throne made, set with jewels, and it was lifted high into the sky, shining like the sun.',
+      'Make the throne: the grown-up cuts a big sun from the yellow card, and your child tapes it to the back of the chair.',
+      'Tear the coloured paper into big pieces for jewels, each about as big as your child’s palm, and pile them on the tray.',
+      'Take turns to sit on the throne. Everyone else gently showers the paper jewels over them and calls روز نو! (new day!).',
+      'The one on the throne says one wish for the new year.',
+      'Read Ferdowsi’s lines together: به جمشید بر گوهر افشاندند / مر آن روز را روز نو خواندند (they scattered jewels over Jamshid, and called that day the new day) and چنین جشن فرخ از آن روزگار / به ما ماند از آن خسروان یادگار (this happy feast has come down to us from those kings of old). That is why we still have Nowruz.',
+    ],
+    talk: ['What is your wish for the new year?', 'Why do you think people called it the new day?', 'What is new for you this spring?'],
+    whyItHelps:
+      'Acting out the old story behind a festival the child already knows gives Nowruz a beginning they can picture, and saying a wish to the family is gentle practice at speaking up in a group.',
+    easier: 'Skip the poetry: just shower the jewels and call روز نو together.',
+    harder:
+      'Read the story Jamshid and the First Nowruz first. Then learn the line سر سال نو هرمز فرودین, which says it was the first day of Farvardin, and find that day on the calendar.',
+    variations: [
+      'Play the throne game when relatives visit at Nowruz, so every grandparent gets a turn on the throne and a shower of jewels.',
+      'Draw Jamshid’s shining throne up in the sky, like a second sun above the people.',
+      'Instead of a wish, each person on the throne says one thing they learned or did well this year.',
+    ],
+    safety: [
+      'Sit on the throne, never stand on it, and nobody lifts or tips the chair. Use a big cushion on the floor if your chair is not steady.',
+      'Keep the paper jewels big, and sweep them up afterwards if a baby or toddler is about: small bits of paper end up in mouths.',
+    ],
+    tags: ['pretend', 'party', 'reading'],
+    refs: [
+      IR.nowruz,
+      { title: 'شاهنامه، جمشید، بخش ۱: پادشاهی جمشید', publisher: 'Ganjoor', url: 'https://ganjoor.net/ferdousi/shahname/jamshid/sh1' },
+    ],
+    celebration: 'nowruz',
     lang: 'fa',
   },
 ];

@@ -6,10 +6,11 @@ import { Emoji } from '../components/Emoji';
 import { BedsideToggle, DimOffer, HelpButton, ReadAloud } from '../components/Help';
 import { Icon } from '../components/Icon';
 import { BackButton, Empty, Page, Section } from '../components/Page';
+import { Glyph, ListGroup, ListRow } from '../components/ui';
 import { Pip } from '../components/Pip';
 import { PlayTabs } from '../components/PlayTabs';
 import { toast } from '../components/Toast';
-import { STORY_THEMES, type Story, type StoryPromptKind, type StoryTheme } from '../data/packs';
+import { STORY_SAGAS, STORY_THEMES, type Story, type StoryPromptKind, type StorySaga, type StoryTheme } from '../data/packs';
 import { STORIES } from '../data/stories';
 import { DOMAINS } from '../data/types';
 import { num, showsOwnScript, t, tn } from '../i18n';
@@ -37,6 +38,18 @@ const THEME_LABEL: Record<StoryTheme, string> = {
   honesty: t('Telling the truth'),
   family: t('Family'),
 };
+
+/** Longer works told episode by episode, with what to call them and a line on how to read them. */
+const SAGA: Record<StorySaga, { label: string; heading: string; intro: string }> = {
+  shahnameh: {
+    label: t('Shahnameh'),
+    heading: t('The Shahnameh, in order'),
+    intro: t('Ferdowsi’s Book of Kings, from the first kings to the heroes and the later kings. Each story follows on from the one before, so you can read them in order as your child grows.'),
+  },
+};
+
+/** The stories of one saga, in the order they come in the work. */
+const sagaStories = (name: StorySaga) => STORIES.filter((s) => s.saga?.name === name).sort((a, b) => a.saga!.order - b.saga!.order);
 
 const fits = (s: Story, months: number | undefined) => months === undefined || (s.minMonths <= months && months <= s.maxMonths);
 
@@ -73,10 +86,17 @@ export default function Stories() {
   const saved = useStore((s) => s.savedStories);
   const asked = params.get('theme');
   const theme = STORY_THEMES.includes(asked as StoryTheme) ? (asked as StoryTheme) : null;
+  const askedSaga = params.get('saga');
+  const saga = !theme && STORY_SAGAS.includes(askedSaga as StorySaga) ? (askedSaga as StorySaga) : null;
   const months = age?.months;
 
   const forAge = useMemo(() => STORIES.filter((s) => fits(s, months)), [months]);
-  const list = theme ? forAge.filter((s) => s.themes.includes(theme)) : forAge;
+  const list = theme
+    ? forAge.filter((s) => s.themes.includes(theme))
+    : saga
+      ? forAge.filter((s) => s.saga?.name === saga).sort((a, b) => a.saga!.order - b.saga!.order)
+      : forAge;
+  const sagas = STORY_SAGAS.filter((n) => forAge.some((s) => s.saga?.name === n));
   const readCounts = useMemo(() => {
     const m = new Map<string, number>();
     for (const r of reads) if (r.childId === child?.id) m.set(r.storyId, (m.get(r.storyId) ?? 0) + 1);
@@ -98,7 +118,7 @@ export default function Stories() {
 
   return (
     <Page world="dusk" title={t('Stories')} heading={t('Story time')} actions={<><HelpButton /><ProfileButton /></>} head={<PlayTabs view="stories" />}>
-      {tonight && !theme && (
+      {tonight && !theme && !saga && (
         <Link to={`/stories/${tonight.id}`} className="tonight">
           <Art emoji={tonight.emoji} seed={tonight.id} palette={palette(tonight.id)} energy="calm" className="tonight-art" eager live />
           <span className="tonight-text">
@@ -112,8 +132,19 @@ export default function Stories() {
         </Link>
       )}
 
-      {themes.length > 0 && (
+      {themes.length + sagas.length > 0 && (
         <div className="chips scroll" role="group" aria-label={t('Story themes')}>
+          {sagas.map((n) => (
+            <button
+              key={n}
+              type="button"
+              className="chip"
+              aria-pressed={saga === n}
+              onClick={() => setParams(saga === n ? {} : { saga: n }, { replace: true })}
+            >
+              {SAGA[n].label}
+            </button>
+          ))}
           {themes.map((t) => (
             <button
               key={t}
@@ -128,7 +159,7 @@ export default function Stories() {
         </div>
       )}
 
-      {savedList.length > 0 && !theme && (
+      {savedList.length > 0 && !theme && !saga && (
         <Section title={t('Saved')} id="saved-title">
           <div className="tile-grid">
             {savedList.map((s) => (
@@ -138,7 +169,11 @@ export default function Stories() {
         </Section>
       )}
 
-      <Section title={theme ? THEME_LABEL[theme] : child ? t('For {name}', { name: child.name }) : t('All stories')} id="stories-title">
+      <Section
+        title={theme ? THEME_LABEL[theme] : saga ? SAGA[saga].heading : child ? t('For {name}', { name: child.name }) : t('All stories')}
+        id="stories-title"
+      >
+        {saga && <p className="section-note">{SAGA[saga].intro}</p>}
         {list.length > 0 ? (
           <div className="tile-grid">
             {list.map((s) => (
@@ -169,6 +204,10 @@ export function StoryPage() {
   const { id = '' } = useParams();
   const { child } = useActiveChild();
   const story = STORIES.find((s) => s.id === id);
+  const episodes = story?.saga ? sagaStories(story.saga.name) : [];
+  const at = story ? episodes.indexOf(story) : -1;
+  const before = at > 0 ? episodes[at - 1] : undefined;
+  const after = at >= 0 ? episodes[at + 1] : undefined;
   const saved = useStore((s) => s.savedStories.includes(id));
   const [telling, setTelling] = useState(false);
   const [shared, setShared] = useState(false);
@@ -277,6 +316,32 @@ export function StoryPage() {
           <p>{t('Then wait. Whatever they say is the right answer.')}</p>
         </div>
       </Section>
+
+      {story.saga && (before || after) && (
+        <Section title={SAGA[story.saga.name].heading} id="saga-title">
+          <ListGroup>
+            {before && (
+              <ListRow
+                to={`/stories/${before.id}`}
+                lead={<Glyph emoji={before.emoji} tone="var(--d-thinking)" />}
+                title={before.title}
+                subtitle={t('Comes before · {age}', { age: formatAgeRange(before.minMonths, before.maxMonths) })}
+              />
+            )}
+            {after && (
+              <ListRow
+                to={`/stories/${after.id}`}
+                lead={<Glyph emoji={after.emoji} tone="var(--d-feelings)" />}
+                title={after.title}
+                subtitle={t('Comes next · {age}', { age: formatAgeRange(after.minMonths, after.maxMonths) })}
+              />
+            )}
+          </ListGroup>
+          <Link to={`/stories?saga=${story.saga.name}`} className="link-btn">
+            {t('See them all')}
+          </Link>
+        </Section>
+      )}
 
       {child && (
         <button

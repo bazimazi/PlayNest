@@ -72,6 +72,11 @@ House rules, all enforced in review and some by tests:
 - No guilt, no blame, no comparison between children; "they" for any child or parent; British English at a reading age of about 9 to 12.
 - Traditions are treated with respect and changed only where evidence shows harm. No religious rulings. Political neutrality: no
   sides, enemies, dates or places in content about conflict.
+- **Stories are retold from the text itself, and every change is named.** Plots come from the work (for Persian classics, read on
+  Ganjoor) or a documented folk telling, never from memory or a modern retelling; a story whose full plot can't be read waits.
+  Softening follows the age rules in [RESEARCH-9.md](RESEARCH-9.md) (no death on the page under 6, no killing shown at 6 to 8, no
+  suicide, torture or sexual content at any age, no wine), and the story's `note` tells the parent what the source says and what
+  was changed. Old enemies in epics are never linked to living peoples.
 - First-aid cards follow one named body per region and say which.
 
 ## 5. How a piece of content is made

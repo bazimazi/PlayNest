@@ -920,5 +920,11 @@
  "Works offline": "کار بدون اینترنت",
  "Getting ready…": "در حال آماده شدن…",
  "Every screen opens with no signal": "همهٔ صفحه‌ها بدون آنتن هم باز می‌شوند",
- "Keep PlayNest open with a connection for a minute": "پلی‌نست را یک دقیقه با اینترنت باز نگه دارید"
+ "Keep PlayNest open with a connection for a minute": "پلی‌نست را یک دقیقه با اینترنت باز نگه دارید",
+ "Comes before · {age}": "پیش از این · {age}",
+ "Comes next · {age}": "بعد از این · {age}",
+ "Ferdowsi’s Book of Kings, from the first kings to the heroes and the later kings. Each story follows on from the one before, so you can read them in order as your child grows.": "نامهٔ شاهانِ فردوسی، از نخستین شاهان تا پهلوانان و شاهان پسین. هر قصه دنبالهٔ قصهٔ پیش از خودش است، پس می‌توانید همراه با بزرگ شدن کودکتان آن‌ها را به ترتیب بخوانید.",
+ "See them all": "دیدن همه",
+ "Shahnameh": "شاهنامه",
+ "The Shahnameh, in order": "شاهنامه، به ترتیب"
 }

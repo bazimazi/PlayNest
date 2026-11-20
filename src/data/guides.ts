@@ -24,6 +24,7 @@ import { SAFETY_MORE_GUIDES } from './guides-safety-more';
 import { SCHOOL_MOVES_GUIDES } from './guides-school-moves';
 import { SCREENS_YOUNG_GUIDES } from './guides-screens-young';
 import { SIGNS_GUIDES } from './guides-signs';
+import { TALES_GUIDES } from './guides-tales';
 import { WELLBEING_GUIDES } from './guides-wellbeing';
 import { WHEELS_POWER_GUIDES } from './guides-wheels-power';
 import { YOU_GUIDES } from './guides-you';
@@ -685,6 +686,7 @@ export const GUIDES: Guide[] = [
   ...NIGHT_GUIDES,
   ...SCHOOL_MOVES_GUIDES,
   ...COURSES_GUIDES,
+  ...TALES_GUIDES,
 ];
 
 localize('guides', GUIDES, { hideMissing: true });

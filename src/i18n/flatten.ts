@@ -8,7 +8,7 @@ const NOT_WORDS = new Set([
   'id', 'slug', 'key', 'emoji', 'url', 'color', 'tone', 'type', 'kind', 'via', 'domains', 'tags', 'settings', 'energy',
   'materialsLevel', 'sources', 'source', 'weather', 'seasons', 'celebration', 'checkedOn', 'group', 'topic', 'evidence',
   'stance', 'refs', 'melody', 'original', 'roman', 'nativeTitle', 'nativeName', 'dates', 'whenEnergy', 'whenSetting',
-  'whenTag', 'need', 'band', 'relatedTags', 'phone', 'category', 'themes', 'basedOn', 'textLine', 'lang', 'guide', 'coach',
+  'whenTag', 'need', 'band', 'relatedTags', 'phone', 'category', 'themes', 'basedOn', 'textLine', 'lang', 'guide', 'coach', 'saga',
 ]);
 
 /** Fields that are words elsewhere but proper names in this collection. */

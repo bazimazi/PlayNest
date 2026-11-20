@@ -236,6 +236,7 @@ export const PERSIAN_STORIES: Story[] = [
     themes: ['nature', 'family', 'bedtime'],
     bedtime: true,
     stance: 'open',
+    saga: { name: 'shahnameh', order: 20 },
     paragraphs: [
       'Long, long ago, near the beginning of things, there was a king of Iran called Hushang. He was wise and good, and he taught people many new things. But there was one thing nobody knew yet. Nobody knew how to make fire.',
       'In winter the nights were long and dark, and the cold crept in everywhere.',
@@ -278,6 +279,7 @@ export const PERSIAN_STORIES: Story[] = [
     themes: ['family', 'nature', 'bedtime'],
     bedtime: true,
     stance: 'open',
+    saga: { name: 'shahnameh', order: 40 },
     paragraphs: [
       'Long ago there was a king of Iran called Jamshid. He was clever and kind, and he wanted to make the world a better place to live in. So he set to work.',
       'First he softened iron in the fire and made it into tools and armour. Then he taught people to spin and weave flax and silk and wool, and to sew themselves warm clothes.',
@@ -357,6 +359,7 @@ export const PERSIAN_STORIES: Story[] = [
     themes: ['bravery', 'friendship', 'patience'],
     bedtime: false,
     stance: 'open',
+    saga: { name: 'shahnameh', order: 90 },
     paragraphs: [
       "Rostam was young, but he was already the strongest man in all Iran. He was so big and so heavy that no ordinary horse could carry him. And Iran needed him, for an enemy army was coming. 'I need a horse,' said Rostam. 'A horse like no other.'",
       "So the herds were brought before him from every pasture in Zabulistan. One by one the horses were led up, and Rostam pressed his hand down on each one's back, to test its strength. And one by one, each horse sank under his hand until its belly almost touched the ground. 'Not this one,' said Rostam. 'Not this one either.'",
@@ -485,6 +488,7 @@ export const PERSIAN_STORIES: Story[] = [
     themes: ['bravery', 'honesty', 'family'],
     bedtime: false,
     stance: 'care',
+    saga: { name: 'shahnameh', order: 50 },
     paragraphs: [
       'Long ago, a cruel king called Zahhak sat on the throne of Iran. An evil spirit had once kissed him on the shoulders, and from each shoulder a black snake had grown. The snakes were always hungry. To feed them, the king’s soldiers took young people from their homes, one family after another. Everyone was afraid, and nobody dared to speak.',
       "Zahhak knew that the people hated him, and he was afraid too. So one day he called all the great men of the land to his palace. 'Write a letter,' he said, 'saying that I am a good and fair king, and that I have done nothing but good. Then every one of you will sign it.' The great men were frightened, so one after another, they signed.",
@@ -738,6 +742,7 @@ export const PERSIAN_STORIES: Story[] = [
     themes: ['honesty', 'patience'],
     bedtime: false,
     stance: 'open',
+    saga: { name: 'shahnameh', order: 110 },
     paragraphs: [
       'Long ago there was a king called Kavus. The whole earth was his to rule, and he had everything he wanted. One day, while Kavus was out hunting, a smooth-talking young man came to him with a bunch of flowers, bowed to the ground and gave them to him. Nobody knew that this young man was really a div, a demon of the old stories, dressed up as a servant.',
       "'O king,' said the servant, 'the earth is all yours. But the sky still keeps its secrets from you. What is the sun hiding from you? Who turns the moon, the day and the night, and the whole wheeling sky?'",
@@ -764,7 +769,7 @@ export const PERSIAN_STORIES: Story[] = [
       { kind: 'open', text: 'Why do you think Kavus believed the servant?' },
       { kind: 'distancing', text: 'Has anyone ever told you only what you wanted to hear? How did it turn out?' },
     ],
-    note: "From Ferdowsi's Shahnameh. In the poem it is Iblis who sends the div, Ferdowsi says Kavus meant to make war on the sky with his bow, and Goudarz's scolding is much sharper than here. The story goes on to say that Kavus's son Siavash was still to be born, which is why he survived the fall.",
+    note: "From Ferdowsi's Shahnameh. In the poem it is Iblis who sends the div, Ferdowsi reports a story that Kavus meant to make war on the sky with his bow, and Goudarz's scolding is much sharper than here. The story goes on to say that Kavus's son Siavash was still to be born, which is why he survived the fall.",
     refs: [
       ganjoor('شاهنامه، داستان رزم کاووس با شاه هاماوران، بخش ۸', 'ferdousi/shahname/hamavaran/sh8'),
       ganjoor('شاهنامه، داستان رزم کاووس با شاه هاماوران، بخش ۹', 'ferdousi/shahname/hamavaran/sh9'),
@@ -783,13 +788,14 @@ export const PERSIAN_STORIES: Story[] = [
     themes: ['bravery', 'cleverness'],
     bedtime: false,
     stance: 'open',
+    saga: { name: 'shahnameh', order: 115 },
     paragraphs: [
       'On Iran’s border stood a castle called the White Fortress. Its commander was a champion named Hajir. One day a great army reached the border, and at its head rode a tall, powerful young man called Sohrab. Hajir rode out to fight him, but Sohrab beat him and took him prisoner.',
       'Inside the fortress, everyone was afraid. But among them was a young woman called Gordafarid, the daughter of Gazhdaham, who had no equal at riding and archery. When she heard that Hajir had been captured, she made up her mind.',
       "She put on a horseman’s armour, tucked her long hair under her helmet, and galloped out of the fortress like a lion. She stopped in front of the army and called out, 'Who will fight me?'",
       'Sohrab laughed and rode forward. Gordafarid sent a shower of arrows at him, but he raised his shield and charged. She swung her lance. Sohrab lifted her right out of the saddle, but she twisted free, drew her sword and cut his spear in two. Then she turned her horse and raced for the fortress.',
       "Sohrab chased after her and caught up. Just then her helmet came off, and her long hair tumbled free. Sohrab stared in amazement. 'A girl! Iran has sent a girl to fight me?' And he threw his lasso and caught her.",
-      "Gordafarid saw that she was caught. But she did not show her fear. She thought, and found one way out. She turned to Sohrab and said calmly, 'Two armies are watching us. Now that they have seen my face and hair, your soldiers will be full of talk about you. It would be better to settle this quietly. The fortress, its treasure and its guards are all yours.'",
+      "Gordafarid saw that she was caught. But she did not show her fear. She thought, and found one way out. She turned to Sohrab and said calmly, 'Two armies are watching us. If they see my face and hair, your soldiers will be full of talk about you. It would be better to settle this quietly. The fortress, its treasure and its guards are all yours.'",
       'Sohrab agreed, and rode with her to the fortress gate. The gate opened, Gordafarid slipped inside, still tied with his rope, and the guards shut the gate behind her. Sohrab was left outside.',
       "Gordafarid climbed up onto the wall and laughed. 'Brave champion,' she called down, 'do not wear yourself out! Soon the king and Rostam will hear of this. You had better go back to your own land before it is too late.'",
       'Sohrab went red with anger and shame. He had lost the fortress so easily, and to a young woman’s quick wits. As for Gordafarid, who rode out with courage and came back with cleverness, she has lived on in the Shahnameh ever since.',
@@ -808,7 +814,7 @@ export const PERSIAN_STORIES: Story[] = [
       { kind: 'open', text: 'Which took more courage, the fight or the trick? Why?' },
       { kind: 'distancing', text: 'When have you got out of a tricky spot by thinking fast?' },
     ],
-    note: "From the story of Rostam and Sohrab in Ferdowsi's Shahnameh. Sohrab is Rostam's son, though neither of them knows it yet, and their story ends sadly; this part stands on its own. Ferdowsi's battle is bloodier and Gordafarid's words from the wall are harsher, and both are softened here. Her offer at the gate echoes two of Ferdowsi's own lines: better that we settle this in secret, and the fortress, its treasure and its guards are all yours.",
+    note: "From the story of Rostam and Sohrab in Ferdowsi's Shahnameh. Sohrab is Rostam's son, and he knows his father's name, but when the two meet in battle neither knows the other, and their story ends sadly; this part stands on its own. Ferdowsi's battle is bloodier and Gordafarid's words from the wall are harsher, and both are softened here. Her offer at the gate echoes two of Ferdowsi's own lines: better that we settle this in secret, and the fortress, its treasure and its guards are all yours.",
     refs: [ganjoor('شاهنامه، داستان رستم و سهراب، بخش ۷', 'ferdousi/shahname/sohrab/sh7')],
   },
 ];

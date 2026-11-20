@@ -3,6 +3,7 @@ import {
   COACH_GROUPS,
   NEEDS,
   SONG_TYPES,
+  STORY_SAGAS,
   STORY_THEMES,
   type Adaptation,
   type AidCard,
@@ -269,6 +270,12 @@ export function validateStories(list: Story[]): string[] {
     if (!s.beats || s.beats.length < 4 || s.beats.length > 7) err('beats: 4–7');
     if (!s.prompts || s.prompts.length < 3 || s.prompts.length > 4) err('prompts: 3–4');
     if (s.stance !== 'open' && s.stance !== 'care') err('stance must be open or care');
+    if (s.saga) {
+      if (!STORY_SAGAS.includes(s.saga.name)) err(`unknown saga ${s.saga.name}`);
+      if (!(Number.isInteger(s.saga.order) && s.saga.order > 0)) err('saga order must be a positive whole number');
+      const twin = list.find((o) => o !== s && o.saga?.name === s.saga?.name && o.saga?.order === s.saga?.order);
+      if (twin) err(`saga order ${s.saga.order} is also ${twin.id}`);
+    }
     checkRefs(s.refs, err);
   });
 }

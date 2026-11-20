@@ -10,6 +10,8 @@ import type { Ref, Story } from './packs';
 import { fitsCulture, localize } from '../i18n';
 import { ENGLISH_STORIES } from './stories-english';
 import { PERSIAN_STORIES } from './stories-persian';
+import { SHAHNAMEH_STORIES } from './stories-shahnameh';
+import { HERITAGE_STORIES } from './stories-heritage';
 
 const wp = (title: string, url: string): Ref => ({ title, publisher: 'Wikipedia', url });
 const gut = (title: string, url: string): Ref => ({ title, publisher: 'Project Gutenberg', url });
@@ -120,15 +122,16 @@ const TOLD: Story[] = [
     id: 'zal-and-the-simorgh',
     title: 'Zāl and the Simorgh',
     nativeTitle: 'زال و سیمرغ',
-    culture: "Traditional, Iranian, from Ferdowsi's Shahnameh",
+    culture: "Persian, from Ferdowsi's Shahnameh",
     lang: 'fa',
     emoji: '🦅',
-    minMonths: 48,
+    minMonths: 60,
     maxMonths: 144,
     minutes: 3,
     themes: ['family', 'kindness', 'nature'],
     bedtime: true,
     stance: 'open',
+    saga: { name: 'shahnameh', order: 70 },
     paragraphs: [
       'Long ago in Iran there lived a great hero called Sām. When his son was born, the baby was strong and well, and his hair was as white as snow. They called him Zāl, a name that points to that white hair.',
       'Sām looked at his son and felt afraid. He was afraid of what people would say, and he did a wrong thing. He said an evil spirit must be to blame, and he had the baby carried to the Alborz mountain and left there.',
@@ -153,11 +156,13 @@ const TOLD: Story[] = [
       { kind: 'open', text: 'How do you think Zāl felt, leaving the nest?' },
       { kind: 'distancing', text: 'Who would you call if you needed help?' },
     ],
-    note: "From a great Iranian poem. A baby is left on a mountain near the start: the wrong is said gently and kept, because putting it right is the story. The tale honours a child who looks different, and some link Zāl's name to albinism.",
+    note: "From a great Iranian poem. A baby is left on a mountain near the start: the wrong is said gently and kept, because putting it right is the story. In the poem the Simorgh first carries the baby off as food for her chicks, then takes pity on him; here she cares for him from the start. The tale honours a child who looks different, and some link Zāl's name to albinism. With an adopted or fostered child, it may bring questions about being given up: answer them gently and simply.",
     refs: [
       wp('Zāl', 'https://en.wikipedia.org/wiki/Z%C4%81l'),
       wp('زال', 'https://fa.wikipedia.org/wiki/%D8%B2%D8%A7%D9%84'),
       wp('Simurgh', 'https://en.wikipedia.org/wiki/Simurgh'),
+      { title: 'شاهنامه، پادشاهی منوچهر: زادن زال', publisher: 'Ganjoor', url: 'https://ganjoor.net/ferdousi/shahname/manoochehr/sh2' },
+      { title: 'شاهنامه، پادشاهی منوچهر: آگاه شدن سام از کار زال', publisher: 'Ganjoor', url: 'https://ganjoor.net/ferdousi/shahname/manoochehr/sh3' },
     ],
   },
   {
@@ -2914,7 +2919,7 @@ const TOLD: Story[] = [
 localize('stories', TOLD, { hideMissing: true });
 
 /** Every story in every language, for checking the content. */
-export const EVERY_STORY: readonly Story[] = [...TOLD, ...PERSIAN_STORIES, ...ENGLISH_STORIES];
+export const EVERY_STORY: readonly Story[] = [...TOLD, ...PERSIAN_STORIES, ...SHAHNAMEH_STORIES, ...HERITAGE_STORIES, ...ENGLISH_STORIES];
 
 /** The stories this language tells: its own culture's, never another's. */
 export const STORIES: Story[] = EVERY_STORY.filter(fitsCulture);

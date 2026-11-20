@@ -17,6 +17,17 @@ import { localize } from '../i18n';
  *    the sleep riddle, the pre-Islamic dog riddle and Rudaki's pen riddle from https://fa.wikipedia.org/wiki/چیستان;
  *    Ferdowsi's riddles for Zal (/ferdousi/shahname/manoochehr/sh20, answers in sh21), Rudaki (/roodaki/baghimande/sh100) and
  *    Manouchehri's candle (/manoochehri/divanm/ghaside-ghete/sh50) checked on Ganjoor.
+ *  - Shahnameh, from Ganjoor's text (https://ganjoor.net/ferdousi/shahname/…; Ganjoor names its source «ویکی‌درج», and
+ *    wording can differ from Khaleghi-Motlagh's edition). Lines quoted, by card: 1 Tahmures, /tahmoores/sh1 couplet 42;
+ *    4 the Simorgh to Zal, /manoochehr/sh2 c. 94; 5 Sam to Zal, /manoochehr/sh3 c. 109; 6 Zav's peace, /zutahmasb/sh1 c. 28;
+ *    8 Rostam thanks the wild sheep, /kkavoos/sh6 c. 23; 9 Shapur's bridge, /zolaktaf/sh1 c. 15; 10 wisdom, /aghaz/sh2 c. 3;
+ *    13 divs, /akvan/sh1 c. 141; 14 Rostam to Bizhan, /bizhan/sh11 c. 24; 16 Anushirvan to Babak, /anooshirvan/sh4 c. 46;
+ *    18 the seed of words, /yazdgerd3/sh17 c. 22 (also /parviz/sh71 c. 6). Stories told without a quote: 2 Kaveh tears up
+ *    the testimony, /zahak/sh7; 7 Rostam turns down the feast, /garshasp/sh5 c. 22–25; 11 Gordafarid, /sohrab/sh7 c. 38–55;
+ *    12 Siavash asks Kavus to pardon the queen, /siavosh/sh4 c. 285–308; 15 Bahram and the cow, /bahgoor/sh19;
+ *    17 Barbad in the cypress, /parviz/sh70. Card 3, Fereydun's sons and the dragon, is not in Ganjoor's text; it was read in
+ *    Mohl's edition on Persian Wikisource, https://fa.wikisource.org/wiki/شاهنامه_(تصحیح_ژول_مل)/آزمودن_فریدون_پسران_خود_را.
+ *    Research: research_notes/PlayNest phase 11 research round 8, notes 01–03 and 07.
  * Ids are stable, so add new cards at the end of a theme.
  */
 export const PERSIAN_TALK: TalkCard[] = [
@@ -62,6 +73,28 @@ export const PERSIAN_TALK: TalkCard[] = [
   { id: 'talk-fa-riddle-6', theme: 'Riddles', emoji: '✒️', band: '6-8', lang: 'fa', text: 'Rudaki’s riddle: it limps but runs, has no ears but finds words, no eyes but sees the world. (A pen)' },
   { id: 'talk-fa-riddle-7', theme: 'Riddles', emoji: '🐕', band: '6-8', lang: 'fa', text: 'A riddle from ancient Iran: which creature is taller sitting down than standing up? (A dog)' },
   { id: 'talk-fa-riddle-8', theme: 'Riddles', emoji: '🕯️', band: '6-8', lang: 'fa', text: 'Manouchehri’s riddle: it carries its life on top of its head, and its body keeps that life going. (A candle)' },
+
+  // ---------- Shahnameh (شاهنامه), ages 6 to 8 ----------
+  { id: 'talk-fa-shahnameh-1', theme: 'Shahnameh', emoji: '✍️', band: '6-8', lang: 'fa', text: 'King Tahmures let the beaten divs go free, and they taught him to write. Why do you think he let them go?' },
+  { id: 'talk-fa-shahnameh-2', theme: 'Shahnameh', emoji: '🔨', band: '6-8', lang: 'fa', text: 'The whole court signed a paper calling cruel Zahhak fair, but Kaveh tore it up. Why do you think he did?' },
+  { id: 'talk-fa-shahnameh-3', theme: 'Shahnameh', emoji: '🐉', band: '6-8', lang: 'fa', text: 'Fereydun’s three sons met a dragon: one ran, one got ready to fight, one stood firm. What would you do?' },
+  { id: 'talk-fa-shahnameh-4', theme: 'Shahnameh', emoji: '🐦', band: '6-8', lang: 'fa', text: 'The Simorgh gave Zal one of her feathers, to call her whenever he needed help. Who would you call?' },
+  { id: 'talk-fa-shahnameh-5', theme: 'Shahnameh', emoji: '🔭', band: '6-8', lang: 'fa', text: 'Sam told his son Zal to learn from every kind of knowing, for each one brings joy. What do you love learning?' },
+  { id: 'talk-fa-shahnameh-6', theme: 'Shahnameh', emoji: '🌧️', band: '6-8', lang: 'fa', text: 'In King Zav’s time, two hungry armies made peace and shared the land. How do you make up after a quarrel?' },
+  { id: 'talk-fa-shahnameh-7', theme: 'Shahnameh', emoji: '🏔️', band: '6-8', lang: 'fa', text: 'Young Rostam said no to a feast while his big job wasn’t done. When do you finish a job before you play?' },
+  { id: 'talk-fa-shahnameh-8', theme: 'Shahnameh', emoji: '🐏', band: '6-8', lang: 'fa', text: 'A wild sheep led thirsty Rostam to water, and he wished it green fields. Which animal would you like to thank?' },
+  { id: 'talk-fa-shahnameh-9', theme: 'Shahnameh', emoji: '🌉', band: '6-8', lang: 'fa', text: 'King Shapur, just five, heard people squeezed on one bridge and had a second built. What could we make easier?' },
+
+  // ---------- Shahnameh (شاهنامه), ages 9 to 12 ----------
+  { id: 'talk-fa-shahnameh-10', theme: 'Shahnameh', emoji: '💡', band: '9-12', lang: 'fa', text: 'Ferdowsi wrote that good sense is the best gift God gave us. When has good sense helped you?' },
+  { id: 'talk-fa-shahnameh-11', theme: 'Shahnameh', emoji: '🏰', band: '9-12', lang: 'fa', text: 'Gordafarid got free by promising Sohrab the castle, then shut the gate on him. Is a trick fair in danger?' },
+  { id: 'talk-fa-shahnameh-12', theme: 'Shahnameh', emoji: '🕊️', band: '9-12', lang: 'fa', text: 'The queen lied about Siavash, yet he asked his father to forgive her. Could you forgive like that?' },
+  { id: 'talk-fa-shahnameh-13', theme: 'Shahnameh', emoji: '🧭', band: '9-12', lang: 'fa', text: 'Ferdowsi wrote that whoever leaves the path of humanity is a div, not a person. What keeps us humane?' },
+  { id: 'talk-fa-shahnameh-14', theme: 'Shahnameh', emoji: '💍', band: '9-12', lang: 'fa', text: 'Before pulling Bizhan from the pit, Rostam asked him to forgive Gorgin, who betrayed him. Why ask that first?' },
+  { id: 'talk-fa-shahnameh-15', theme: 'Shahnameh', emoji: '🐄', band: '9-12', lang: 'fa', text: 'In the story, King Bahram’s unfair thought dried up a cow’s milk. What do you think that picture means?' },
+  { id: 'talk-fa-shahnameh-16', theme: 'Shahnameh', emoji: '⚖️', band: '9-12', lang: 'fa', text: 'Babak made King Anushirvan come and be checked like every rider. Should the rules count for everyone?' },
+  { id: 'talk-fa-shahnameh-17', theme: 'Shahnameh', emoji: '🎵', band: '9-12', lang: 'fa', text: 'Barbad was kept out of the palace, so he played hidden in a cypress. What do you do when a door is shut?' },
+  { id: 'talk-fa-shahnameh-18', theme: 'Shahnameh', emoji: '🌱', band: '9-12', lang: 'fa', text: 'Ferdowsi wrote that he won’t die, for he has scattered the seeds of his words. What would you make to last?' },
 ];
 
 localize('talk-persian', PERSIAN_TALK, { hideMissing: true });

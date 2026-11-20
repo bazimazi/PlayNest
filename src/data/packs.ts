@@ -245,8 +245,16 @@ export interface Story {
    * until someone from that community has said yes.
    */
   stance: 'open' | 'care';
+  /**
+   * Set when the story is one episode of a longer work that families can follow in order, such as the Shahnameh. `order`
+   * is where it falls in that work (gaps are fine), so the app can offer the one before and the one after.
+   */
+  saga?: { name: StorySaga; order: number };
   refs: Ref[];
 }
+
+export const STORY_SAGAS = ['shahnameh'] as const;
+export type StorySaga = (typeof STORY_SAGAS)[number];
 
 // ---------- Songs ----------
 
