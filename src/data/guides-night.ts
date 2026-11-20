@@ -39,7 +39,7 @@ export const NIGHT_GUIDES: Guide[] = [
     slug: 'night-time-troubles',
     title: 'Night frights, sleepwalking and snoring',
     emoji: '🌛',
-    summary: 'What’s happening when your child screams, walks or snores in their sleep, what helps, and when to see a doctor.',
+    summary: 'Nightmares, night terrors, sleepwalking and snoring: what’s happening, what helps, and when to see a doctor.',
     minutes: 5,
     minMonths: 12,
     maxMonths: 144,
@@ -51,7 +51,7 @@ export const NIGHT_GUIDES: Guide[] = [
       { type: 'p', text: 'Most night-time scares are a normal part of growing up, and most children grow out of them. Knowing which is which tells you whether to comfort, wait or see a doctor.' },
       {
         type: 'table',
-        head: ['What you see', 'Nightmare', 'Night terror', 'Sleepwalking'],
+        head: ['What you see', 'Nightmare', 'Night terror', 'Sleep\u00ADwalking'], // soft hyphen: four columns don't fit a 390px phone otherwise
         rows: [
           ['Awake?', 'Yes, and wants you', 'No, and may not know you', 'No, moving about asleep'],
           ['Remembers it?', 'Often', 'No', 'No'],

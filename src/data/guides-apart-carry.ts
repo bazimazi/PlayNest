@@ -143,7 +143,7 @@ export const APART_CARRY_GUIDES: Guide[] = [
     slug: 'slings-and-carriers',
     title: 'Slings and carriers, safely',
     emoji: '🤱',
-    summary: 'Five quick checks, why feeding and hot drinks wait, the first months, and keeping hips healthy.',
+    summary: 'Five quick checks for carrying your baby, why feeding and hot drinks wait, the first months, and keeping hips healthy.',
     minutes: 3,
     minMonths: 0,
     maxMonths: 24,

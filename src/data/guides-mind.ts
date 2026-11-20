@@ -41,7 +41,7 @@ export const MIND_GUIDES: Guide[] = [
     slug: 'your-mind-after-birth',
     title: 'Your mind after a baby',
     emoji: '🌤️',
-    summary: 'Blues, low mood, worry, frightening thoughts and a hard birth: what’s common, what’s urgent, and what helps.',
+    summary: 'Baby blues, postnatal depression and anxiety, frightening thoughts and a hard birth: what’s common, what’s urgent, and what helps.',
     minutes: 5,
     minMonths: 0,
     maxMonths: 24,

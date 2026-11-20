@@ -1,3 +1,4 @@
+import { useLayoutEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ActivityTile } from '../components/ActivityCard';
 import { Art } from '../components/Art';
@@ -173,29 +174,54 @@ function Block({ block }: { block: GuideBlock }) {
         </div>
       );
     case 'table':
-      return (
-        <div className="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                {block.head.map((h) => (
-                  <th key={h}>{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {block.rows.map((r) => (
-                <tr key={r.join('|')}>
-                  {r.map((c, i) => (
-                    <td key={i}>{c}</td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      );
+      return <GuideTable head={block.head} rows={block.rows} />;
   }
+}
+
+/**
+ * A table that may scroll sideways on a small phone or with big text. Only while it actually scrolls, it can take focus
+ * (so the arrow keys reach the hidden columns) and is announced by its column headings.
+ */
+function GuideTable({ head, rows }: { head: string[]; rows: string[][] }) {
+  const wrap = useRef<HTMLDivElement>(null);
+  const [scrolls, setScrolls] = useState(false);
+  useLayoutEffect(() => {
+    const el = wrap.current;
+    if (!el) return;
+    const measure = () => setScrolls(el.scrollWidth > el.clientWidth + 1);
+    measure();
+    if (typeof ResizeObserver === 'undefined') return;
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    if (el.firstElementChild) ro.observe(el.firstElementChild);
+    return () => ro.disconnect();
+  }, []);
+  return (
+    <div
+      ref={wrap}
+      className={head.length > 3 ? 'table-wrap many-cols' : 'table-wrap'}
+      {...(scrolls ? { tabIndex: 0, role: 'region', 'aria-label': head.join(', ') } : {})}
+    >
+      <table>
+        <thead>
+          <tr>
+            {head.map((h) => (
+              <th key={h}>{h}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr key={r.join('|')}>
+              {r.map((c, i) => (
+                <td key={i}>{c}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
 export function GuidePage() {

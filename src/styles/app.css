@@ -2303,6 +2303,13 @@ th {
   border-top: 0;
   font-weight: 900;
 }
+/* Four columns barely fit a phone, so they give up some padding before anything has to scroll. */
+.table-wrap.many-cols :is(th, td) {
+  padding-inline: 7px;
+}
+.table-wrap.many-cols :is(th, td):first-child {
+  padding-inline-start: 12px;
+}
 .sources {
   display: grid;
   gap: 8px;

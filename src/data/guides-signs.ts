@@ -43,7 +43,7 @@ export const SIGNS_GUIDES: Guide[] = [
     slug: 'signs-not-to-wait-on',
     title: 'Signs not to wait on',
     emoji: '🚩',
-    summary: 'A few serious illnesses start quietly or look like something common. These are the signs to act on today, or straight away.',
+    summary: 'Some serious illnesses, such as diabetes, appendicitis, meningitis and sepsis, start quietly or look like something common. These are the signs to act on today, or straight away.',
     minutes: 5,
     minMonths: 0,
     maxMonths: 144,

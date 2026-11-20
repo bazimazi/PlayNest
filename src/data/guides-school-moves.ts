@@ -41,7 +41,7 @@ export const SCHOOL_MOVES_GUIDES: Guide[] = [
     slug: 'school-worries-and-avoidance',
     title: 'When your child doesn’t want to go to school',
     emoji: '🏫',
-    summary: 'Tummy aches on school mornings and tears at the gate: why it happens, why staying home can backfire, and how home and school can help together.',
+    summary: 'Tummy aches on school mornings, tears at the gate, or school refusal: why it happens, why staying home can backfire, and how home and school can help together.',
     minutes: 5,
     minMonths: 48,
     maxMonths: 144,
